@@ -24,6 +24,10 @@ Route::get('/admin/list', '\App\Http\Controllers\Admin\AdminController@listAcoun
 Route::get('/admin/register', '\App\Http\Controllers\Auth\RegisterController@showAdminRegisterForm')->name("Register");
 Route::post('/admin/register', '\App\Http\Controllers\Auth\RegisterController@createAdmin');
 
+//admin manager account
+Route::get("/admin/listAccount","\App\Http\Controllers\Admin\UserController@index")->name("listAccount");
+
+
 Route::get('/auth/login',function(){
     return view("Admin.login");
 });

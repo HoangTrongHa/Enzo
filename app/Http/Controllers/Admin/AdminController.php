@@ -17,7 +17,7 @@ class AdminController extends Controller
         return view('Admin.index');
     }
     public function listAcount(){
-        $users = User::where("role", "!=", 5)->get();
+        $users = User::where("static", "!=", 5)->get();
         return view("Admin.Manager.listAcount", compact('users'));
     }
 }

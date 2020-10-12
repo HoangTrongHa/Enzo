@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Customer;
 use App\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class CustomerController extends Controller
 {
@@ -19,20 +20,39 @@ class CustomerController extends Controller
         return view("Customer.register");
     }
     public function PostRegister(Request $request){
-        $request->validate([
-            "customer_name"=>"required|min:3",
-            "email"=>"required|unique:customers",
-            "password"=>"required|min:6",
-            "password_cf"=>"same:password"
-        ]);
+//        $request->validate([
+//            "customer_name"=>"required|min:3",
+//            "email"=>"required|unique:customers",
+//            "password"=>"required|min:6",
+//            "password_cf"=>"same:password"
+//        ]);
+        $sinhnhat = $request->birth_year +$request->birth_month + $request->birth_day;
         $cus = Customer::create([
-            "customer_name"=>$request->customer_name,
+            "tenchuhan"=>$request->tenchuhan,
+            "tenphienam"=>$request->tenphienam,
+            "male"=>$request->male,
+            "sinhnhat"=>$sinhnhat,
+            "thanhphangiadinh"=>$request->thanhphangiadinh,
+            "diachinha"=>$request->diachinha,
+            "sodienthoaicodinh"=>$request->sodienthoaicodinh,
+            "sodienthoaididong"=>$request->sodienthoaididong,
             "email"=>$request->email,
-            "password"=>bcrypt($request->password)
-        ]);
+            "linkweb"=>$request->linkweb,
+            "truso"=>$request->truso,
+            "sdtcty"=>$request->sdtcty,
+            "songuoilam"=>$request->songuoilam,
+            "chucvu"=>$request->chucvu,
+            "namcongtac"=>$request->namcongtac,
+            "thoigianlamviec"=>$request->thoigianlamviec,
+            "thoigiannghi"=>$request->thoigiannghi,
+            "nguoibaolanh"=>$request->nguoibaolanh,
+            "diachinguoibaolanh"=>$request->diachinguoibaolanh,
+            "sdtnguoibaolanh"=>$request->sdtnguoibaolanh,
+            'matkhau' => Hash::make($request['matkhau']),
+            ]);
         if ($cus)
         {
-            return redirect()->route("customer.login")->with("success","Sign Up Success...");
+            return redirect()->route("loginCustomer")->with("success","Sign Up Success...");
         }
         return redirect()->back()->with("error","Registration failed...");
     }
