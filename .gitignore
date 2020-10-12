@@ -1,0 +1,13 @@
+.idea
+.vscode
+.svn
+/node_modules
+/public/hot
+#/public/storage
+#/public/assets/web/js/*
+#/public/assets/web/css/*
+#/public/mix-manifest.json
+/storage/*.key
+/storage/debugbar
+/vendor
+/lint.sh

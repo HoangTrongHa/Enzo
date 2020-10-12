@@ -40,7 +40,7 @@
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
                             </div>
                             <div id="register-link" class="text-right">
-                                <a href="#" class="type-text">Register here</a>
+                                <a href="{{route("registercustomer")}}" class="type-text">Register here</a>
                             </div>
                         </form>
                     </div>

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Customer;
+use App\Http\Requests\AdminCreateRequest;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
@@ -40,7 +42,6 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
-        $this->middleware('guest:User');
         $this->middleware('guest:Customer');
     }
 
@@ -49,15 +50,19 @@ class RegisterController extends Controller
         return view("auth.register");
     }
 
-    protected function createAdmin(Request $request)
+    protected function createAdmin(AdminCreateRequest $request)
     {
-        $this->validator($request->all())->validate();
+        if ($request->hasFile('Avatar')) {
+            $extension = $request->file('Avatar')->getClientOriginalExtension();
+            $name = sha1(10);
+            $file = Storage::disk('public')->put('',  $request->file("Avatar"));
+        }
         $User = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
             'phone' => $request['phone'],
-            'avatar' => $request["avatar"]
+            'avatar' => isset($file) ? $file : null,
         ]);
         return redirect()->intended('login/admin');
     }
@@ -69,7 +74,7 @@ class RegisterController extends Controller
 
     protected function createCustonmer(Request $request)
     {
-        $this->validator($request->all())->validate();
+//        $this->validator($request->all())->validate();
         $Customer = Customer::create([
             'name' => $request['name'],
             'email' => $request['email'],

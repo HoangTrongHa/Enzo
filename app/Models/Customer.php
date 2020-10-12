@@ -10,7 +10,8 @@ class Customer extends Authenticatable
 {
     use Notifiable;
 
-    protected $guard = 'writer';
+    protected $guard = 'Customer';
+    protected $table = "_customer";
 
     protected $fillable = [
         'customer_name', 'email', 'password',"phone_number","address","avatar",

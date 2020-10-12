@@ -38,7 +38,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        $this->middleware('guest:user')->except('logout');
+//        $this->middleware('guest:users')->except('logout');
         $this->middleware('guest:Customer')->except('logout');
     }
 
@@ -56,7 +56,7 @@ class LoginController extends Controller
             'password_confirmation' => 'bail|required|same:password',
         ]);
 
-        if (Auth::guard('User')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
             return redirect()->intended('/User');
         }
@@ -81,5 +81,14 @@ class LoginController extends Controller
             return redirect()->intended('/Customer');
         }
         return back()->withInput($request->only('email', 'remember'));
+    }
+
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return redirect('/admin/login');
     }
 }
