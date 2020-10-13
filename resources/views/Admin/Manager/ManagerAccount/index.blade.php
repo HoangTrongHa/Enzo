@@ -22,7 +22,7 @@
                             <th>{{$list ->tenphienam}}</th>
                             <th>{{$list ->male}}</th>
                             <td>
-                                <a href="#" class="badge badge-success badge-pill">Check</a>
+                                <a href="{{route("showuser",['id'=>$list->id])}}" class="badge badge-success badge-pill">Check</a>
                                 <a href="#" class="badge badge-primary badge-pill">Edit</a>
                                 <a href="#"  class="badge badge-danger badge-pill">Delete</a>
                             </td>

@@ -10,7 +10,7 @@ class Customer extends Model
     protected $table =  "customer";
     protected $fillable = ["tenchuhan","tenphienam","male","sinhnhat","thanhphangiadinh","diachinha","sodienthoaicodinh","sodienthoaididong",
         "matkhau","email","linkweb","truso","sdtcty","songuoilam","chucvu","namcongtac","thoigianlamviec","thoigiannghi","nguoibaolanh",
-        "nguoibaolanh","diachinguoibaolanh","sdtnguoibaolanh"];
+        "nguoibaolanh","diachinguoibaolanh","sdtnguoibaolanh","static"];
 
     protected $hidden =[
       "matkhau",'remember_token',

@@ -38,7 +38,6 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-//        $this->middleware('guest:users')->except('logout');
         $this->middleware('guest:Customer')->except('logout');
     }
 
@@ -64,19 +63,19 @@ class LoginController extends Controller
     }
 
     //login customer
-    public function showWriterLoginForm()
+    public function showCustomerLoginForm()
     {
-        return view('auth.login', ['url' => 'writer']);
+        return view('Customer.login', ['url' => 'customer']);
     }
 
-    public function writerLogin(Request $request)
+    public function CustomerLogin(Request $request)
     {
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required|min:6'
         ]);
 
-        if (Auth::guard('Customer')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+        if (Auth::guard('Customer')->attempt(['email' => $request->email, 'password' => $request->matkhau], $request->get('remember'))) {
 
             return redirect()->intended('/Customer');
         }
@@ -90,5 +89,15 @@ class LoginController extends Controller
         $request->session()->invalidate();
 
         return redirect('/admin/login');
+    }
+
+    protected function sendLoginResponse(Request $request)
+    {
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        return $this->authenticated($request, $this->guard()->user())
+            ?: redirect()->intended($this->redirctPath());
     }
 }

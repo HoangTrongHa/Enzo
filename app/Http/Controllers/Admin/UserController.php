@@ -13,4 +13,13 @@ class UserController extends Controller
         $user = Customer::all();
         return view('Admin.Manager.ManagerAccount.index',compact("user"));
     }
+    public function show($id)
+    {
+
+        $customer = Customer::findOrfail($id);
+
+
+        return view("Admin.Manager.ManagerAccount.show",compact("customer"));
+    }
+
 }

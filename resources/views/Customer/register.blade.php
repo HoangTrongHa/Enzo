@@ -348,7 +348,7 @@
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
-                    <input type="text" name="sdtnguoibaolanh" class="@error("sdtnguoibaolanh") is-invalid  @enderror">
+                    <input type="number" name="sdtnguoibaolanh" class="@error("sdtnguoibaolanh") is-invalid  @enderror">
                     @error("sdtnguoibaolanh")
                     <span class="error invalid-feedback">{{$message}}</span>
                     @enderror

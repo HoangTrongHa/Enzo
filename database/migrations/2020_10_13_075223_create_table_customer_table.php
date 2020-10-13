@@ -25,6 +25,7 @@ class CreateTableCustomerTable extends Migration
             $table->string("sodienthoaididong");
             $table->string("matkhau");
             $table->string("email");
+            $table->integer("static")->default(1);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('linkweb');
             $table->string('truso');
@@ -39,6 +40,7 @@ class CreateTableCustomerTable extends Migration
             $table->string('sdtnguoibaolanh');
             $table->rememberToken();
             $table->timestamps();
+
         });
     }
 

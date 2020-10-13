@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Customer;
 use App\Http\Requests\AdminCreateRequest;
+use App\Role;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -63,7 +64,11 @@ class RegisterController extends Controller
             'password' => Hash::make($request['password']),
             'phone' => $request['phone'],
             'avatar' => isset($file) ? $file : null,
+
         ]);
+        $User ->roles()
+            ->attach(Role::where('name', 'employee')->first());
+        return $User;
         return redirect()->intended('login/admin');
     }
 

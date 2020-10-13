@@ -40,6 +40,28 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function authorizeRoles($roles)
+    {
+        if (is_array($roles)) {
+            return $this->hasAnyRole($roles) ||
+                abort(401, 'This action is unauthorized.');
+        }
+        return $this->hasRole($roles) ||
+            abort(401, 'This action is unauthorized.');
+    }
+
+    public function hasAnyRole($roles)
+    {
+        return null !== $this->roles()->whereIn(‘name’, $roles)->first();
+    }
+    /**
+     * Check one role
+     * @param string $role
+     */
+    public function hasRole($role)
+    {
+        return null !== $this->roles()->where(‘name’, $role)->first();
+    }
 
     public function getImage()
     {
@@ -52,18 +74,8 @@ class User extends Authenticatable
     }
     public const ADMIN_ROLE = 1;
     public const USER_ROLE =0;
-//    protected $type= [
-//        0 =>[
-//            'name'=>"Close",
-//            'class'=>'badge badge-danger badge-pill'
-//        ],
-//       1 =>[
-//           "name" => "Active",
-//            'class'=>'badge badge-primary badge-pill'
-//       ]
-//    ];
-//    public function getRole(){
-//        return Arr::get($this->type,$this->role);
-//    }
-
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
 }

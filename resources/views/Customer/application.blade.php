@@ -8,7 +8,7 @@
 @include("Customer.Components.header")
 <section style="background:#01897b ">
     <div class="container">
-        <h1 class="login-h1">ログイン</h1>
+        <h1 class="login-h1">応用</h1>
     </div>
 </section>
 <section>
@@ -32,7 +32,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="password" class="type-text">Password:</label><br>
-                                <input type="password" name="matkhau" id="matkhau" class="form-control">
+                                <input type="text" name="password" id="password" class="form-control">
                             </div>
                             <div class="form-group">
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">

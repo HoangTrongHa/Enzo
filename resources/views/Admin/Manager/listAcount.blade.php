@@ -30,7 +30,6 @@
                         <td>{{$list->created_at}}</td>
                         <td>{{$list->updated_at}}</td>
                         <td>
-                            <a href="#" class="badge badge-success badge-pill">Check</a>
                             <a href="#" class="badge badge-primary badge-pill">Edit</a>
                             <a href="#"  class="badge badge-danger badge-pill">Delete</a>
                         </td>
