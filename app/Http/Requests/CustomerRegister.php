@@ -29,7 +29,7 @@ class CustomerRegister extends FormRequest
             "diachinha" => "required | max:255",
             "sodienthoaicodinh" => "min:10| max:11",
             "sodienthoaididong" => "min:10| max:11",
-            "matkhau" => "min:3",
+            "password" => "min:3",
             "email" => "required",
             "linkweb"=>"required",
             "truso"=>"required",

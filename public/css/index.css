@@ -525,3 +525,16 @@ color: black;
 #login .container #login-row #login-column #login-box #login-form #register-link {
     margin-top: -85px;
 }
+
+ .item-left {
+     background: #9fdbd5;
+     border: 1px solid #01897b;
+ }
+
+.item-right {
+    border: 1px solid #01897b;
+}
+.page-wrap {
+    min-height: 100vh;
+}
+

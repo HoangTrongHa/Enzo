@@ -165,8 +165,8 @@
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
-                    <input type="password" name="password" class="@error("matkhau") is-invalid  @enderror">
-                    @error("matkhau")
+                    <input type="password" name="password" class="@error("password") is-invalid  @enderror">
+                    @error("password")
                     <span class="error invalid-feedback">{{$message}}</span>
                     @enderror
                 </div>
@@ -427,15 +427,5 @@
                     </div>
 </div>
 
-<style>
-    .item-left {
-        background: #9fdbd5;
-        border: 1px solid #01897b;
-    }
-
-    .item-right {
-        border: 1px solid #01897b;
-    }
-</style>
 @endsection
 

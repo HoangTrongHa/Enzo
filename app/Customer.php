@@ -9,10 +9,14 @@ class Customer extends Model
 {   use Notifiable;
     protected $table =  "customer";
     protected $fillable = ["tenchuhan","tenphienam","male","sinhnhat","thanhphangiadinh","diachinha","sodienthoaicodinh","sodienthoaididong",
-        "matkhau","email","linkweb","truso","sdtcty","songuoilam","chucvu","namcongtac","thoigianlamviec","thoigiannghi","nguoibaolanh",
+        "password","email","linkweb","truso","sdtcty","songuoilam","chucvu","namcongtac","thoigianlamviec","thoigiannghi","nguoibaolanh",
         "nguoibaolanh","diachinguoibaolanh","sdtnguoibaolanh","static"];
 
     protected $hidden =[
-      "matkhau",'remember_token',
+      "password",'remember_token',
     ];
+
+    public function upload(){
+        return $this->belongsTo("app\upload");
+    }
 }

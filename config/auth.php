@@ -79,7 +79,7 @@ return [
             'Customer' => [
                 'driver' => 'database',
                 'model' => App\Customer::class,
-                'table' => '_customer'
+                'table' => 'customer'
             ],
         ],
 
