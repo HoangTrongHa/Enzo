@@ -14,42 +14,11 @@ use Illuminate\Support\Facades\Storage;
 
 class CustomerController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('guest:Customer')->except('logout');
-    }
-
-    public function loginCustomer()
-    {
-        return view("Customer.login");
-    }
-
     public function index()
     {
-
         return view("Customer.index");
-
     }
 
-    public function postLogin(Request $request)
-    {
-//        dd($request->all());
-      $login = Auth::guard('Customer')->attempt(["email"=>$request->username,"password"=>$request->password]);
-//        dd($login);
-        if ($login == true){
-                $static = Auth::guard('Customer')->user()->static;
-
-                if ($static == 1){
-                    return redirect()->route("application");
-//                    return view("Customer.application");
-                }else{
-                    return view("Customer.loan");
-                }
-//            Auth::check()->id
-        }
-        return redirect()->back()->with("error","Login failed..");
-
-    }
     public function Register()
     {
         return view("Customer.register");
@@ -90,7 +59,6 @@ class CustomerController extends Controller
     public function application(){
         return view("Customer.application");
     }
-
     public function upload(Request $request){
         if ($request->hasFile("avatar")||$request->hasFile('front') || $request->hasFile("cmt") || $request->hasFile("idnhanhvien")
         || $request->hasFile("sotietkiem") || $request->hasFile("3thangluong") || $request->hasFile("nhieuanh")) {
@@ -138,5 +106,7 @@ class CustomerController extends Controller
         ]);
         return view("Customer.confirm");
     }
-
+    public function loan(){
+        return view("Customer.loan");
+    }
 }

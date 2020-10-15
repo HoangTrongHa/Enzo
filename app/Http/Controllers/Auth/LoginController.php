@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -38,57 +38,24 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        $this->middleware('guest:Customer')->except('logout');
     }
 
 //login admin
     public function showAdminLoginForm()
     {
-        return view("Admin.index");
+        return view("auth.login");
     }
 
     public function adminLogin(Request $request)
     {
         $this->validate($request, [
             'email' => 'required|email',
-            'password' => 'required|min:6|max:20',
-            'password_confirmation' => 'bail|required|same:password',
+            'password' => 'required|min:3|max:20',
         ]);
-
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-
-            return redirect()->intended('/User');
+        if ($this->attemptLogin($request)) {
+            return redirect()->route("home.admin");
         }
-        return back()->withInput($request->only('email', 'remember'));
-    }
-
-    //login customer
-    public function showCustomerLoginForm()
-    {
-        return view('Customer.login', ['url' => 'customer']);
-    }
-
-    public function CustomerLogin(Request $request)
-    {
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required|min:6'
-        ]);
-
-        if (Auth::guard('Customer')->attempt(['email' => $request->email, 'password' => $request->matkhau], $request->get('remember'))) {
-
-            return redirect()->intended('/Customer');
-        }
-        return back()->withInput($request->only('email', 'remember'));
-    }
-
-    public function logout(Request $request)
-    {
-        $this->guard()->logout();
-
-        $request->session()->invalidate();
-
-        return redirect('/admin/login');
+        return $this->sendFailedLoginResponse($request);
     }
 
     protected function sendLoginResponse(Request $request)
@@ -98,6 +65,6 @@ class LoginController extends Controller
         $this->clearLoginAttempts($request);
 
         return $this->authenticated($request, $this->guard()->user())
-            ?: redirect()->intended($this->redirctPath());
+            ?: redirect()->intended($this->redirectPath());
     }
 }
