@@ -60,7 +60,8 @@ class CustomerController extends Controller
         return view("Customer.application");
     }
     public function upload(Request $request){
-        if ($request->hasFile("avatar")||$request->hasFile('front') || $request->hasFile("cmt") || $request->hasFile("idnhanhvien")
+//        dd($request->all());
+        if ($request->hasFile("avatar")||$request->hasFile('front') || $request->hasFile("idnhanhvien")
         || $request->hasFile("sotietkiem") || $request->hasFile("3thangluong") || $request->hasFile("nhieuanh")) {
             $extension1 = $request->file('front')->getClientOriginalExtension();
             $name1 = sha1(10);
@@ -91,17 +92,17 @@ class CustomerController extends Controller
             $file7 = Storage::disk()->put('',  $request->file("avatar"));
 
         }
-//        dd($request->all());
+//        dd($request->customer_id);
         $upload = upload::create([
 
             'avatar' => isset($file7) ? $file7 : null,
             'Front' => isset($file1) ? $file1 : null,
             'Back' => isset($file2) ? $file2 : null,
             'idnhanhvien' => isset($file3) ? $file3 : null,
-            'luong' => isset($file4) ? $file4 : null,
-            'Biasotietkiem' => isset($file5) ? $file5 : null,
+            'luong' => isset($file5) ? $file5 : null,
+            'Biasotietkiem' => isset($file4) ? $file4 : null,
             'manypicture' => isset($file6) ? $file6 : null,
-//            "customerid" => Auth::user()->id
+            "customer_id" => $request->customer_id
 
         ]);
         return view("Customer.confirm");
@@ -109,4 +110,5 @@ class CustomerController extends Controller
     public function loan(){
         return view("Customer.loan");
     }
+
 }

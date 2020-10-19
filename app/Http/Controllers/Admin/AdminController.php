@@ -26,4 +26,5 @@ class AdminController extends Controller
         $users = User::where("role", "!=", 5)->get();
         return view("Admin.Manager.listAcount", compact('users'));
     }
+
 }

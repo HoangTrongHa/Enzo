@@ -39,8 +39,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{route("listAccount")}}">List Account</a>
-                <a class="collapse-item" href="register.html">Pending Authorization
-                </a>
+                <a class="collapse-item" href="{{route("showChanger")}}">Pending Authorization</a>
 
             </div>
         </div>

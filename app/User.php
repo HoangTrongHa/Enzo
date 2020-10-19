@@ -76,6 +76,9 @@ class User extends Authenticatable
     public const USER_ROLE =0;
     public function roles()
     {
-        return $this->belongsToMany(Role::class);
+    }
+    public function uploadkey(){
+        return $this->hasMany("/app/upload","customer_id");
+
     }
 }

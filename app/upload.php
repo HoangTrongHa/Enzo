@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class upload extends Model
 {
     protected $table = 'upload';
-    protected $fillable = ["avatar", "Front", "idnhanhvien", "Back", "manypicture", "luong", "Biasotietkiem", "manypicture"];
+    protected $fillable = ["avatar", "Front", "idnhanhvien", "Back", "luong", "Biasotietkiem", "manypicture","customer_id"];
 
-    public function Customer(){
-        return $this->belongsTo("app\Customer");
+    public function AvartaCustomer(){
+        return $this->belongsTo("app\Customer","customer_id");
     }
 }

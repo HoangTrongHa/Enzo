@@ -38,7 +38,10 @@ Route::group(["prefix"=>"admin"],function (){
 //admin manager account
 Route::get("/admin/listAccount","\App\Http\Controllers\Admin\UserController@index")->name("listAccount");
 //admin manager customer
-Route::get("/admin/UserAccount/{id}","\App\Http\Controllers\Admin\UserController@show")->name("showuser");
+    Route::get("/UserAccount/{id}","\App\Http\Controllers\Admin\UserController@show")->name("showuser");
+    Route::get("/admin/UserAccount/change","\App\Http\Controllers\Admin\UserController@showChanger")->name("showChanger");
+//    Route::put("/user/change/{id}","\App\Http\Controllers\Admin\UserController@postChange")->name("change");
+    Route::get("/admin/UserAccount/grantRight/{id}","\App\Http\Controllers\Admin\UserController@grantRight")->name("showgrantRightAdmin");
 Route::get('/auth/login',function(){
     return view("Admin.login");
 });

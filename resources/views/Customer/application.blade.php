@@ -50,6 +50,8 @@
                     <span style="">ラジオボックス追加 　選択後、項目項目ボタンをクリックすると 　アップロード項目が増える（最大５項目）</span>
                 </div>
             </div>
+            <input type="hidden" class="front" name="customer_id" value="{{Auth::user()->id}}">
+
         </div>
         <div class="container entry">
             <div class="row">
