@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCustomer extends Migration
+class CreateTableCustomer extends Migration
 {
     /**
      * Run the migrations.
@@ -14,6 +14,7 @@ class CreateCustomer extends Migration
     public function up()
     {
         Schema::create('customer', function (Blueprint $table) {
+
             $table->bigIncrements("id");
             $table->string("tenchuhan");
             $table->string("tenphienam");
@@ -38,6 +39,10 @@ class CreateCustomer extends Migration
             $table->string('nguoibaolanh');
             $table->string('diachinguoibaolanh');
             $table->string('sdtnguoibaolanh');
+            $table->double("maxtotal");
+            $table->double("borrowing");
+            $table->double("receive");
+            $table->date("payment_term");
             $table->rememberToken();
             $table->timestamps();
         });
@@ -50,6 +55,8 @@ class CreateCustomer extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customer');
+        Schema::table('customer', function (Blueprint $table) {
+            Schema::dropIfExists('customer');
+        });
     }
 }

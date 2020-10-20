@@ -16,6 +16,7 @@
                         <th>{{$list -> tenchuhan}}</th>
                         <th>
                             <div class="four">
+                                @if($list ->static ==1)
                                 <div class="button-wrap">
                                     <div class="button-bg">
                                         <div class="button-out"></div>
@@ -23,11 +24,20 @@
                                         <div class="button-switch"></div>
                                     </div>
                                 </div>
+                                @else ($list ->static ==2)
+                                    <div class="button-wrap button-active">
+                                        <div class="button-bg">
+                                            <div class="button-out"></div>
+                                            <div class="button-in"></div>
+                                            <div class="button-switch"></div>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
 
                         </th>
                         <th>
-                            <a href="{{route("showgrantRightAdmin",[$list->id])}}"class="badge badge-success badge-pill">Change</a>
+                            <a href="{{route("showgrantRightAdmin",[$list->id])}}" class="badge badge-success badge-pill">Change</a>
                         </th>
                     </tr>
                 @endforeach
@@ -80,10 +90,4 @@
         .four .button-active .button-bg { background-color:#22bb22; }
 
     </style>
-    <script>
-
-        $('.button-wrap').on("click", function(){
-            $(this).toggleClass('button-active');
-        });
-    </script>
 @endsection

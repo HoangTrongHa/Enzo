@@ -1,5 +1,4 @@
 <?php
-
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -10,10 +9,9 @@ class Customer extends Model
     protected $table =  "customer";
     protected $fillable = ["tenchuhan","tenphienam","male","sinhnhat","thanhphangiadinh","diachinha","sodienthoaicodinh","sodienthoaididong",
         "password","email","linkweb","truso","sdtcty","songuoilam","chucvu","namcongtac","thoigianlamviec","thoigiannghi","nguoibaolanh",
-        "nguoibaolanh","diachinguoibaolanh","sdtnguoibaolanh","static"];
-
+        "nguoibaolanh","diachinguoibaolanh","sdtnguoibaolanh","static","maxtotal","borrowing","receive","payment_term"];
     protected $hidden =[
-      "password",'remember_token',
+        "password",'remember_token',
     ];
 
     public function upload(){

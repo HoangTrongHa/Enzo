@@ -1,6 +1,6 @@
 @extends("Admin.Components.layout")
 @section("content")
-    <form action="" id="basicform" method="POST" >
+    <form action="{{route("PostgrantRight",[$data->static])}}" id="basicform" method="POST" >
         @csrf
         @method("POST")
         <div class="form-group">
@@ -10,9 +10,9 @@
         </div>
         <div class="form-group">
             <label for="">Grant Right*</label>
-            <select class="form-control" name="role" id="arrtb_id">
-                <option value="0" {{($data->static==1)?"selected":""}}>Close</option>
-                <option value="1"  {{($data->static==2)?"selected":""}}>Active</option>
+            <select class="form-control" name="static">
+                <option value="1" {{($data->static==1)?"selected":""}} >Close</option>
+                <option value="2"  {{($data->static==2)?"selected":""}} >Active</option>
             </select>
         </div>
         <p class="text-left">
