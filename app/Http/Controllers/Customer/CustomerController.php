@@ -56,11 +56,17 @@ class CustomerController extends Controller
         }
         return redirect()->back()->with("error", "Registration failed...");
     }
-    public function application(){
-        return view("Customer.application");
+    public function application()
+    {
+        $static =Auth::guard("Customer")->user();
+        if ($static->static == 2) {
+            return view("Customer.loan",compact("static"));
+        } else {
+            return view("Customer.application");
+        }
+
     }
     public function upload(Request $request){
-//        dd($request->all());
         if ($request->hasFile("avatar")||$request->hasFile('front') || $request->hasFile("idnhanhvien")
         || $request->hasFile("sotietkiem") || $request->hasFile("3thangluong") || $request->hasFile("nhieuanh")) {
             $extension1 = $request->file('front')->getClientOriginalExtension();
@@ -69,27 +75,27 @@ class CustomerController extends Controller
 
             $extension2 = $request->file('back')->getClientOriginalExtension();
             $name2 = sha1(10);
-            $file2 = Storage::disk()->put('',  $request->file("back"));
+            $file2 = Storage::disk()->put('back/',  $request->file("back"));
 
             $extension3 = $request->file('idnhanhvien')->getClientOriginalExtension();
             $name3 = sha1(10);
-            $file3 = Storage::disk()->put('',  $request->file("idnhanhvien"));
+            $file3 = Storage::disk()->put('idnhanhvien/',  $request->file("idnhanhvien"));
 
             $extension4 = $request->file('sotietkiem')->getClientOriginalExtension();
             $name4 = sha1(10);
-            $file4 = Storage::disk()->put('',  $request->file("sotietkiem"));
+            $file4 = Storage::disk()->put('sotietkiem/',  $request->file("sotietkiem"));
 
             $extension5 = $request->file('3thangluong')->getClientOriginalExtension();
             $name5 = sha1(10);
-            $file5 = Storage::disk()->put('',  $request->file("3thangluong"));
+            $file5 = Storage::disk()->put('3thangluong/',  $request->file("3thangluong"));
 
             $extension6 = $request->file('nhieuanh')->getClientOriginalExtension();
             $name6 = sha1(10);
-            $file6 = Storage::disk()->put('',  $request->file("nhieuanh"));
+            $file6 = Storage::disk()->put('nhieuanh/',  $request->file("nhieuanh"));
 
             $extension7 = $request->file('avatar')->getClientOriginalExtension();
             $name7 = sha1(10);
-            $file7 = Storage::disk()->put('',  $request->file("avatar"));
+            $file7 = Storage::disk()->put('avatar/',  $request->file("avatar"));
 
         }
 //        dd($request->customer_id);
@@ -108,7 +114,15 @@ class CustomerController extends Controller
         return view("Customer.confirm");
     }
     public function loan(){
-        return view("Customer.loan");
+
+        return view("Customer.loan",compact("cus"));
+    }
+    public function sinsei(){
+
+        return view("Customer.sinsei");
+    }
+    public function postSinsei(){
+        
     }
 
 }

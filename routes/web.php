@@ -69,3 +69,4 @@ Route::group(['middleware' => 'test'], function () {
 Route::post("/postProfile", "\App\Http\Controllers\Customer\CustomerController@upload")->name("upload");
 Route::get("/loan", "\App\Http\Controllers\Customer\CustomerController@loan")->name("loan");
 Route::get("/application", "\App\Http\Controllers\Customer\CustomerController@application")->name("application");
+Route::get("/sinsei", "\App\Http\Controllers\Customer\CustomerController@sinsei")->name("sinsei");

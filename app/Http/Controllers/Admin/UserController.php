@@ -31,6 +31,7 @@ class UserController extends Controller
 
     public function grantRight($id)
     {
+
         $data = Customer::findOrfail($id);
         return view("Admin.Manager.ManagerAccount.AccountStatus", compact("data"));
     }
@@ -38,11 +39,12 @@ class UserController extends Controller
     public function PostgrantRight(Request $req, $id)
     {
         $cus = Customer::findOrFail($id);
-        $cus->update($req->all());
-        $customer = Customer::all();
 
-//        dd($req->all());
-        return view("Admin.Manager.ManagerAccount.chang", compact("customer", "cus"));
+        $cus->update([
+            "static" =>$req->static
+        ]);
+        $cus->save();
+        return redirect()->route("showChanger");
     }
 
 //    public function loanAccount()

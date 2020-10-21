@@ -6,98 +6,87 @@
             <h1 class="login-h1">申し込み</h1>
         </div>
     </section>
-    <section>
+    <div>
         <div class="container">
-            <div class="loan-content">
-                <div class="loan-item">
-                    <div class="style-loan">
-
-
-                    <div class="item-content">
-                        <span>so tien duoc vay</span>
-                        <h1>00,000,00</h1>
+            <div class="row justify-content-around">
+                <div class="col-5 loan align-items-center">
+                    <div class="align-items-center loan-app">
+                        <span class="span-1">so tien van con no</span><br>
+                        <span class="span-2" style="font-size: 62px;">{{Auth::guard("Customer")->user()->maxtotal}}</span>
                     </div>
+                    <div class="button-app">
+                        <a href="{{route("sinsei")}}" class="button-a">Get Started</a>
                     </div>
-                    <div class="button-loan">
-                        <a class="loan-button" href="#">Ung dung</a><br>
-                        <a class="loan-button" href="#">lich su vay</a>
+                    <div class="button-app">
+                        <a href="#" class="button-a">History</a>
                     </div>
-
                 </div>
-                <div class="loan-item">
-                    <span style="color: white">so tien duoc vay</span>
-                    <div class="item-content">
-                        <h1>00,000,00</h1>
-                    </div>
-                    <span style="color: white">Ngay phai tra</span>
-                    <div class="dead-line">
-                        <span>Ngay</span>
-                        <div class="time-line">
-                            <span>00</span>
+                <div class="col-5 loan">
+                    <div class="row align-items-center">
+
+                        <div class="right-loan">
+                             <span>
+                                  <  Thong Bao co the vay >
+                              </span>
+                            <div class="align-items-center loan-app">
+                                <span class="span-1">{{$static->maxtotal}}</span>
+
+                            </div>
+                            <span>
+                                <  Ngay Phai Tra >
+                             </span>
+                            <div class="align-items-center loan-app">
+                                <span class="span-1">{{$static ->payment_term}}</span>
+                            </div>
+                            <span>
+                                <  Thong tin tai khoan admin >
+                             </span>
+                            <div class="align-items-center loan-app">
+                                <span class="span-1">Hoàng trọng Hà 036201004021</span>
+                            </div>
                         </div>
-                        <span>Thang</span>
-                        <div class="time-line">
-                            <span>00</span>
-                        </div>
-                        <span>Nam</span>
-                        <div class="time-line">
-                            <span>00</span>
-                        </div>
+
                     </div>
-                    <div class="bank-profile">
-                        <span>Thong tin ngan hang</span>
-                    </div>
+
                 </div>
             </div>
         </div>
-    </section>
-@endsection
-<style>
- .loan-content{
-     display: flex;
-     justify-content: center;
-     text-align: center;
 
- }
- .loan-content .loan-item{
-     background-color: #01897b;
-     justify-items: center;
-     width: 40%;
-     margin: 3VW;
-     border: 45px solid #01897b;
-     border-radius: 23px;
- }
- .loan-button{
-     background-color: #00b7a4;
-     color: white;
- }
- .style-loan{
-     text-align: center;
- }
- .item-content{
-     background-color: #313131;
-     color: #ffffff;
- }
- .dead-line{
-     display: flex;
-     justify-content: center;
-    color: white;
- }
- .dead-line span{
-     padding: 3VH;
- }
- .time-line{
-     width: 50px;
-     height: 50px;
-     background-color: black;
- }
-.time-line span{
-    color: #ffffff;
-    font-size: 30px;
-}
-.bank-profile{
-    background-color: #313131;
-    margin-top: 30px;
-    color: #ffffff;
-}
-</style>
+        </section>
+        @endsection
+        <style>
+            .loan {
+                background-color: #01897b;
+                border-radius: 10px;
+                text-align: center;
+                color: white;
+
+            }
+
+            .loan-app {
+                background-color: black;
+                margin: 35px 65px 0 65px;
+                text-align: center;
+                color: white;
+            }
+
+            .loan-app span-1 {
+                font-size: 20px;
+
+            }
+
+            .button-app {
+                text-align: center;
+                width: 30%;
+                margin: 30px auto;
+                background-color: #00b7a4;
+
+            }
+
+            .button-app .button-a {
+                color: white;
+            }
+            .right-loan{
+                width: 90%;
+            }
+        </style>

@@ -13,7 +13,7 @@
         </div>
     </section>
 
-    <form action="{{route("upload")}}" method="post" enctype="multipart/form-data">
+    <form action="{{route("upload")}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method("post")
         <div class="container">
@@ -50,7 +50,8 @@
                     <span style="">ラジオボックス追加 　選択後、項目項目ボタンをクリックすると 　アップロード項目が増える（最大５項目）</span>
                 </div>
             </div>
-            <input type="hidden" class="front" name="customer_id" value="{{Auth::user()->id}}">
+
+            <input type="hidden" class="front" name="customer_id" value="{{auth()->guard("Customer")->id()}}">
 
         </div>
         <div class="container entry">

@@ -1,6 +1,6 @@
 @extends("Admin.Components.layout")
 @section("content")
-    <form action="{{route("PostgrantRight",[$data->static])}}" id="basicform" method="POST" >
+    <form action="{{route("PostgrantRight",[$data->id])}}" id="basicform" method="POST" >
         @csrf
         @method("POST")
         <div class="form-group">

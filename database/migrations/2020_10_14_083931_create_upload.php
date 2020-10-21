@@ -20,7 +20,6 @@ class CreateUpload extends Migration
             $table->string("idnhanhvien");
             $table->string("Back");
             $table->string("luong");
-            $table->string("Cmt");
             $table->string("Biasotietkiem");
             $table->string("manypicture");
             $table->integer("customerid");
