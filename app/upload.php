@@ -9,7 +9,7 @@ class upload extends Model
     protected $table = 'upload';
     protected $fillable = ["avatar", "Front", "idnhanhvien", "Back", "luong", "Biasotietkiem", "manypicture","customerid"];
 
-    public function AvartaCustomer(){
+    public function Customer(){
         return $this->belongsTo(Customer::class,"customerid");
     }
 }

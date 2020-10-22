@@ -49,6 +49,7 @@ Route::group(["prefix"=> "admin"],function (){
     Route::get("LoanAccount/Loan","\App\Http\Controllers\Admin\LoanController@index")->name("loan.index");
     Route::get("Loan-Account-Create/Loan/{id}","\App\Http\Controllers\Admin\LoanController@createLoan")->name("loan.createLoan");
     Route::post("updateLoan/{id}","\App\Http\Controllers\Admin\LoanController@postLoan")->name("loan.postcreateLoan");
+    Route::get("写真認証リスト","\App\Http\Controllers\Admin\UserController@checkImager")->name("checkImager");
 });
 
 //Route::get('/auth/login',function(){
@@ -70,3 +71,5 @@ Route::post("/postProfile", "\App\Http\Controllers\Customer\CustomerController@u
 Route::get("/loan", "\App\Http\Controllers\Customer\CustomerController@loan")->name("loan");
 Route::get("/application", "\App\Http\Controllers\Customer\CustomerController@application")->name("application");
 Route::get("/sinsei", "\App\Http\Controllers\Customer\CustomerController@sinsei")->name("sinsei");
+Route::post("/postSinsei", "\App\Http\Controllers\Customer\CustomerController@postSinsei")->name("postSinsei");
+Route::get("/sinsei3", "\App\Http\Controllers\Customer\CustomerController@sinsei3")->name("sinsei3");

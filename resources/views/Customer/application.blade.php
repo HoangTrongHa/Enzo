@@ -51,7 +51,7 @@
                 </div>
             </div>
 
-            <input type="hidden" class="front" name="customer_id" value="{{auth()->guard("Customer")->id()}}">
+            <input type="hidden" class="front" name="customerid" value="{{auth()->guard("Customer")->id()}}">
 
         </div>
         <div class="container entry">

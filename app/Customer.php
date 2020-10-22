@@ -9,7 +9,7 @@ class Customer extends Model
     protected $table =  "customer";
     protected $fillable = ["tenchuhan","tenphienam","male","sinhnhat","thanhphangiadinh","diachinha","sodienthoaicodinh","sodienthoaididong",
         "password","email","linkweb","truso","sdtcty","songuoilam","chucvu","namcongtac","thoigianlamviec","thoigiannghi","nguoibaolanh",
-        "nguoibaolanh","diachinguoibaolanh","sdtnguoibaolanh","static","maxtotal","borrowing","receive","payment_term"];
+        "nguoibaolanh","diachinguoibaolanh","sdtnguoibaolanh","static","maxtotal","borrowing","receive","payment_term","checklogin","loancus"];
     protected $hidden =[
         "password",'remember_token',
     ];
@@ -18,6 +18,6 @@ class Customer extends Model
         return $this->static;
     }
     public function upload(){
-        return $this->belongsTo("app\upload");
+        return $this->hasMany(upload::class, 'customerid');
     }
 }

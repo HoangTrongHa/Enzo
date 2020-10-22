@@ -69,46 +69,32 @@ class CustomerController extends Controller
     public function upload(Request $request){
         if ($request->hasFile("avatar")||$request->hasFile('front') || $request->hasFile("idnhanhvien")
         || $request->hasFile("sotietkiem") || $request->hasFile("3thangluong") || $request->hasFile("nhieuanh")) {
-            $extension1 = $request->file('front')->getClientOriginalExtension();
-            $name1 = sha1(10);
-            $file1 = Storage::disk()->put('front/',  $request->file("front"));
+            $file1 = Storage::disk()->put('public/front',  $request->file("front"));
 
-            $extension2 = $request->file('back')->getClientOriginalExtension();
-            $name2 = sha1(10);
-            $file2 = Storage::disk()->put('back/',  $request->file("back"));
+            $file2 = Storage::disk()->put('public/back',  $request->file("back"));
 
-            $extension3 = $request->file('idnhanhvien')->getClientOriginalExtension();
-            $name3 = sha1(10);
-            $file3 = Storage::disk()->put('idnhanhvien/',  $request->file("idnhanhvien"));
+            $file3 = Storage::disk()->put('public/idnhanhvien',  $request->file("idnhanhvien"));
 
-            $extension4 = $request->file('sotietkiem')->getClientOriginalExtension();
-            $name4 = sha1(10);
-            $file4 = Storage::disk()->put('sotietkiem/',  $request->file("sotietkiem"));
+            $file4 = Storage::disk()->put('public/sotietkiem',  $request->file("sotietkiem"));
 
-            $extension5 = $request->file('3thangluong')->getClientOriginalExtension();
-            $name5 = sha1(10);
-            $file5 = Storage::disk()->put('3thangluong/',  $request->file("3thangluong"));
+            $file5 = Storage::disk()->put('public/3thangluong',  $request->file("3thangluong"));
 
-            $extension6 = $request->file('nhieuanh')->getClientOriginalExtension();
-            $name6 = sha1(10);
-            $file6 = Storage::disk()->put('nhieuanh/',  $request->file("nhieuanh"));
+            $file6 = Storage::disk()->put('public/nhieuanh',  $request->file("nhieuanh"));
 
-            $extension7 = $request->file('avatar')->getClientOriginalExtension();
-            $name7 = sha1(10);
-            $file7 = Storage::disk()->put('avatar/',  $request->file("avatar"));
+            $file7 = Storage::disk()->put('public/avatar',  $request->file("avatar"));
 
         }
 //        dd($request->customer_id);
         $upload = upload::create([
 
-            'avatar' => isset($file7) ? $file7 : null,
+            'avatar' => $file7,
             'Front' => isset($file1) ? $file1 : null,
             'Back' => isset($file2) ? $file2 : null,
             'idnhanhvien' => isset($file3) ? $file3 : null,
             'luong' => isset($file5) ? $file5 : null,
             'Biasotietkiem' => isset($file4) ? $file4 : null,
             'manypicture' => isset($file6) ? $file6 : null,
-            "customer_id" => $request->customer_id
+            "customerid" => $request->customerid
 
         ]);
         return view("Customer.confirm");
@@ -118,11 +104,20 @@ class CustomerController extends Controller
         return view("Customer.loan",compact("cus"));
     }
     public function sinsei(){
-
         return view("Customer.sinsei");
     }
-    public function postSinsei(){
-        
+    public function postSinsei(Request $req){
+        $id = Auth::guard("Customer")->user()->id;
+        $cus = Customer::FindOrFail($id);
+        $cus ->loancus = $req->loancus;
+        $cus->save();
+        return view("Customer.confirm");
+
     }
+    public function sinsei3(){
+
+        return view("Customer.sinssei3");
+    }
+
 
 }

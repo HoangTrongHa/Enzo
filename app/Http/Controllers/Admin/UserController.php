@@ -31,9 +31,9 @@ class UserController extends Controller
 
     public function grantRight($id)
     {
-
-        $data = Customer::findOrfail($id);
-        return view("Admin.Manager.ManagerAccount.AccountStatus", compact("data"));
+        $customer = Customer::with('upload')->findOrfail($id);
+//        $upload = upload::where("customerid",$customer )->get();
+        return view("Admin.Manager.ManagerAccount.AccountStatus", compact("customer"));
     }
 
     public function PostgrantRight(Request $req, $id)
@@ -47,28 +47,8 @@ class UserController extends Controller
         return redirect()->route("showChanger");
     }
 
-//    public function loanAccount()
-//    {
-//        $cus = Customer::with('loan')->where("static", 2)->get();
-//        return view("Admin.Manager.ManagerAccount.loanaccount", compact("cus"));
-//    }
-//
-//    public function creatLoanAccount($id)
-//    {
-//        $cus = Customer::findOrFail($id);
-//        $loan = Loan::all();
-//        return view("Admin.Manager.ManagerAccount.createLoan", compact("cus", "loan"));
-//    }
-//
-//    public function postLoanAccount(Request $res, $id)
-//    {
-//        $loan = Loan::findOrFail($id);
-//        try {
-//            $loan->update([
-//
-//            ]);
-//        } catch (\Exception $e) {
-//
-//        }
-//    }
+    public function checkImager() {
+        $cus = Customer::where("static",1)->get();
+        return view("Admin.Manager.ManagerAccount.checkImager",compact("cus"));
+    }
 }

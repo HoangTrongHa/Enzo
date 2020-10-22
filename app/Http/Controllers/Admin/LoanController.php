@@ -10,8 +10,10 @@ class LoanController extends Controller
 {
     public function index()
     {
-        $cus = Customer::where("static", 2)->get();
-        return view("Admin.Manager.Loan.index", compact("cus"));
+
+        $user  = Customer::whereNotNull("loancus" )->get();
+
+        return view("Admin.Manager.Loan.index", compact("user"));
     }
 
     public function createLoan($id)

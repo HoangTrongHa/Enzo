@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Customer;
 
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -58,4 +59,12 @@ class LoginController extends Controller
     {
         return Auth::guard('Customer');
     }
+//    function authenticated(Request $request, $user)
+//    {
+//        $user->update([
+//            'checklogin' => Carbon::now()->toDateTimeString(),
+//        ]);
+//        $user->save();
+//
+//    }
 }
