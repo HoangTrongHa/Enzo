@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Customer;
+use App\History;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CustomerRegister;
 use App\upload;
@@ -56,32 +57,55 @@ class CustomerController extends Controller
         }
         return redirect()->back()->with("error", "Registration failed...");
     }
+
     public function application()
     {
-        $static =Auth::guard("Customer")->user();
+        $static = Auth::guard("Customer")->user();
         if ($static->static == 2) {
-            return view("Customer.loan",compact("static"));
+            if ($static->loancus == null) {
+                return redirect()->route("loan");
+
+            } else {
+                if ($static->maxtotal == null) {
+                    return view("Customer.confirm");
+                } else {
+                    if($static->receive == null){
+                        return redirect()->route("sinsei3");
+
+                    }else{
+                        return redirect()->route("loan");
+                    }
+
+                }
+            }
         } else {
-            return view("Customer.application");
+            $up = upload::where("customerid", $static->id)->get();
+            if ($up == null) {
+                return redirect()->route("application");
+            } else {
+                return view("Customer.confirm");
+            }
         }
 
     }
-    public function upload(Request $request){
-        if ($request->hasFile("avatar")||$request->hasFile('front') || $request->hasFile("idnhanhvien")
-        || $request->hasFile("sotietkiem") || $request->hasFile("3thangluong") || $request->hasFile("nhieuanh")) {
-            $file1 = Storage::disk()->put('public/front',  $request->file("front"));
 
-            $file2 = Storage::disk()->put('public/back',  $request->file("back"));
+    public function upload(Request $request)
+    {
+        if ($request->hasFile("avatar") || $request->hasFile('front') || $request->hasFile("idnhanhvien")
+            || $request->hasFile("sotietkiem") || $request->hasFile("3thangluong") || $request->hasFile("nhieuanh")) {
+            $file1 = Storage::disk()->put('public/front', $request->file("front"));
 
-            $file3 = Storage::disk()->put('public/idnhanhvien',  $request->file("idnhanhvien"));
+            $file2 = Storage::disk()->put('public/back', $request->file("back"));
 
-            $file4 = Storage::disk()->put('public/sotietkiem',  $request->file("sotietkiem"));
+            $file3 = Storage::disk()->put('public/idnhanhvien', $request->file("idnhanhvien"));
 
-            $file5 = Storage::disk()->put('public/3thangluong',  $request->file("3thangluong"));
+            $file4 = Storage::disk()->put('public/sotietkiem', $request->file("sotietkiem"));
 
-            $file6 = Storage::disk()->put('public/nhieuanh',  $request->file("nhieuanh"));
+            $file5 = Storage::disk()->put('public/3thangluong', $request->file("3thangluong"));
 
-            $file7 = Storage::disk()->put('public/avatar',  $request->file("avatar"));
+            $file6 = Storage::disk()->put('public/nhieuanh', $request->file("nhieuanh"));
+
+            $file7 = Storage::disk()->put('public/avatar', $request->file("avatar"));
 
         }
 //        dd($request->customer_id);
@@ -99,25 +123,45 @@ class CustomerController extends Controller
         ]);
         return view("Customer.confirm");
     }
-    public function loan(){
 
-        return view("Customer.loan",compact("cus"));
+    public function loan()
+    {
+        $static = Auth::guard("Customer")->user();
+        $his = $static->history()->where("status",2)->first();
+
+        return view("Customer.loan",compact("static","his"));
     }
-    public function sinsei(){
+
+    public function sinsei()
+    {
         return view("Customer.sinsei");
     }
-    public function postSinsei(Request $req){
+
+    public function postSinsei(Request $req)
+    {
         $id = Auth::guard("Customer")->user()->id;
         $cus = Customer::FindOrFail($id);
-        $cus ->loancus = $req->loancus;
+        $cus->loancus = $req->loancus;
         $cus->save();
         return view("Customer.confirm");
 
     }
-    public function sinsei3(){
 
-        return view("Customer.sinssei3");
+    public function sinsei3()
+    {
+        $cus = Auth::guard("Customer")->user();
+        return view("Customer.sinssei3",compact("cus"));
     }
 
-
+        public function postSinsei3(Request $req){
+            $his = History::create([
+                "customerid" => $req->customerid,
+                "maxtotal" => $req ->maxtotal,
+                "Deducted" =>$req ->borrowing,
+                "receive" =>$req ->receive,
+                "payment_term" =>$req ->payment_term,
+            ]);
+            $his->save();
+            return redirect()->route("application");
+        }
 }

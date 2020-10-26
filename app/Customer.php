@@ -3,8 +3,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Customer extends Model
+class Customer extends Authenticatable
 {   use Notifiable;
     protected $table =  "customer";
     protected $fillable = ["tenchuhan","tenphienam","male","sinhnhat","thanhphangiadinh","diachinha","sodienthoaicodinh","sodienthoaididong",
@@ -17,7 +18,13 @@ class Customer extends Model
     {
         return $this->static;
     }
-    public function upload(){
+    public function upload()
+    {
         return $this->hasMany(upload::class, 'customerid');
     }
+    public function history()
+    {
+        return $this->hasMany(History::class, 'customerid');
+    }
+
 }

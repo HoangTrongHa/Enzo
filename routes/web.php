@@ -49,7 +49,7 @@ Route::group(["prefix"=> "admin"],function (){
     Route::get("LoanAccount/Loan","\App\Http\Controllers\Admin\LoanController@index")->name("loan.index");
     Route::get("Loan-Account-Create/Loan/{id}","\App\Http\Controllers\Admin\LoanController@createLoan")->name("loan.createLoan");
     Route::post("updateLoan/{id}","\App\Http\Controllers\Admin\LoanController@postLoan")->name("loan.postcreateLoan");
-    Route::get("写真認証リスト","\App\Http\Controllers\Admin\UserController@checkImager")->name("checkImager");
+    Route::get("/写真認証リスト","\App\Http\Controllers\Admin\UserController@checkImager")->name("checkImager");
 });
 
 //Route::get('/auth/login',function(){
@@ -73,3 +73,7 @@ Route::get("/application", "\App\Http\Controllers\Customer\CustomerController@ap
 Route::get("/sinsei", "\App\Http\Controllers\Customer\CustomerController@sinsei")->name("sinsei");
 Route::post("/postSinsei", "\App\Http\Controllers\Customer\CustomerController@postSinsei")->name("postSinsei");
 Route::get("/sinsei3", "\App\Http\Controllers\Customer\CustomerController@sinsei3")->name("sinsei3");
+Route::post("/postSinsei3", "\App\Http\Controllers\Customer\CustomerController@postSinsei3")->name("postSinsei3");
+
+include_once("appnew.php");
+include_once("bank.php");

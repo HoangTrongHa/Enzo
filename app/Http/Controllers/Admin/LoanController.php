@@ -11,7 +11,7 @@ class LoanController extends Controller
     public function index()
     {
 
-        $user  = Customer::whereNotNull("loancus" )->get();
+        $user  = Customer::where("loancus","!=",null )->get();
 
         return view("Admin.Manager.Loan.index", compact("user"));
     }
@@ -24,11 +24,13 @@ class LoanController extends Controller
 
     public function postLoan($id, Request $req)
     {
+//        dd($req->all());
         $cus = Customer::FindOrFail($id);
         $cus->maxtotal = $req->maxtotal;
         $cus->borrowing = $req->borrowing;
         $cus->receive = $req->receive;
         $cus->payment_term = $req->payment_term;
+
         $cus->save();
         return redirect()->route("loan.index")->with("success", "Update products successfully");
     }

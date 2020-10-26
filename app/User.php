@@ -79,6 +79,5 @@ class User extends Authenticatable
     }
     public function uploadkey(){
         return $this->hasMany("/app/upload","customer_id");
-
     }
 }

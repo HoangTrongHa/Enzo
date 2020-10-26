@@ -25,7 +25,7 @@
             <span>ユーザーリスト danh sach nguoi dung</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route("index-appnew")}}">
             <i class="fa fa-folder-open fa-tachometer-alt"></i>
             <span>新規申し込みリスト ung dung moi nhat </span></a>
     </li>
@@ -40,7 +40,7 @@
             <span>売却審査リスト danh sach ban hang</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route("index-banking")}}">
             <i class="fa fa-credit-card fa-tachometer-alt"></i>
             <span>送金リスト danh sach chuyen tien</span></a>
     </li>
