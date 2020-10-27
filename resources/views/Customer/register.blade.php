@@ -68,7 +68,8 @@
                                 <option></option>
                                 @for ($year = 2019; $year >= 1930; $year--)
                                     <option
-                                        {{old('birth_year') == $year ? 'selected' : ''}} value="{{$year}}">{{$year}}</option>
+                                        {{old('birth_year') == $year ? 'selected' : ''}} value="{{$year}}">{{$year}}
+                                    </option>
                                 @endfor
                             </select>
                         </div>

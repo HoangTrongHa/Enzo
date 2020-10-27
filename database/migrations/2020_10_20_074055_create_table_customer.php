@@ -39,10 +39,10 @@ class CreateTableCustomer extends Migration
             $table->string('nguoibaolanh');
             $table->string('diachinguoibaolanh');
             $table->string('sdtnguoibaolanh');
-            $table->double("maxtotal");
-            $table->string("borrowing");
-            $table->string("receive");
-            $table->date("payment_term");
+            $table->double("maxtotal")->nullable();
+            $table->string("borrowing")->nullable();
+            $table->string("receive")->nullable();
+            $table->date("payment_term")->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

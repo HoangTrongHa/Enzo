@@ -51,11 +51,10 @@ class RegisterController extends Controller
         return view("auth.register");
     }
 
-    protected function createAdmin(AdminCreateRequest $request)
+    protected function createAdmin(Request $request)
     {
+        dd($request);
         if ($request->hasFile('Avatar')) {
-            $extension = $request->file('Avatar')->getClientOriginalExtension();
-            $name = sha1(10);
             $file = Storage::disk('public')->put('',  $request->file("Avatar"));
         }
         $User = User::create([
@@ -68,8 +67,7 @@ class RegisterController extends Controller
         ]);
         $User ->roles()
             ->attach(Role::where('name', 'employee')->first());
-        return $User;
-        return redirect()->intended('login/admin');
+       return redirect()->route("login-ad");
     }
 
     public function showCustomerRegisterForm()

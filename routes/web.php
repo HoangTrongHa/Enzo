@@ -23,7 +23,7 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/test', '\App\Http\Controllers\Auth\LoginController@showAdminLoginForm')->name("login-ad");
     Route::post('/postlogin', '\App\Http\Controllers\Auth\LoginController@adminLogin')->name("login-ad");
     Route::get('/register', '\App\Http\Controllers\Auth\RegisterController@showAdminRegisterForm')->name("Register");
-    Route::post('/register', '\App\Http\Controllers\Auth\RegisterController@createAdmin');
+    Route::post('/postregister', '\App\Http\Controllers\Auth\RegisterController@createAdmin')->name("postRegister");
 
     Route::group(["middleware" => "admin"], function () {
         Route::get('/', '\App\Http\Controllers\Admin\AdminController@index')->name("home.admin");

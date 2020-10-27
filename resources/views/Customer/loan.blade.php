@@ -11,12 +11,14 @@
                 <div class="col-5 loan align-items-center">
                     <div class="align-items-center loan-app">
                         <span class="span-1">支払うべき金額</span><br>
-
-                        <span class="span-2" style="font-size: 62px;">{{$his ->receive}}</span>
-
+                        @if($static->receive == null)
+                        <span class="span-2" style="font-size: 62px;">0,000,000</span>
+                        @else
+                            <span class="span-2" style="font-size: 62px;">{{$static ->receive}}</span>
+                        @endif
                     </div>
                     <div class="button-app">
-                        @if($his ->Deducted == null)
+                        @if($static ->borrowing == null)
 
                         <a href="{{route("sinsei")}}" class="button-a">Get Started</a>
                         @else
@@ -72,7 +74,7 @@
                     <div class="modal-body">
                         <h1>管理者アカウント</h1>
                         <span>Hoàng trọng Hà 036201004021</span>
-                        <h2>お金を払わなければならない</h2><span style="font-size: 40px;">{{$his ->receive}}</span> <span>円</span>
+                        <h2>お金を払わなければならない</h2><span style="font-size: 40px;">{{$static ->receive}}</span> <span>円</span>
                     </div>
 
                     <!-- Modal footer -->

@@ -5,23 +5,38 @@ namespace App\Http\Controllers\Admin;
 use App\Customer;
 use App\History;
 use App\Http\Controllers\Controller;
+use PDF;
 use Illuminate\Http\Request;
-
 class BankingController extends Controller
 {
     public function  index(){
-        $cus = Customer::where("static", 2)->get();
-        foreach ($cus as $list){
-            $list->id;
-            $his = History::where("customerid", $list->id)->get();
-            return view("Admin.banking.index",compact("his","cus"));
-        }
-        return false;
+//        $cus = Customer::where("static", 2)->get();
+//        foreach ($cus as $list){
+//            $list->id;
+//            $his = History::where("customerid", $list->id)->get();
+//
+//        }
+//        return false;
+        $cus = Customer::with(['history' => function ($q) {
+            $q->where('status', 2)->first();
+        }]) ->has('history')->get();
+        return view("Admin.banking.index",compact("cus"));
     }
     public function showBanking($id){
-        $cus = Customer::FindOrFail($id);
-      $his= $cus->history()->where("customerid",$cus->id)->get();
-      return view("Admin.banking.showbanking",compact("his","cus"));
+        $cus = Customer::with(["history" => function ($query){
+            $query->where("status",2)->first();
+        }])->FindOrFail($id);
+
+//        $cus = Customer::with("history")->findOrFail($id)->first();
+//        dd($cus->history());
+      return view("Admin.banking.showbanking",compact("cus"));
+    }
+    public function postShowBanking($id){
+        $cus = Customer::with(["history" => function ($query){
+            $query->where("status",2)->first();
+        }])->FindOrFail($id);
+        $pdf = PDF::loadView("Admin.pdf.index",compact("cus"));
+        return $pdf->stream();
     }
 
 }

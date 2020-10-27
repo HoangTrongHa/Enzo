@@ -61,33 +61,25 @@ class CustomerController extends Controller
     public function application()
     {
         $static = Auth::guard("Customer")->user();
-        if ($static->static == 2) {
-            if ($static->loancus == null) {
-                return redirect()->route("loan");
-
-            } else {
-                if ($static->maxtotal == null) {
-                    return view("Customer.confirm");
+        $up = $static->upload()->first();
+        if ($static->maxtotal !=null && $static->borrowing != null && $static->receive != null && $static->payment_term != null) {
+            return redirect()->route("loan");
+        } else {
+            if ($up != null) {
+                if ($static->static == 2) {
+                    return redirect()->route("loan");
                 } else {
-                    if($static->receive == null){
-                        return redirect()->route("sinsei3");
-
-                    }else{
-                        return redirect()->route("loan");
-                    }
 
                 }
-            }
-        } else {
-            $up = upload::where("customerid", $static->id)->get();
-            if ($up == null) {
-                return redirect()->route("application");
+                return view("Customer.Confirm");
             } else {
-                return view("Customer.confirm");
+                return view("Customer.application");
             }
         }
 
+
     }
+
 
     public function upload(Request $request)
     {
@@ -108,7 +100,7 @@ class CustomerController extends Controller
             $file7 = Storage::disk()->put('public/avatar', $request->file("avatar"));
 
         }
-//        dd($request->customer_id);
+
         $upload = upload::create([
 
             'avatar' => $file7,
@@ -126,10 +118,21 @@ class CustomerController extends Controller
 
     public function loan()
     {
-        $static = Auth::guard("Customer")->user();
-        $his = $static->history()->where("status",2)->first();
 
-        return view("Customer.loan",compact("static","his"));
+        $static = Auth::guard("Customer")->user();
+        if ($static->loancus == null) {
+            return view("Customer.loan", compact("static"));
+
+        } else {
+            if ($static->loancus != null && $static->receive != null) {
+                return redirect()->route("sinsei3");
+            }else{
+                if ($static->maxtotal !=null && $static->borrowing != null && $static->receive != null && $static->payment_term != null) {
+                    return view("Customer.loan", compact("static"));
+                }
+            }
+            return view("Customer.confirm");
+        }
     }
 
     public function sinsei()
@@ -150,18 +153,19 @@ class CustomerController extends Controller
     public function sinsei3()
     {
         $cus = Auth::guard("Customer")->user();
-        return view("Customer.sinssei3",compact("cus"));
+        return view("Customer.sinssei3", compact("cus"));
     }
 
-        public function postSinsei3(Request $req){
-            $his = History::create([
-                "customerid" => $req->customerid,
-                "maxtotal" => $req ->maxtotal,
-                "Deducted" =>$req ->borrowing,
-                "receive" =>$req ->receive,
-                "payment_term" =>$req ->payment_term,
-            ]);
-            $his->save();
-            return redirect()->route("application");
-        }
+    public function postSinsei3(Request $req)
+    {
+        $his = History::create([
+            "customerid" => $req->customerid,
+            "maxtotal" => $req->maxtotal,
+            "Deducted" => $req->borrowing,
+            "receive" => $req->receive,
+            "payment_term" => $req->payment_term,
+        ]);
+        $his->save();
+        return redirect()->route("application");
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminCreateRequest;
 use App\Http\Requests\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -46,7 +47,7 @@ class LoginController extends Controller
         return view("auth.login");
     }
 
-    public function adminLogin(Request $request)
+    public function adminLogin(AdminCreateRequest $request)
     {
         $this->validate($request, [
             'email' => 'required|email',
