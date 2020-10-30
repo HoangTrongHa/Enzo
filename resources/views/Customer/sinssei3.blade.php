@@ -11,7 +11,7 @@
             <div class="container">
                 <div id="login-row" class="row justify-content-center align-items-center">
                     <div class="col-md-6 show-result">
-                        <form action="{{route("postSinsei3")}}" method="POST">
+                        <form action="{{route("postSinsei3",[$cus->id])}}" method="POST">
                             @csrf
                             @method("POST")
                             <div class="container">
@@ -33,6 +33,7 @@
                                             <input type="hidden" name="receive" value="{{$cus->receive}} ">
                                             <input type="hidden" name="payment_term" value="{{$cus->payment_term}} ">
                                             <input type="hidden" name="customerid" value="{{$cus->id}}">
+                                            <input type="hidden" name="loancustomer" value="{{$cus->maxtotal}}">
                                         </div>
 
                                         <div class="col-1  sinsei-left ">

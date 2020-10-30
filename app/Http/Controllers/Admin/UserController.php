@@ -39,7 +39,6 @@ class UserController extends Controller
     public function PostgrantRight(Request $req, $id)
     {
         $cus = Customer::findOrFail($id);
-
         $cus->update([
             "static" =>$req->static
         ]);

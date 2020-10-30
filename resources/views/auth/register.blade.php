@@ -24,7 +24,7 @@
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
 
-                                <form method="POST" action="{{ route('postRegister') }}" enctype="multipart/form-data">
+                                <form method="POST" action="{{ route('postRegister-admin') }}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group row">
                                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>

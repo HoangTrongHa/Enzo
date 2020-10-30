@@ -1,17 +1,17 @@
 @extends("Customer.Components.layout")
 
-    @section("content")
-        <section style="background:#01897b ">
-            <div class="container">
-                <h1 class="login-h1">事前申し込み<br> 手数料優遇パス発行</h1>
-            </div>
-        </section>
-        <section style="margin-bottom: 50px">
-            <div class="container" style="border-bottom: 2px solid #01897b;">
-                <h1 style="color: black" class="login-h1">Entry</h1>
-            </div>
-        </section>
+@section("content")
+    <section style="background:#01897b ">
         <div class="container">
+            <h1 class="login-h1">事前申し込み<br> 手数料優遇パス発行</h1>
+        </div>
+    </section>
+    <section style="margin-bottom: 50px">
+        <div class="container" style="border-bottom: 2px solid #01897b;">
+            <h1 style="color: black" class="login-h1">Entry</h1>
+        </div>
+    </section>
+    <div class="container">
         <form action="{{route("postRegister")}}" method="POST">
             @csrf
             @method("POST")
@@ -45,15 +45,29 @@
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="male" id="male"
-                               value="男" {{old('male') == '男' ? 'checked' : ''}}>
-                        <label class="form-check-label mr-3" for="male">男</label>
-                        <input class="form-check-input" type="radio" name="male" id="female"
-                               value="女" {{old('male') == '女' ? 'checked' : ''}}>
-                        <label class="form-check-label mr-3" for="female">女</label>
+                    <div class="form-item form-group row">
+
+                        <div class="item-input col-sm-8">
+                            <select class="custom-select form-custom" name="male" value="{{ old('male') }}">
+                                <option selected hidden></option>
+                                <option {{old('male') == "男" ? 'selected' : ''}} value="男">男</option>
+                                <option {{old('male') == "女" ? 'selected' : ''}} value="既婚">女</option>
+                            </select>
+                            @error('family_structure')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
                     </div>
+
+
                 </div>
+
+
+
+
+
+
+
             </div>
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
@@ -102,7 +116,7 @@
 
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
-                    家族の一員     thanh phan gia dinh
+                    家族の一員 thanh phan gia dinh
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
@@ -162,7 +176,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
-                    パスワード       Mat Khau
+                    パスワード Mat Khau
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
@@ -178,7 +192,8 @@
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
-                    <input type="password"　class="w-custom-2 form-custom" name="password_confirmation" value="{{ old('password_confirmation') }}">
+                    <input type="password" 　class="w-custom-2 form-custom" name="password_confirmation"
+                           value="{{ old('password_confirmation') }}">
                     @error('password_confirmation')
                     <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
                     @enderror
@@ -289,15 +304,15 @@
             </div>
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
-
-
                     労働時間 thoi gian lam viec
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
-                <input type="text" name="thoigianlamviec" class="@error("thoigianlamviec") is-invalid  @enderror">
-                @error("thoigianlamviec")
-                <span class="error invalid-feedback">{{$message}}</span>
-                @enderror
+                <div class="col-sm-10 item-right">
+                    <input type="text" name="thoigianlamviec" class="@error("thoigianlamviec") is-invalid  @enderror">
+                    @error("thoigianlamviec")
+                    <span class="error invalid-feedback">{{$message}}</span>
+                    @enderror
+                </div>
             </div>
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
@@ -336,7 +351,8 @@
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
-                    <input type="text" name="diachinguoibaolanh" class="@error("diachinguoibaolanh") is-invalid  @enderror">
+                    <input type="text" name="diachinguoibaolanh"
+                           class="@error("diachinguoibaolanh") is-invalid  @enderror">
                     @error("diachinguoibaolanh")
                     <span class="error invalid-feedback">{{$message}}</span>
                     @enderror
@@ -358,75 +374,274 @@
             </div>
 
             <div class="clear"></div>
-            <p>
-                <button class="button-login" type="submit">Register</button>
-            </p>
-        </form>
-            <div class="entry-footer">
-                <div class="entry-footer-title">
-                    ●個人情報の取り扱いについて
+            <section>
+                <div class="container">
+                    <input type="radio" id="dewey" name="drone" value="dewey" style="width: 5%;">
+                    <label for="dewey">●個人情報の取り扱いについて</label>
                 </div>
-                <div class="entry-footer-content">
-                    <div class="entry-footer-scroll">
-                        <b>（1）事業者の氏名または名称</b><br>
-                        BBS株式会社<br>
-                        <b>（2）個人情報管理責任者</b><br>
-                        BBS株式会社　代表取締役　中原正光<br>
-                        <b>（3）個人情報の利用目的</b><br>
-                        当社は、すべての事業で取扱う個人情報及び従業員等の個人情報を取得および利用する場
-                        合には、利用目的を明確にし、特定された利用目的の達成に必要な範囲内で適正に個人情
-                        報を取扱うとともに、目的外利用はいたしません。<br>
-                        ＜各種サービスにて取得した個人情報＞<br>
-                        当社の各サービスのご利用に際して、提供いただく個人情報の利用目的は、各サービス利
-                        用規約の個人情報の取り扱いについての条項をご確認下さい。<br>
-                        なお、当社が取得した会員情報については、会員規約第４条第３項に定める利用目的
-                        の範囲内で利用します。<br>
-                        ＜人事・採用関連、従業員から取得した個人情報＞<br>
-                        採用選考に応募された方、当社に在籍されていた方、従業員の方の個人情報の利用目的
-                        は、下記となります。<br>
-                        ・採用の検討及び決定採用関係書類の送付<br>
-                        ・労務管理、給与・賞与等の支払い、組合・互助組織・関係会社・出向会社等への連絡、
-                        提供<br>
-                        ・官公庁への届け出、報告<br>
-                        ・労務関連法令への対応、連絡<br>
-                        ・連絡文書の送付<br>
-                        ＜お問い合わせ、個人情報保護法の開示請求にあたり取得した個人情報＞<br>
-                        お問い合わせを通じてお客様からご提供いただきました個人情報は、お問い合わせ対応の
-                        ために利用いたします。<br>
-                        <b>（4）個人情報の提供</b><br>
-                        当社は、個人情報について、あらかじめご本人から同意をいただいた提供先以外の第三者
-                        に提供、開示等はいたしません。<br>
-                        ただし、以下の場合は、個人情報を本人の同意なく提供することがあります。<br>
-                        ・法令に基づく場合<br>
-                        ・人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得る
-                        ことが困難であるとき<br>
-                        ・公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、
-                        本人の同意を得ることが困難であるとき<br>
-                        ・国の機関、地方公共団体または当該機関・団体より委託を受けた者が法令に定める事務
-                        を遂行するにあたり、当社が協力する必要がある場合であって、本人の同意を得ることに
-                        より当該事務の遂行に支障を及ぼすおそれがあるとき<br>
-                        ・犯罪捜査のため法律(刑事訴訟法)に基づく正規の手続きを経て、裁判所より捜索差押許
-                        可状が発付されたとき<br>
-                        <b>（5）個人情報の外部委託</b><br>
-                        当社は、機密保持契約を交わしたうえで、業務の一部を委託業者に委託することがありま
-                        す。委託業者は、委託業務を遂行するために必要な個人情報に接し、これを利用します
-                        が、その業務以外の目的で利用することはありません。<br>
-                        委託に際しては、個人情報の保護水準が、当社が設定する安全対策基準を満たす事業者を
-                        選定し、適切な管理、監督を行います。<br>
-                        <b>（6）個人情報の開示等</b><br>
-                        当社は、お客様より個人情報の利用目的の通知、開示、訂正、削除、利用または第三者へ
-                        の提供の停止の依頼を受けた場合は、すみやかに応じます。 なお、お客様のご登録頂いて
-                        いる個人情報や、ご利用履歴につきましては、ご利用のサービスにログインいただくこと
-                        でご確認いただけますので、そちらをご確認ください。また、書面での開示等の求めに応
-                        じる手続きは、当社の定めた様式により承りますので、定めた様式にてお問い合わせくだ
-                        さい。<br>
-                        <b>（7）個人情報の管理、安全対策について</b><br>
-                        個人情報への不正アクセス、個人情報の滅失、毀損、改ざんおよび漏えい等のリスクに対
-                        して適切な予防措置を講ずることにより、個人情報の管理において、安全性、正確性の確
-                        保を図ります。 また、万が一、問題が発生した場合には、被害の最小限化に努めるとと
-                        もに、速やかに是正措置を実施します。
+            </section>
+
+            <section>
+                <div class="container" style="margin-top: 15%; margin-bottom: 30%;">
+                    <div style="margin: 0 50%;">
+                        <article id="example">（1）事業者の氏名または名称
+                            BBS株式会社
+                            <（2）個人情報管理責任者
+                            BBS株式会社　代表取締役　中原正光
+                            （3）個人情報の利用目的
+                            当社は、すべての事業で取扱う個人情報及び従業員等の個人情報を取得および利用する場
+                            合には、利用目的を明確にし、特定された利用目的の達成に必要な範囲内で適正に個人情
+                            報を取扱うとともに、目的外利用はいたしません。
+                            ＜各種サービスにて取得した個人情報＞
+                            当社の各サービスのご利用に際して、提供いただく個人情報の利用目的は、各サービス利
+                            用規約の個人情報の取り扱いについての条項をご確認下さい。
+                            なお、当社が取得した会員情報については、会員規約第４条第３項に定める利用目的
+                            の範囲内で利用します。
+                            ＜人事・採用関連、従業員から取得した個人情報＞
+                            採用選考に応募された方、当社に在籍されていた方、従業員の方の個人情報の利用目的
+                            は、下記となります。
+                            ・採用の検討及び決定採用関係書類の送付
+                            ・労務管理、給与・賞与等の支払い、組合・互助組織・関係会社・出向会社等への連絡、
+                            提供
+                            ・官公庁への届け出、報告
+                            ・労務関連法令への対応、連絡
+                            ・連絡文書の送付
+                            ＜お問い合わせ、個人情報保護法の開示請求にあたり取得した個人情報＞
+                            お問い合わせを通じてお客様からご提供いただきました個人情報は、お問い合わせ対応の
+                            ために利用いたします。
+                            （4）個人情報の提供
+                            当社は、個人情報について、あらかじめご本人から同意をいただいた提供先以外の第三者
+                            に提供、開示等はいたしません。
+                            ただし、以下の場合は、個人情報を本人の同意なく提供することがあります。
+                            ・法令に基づく場合
+                            ・人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得る
+                            ことが困難であるとき
+                            ・公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、
+                            本人の同意を得ることが困難であるとき
+                            ・国の機関、地方公共団体または当該機関・団体より委託を受けた者が法令に定める事務
+                            を遂行するにあたり、当社が協力する必要がある場合であって、本人の同意を得ることに
+                            より当該事務の遂行に支障を及ぼすおそれがあるとき
+                            ・犯罪捜査のため法律(刑事訴訟法)に基づく正規の手続きを経て、裁判所より捜索差押許
+                            可状が発付されたとき
+                            （5）個人情報の外部委託
+                            当社は、機密保持契約を交わしたうえで、業務の一部を委託業者に委託することがありま
+                            す。委託業者は、委託業務を遂行するために必要な個人情報に接し、これを利用します
+                            が、その業務以外の目的で利用することはありません。
+                            委託に際しては、個人情報の保護水準が、当社が設定する安全対策基準を満たす事業者を
+                            選定し、適切な管理、監督を行います。
+                            （6）個人情報の開示等
+                            当社は、お客様より個人情報の利用目的の通知、開示、訂正、削除、利用または第三者へ
+                            の提供の停止の依頼を受けた場合は、すみやかに応じます。 なお、お客様のご登録頂いて
+                            いる個人情報や、ご利用履歴につきましては、ご利用のサービスにログインいただくこと
+                            でご確認いただけますので、そちらをご確認ください。また、書面での開示等の求めに応
+                            じる手続きは、当社の定めた様式により承りますので、定めた様式にてお問い合わせくだ
+                            さい。
+                            （7）個人情報の管理、安全対策について
+                            個人情報への不正アクセス、個人情報の滅失、毀損、改ざんおよび漏えい等のリスクに対
+                            して適切な予防措置を講ずることにより、個人情報の管理において、安全性、正確性の確
+                            保を図ります。 また、万が一、問題が発生した場合には、被害の最小限化に努めるとと
+                            もに、速やかに是正措置を実施します。
+                        </article>
                     </div>
-</div>
 
+                </div>
+            </section>
+            <section>
+                <div class="container" style="text-align: end">
+                    <button class="button-login" type="submit" style="width: 30%; font-size: 30px;background-color: #808080;color: white;border-radius: 5px;
+">登録
+                    </button>
+                </div>
+
+
+            </section>
+        </form>
+    </div>
+
+    <style>
+        #login-column {
+            border-radius: 15px;
+        }
+
+        .register-customer {
+            display: flex;
+            justify-content: flex-end;
+
+        }
+
+        .register-button {
+            background-color: #a2a2a2;
+            width: 30%;
+            text-align: center;
+            padding: 20px;
+        }
+
+        input {
+            width: 100%;
+            margin: 15px auto;
+            background-color: #eeeeee;
+        }
+
+        #example {
+            position: absolute;
+
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 300px;
+            border: 2px #01897b solid;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        *.-morulus-customsb {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        *.-morulus-customsb > figure:first-child {
+            margin: 0px !important;
+            position: absolute;
+            right: 4px !important;
+            width: 4px !important;
+            height: 100px;
+            background-color: #a2a2a2;
+        }
+
+        *.-morulus-customsb > *:last-child {
+            overflow-y: scroll;
+            height: 100%;
+            width: 100%;
+            padding-right: 20px;
+        }
+    </style>
+    <script>
+        // Perform custom scrollbar
+        window.morulusCustomSb = (function () {
+            var nu = navigator.userAgent,
+                aus = ['Mozilla', 'IE'],
+                // Remove event listner polyfill
+                removeEventListner = function (el, type, handler) {
+                    if (el.addEventListener) {
+                        el.removeEventListener(type, handler, false);
+                    } else if (elem.attachEvent) {
+                        el.detachEvent("on" + type, handler);
+                    } else {
+                        el["on" + type] = null;
+                    }
+                    ;
+                },
+                // Event listner polyfill
+                eventListner = function (el, type, handler, once) {
+                    var realhandler = once ? function () {
+                        removeEventListner(el, type, realhandler);
+                    } : handler;
+                    if (el.addEventListener) {
+                        listen = el.addEventListener(type, handler, false);
+                    } else if (el.attachEvent) {
+                        listen = el.addEventListener('on' + type, handler, false);
+                    } else {
+                        el['on' + type] = handler;
+                    }
+                    return el;
+                },
+                retfalse = function () {
+                    return !!0;
+                },
+                disableSelection = function (el) {
+                    if (nu.indexOf(aus[0]) != -1) // FF
+                        el.style['MozUserSelect'] = 'none';
+                    else if (nu.indexOf(aus[1]) != -1) // IE
+                        eventListner(el, 'selectstart.disableTextSelect', retfalse);
+                    else
+                        eventListner(el, 'mousedown.disableTextSelect', retfalse);
+                },
+                enableSelection = function (el) {
+                    if (nu.indexOf(aus[0]) != -1) // FF
+                        el.style['MozUserSelect'] = '';
+                    else if (nu.indexOf(aus[1]) != -1) // IE
+                        removeEventListner(el, 'selectstart.disableTextSelect', retfalse);
+                    else
+                        removeEventListner(el, 'mousedown.disableTextSelect', retfalse);
+                }
+            return function (a) {
+
+                var
+                    listen,
+                    i,
+                    d = document,
+                    s, // Scrollable
+                    n, // Custom scrollbar wrapper
+                    r, // Runner
+                    height, // Runner height
+                    scrollTop, // Start scroll top,
+                    // Scroll handler
+                    handlerScroll = function (e) {
+
+                        r.style.top = ((100 - parseInt(r.style.height)) * (s.scrollTop / (s.scrollHeight - s.clientHeight))) + '%';
+                    },
+                    drag = !!0,
+                    screenY = 0,
+                    handlerMove = function (e) {
+                        var d = ((height * (scrollTop / (s.scrollHeight - s.clientHeight))) + (e.screenY - screenY));
+                        if (d > height) d = height;
+                        else if (d < 0) d = 0;
+                        // set Scroll top
+                        s.scrollTop = Math.round((s.scrollHeight - s.clientHeight) * (d / height));
+                    },
+                    handlerUp = function (e) {
+                        drag = !!0;
+                        // Enable selection
+                        enableSelection(s);
+                        // remove listen for window move
+                        removeEventListner(window, 'mousemove', handlerMove);
+                        e.stopPropagation();
+                    },
+                    handlerDown = function (e) {
+                        drag = !0;
+                        screenY = e.screenY;
+                        height = s.clientHeight - parseInt(window.getComputedStyle(r).height);
+                        scrollTop = s.scrollTop;
+                        // Disable selection
+                        disableSelection(s);
+                        // Listen for window move
+                        eventListner(window, 'mousemove', handlerMove);
+                        eventListner(window, 'mouseup', handlerUp, true);
+                        e.preventDefault();
+                        return false;
+                    },
+                    handlerWrapDown = function (e) {
+                        if (e.offsetX > n.offsetWidth - 20) {
+                            s.scrollTop = Math.round((s.scrollHeight - s.clientHeight) * (e.offsetY / n.offsetHeight));
+                            handlerDown(e);
+                        }
+                    },
+                    n = d.createElement('div');
+                r = d.createElement('figure');
+                s = d.createElement('div');
+
+                // Wrap each insert elements
+                for (i = 0; i < a.childNodes.length; i++) {
+                    s.appendChild(a.childNodes[0]);
+                }
+                a.appendChild(n);
+                n.appendChild(r);
+                n.appendChild(s);
+                n.className = '-morulus-customsb';
+                // Set size of runner
+                r.style.height = (100 * (s.clientHeight / s.scrollHeight)
+                    .toFixed(2)) + '%';
+                // Listen for scroll
+                eventListner(s, 'scroll', handlerScroll);
+                // Listen for drug
+                eventListner(r, 'mousedown', handlerDown);
+                eventListner(r, 'mouseup', handlerUp);
+                // Listerb for drug on wrapper
+                eventListner(n, 'mousedown', handlerWrapDown);
+            };
+        })();
+        // Execute
+        morulusCustomSb(document.getElementsByTagName('article')[0])
+    </script>
 @endsection
-

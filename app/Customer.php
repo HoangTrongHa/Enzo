@@ -10,7 +10,8 @@ class Customer extends Authenticatable
     protected $table =  "customer";
     protected $fillable = ["tenchuhan","tenphienam","male","sinhnhat","thanhphangiadinh","diachinha","sodienthoaicodinh","sodienthoaididong",
         "password","email","linkweb","truso","sdtcty","songuoilam","chucvu","namcongtac","thoigianlamviec","thoigiannghi","nguoibaolanh",
-        "nguoibaolanh","diachinguoibaolanh","sdtnguoibaolanh","static","maxtotal","borrowing","receive","payment_term","checklogin","loancus"];
+        "nguoibaolanh","diachinguoibaolanh","sdtnguoibaolanh","static","maxtotal","borrowing","receive","payment_term","checklogin","loancus",
+        "loancustomer","loanrefund","account_number","account_holder","account_type","name-of-financial-institution"];
     protected $hidden =[
         "password",'remember_token',
     ];

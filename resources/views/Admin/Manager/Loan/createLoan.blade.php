@@ -6,7 +6,7 @@
             <label for="inputnumber">希望売却額</label>
         </div>
         <div class="form-group col-md-6">
-            <input id="inputipt" type="text" readonly="true" data-parsley-trigger="change" value="{{$cus->loancus}}"
+            <input id="inputipt" type="text" readonly="true" data-parsley-trigger="change" value="{{number_format($cus->loancus)}}"
                    autocomplete="off" class="form-control">
         </div>
     </div>
@@ -25,7 +25,7 @@
             </div>
             <div class="form-group col-md-4">
                 <label for="inputCity">To Pay</label>
-                <input type="text" class="form-control" id="nhanlai" name="receive">
+                <input type="text" class="form-control" id="nhanlai" name="receive" readonly>
             </div>
         </div>
         <div class="form-group col-md-12">

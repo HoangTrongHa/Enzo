@@ -62,6 +62,7 @@
                                     <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
                                 </form>
                                 <hr>
+                                <a href="{{route("Register")}}">Dang ky</a>
                             </div>
                         </div>
                     </div>

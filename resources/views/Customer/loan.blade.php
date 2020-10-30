@@ -12,15 +12,15 @@
                     <div class="align-items-center loan-app">
                         <span class="span-1">支払うべき金額</span><br>
                         @if($static->receive == null)
-                        <span class="span-2" style="font-size: 62px;">0,000,000</span>
+                            <span class="span-2" style="font-size: 62px;">0,000,000</span>
                         @else
-                            <span class="span-2" style="font-size: 62px;">{{$static ->receive}}</span>
+                            <span class="span-2" style="font-size: 62px;">{{$static ->loancustomer}}</span>
                         @endif
                     </div>
                     <div class="button-app">
                         @if($static ->borrowing == null)
 
-                        <a href="{{route("sinsei")}}" class="button-a">Get Started</a>
+                            <a href="{{route("sinsei")}}" class="button-a">Get Started</a>
                         @else
 
                             <a type="button" class="button-a" data-toggle="modal" data-target="#myModal">
@@ -62,30 +62,33 @@
                 </div>
             </div>
         </div>
-        <div class="modal" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">私たちに送金</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
 
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <h1>管理者アカウント</h1>
-                        <span>Hoàng trọng Hà 036201004021</span>
-                        <h2>お金を払わなければならない</h2><span style="font-size: 40px;">{{$static ->receive}}</span> <span>円</span>
-                    </div>
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">私たちに送金</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
 
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <a type="button" class="btn btn-primary" data-dismiss="modal">送信が必要</a>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">閉じる</button>
-                    </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <h1>管理者アカウント</h1>
+                            <span>Hoàng trọng Hà 036201004021</span>
+                            <h2>お金を払わなければならない</h2>
+                            <div>
+                                <span style="font-size: 40px;">{{$static ->loancustomer}}</span> <span>円</span><br>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{{route("customerbanking")}}" class="btn btn-primary">精算</a>
+                        </div>
 
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
+    </div>
         </section>
 
         @endsection
@@ -121,7 +124,8 @@
             .button-app .button-a {
                 color: white;
             }
-            .right-loan{
+
+            .right-loan {
                 width: 90%;
             }
 

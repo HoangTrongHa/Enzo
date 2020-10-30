@@ -53,7 +53,7 @@ class RegisterController extends Controller
 
     protected function createAdmin(Request $request)
     {
-        dd($request);
+
         if ($request->hasFile('Avatar')) {
             $file = Storage::disk('public')->put('',  $request->file("Avatar"));
         }
@@ -65,8 +65,8 @@ class RegisterController extends Controller
             'avatar' => isset($file) ? $file : null,
 
         ]);
-        $User ->roles()
-            ->attach(Role::where('name', 'employee')->first());
+//        $User ->roles()
+//            ->attach(Role::where('name', 'employee')->first());
        return redirect()->route("login-ad");
     }
 

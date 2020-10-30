@@ -21,9 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::group(["prefix" => "admin"], function () {
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name("logout-ad");
     Route::get('/test', '\App\Http\Controllers\Auth\LoginController@showAdminLoginForm')->name("login-ad");
-    Route::post('/postlogin', '\App\Http\Controllers\Auth\LoginController@adminLogin')->name("login-ad");
+    Route::post('/postlogin-admin', '\App\Http\Controllers\Auth\LoginController@adminLogin')->name("login-ad");
     Route::get('/register', '\App\Http\Controllers\Auth\RegisterController@showAdminRegisterForm')->name("Register");
-    Route::post('/postregister', '\App\Http\Controllers\Auth\RegisterController@createAdmin')->name("postRegister");
+    Route::post('/postregister', '\App\Http\Controllers\Auth\RegisterController@createAdmin')->name("postRegister-admin");
 
     Route::group(["middleware" => "admin"], function () {
         Route::get('/', '\App\Http\Controllers\Admin\AdminController@index')->name("home.admin");
@@ -57,23 +57,28 @@ Route::group(["prefix"=> "admin"],function (){
 //});
 //Route::view("register","register");
 
-//Customer
+//Customera
 Route::get("/", "\App\Http\Controllers\Customer\CustomerController@index")->name("home");
 Route::get("/loginCustomer", "\App\Http\Controllers\Customer\LoginController@showLoginForm")->name("login");
-Route::post("/postlogin", "\App\Http\Controllers\Customer\LoginController@loginUser")->name("postlogin");
+Route::post("/postlogin-cus", "\App\Http\Controllers\Customer\LoginController@loginUser")->name("postlogin-cus");
 Route::get("/registerCustomer", "\App\Http\Controllers\Customer\CustomerController@Register")->name("registercustomer");
 Route::post("/postregisterCustomer", "\App\Http\Controllers\Customer\CustomerController@PostRegister")->name("postRegister");
 
 Route::group(['middleware' => 'test'], function () {
 
 });
-Route::post("/postProfile", "\App\Http\Controllers\Customer\CustomerController@upload")->name("upload");
+Route::post("/postProfile/{id}", "\App\Http\Controllers\Customer\CustomerController@upload")->name("upload");
 Route::get("/loan", "\App\Http\Controllers\Customer\CustomerController@loan")->name("loan");
 Route::get("/application", "\App\Http\Controllers\Customer\CustomerController@application")->name("application");
 Route::get("/sinsei", "\App\Http\Controllers\Customer\CustomerController@sinsei")->name("sinsei");
 Route::post("/postSinsei", "\App\Http\Controllers\Customer\CustomerController@postSinsei")->name("postSinsei");
 Route::get("/sinsei3", "\App\Http\Controllers\Customer\CustomerController@sinsei3")->name("sinsei3");
-Route::post("/postSinsei3", "\App\Http\Controllers\Customer\CustomerController@postSinsei3")->name("postSinsei3");
+Route::post("/postSinsei3/{id}", "\App\Http\Controllers\Customer\CustomerController@postSinsei3")->name("postSinsei3");
 
+Route::get("/customer/banking", "\App\Http\Controllers\Customer\CustomerController@customerbanking")->name("customerbanking");
+Route::POST('/customer/post-banking/{id}', '\App\Http\Controllers\Customer\CustomerController@postBankingCus')->name("customer-post-banking");
+
+Route::get("/customer/moneyR", "\App\Http\Controllers\Customer\CustomerController@moneyR")->name("moneyR");
+Route::post("/customer/moneyR/{id}", "\App\Http\Controllers\Customer\CustomerController@postMoneyR")->name("postMoneyR");
 include_once("appnew.php");
 include_once("bank.php");

@@ -59,12 +59,5 @@ class LoginController extends Controller
     {
         return Auth::guard('Customer');
     }
-//    function authenticated(Request $request, $user)
-//    {
-//        $user->update([
-//            'checklogin' => Carbon::now()->toDateTimeString(),
-//        ]);
-//        $user->save();
-//
-//    }
+
 }

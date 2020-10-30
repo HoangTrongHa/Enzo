@@ -1,20 +1,5 @@
 
-<section>
-    <div class="container">
-        <div class="button-footer">
-            <div class="button-footer-content">
-                <span>個人新規申し込みはこちら</span>
-            </div>
-            <div class="button-footer-content">
-                <span>個人新規申し込みはこちら</span>
-            </div>
-            <div class="button-footer-content">
-                <span>個人新規申し込みはこちら</span>
-            </div>
-        </div>
-    </div>
 
-</section>
 <footer>
 
     <div class="footer">

@@ -6,6 +6,7 @@
 <body>
 @include("Customer.Components.header")
 @yield("content")
+
 @include("Customer.Components.footer")
 
 </body>

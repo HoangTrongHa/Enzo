@@ -384,6 +384,22 @@
 
     </div>
 </section>
+<section>
+    <div class="container">
+        <div class="button-footer">
+            <div class="button-footer-content">
+                <span>個人新規申し込みはこちら</span>
+            </div>
+            <div class="button-footer-content">
+                <span>個人新規申し込みはこちら</span>
+            </div>
+            <div class="button-footer-content">
+                <span>個人新規申し込みはこちら</span>
+            </div>
+        </div>
+    </div>
+
+</section>
 @include("Customer.Components.footer")
 </body>
 </html>

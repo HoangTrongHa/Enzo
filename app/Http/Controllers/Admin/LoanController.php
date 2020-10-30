@@ -10,7 +10,6 @@ class LoanController extends Controller
 {
     public function index()
     {
-
         $user  = Customer::where("receive",null )->where("static",2)->get();
         return view("Admin.Manager.Loan.index", compact("user"));
     }
@@ -29,7 +28,6 @@ class LoanController extends Controller
         $cus->borrowing = $req->borrowing;
         $cus->receive = $req->receive;
         $cus->payment_term = $req->payment_term;
-
         $cus->save();
         return redirect()->route("loan.index")->with("success", "Update products successfully");
     }

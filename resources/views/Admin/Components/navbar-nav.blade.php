@@ -22,17 +22,25 @@
     <li class="nav-item">
         <a class="nav-link" href="{{route("listAccount")}}">
             <i class="far fa-id-card fa-tachometer-alt"></i>
-            <span>ユーザーリスト danh sach nguoi dung</span></a>
+            <span>ユーザーリスト </span>
+{{--                <span style="color: red;margin: 30px;-webkit-text-stroke: medium;">{{$countUser}}</span>--}}
+
+        </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{route("index-appnew")}}">
             <i class="fa fa-folder-open fa-tachometer-alt"></i>
-            <span>新規申し込みリスト ung dung moi nhat </span></a>
+            <span>新規申し込みリスト ung dung moi nhat </span>
+        </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{route("checkImager")}}">
             <i class="fas fa-image fa-tachometer-alt"></i>
-            <span>写真承認リスト phe duyet anh</span></a>
+            <span>写真承認リスト phe duyet anh</span>
+{{--            <span style="color: red;margin: 30px;-webkit-text-stroke: medium;">{{$wait}}</span>--}}
+        </a>
+
+
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{route("loan.index")}}">
@@ -45,12 +53,12 @@
             <span>送金リスト danh sach chuyen tien</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route("refund")}}">
             <i class="fa fa-check fa-tachometer-alt"></i>
-            <span>返金リスト danh sach hoan tien</span></a>
+            <span>返金リスト</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route("delay")}}">
             <i class="fas fa-exclamation-circle fa-tachometer-alt"></i>
             <span>遅延者リスト danh sach tri hoan</span></a>
     </li>

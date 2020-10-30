@@ -13,7 +13,7 @@
         </div>
     </section>
 
-    <form action="{{route("upload")}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route("upload",[$static->id])}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method("post")
         <div class="container">
@@ -42,14 +42,10 @@
                 <input type="file" class="front" name="3thangluong">
             </div>
             <div class="form-group">
-                <div>
-                    <label for="nhieuanh">身分証明書、撮影日記載の紙を持ち、自撮り。撮影例 nhieu anh</label><br>
-                    <input type="file" name="nhieuanh" class="nhieuanh">
-                </div>
-                <div>
-                    <span style="">ラジオボックス追加 　選択後、項目項目ボタンをクリックすると 　アップロード項目が増える（最大５項目）</span>
-                </div>
+                <label for="nhieuanh">給与直近三ヶ月分の写真 </label><br>
+                <input type="file" class="front" name="nhieuanh">
             </div>
+
 
             <input type="hidden" class="front" name="customerid" value="{{auth()->guard("Customer")->id()}}">
 
@@ -57,50 +53,53 @@
         <div class="container entry">
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
-                    Ten chu han
+                    金融機関名
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
-                    <input type="text" name="tenchuhan" class="@error("tenchuhan") is-invalid  @enderror">
-                    @error("tenchuhan")
-                    <span class="error invalid-feedback">{{$message}}</span>
-                    @enderror
+                    <input type="text" name="name-of-financial-institution" class="uploadbank" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
-                    Ten chu han
+                    口座の種類
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
-                    <input type="text" name="tenchuhan" class="@error("tenchuhan") is-invalid  @enderror">
-                    @error("tenchuhan")
-                    <span class="error invalid-feedback">{{$message}}</span>
-                    @enderror
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="radio" id="male" name="account_type" value="正常">
+                            <label for="正常">正常</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="radio" id="female" name="account_type" value="電流">
+                            <label for="male">電流</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="radio" id="other" name="account_type" value="定期的に">
+                            <label for="male">定期的に</label>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
-                    Ten chu han
+                    口座番号
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
-                    <input type="text" name="tenchuhan" class="@error("tenchuhan") is-invalid  @enderror">
-                    @error("tenchuhan")
-                    <span class="error invalid-feedback">{{$message}}</span>
-                    @enderror
+                    <input type="number" name="account_number" class="uploadbank" required>
+
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
-                    Ten chu han
+                    アカウント名
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
-                    <input type="text" name="tenchuhan" class="@error("tenchuhan") is-invalid  @enderror">
-                    @error("tenchuhan")
-                    <span class="error invalid-feedback">{{$message}}</span>
-                    @enderror
+                    <input type="text" name="account_holder" class="uploadbank" required>
+
                 </div>
             </div>
             <div class="button-entry-type">
@@ -119,7 +118,7 @@
 <style>
     .front {
         background: #efdf00;
-        width: 28%;
+        width: 50%;
     }
     .entry{
         margin-top: 15%;
@@ -137,5 +136,8 @@
         height: 10VH;
         border: 10px;
         color: #ffffff;
+    }
+    .uploadbank{
+        margin: 20px auto; width: 100%; background-color: #eeeeee; border: 1px solid #eeeeee;
     }
 </style>

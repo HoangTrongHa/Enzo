@@ -102,8 +102,6 @@
         </div>
 
     </div>
-
-
     <div class="button-submit">
             <span class="text-left">
                 <a href="{{route("post-showbanking",[$cus->id])}}" class="btn btn-space btn-primary update-profile">送金手続き</a>
