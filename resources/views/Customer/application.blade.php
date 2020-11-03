@@ -57,7 +57,7 @@
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
-                    <input type="text" name="name-of-financial-institution" class="uploadbank" required>
+                    <input type="text" name="name_bank" class="uploadbank" required>
                 </div>
             </div>
             <div class="row">

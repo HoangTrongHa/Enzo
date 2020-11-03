@@ -5,7 +5,8 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
-                    <th>申請日</th>
+                    <th>支払日
+                    </th>
                     <th>利用状況　</th>
                     <th>名前</th>
                     <th>名前</th>
@@ -17,7 +18,7 @@
                 <tbody>
                 @foreach($cus as $cus)
                     <tr>
-                        <th>{{$cus -> created_at}}</th>
+                        <th>{{$cus -> payment_term}}</th>
                         <th>
                             <div class="four">
                                 @if($cus ->static ==1)

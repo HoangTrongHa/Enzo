@@ -1,9 +1,19 @@
 @extends("Admin.Components.layout")
 @section("content")
 
-    <h1 class="h3 mb-2 text-gray-800">List Account Manager</h1>
-
     <div class="card shadow mb-4">
+        <h1 style="text-align: center">List Account </h1>
+        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="get" role="search" action="{{route("search")}}">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" name="key">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
 
         <div class="card-body">
             <div class="table-responsive">
@@ -55,6 +65,7 @@
             </div>
         </div>
     </div>
+    {!! $user->links() !!}
     <style>
         th{
             text-align: center;

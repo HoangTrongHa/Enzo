@@ -21,16 +21,40 @@
     </span>
 </div>
 <div>
-   <div class="name-pdf">
-       <div class="left-pdf">
-               <label>氏名</label>
-           <div class="col-md-2">
-           </div>
-       </div>
-       <div class="right-pdf">
-           <p>{{$cus->tenchuhan}}</p>
-       </div>
-   </div>
+    <table>
+        <tr>
+            <td>かんじ名</td>
+            <td>{{$cus->tenchuhan}}</td>
+        </tr>
+        <tr>
+            <td>電子メールアドレス</td>
+            <td>{{$cus->email}}</td>
+
+        </tr>
+        <tr>
+            <td>借りたい金額</td>
+            <td>{{$cus->loancus}}</td>
+
+        </tr>
+        <tr>
+            <td>実際の量</td>
+            <td>{{$cus->maxtotal}}</td>
+
+        </tr>
+        <tr>
+            <td>もらった分量
+            </td>
+            <td>{{$cus->receive}}</td>
+
+        </tr>
+        <tr>
+            <td>お金を払わなければならない
+
+            </td>
+            <td>{{$cus->loancustomer}}</td>
+
+        </tr>
+    </table>
 </div>
 
 </body>
@@ -46,15 +70,7 @@
        color: #01897b;
        font-size: 100px;
    }
-   .name-pdf{
-       display: flex;
-   }
-   .name-pdf .left-pdf{
-       width: 30%;
-   }
-   .name-pdf .right-pdf{
-       width:auto;
-   }
+
 </style>
 <script type="text/php">
     if (isset($pdf)) {

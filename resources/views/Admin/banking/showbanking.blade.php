@@ -104,16 +104,22 @@
     </div>
     <div class="button-submit">
             <span class="text-left">
-                <a href="{{route("post-showbanking",[$cus->id])}}" class="btn btn-space btn-primary update-profile">送金手続き</a>
+
+                <a href="{{route("post-showbanking",[$cus->id])}}"
+                   class="btn btn-space btn-primary update-profile">送金手続き</a>
             </span>
         <span class="text-left">
-                <a type="submit" class="btn btn-space btn-primary update-profile">非承認</a>
+                <a href=" {{route("money-transfer",[$cus->id])}}" class="btn btn-space btn-primary update-profile">確認メール</a>
             </span>
+        <span class="text-left">
+                <a href="{{route("mail-refuse",[$cus->id])}}" class="btn btn-space btn-primary update-profile">非承認</a>
+            </span>
+
         <span class="text-left">
                 <button type="submit" class="btn btn-space btn-primary update-profile">History</button>
             </span>
         <span class="text-left">
-                <button type="submit" class="btn btn-space btn-primary update-profile">Back</button>
+                <a href="{{route("index-banking")}}" class="btn btn-space btn-primary update-profile">Back</a>
             </span>
     </div>
 
@@ -152,7 +158,8 @@
         .maxtotal-right span {
             font-size: 30px;
         }
-        .profile-banking{
+
+        .profile-banking {
             margin-top: 10%;
         }
     </style>

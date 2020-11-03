@@ -9,11 +9,14 @@ use Illuminate\Http\Request;
 class DelayController extends Controller
 {
    public function index(){
-        $cus = Customer::where("static",3)->get();
+        $cus = Customer::where("static",4)->get();
         return view("Admin.delay.index",compact("cus"));
    }
    public function showDelay($id){
-       $cus = Customer::where("static",3)->FindOrFail($id);
-       return view ();
+       $cus = Customer::where("static",4)->FindOrFail($id);
+       $end = ($cus->loancustomer) - ($cus->loanrefund);
+       return view ("Admin.delay.showDelay",compact("cus","end"));
+
    }
+
 }

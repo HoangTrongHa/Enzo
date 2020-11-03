@@ -7,7 +7,7 @@
         </div>
     </section>
     <section>
-        <div class="container">
+        <div class="container" style="margin: 5% auto;">
             <div class="container">
                 <div id="login-row" class="row justify-content-center align-items-center">
                     <div class="col-md-6 show-result">
@@ -36,7 +36,7 @@
                                             <input type="hidden" name="loancustomer" value="{{$cus->maxtotal}}">
                                         </div>
 
-                                        <div class="col-1  sinsei-left ">
+                                    <div class="col-1  sinsei-left ">
                                             <span>円</span>
                                         </div>
                                     </div>

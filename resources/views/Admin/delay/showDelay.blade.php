@@ -1,160 +1,178 @@
-{{--@extends("Admin.Components.layout")--}}
-{{--@section("content")--}}
-{{--    <div class="container">--}}
-{{--        <div class="show-maxtotal">--}}
-{{--            <div class="maxtotal-left">--}}
-{{--                <span style="font-size: 40px;">希望売却額</span>--}}
-{{--            </div>--}}
-{{--            <div class="maxtotal-right" style="float: right">--}}
-{{--                <input type="text" readonly="true" data-parsley-trigger="change" value="{{$cus->receive}}"--}}
-{{--                       autocomplete="off" class="form-control" style="text-align: right;font-size: 30px;height: 100%">--}}
-{{--            </div>--}}
-{{--            <span style="margin-left: 2%">円</span>--}}
-{{--        </div>--}}
+@extends("Admin.Components.layout")
+@section("content")
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputnumber">デジタルマネーの欠如</label>
+            <input type="number" class="form-control" id="inputtotal"
+                   name="maxtotal" value="{{$cus->loancustomer}}" readonly>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputnumber">払込金額
+            </label>
+            <input type="number" class="form-control" id="inputtotal"
+                   name="maxtotal" value="{{$cus->loanrefund}}" readonly>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputnumber">余剰</label>
+            <input type="number" class="form-control" id="inputtotal"
+                   value="{{$end}}" readonly>
+        </div>
 
-{{--        <div class="show-maxtotal">--}}
-{{--            <div class="maxtotal-left">--}}
-{{--                <span style="font-size: 40px;">お戻し期日　</span>--}}
-{{--            </div>--}}
-{{--            <div class="maxtotal-right">--}}
-{{--                <span> {{$cus->payment_term}}--}}
-{{--                </span>--}}
-{{--            </div>--}}
+        <div class="form-group col-md-12">
+            <label for="inputCity">Deadtime</label>
 
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <div class="container profile-banking">--}}
-{{--        <div class="row">--}}
-{{--            <div class="col-12">--}}
-{{--                <div class="tab-content profile-tab" id="myTabContent">--}}
-{{--                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">--}}
-{{--                        <div class="row">--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <label>氏名</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <p>{{$cus->tenchuhan}}</p>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <label>生年月日年齢</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <p>{{$cus->sinhnhat}}</p>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <label>家族構成</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <p>{{$cus->thanhphangiadinh}}</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="row">--}}
-{{--                            <div class="col-md-6">--}}
-{{--                                <label>住所</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-6">--}}
-{{--                                <p>{{$cus->diachinha}}</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="row">--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <label>携帯番号</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <p>{{$cus->sodienthoaididong}}</p>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <label>自宅番号</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <p>{{$cus->sodienthoaicodinh}}</p>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <label>メールアドレス</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <p>{{$cus->email}}</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="row">--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <label>勤務先名</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <p>{{$cus->truso}}</p>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <label>勤務先電話番号</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <p>{{$cus->sdtcty}}</p>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <label>勤務先本社所在地</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-2">--}}
-{{--                                <p>{{$cus->linkweb}}</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+            @if($cus->payment_term ==0 || $cus->payment_term == null)
+                <input type="datetime-local" class="form-control" id="inputtotal" name="payment_term" required>
+            @else
+                <input type="text" class="form-control" value="{{$cus->payment_term}}" readonly>
+            @endif
 
-{{--    </div>--}}
-{{--    <div class="button-submit">--}}
-{{--            <span class="text-left">--}}
-{{--                <a href="{{route("post-showbanking",[$cus->id])}}" class="btn btn-space btn-primary update-profile">送金手続き</a>--}}
-{{--            </span>--}}
-{{--        <span class="text-left">--}}
-{{--                <a type="submit" class="btn btn-space btn-primary update-profile">非承認</a>--}}
-{{--            </span>--}}
-{{--        <span class="text-left">--}}
-{{--                <button type="submit" class="btn btn-space btn-primary update-profile">History</button>--}}
-{{--            </span>--}}
-{{--        <span class="text-left">--}}
-{{--                <button type="submit" class="btn btn-space btn-primary update-profile">Back</button>--}}
-{{--            </span>--}}
-{{--    </div>--}}
+        </div>
+    </div>
+    <div class="container profile-banking">
+        <div class="row">
+            <div class="col-12">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>氏名</label>
+                            </div>
+                            <div class="col-md-2">
+                                <p>{{$cus->tenchuhan}}</p>
+                            </div>
+                            <div class="col-md-2">
+                                <label>生年月日年齢</label>
+                            </div>
+                            <div class="col-md-2">
+                                <p>{{$cus->sinhnhat}}</p>
+                            </div>
+                            <div class="col-md-2">
+                                <label>家族構成</label>
+                            </div>
+                            <div class="col-md-2">
+                                <p>{{$cus->thanhphangiadinh}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>住所</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{$cus->diachinha}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>携帯番号</label>
+                            </div>
+                            <div class="col-md-2">
+                                <p>{{$cus->sodienthoaididong}}</p>
+                            </div>
+                            <div class="col-md-2">
+                                <label>自宅番号</label>
+                            </div>
+                            <div class="col-md-2">
+                                <p>{{$cus->sodienthoaicodinh}}</p>
+                            </div>
+                            <div class="col-md-2">
+                                <label>メールアドレス</label>
+                            </div>
+                            <div class="col-md-2">
+                                <p>{{$cus->email}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>勤務先名</label>
+                            </div>
+                            <div class="col-md-2">
+                                <p>{{$cus->truso}}</p>
+                            </div>
+                            <div class="col-md-2">
+                                <label>勤務先電話番号</label>
+                            </div>
+                            <div class="col-md-2">
+                                <p>{{$cus->sdtcty}}</p>
+                            </div>
+                            <div class="col-md-2">
+                                <label>勤務先本社所在地</label>
+                            </div>
+                            <div class="col-md-2">
+                                <p>{{$cus->linkweb}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="button-show-delay">
 
 
-{{--    <style>--}}
+            <a href="#">tra het</a>
+            <a href="#">co so du</a>
+            <a href="{{route("status-to-list",[$cus->id])}}">danh sach den</a>
 
-{{--        .button-submit {--}}
-{{--            width: 30%;--}}
-{{--            float: right;--}}
-{{--            color: white;--}}
-{{--        }--}}
+        </div>
+    </div>
+    <div class="container">
+        <div class="button-show-delay">
+
+            <a href="#">lich su</a>
+            <a href="#">ユーザーメモ</a>
+            <a href="{{route("delay")}}">戻る</a>
+
+        </div>
+    </div>
 
 
-{{--        .button-submit .update-profile {--}}
-{{--            width: 45%;--}}
-{{--            margin: 2%;--}}
-{{--            color: white;--}}
 
-{{--        }--}}
+    <style>
 
-{{--        .show-maxtotal {--}}
-{{--            display: flex;--}}
-{{--            align-items: flex-end;--}}
-{{--        }--}}
+        .button-show-delay {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: 2%;
 
-{{--        .maxtotal-left {--}}
-{{--            width: 30%;--}}
-{{--            margin-right: 15%;--}}
-{{--        }--}}
+        }
 
-{{--        .maxtotal-right {--}}
-{{--            width: 30%;--}}
-{{--            text-align: end;--}}
-{{--        }--}}
+        .button-show-delay a {
+            padding: 9px;
+            background: #007bff;
+            height: 45px;
+            width: 15%;
+            text-align: center;
+            margin: auto 23px;
+            border-radius: 5px;
+            color: white;
 
-{{--        .maxtotal-right span {--}}
-{{--            font-size: 30px;--}}
-{{--        }--}}
-{{--        .profile-banking{--}}
-{{--            margin-top: 10%;--}}
-{{--        }--}}
-{{--    </style>--}}
+        }
 
-{{--@endsection--}}
+        .show-maxtotal {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .maxtotal-left {
+            width: 30%;
+            margin-right: 15%;
+        }
+
+        .maxtotal-right {
+            width: 30%;
+            text-align: end;
+        }
+
+        .maxtotal-right span {
+            font-size: 30px;
+        }
+
+        .profile-banking {
+            margin-top: 10%;
+        }
+    </style>
+
+@endsection

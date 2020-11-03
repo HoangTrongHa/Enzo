@@ -13,9 +13,7 @@ class BankingController extends Controller
 {
     public function index()
     {
-        $cus = Customer::with(['history' => function ($q) {
-            $q->where('status', 2)->first();
-        }])->has('history')->get();
+        $cus =Customer::where("static",2)->whereNotNull("loancustomer")->Where("loancustomer","!=",0)->get();
         return view("Admin.banking.index", compact("cus"));
     }
 
@@ -32,11 +30,22 @@ class BankingController extends Controller
 
     public function postShowBanking($id)
     {
-        $cus = Customer::with(["history" => function ($query) {
-            $query->where("status", 2)->first();
-        }])->FindOrFail($id);
-        $pdf = PDF::loadView("Admin.pdf.index", compact("cus"));
-        return $pdf->stream();
+        try {
+            $cus = Customer::with(["history" => function ($query) {
+                $query->where("status", 2)->first();
+            }])->FindOrFail($id);
+
+            $pdf = PDF::loadView("Admin.pdf.index", compact("cus"));
+            $pdf->download('bill.pdf') ;
+            $cus->update([
+                "static" => 3
+            ]);
+            return redirect()->route("refund");
+        }catch (\Exception $exception){
+            DB::rollBack();
+            return back();
+        }
+
     }
 
 }

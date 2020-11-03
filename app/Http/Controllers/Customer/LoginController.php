@@ -59,5 +59,11 @@ class LoginController extends Controller
     {
         return Auth::guard('Customer');
     }
+    protected function authenticated(Request $request, $user)
+    {
+        $user->update([
+            "checklogin" => now()->toDateTimeString()
+        ]);
+    }
 
 }

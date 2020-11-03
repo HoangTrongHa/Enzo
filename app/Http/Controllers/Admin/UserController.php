@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Customer;
+use App\History;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User;
 use App\upload;
@@ -12,8 +13,15 @@ class UserController extends Controller
 {
     public function index()
     {
-        $user = Customer::all();
+        $user = Customer::paginate(2);
         return view('Admin.Manager.ManagerAccount.index', compact("user"));
+    }
+    public function search(Request $request){
+        $user = Customer::paginate(2);
+        $search = Customer::where('tenchuhan','like','%'.$request->key.'%')->orWhere('account_number',$request->key)->orWhere('sodienthoaididong','like','%'.$request->key.'%')
+        ->orWhere('diachinha','like','%'.$request->key.'%')->get();
+
+        return view('Admin.Manager.ManagerAccount.index',compact("search",'user'));
     }
 
     public function show($id)

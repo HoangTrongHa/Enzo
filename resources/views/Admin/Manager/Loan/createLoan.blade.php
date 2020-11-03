@@ -16,8 +16,14 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputnumber">The Amount Borrowed</label>
-                <input type="number" class="form-control" id="inputtotal" oninput="calculateAmount(this.value)"
-                       name="maxtotal">
+                @if($cus->maxtotal ==0 || $cus->maxtotal == null)
+                    <input type="number" class="form-control" id="inputtotal" oninput="calculateAmount(this.value)"
+                           name="maxtotal" required>
+                @else
+                    <input type="number" class="form-control" id="inputtotal" oninput="calculateAmount(this.value)"
+                           name="maxtotal" value="{{$cus->maxtotal}}" readonly>
+                @endif
+
             </div>
             <div class="form-group col-md-2">
                 <label for="inputCity">Bi tru</label>
@@ -30,7 +36,13 @@
         </div>
         <div class="form-group col-md-12">
             <label for="inputCity">Deadtime</label>
-            <input type="datetime-local" class="form-control" id="inputtotal" name="payment_term">
+
+            @if($cus->payment_term ==0 || $cus->payment_term == null)
+                <input type="datetime-local" class="form-control" id="inputtotal" name="payment_term" required>
+            @else
+                <input type="text" class="form-control" value="{{$cus->payment_term}}" readonly>
+            @endif
+
         </div>
         <div class="form-row">
         <div class="form-group col-md-6">
@@ -56,21 +68,32 @@
             <input id="inputipt" type="text" readonly="true" data-parsley-trigger="change" value="{{$cus->email}}"
                    placeholder="Enter Arrtibute values name" autocomplete="off" class="form-control">
         </div>
-
-        <div class="button-submit">
+        @if($cus->maxtotal ==0 || $cus->maxtotal == null)
+            <div class="button-submit">
             <span class="text-left">
                 <button type="submit" class="btn btn-space btn-primary update-profile">Update</button>
             </span>
-            <span class="text-left">
+                <span class="text-left">
                 <a type="submit" class="btn btn-space btn-primary update-profile">非承認</a>
             </span>
-            <span class="text-left">
+                <span class="text-left">
                 <button type="submit" class="btn btn-space btn-primary update-profile">History</button>
             </span>
-            <span class="text-left">
+                <span class="text-left">
                 <button type="submit" class="btn btn-space btn-primary update-profile">Back</button>
             </span>
-        </div>
+            </div>
+        @else
+            <div class="button-submit">
+                <span class="text-left">
+                <button type="submit" class="btn btn-space btn-primary update-profile">History</button>
+            </span>
+                <span class="text-left">
+                <button type="submit" class="btn btn-space btn-primary update-profile">Back</button>
+            </span>
+            </div>
+        @endif
+
     </form>
     <style>
 

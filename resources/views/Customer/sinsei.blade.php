@@ -7,7 +7,7 @@
         </div>
     </section>
     <section>
-        <div class="container">
+        <div class="container" style="margin: 5% auto;">
             <div class="container">
                 <div id="login-row" class="row justify-content-center align-items-center">
                     <div id="login-column" class="col-md-6">

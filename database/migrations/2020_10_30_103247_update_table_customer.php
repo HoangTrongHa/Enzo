@@ -14,7 +14,7 @@ class UpdateTableCustomer extends Migration
     public function up()
     {
         Schema::table('customer', function (Blueprint $table) {
-         $table->string("name-of-financial-institution");
+         $table->string("name-bank");
         });
     }
 

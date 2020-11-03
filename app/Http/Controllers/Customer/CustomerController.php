@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Storage;
 
 class CustomerController extends Controller
 {
+
+
+
     public function index()
     {
         return view("Customer.index");
@@ -108,10 +111,10 @@ class CustomerController extends Controller
             ]);
             $cus = Auth::guard("Customer")->user()->FindOrFail($id);
             $cus->update([
-                "name-of-financial-institution" =>$request->account_number,
-                "account_number" => $request->account_number,
+                "name-bank" => $request->name_bank,
                 "account_holder" =>$request->account_holder,
-                "account_type" => $request->account_type
+                "account_type" => $request->account_type,
+                "account_number" =>$request->account_number,
             ]);
             return view("Customer.confirm");
         }catch (\Exception $exception){
@@ -177,28 +180,27 @@ class CustomerController extends Controller
 
     public function postSinsei3(Request $req, $id)
     {
-
         try {
-
             DB::beginTransaction();
             $cus = Auth::guard("Customer")->user()->FindOrFail($id);
-            $his = History::create([
+
+            $cus->update([
+                "loancustomer" => $req->loancustomer
+            ]);
+
+            History::create([
                 "customerid" => $req->customerid,
                 "maxtotal" => $req->maxtotal,
                 "Deducted" => $req->borrowing,
                 "receive" => $req->receive,
-                "payment_term" => $req->payment_term,
-
-            ]);
-            $his->save();
-            $cus->update([
-                "loancustomer" => $req->loancustomer
+                "payment_term" => $req->payment_term
             ]);
             DB::commit();
+
             return redirect()->route("loan");
         } catch (\Exception $exception) {
             DB::rollBack();
-            return back();
+            return back() ;
         }
 
     }

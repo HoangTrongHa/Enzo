@@ -15,6 +15,7 @@ class Customer extends Authenticatable
     protected $hidden =[
         "password",'remember_token',
     ];
+
     public function getStatic()
     {
         return $this->static;

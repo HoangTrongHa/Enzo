@@ -171,7 +171,8 @@
                             <h5>延期リストに追加</h5>
                         </div>
                         <div class="modal-footer">
-                            <input type="hidden" value="3" name="static">
+                            <input type="hidden" value="4" name="static">
+                            <input type="datetime-local" class="form-control" id="inputtotal" name="payment_term" value="{{$cus->payment_term}}" required>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Save changes</button>
                         </div>

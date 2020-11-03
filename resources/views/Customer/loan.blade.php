@@ -6,19 +6,19 @@
         </div>
     </section>
     <div>
-        <div class="container">
+        <div class="container" style="margin: 5% auto;">
             <div class="row justify-content-around">
                 <div class="col-5 loan align-items-center">
                     <div class="align-items-center loan-app">
                         <span class="span-1">支払うべき金額</span><br>
-                        @if($static->receive == null)
+                        @if($static ->loancustomer == null || $static ->loancustomer == 0)
                             <span class="span-2" style="font-size: 62px;">0,000,000</span>
                         @else
                             <span class="span-2" style="font-size: 62px;">{{$static ->loancustomer}}</span>
                         @endif
                     </div>
                     <div class="button-app">
-                        @if($static ->borrowing == null)
+                        @if($static ->loancustomer == null || $static ->loancustomer == 0 )
 
                             <a href="{{route("sinsei")}}" class="button-a">Get Started</a>
                         @else

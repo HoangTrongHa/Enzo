@@ -256,7 +256,7 @@
                 <button type="submit" class="btn btn-space btn-primary update-profile">Update</button>
             </span>
             <span class="text-left">
-                <a type="submit" class="btn btn-space btn-primary update-profile">非承認</a>
+                <a href="{{route("mail-refuse",$customer->id)}}" class="btn btn-space btn-primary update-profile">非承認</a>
             </span>
             <span class="text-left">
                 <button type="submit" class="btn btn-space btn-primary update-profile">ユーザーメモ ban ghi nho nguoi dung</button>

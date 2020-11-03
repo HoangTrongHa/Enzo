@@ -12,17 +12,16 @@ class refundController extends Controller
 {
     public function index()
     {
-        $cus = Customer::where("loancustomer", "!=", 0)->get();
+        $cus = Customer::where("static", 3)->where("loancustomer","!=",0)->get();
         return view("Admin.Refund.index", compact("cus"));
     }
 
     public function showrefund($id)
     {
-        $cus = Customer::Where("loanrefund", "!=", null)->FindOrFail($id);
-
+        $cus = Customer::where("static", 3)->FindOrFail($id);
         $end = ($cus->loancustomer) - ($cus->loanrefund);
 
-        return view("Admin.Refund.show", compact("cus","end"));
+        return view("Admin.Refund.show", compact("cus", "end"));
     }
 
     public function changStatus(Request $req, $id)
@@ -35,13 +34,9 @@ class refundController extends Controller
             $his = $cus->history()->first();
 
             $cus->update([
-                "loancustomer" => $req->reset
+                "loancustomer" => $req->reset,
+                "payment_term" =>$req->payment_term
             ]);
-
-            $his->update([
-                'status' => $req->status
-            ]);
-
             DB::commit();
             return redirect()->route("refund");
         } catch (\Exception $exception) {
@@ -55,9 +50,9 @@ class refundController extends Controller
         $cus = Customer::with(['history' => function ($query) {
             $query->where("status", 1);
         }])->FindOrFail($id);
-
         $cus->update([
-            "static" => $req->static
+            "static" => $req->static,
+            "loancustomer" => $req->reset
         ]);
         return redirect()->route("delay");
     }

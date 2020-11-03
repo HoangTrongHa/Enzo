@@ -17,7 +17,7 @@
                 <tbody>
                 @foreach($cus as $cus)
                     <tr>
-                        <th>{{$cus -> created_at}}</th>
+                        <th>{{$cus -> payment_term}}</th>
                         <th>
                             <div class="four">
                                 @if($cus ->static ==1)
