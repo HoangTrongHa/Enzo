@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel Send Email Example</title>
+    <title>kanji_name</title>
 </head>
 <body>
 
-<h1>This is test mail from ABC</h1>
+<h1>Dear {{$cus->kanji_name}}</h1>
    <table>
         <tr>
             <td>かんじ名</td>
-            <td>{{$cus->tenchuhan}}</td>
+            <td>{{$cus->kanji_name}}</td>
         </tr>
         <tr>
             <td>電子メールアドレス</td>

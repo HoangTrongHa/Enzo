@@ -19,16 +19,15 @@
                                     <span class="span-1">so tien van con no</span><br>
                                     <span class="span-2" style="font-size: 62px;">00,000,00</span>
                                 </div>
-                                <input type="checkbox" id="vehicle" name="vehicle1" value="Bike">
-                                <label for="vehicle1"> Không có khoản nợ nào chưa trả. Không check ko thể vay
-                                    tiền.</label>
+                                <input type="checkbox" id="vehicle" name="vehicle1" value="Bike" required>
+                                <label for="vehicle1"> 未払いの負債はありません。 チェックせずにお金を借りること.</label>
 
-                                <label for="vehicle1">So tien Mong muon</label>
+                                <label for="vehicle1">希望する金額</label>
                                 <input type="number" id="vehicle1" name="loancus" value="Bike">
-                                <label for="loancus">yen</label>
+                                <label for="loancus">円</label>
                                 <div class="type-button">
                                     <button type="submit" class=""
-                                            style="width: 65%;background-color: #00b7a4;color: white">Submit
+                                            style="width: 65%;background-color: #00b7a4;color: white">登録
                                     </button>
                                     {{--                                    <button onclick="goBack()" class=""--}}
                                     {{--                                            style="width: 30%;background-color: #00b7a4;color: white">Back--}}

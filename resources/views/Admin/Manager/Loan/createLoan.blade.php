@@ -16,9 +16,9 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputnumber">The Amount Borrowed</label>
-                @if($cus->maxtotal ==0 || $cus->maxtotal == null)
+                @if($cus->maxtotal == 0 || $cus->maxtotal == null)
                     <input type="number" class="form-control" id="inputtotal" oninput="calculateAmount(this.value)"
-                           name="maxtotal" required>
+                           name="maxtotal" required min="10" max="{{$cus->loancus}}">
                 @else
                     <input type="number" class="form-control" id="inputtotal" oninput="calculateAmount(this.value)"
                            name="maxtotal" value="{{$cus->maxtotal}}" readonly>
@@ -37,8 +37,8 @@
         <div class="form-group col-md-12">
             <label for="inputCity">Deadtime</label>
 
-            @if($cus->payment_term ==0 || $cus->payment_term == null)
-                <input type="datetime-local" class="form-control" id="inputtotal" name="payment_term" required>
+            @if($cus->payment_term == 0 || $cus->payment_term == null )
+                <input type="date" class="form-control" id="inputtotal" name="payment_term" required>
             @else
                 <input type="text" class="form-control" value="{{$cus->payment_term}}" readonly>
             @endif
@@ -47,17 +47,17 @@
         <div class="form-row">
         <div class="form-group col-md-6">
             <label for="inputUserName">氏名</label>
-            <input id="inputipt" type="text" readonly="true" data-parsley-trigger="change" value="{{$cus->tenchuhan}}"
+            <input id="inputipt" type="text" readonly="true" data-parsley-trigger="change" value="{{$cus->kanji_name}}"
                    placeholder="Enter Arrtibute values name" autocomplete="off" class="form-control">
         </div>
         <div class="form-group col-md-2">
             <label for="inputUserName">生年月日年齢</label>
-            <input id="inputipt" type="text" readonly="true" data-parsley-trigger="change" value="{{$cus->sinhnhat}}"
+            <input id="inputipt" type="text" readonly="true" data-parsley-trigger="change" value="{{$cus->birthday}}"
                    placeholder="Enter Arrtibute values name" autocomplete="off" class="form-control">
         </div>
             <div class="form-group col-md-2">
             <label for="inputUserName">生年月日年齢</label>
-            <input id="inputipt" type="text" readonly="true" data-parsley-trigger="change" value="{{$cus->sodienthoaididong}}"
+            <input id="inputipt" type="text" readonly="true" data-parsley-trigger="change" value="{{$cus->phone_number}}"
                    placeholder="Enter Arrtibute values name" autocomplete="off" class="form-control">
         </div>
 
@@ -68,13 +68,13 @@
             <input id="inputipt" type="text" readonly="true" data-parsley-trigger="change" value="{{$cus->email}}"
                    placeholder="Enter Arrtibute values name" autocomplete="off" class="form-control">
         </div>
-        @if($cus->maxtotal ==0 || $cus->maxtotal == null)
+        @if($cus->static =3)
             <div class="button-submit">
             <span class="text-left">
                 <button type="submit" class="btn btn-space btn-primary update-profile">Update</button>
             </span>
                 <span class="text-left">
-                <a type="submit" class="btn btn-space btn-primary update-profile">非承認</a>
+                <a style="color: white" href="{{route("loan.delete",[$cus->id])}}" class="btn btn-space btn-primary update-profile">非承認</a>
             </span>
                 <span class="text-left">
                 <button type="submit" class="btn btn-space btn-primary update-profile">History</button>
@@ -86,7 +86,7 @@
         @else
             <div class="button-submit">
                 <span class="text-left">
-                <button type="submit" class="btn btn-space btn-primary update-profile">History</button>
+                <a href="{{route("history",[$cus->id])}}" class="btn btn-space btn-primary update-profile">History</a>
             </span>
                 <span class="text-left">
                 <button type="submit" class="btn btn-space btn-primary update-profile">Back</button>
@@ -107,6 +107,7 @@
             color: white;
 
         }
+
     </style>
     <script>
         function calculateAmount(val) {

@@ -8,12 +8,16 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Customer extends Authenticatable
 {   use Notifiable;
     protected $table =  "customer";
-    protected $fillable = ["tenchuhan","tenphienam","male","sinhnhat","thanhphangiadinh","diachinha","sodienthoaicodinh","sodienthoaididong",
-        "password","email","linkweb","truso","sdtcty","songuoilam","chucvu","namcongtac","thoigianlamviec","thoigiannghi","nguoibaolanh",
-        "nguoibaolanh","diachinguoibaolanh","sdtnguoibaolanh","static","maxtotal","borrowing","receive","payment_term","checklogin","loancus",
-        "loancustomer","loanrefund","account_number","account_holder","account_type","name-of-financial-institution"];
+    protected $fillable = ["kanji_name","name_transliteration","male","birthday","family_structure","address","landline_number","phone_number",
+        "password","email","linkweb","company","company_phone","num_people","position","work_year","work_time","work_break","protector",
+        "guardian_address","phone_number_guard","static","maxtotal","borrowing","receive","payment_term","checklogin","loancus",
+        "loancustomer","loanrefund","account_number","account_holder","account_type","name-of-financial-institution","name-bank"];
     protected $hidden =[
         "password",'remember_token',
+    ];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
     ];
 
     public function getStatic()

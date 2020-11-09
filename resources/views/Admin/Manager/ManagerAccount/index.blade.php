@@ -3,16 +3,6 @@
 
     <div class="card shadow mb-4">
         <h1 style="text-align: center">List Account </h1>
-        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="get" role="search" action="{{route("search")}}">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" name="key">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
 
 
         <div class="card-body">
@@ -54,9 +44,9 @@
                                 </div>
 
                             </th>
-                            <th>{{$list->tenphienam}}</th>
-                            <th>{{$list->tenchuhan}}</th>
-                            <th>{{$list->sodienthoaididong}}</th>
+                            <th>{{$list->name_transliteration}}</th>
+                            <th>{{$list->kanji_name}}</th>
+                            <th>{{$list->phone_number}}</th>
                             <th>{{$list->checklogin}}</th>
                         </tr>
                     @endforeach

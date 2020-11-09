@@ -31,7 +31,7 @@
                         <td>{{$list->updated_at}}</td>
                         <td>
                             <a href="#" class="badge badge-primary badge-pill">Edit</a>
-                            <a href="#"  class="badge badge-danger badge-pill">Delete</a>
+                            <a href="{{route("delete-admin",[$list->id])}}"  class="badge badge-danger badge-pill">Delete</a>
                         </td>
                     </tr>
                     @endforeach

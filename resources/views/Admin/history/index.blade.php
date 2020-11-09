@@ -15,7 +15,7 @@
         <tbody>
         @foreach($his as $list)
         <tr>
-            <th scope="row">1</th>
+            <th scope="row">{{$list->id}}</th>
             <td>{{$list->maxtotal}}</td>
             <td>{{$list->receive}}</td>
             <td>{{$list->payment_term}}</td>

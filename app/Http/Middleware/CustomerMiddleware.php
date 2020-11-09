@@ -10,18 +10,15 @@ class CustomerMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
-//        $a = 1;
-        if (Auth::guard('Customer')->user()->static ==1){
-            return redirect()->route("application");
-        }else{
-            return redirect()->route("loan");
 
+        if (Auth::guard("Customer")->guest()) {
+            return redirect()->route("login");
         }
         return $next($request);
     }

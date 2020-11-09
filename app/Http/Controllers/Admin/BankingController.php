@@ -13,7 +13,7 @@ class BankingController extends Controller
 {
     public function index()
     {
-        $cus =Customer::where("static",2)->whereNotNull("loancustomer")->Where("loancustomer","!=",0)->get();
+        $cus =Customer::where("static",5)->whereNotNull("loancustomer")->Where("loancustomer","!=",0)->get();
         return view("Admin.banking.index", compact("cus"));
     }
 
@@ -38,7 +38,7 @@ class BankingController extends Controller
             $pdf = PDF::loadView("Admin.pdf.index", compact("cus"));
             $pdf->download('bill.pdf') ;
             $cus->update([
-                "static" => 3
+                "static" => 6
             ]);
             return redirect()->route("refund");
         }catch (\Exception $exception){

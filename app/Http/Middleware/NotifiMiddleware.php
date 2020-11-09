@@ -19,33 +19,16 @@ class NotifiMiddleware
     public function handle($request, Closure $next)
     {
         $Customer = Customer::all();
-
-        $wait = count(Customer::where("static",1)->get());
-
+        $wait = count( Customer::where("static",1)->get());
         $countUser = $Customer->filter(function ($item1) {
             return $item1->id;
         })->count();
-
-        $newApplication = $Customer->filter(function ($item2){
-//            return $
-        })->count();
         $Authorized = Customer::where("static", 2)->get();
-
-        $loan = $Customer->filter(function ($item3){
-            return $item3->receive;
-        });
-
-        $loancus =count(Customer::where("receive",null )->where("static",2)->get());
-
-        $refund = Customer::where("static",3)->get();
-
-        $delay = count($cus = Customer::where("static",4)->get());
-
-        $listDark = count(Customer::where("static",5)->get());
-
-//        $refund = $Customer->filter(function ($item){
-//            return
-//        });
+        $loan = Customer::where("static",5)->whereNotNull("loancustomer")->Where("loancustomer","!=",0)->get();
+        $loancus =count(Customer::whereNotNull("loancus")->Where("loancus","!=" ,0)->get());
+        $refund = Customer::where("static",7)->get();
+        $delay = count($cus = Customer::where("static", 8)->where("loancustomer", "!=", 0)->get());
+        $listDark = count(Customer::where("static",9)->get());
         view()->share([
             'wait' => $wait,
             "countUser" => $countUser,

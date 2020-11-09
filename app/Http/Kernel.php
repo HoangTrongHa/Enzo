@@ -4,7 +4,9 @@ namespace App\Http;
 
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\CustomerMiddleware;
+use App\Http\Middleware\LoanMiddeware;
 use App\Http\Middleware\NotifiMiddleware;
+use App\Http\Middleware\SearchMiddeware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -65,7 +67,9 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'customer' => CustomerMiddleware::class,
         'admin' => AdminMiddleware::class,
-        "notify"=>NotifiMiddleware::class
+        "notify"=>NotifiMiddleware::class,
+        "search" =>SearchMiddeware::class,
+        "checkupload" =>LoanMiddeware::class
     ];
 
     /**

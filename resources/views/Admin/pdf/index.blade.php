@@ -24,7 +24,7 @@
     <table>
         <tr>
             <td>かんじ名</td>
-            <td>{{$cus->tenchuhan}}</td>
+            <td>{{$cus->kanji_name}}</td>
         </tr>
         <tr>
             <td>電子メールアドレス</td>

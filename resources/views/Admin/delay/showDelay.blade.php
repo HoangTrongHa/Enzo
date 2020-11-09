@@ -29,100 +29,66 @@
 
         </div>
     </div>
-    <div class="container profile-banking">
-        <div class="row">
-            <div class="col-12">
-                <div class="tab-content profile-tab" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <label>氏名</label>
-                            </div>
-                            <div class="col-md-2">
-                                <p>{{$cus->tenchuhan}}</p>
-                            </div>
-                            <div class="col-md-2">
-                                <label>生年月日年齢</label>
-                            </div>
-                            <div class="col-md-2">
-                                <p>{{$cus->sinhnhat}}</p>
-                            </div>
-                            <div class="col-md-2">
-                                <label>家族構成</label>
-                            </div>
-                            <div class="col-md-2">
-                                <p>{{$cus->thanhphangiadinh}}</p>
-                            </div>
+ @include("Admin.Components.profile")
+    <div class="container">
+        <div class="button-show-delay">
+            <a href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                精算
+            </a>
+
+       <form action="{{route("change-status-history",[$cus->id])}}" method="POST">
+           @csrf
+           @method("POST")
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="history" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>住所</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->diachinha}}</p>
-                            </div>
+                        <div class="modal-body">
+                            本気ですか
                         </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <label>携帯番号</label>
-                            </div>
-                            <div class="col-md-2">
-                                <p>{{$cus->sodienthoaididong}}</p>
-                            </div>
-                            <div class="col-md-2">
-                                <label>自宅番号</label>
-                            </div>
-                            <div class="col-md-2">
-                                <p>{{$cus->sodienthoaicodinh}}</p>
-                            </div>
-                            <div class="col-md-2">
-                                <label>メールアドレス</label>
-                            </div>
-                            <div class="col-md-2">
-                                <p>{{$cus->email}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <label>勤務先名</label>
-                            </div>
-                            <div class="col-md-2">
-                                <p>{{$cus->truso}}</p>
-                            </div>
-                            <div class="col-md-2">
-                                <label>勤務先電話番号</label>
-                            </div>
-                            <div class="col-md-2">
-                                <p>{{$cus->sdtcty}}</p>
-                            </div>
-                            <div class="col-md-2">
-                                <label>勤務先本社所在地</label>
-                            </div>
-                            <div class="col-md-2">
-                                <p>{{$cus->linkweb}}</p>
-                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                            <button type="submit" class="btn btn-primary">変更内容を保存</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
+            <a href="#">バランスがあります</a>
 
+            <a href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#list-dark">ブラックリスト</a>
+
+            <form action="{{route("import-list",[$cus->id])}}" method="POST">
+                @csrf
+                @method("POST")
+                <div class="modal fade" id="list-dark" tabindex="-1" role="dialog" aria-labelledby="list-dark" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                本気ですか
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                                <button type="submit" class="btn btn-primary">変更内容を保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
     <div class="container">
         <div class="button-show-delay">
-
-
-            <a href="#">tra het</a>
-            <a href="#">co so du</a>
-            <a href="{{route("status-to-list",[$cus->id])}}">danh sach den</a>
-
-        </div>
-    </div>
-    <div class="container">
-        <div class="button-show-delay">
-
-            <a href="#">lich su</a>
-            <a href="#">ユーザーメモ</a>
+            <a href="{{route("history",[$cus->id])}}">ローン履歴</a>
             <a href="{{route("delay")}}">戻る</a>
 
         </div>

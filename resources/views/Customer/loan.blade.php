@@ -1,6 +1,6 @@
 @extends("Customer.Components.layout")
 @section("content")
-    <section style="background:#01897b ">
+    <section style="background:#01897b">
         <div class="container">
             <h1 class="login-h1">申し込み</h1>
         </div>
@@ -14,22 +14,23 @@
                         @if($static ->loancustomer == null || $static ->loancustomer == 0)
                             <span class="span-2" style="font-size: 62px;">0,000,000</span>
                         @else
-                            <span class="span-2" style="font-size: 62px;">{{$static ->loancustomer}}</span>
+                            <span class="span-2" style="font-size: 62px;">{{number_format($static ->loancustomer)}}</span>
                         @endif
                     </div>
                     <div class="button-app">
                         @if($static ->loancustomer == null || $static ->loancustomer == 0 )
 
-                            <a href="{{route("sinsei")}}" class="button-a">Get Started</a>
+                            <a href="{{route("sinsei")}}" class="button-a">借り始めます</a>
+                        @elseif($static->static ==9)
+                            <a href="#" class="button-a">借り始めます</a>
                         @else
-
                             <a type="button" class="button-a" data-toggle="modal" data-target="#myModal">
-                                Tra tien de
+                                支払いを請求する
                             </a>
                         @endif
                     </div>
                     <div class="button-app">
-                        <a href="#" class="button-a">History</a>
+                        <a href="#" class="button-a">礼儀を借りる</a>
                     </div>
                 </div>
                 <div class="col-5 loan">
@@ -37,20 +38,29 @@
 
                         <div class="right-loan">
                              <span>
-                                  <  Thong Bao co the vay >
+                                  <  通知を借りることができます >
                               </span>
                             <div class="align-items-center loan-app">
-                                <span class="span-1">{{$static->maxtotal}}</span>
+                                @if($static->maxtotal == null)
+                                    <span class="span-1">00,000,000</span>
+                                @els
+                                    <span class="span-1">{{number_format($static->maxtotal)}}</span>
 
+                                @endif
                             </div>
                             <span>
-                                <  Ngay Phai Tra >
+                                <  支払日 >
                              </span>
                             <div class="align-items-center loan-app">
-                                <span class="span-1">{{$static ->payment_term}}</span>
+                                @if($static ->payment_term == null)
+                                    <span class="span-1">現在ご利用いただけません</span>
+                                @else
+                                    <span class="span-1">{{$static ->payment_term}}</span>
+
+                                @endif
                             </div>
                             <span>
-                                <  Thong tin tai khoan admin >
+                                <  管理者アカウント情報 >
                              </span>
                             <div class="align-items-center loan-app">
                                 <span class="span-1">Hoàng trọng Hà 036201004021</span>
@@ -74,7 +84,7 @@
                         <!-- Modal body -->
                         <div class="modal-body">
                             <h1>管理者アカウント</h1>
-                            <span>Hoàng trọng Hà 036201004021</span>
+                            <span class="span-2">Hoàng trọng Hà 036201004021</span>
                             <h2>お金を払わなければならない</h2>
                             <div>
                                 <span style="font-size: 40px;">{{$static ->loancustomer}}</span> <span>円</span><br>

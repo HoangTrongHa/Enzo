@@ -40,9 +40,9 @@
                                 @endif
                             </div>
                         </th>
-                        <th>{{$cus->tenphienam}}</th>
-                        <th>{{$cus->tenchuhan}}</th>
-                        <th>{{$cus->sodienthoaididong}}</th>
+                        <th>{{$cus->name_transliteration}}</th>
+                        <th>{{$cus->kanji_name}}</th>
+                        <th>{{$cus->landline_number}}</th>
                         <th>{{$cus->checklogin}}</th>
                         <th>
                             <a href="{{route("show-refund",['id' => $cus->id])}}"

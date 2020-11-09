@@ -67,7 +67,7 @@ class RegisterController extends Controller
         ]);
 //        $User ->roles()
 //            ->attach(Role::where('name', 'employee')->first());
-       return redirect()->route("login-ad");
+       return redirect()->route("listadmin");
     }
 
     public function showCustomerRegisterForm()

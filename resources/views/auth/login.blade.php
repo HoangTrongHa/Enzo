@@ -24,7 +24,7 @@
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
 
-                                <form class="user" method="POST" action="{{ route('login-ad') }}">
+                                <form class="user" method="POST" action="{{ route('post-login-admin') }}">
                                     @csrf
                                     <div class="form-group row">
                                         <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>

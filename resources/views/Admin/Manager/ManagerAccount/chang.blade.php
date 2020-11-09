@@ -5,15 +5,15 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                 <tr>
-                    <th>tenchuhan</th>
-                    <th>trang thai</th>
-                    <th>Chuc Nang</th>
+                    <th>かんじ名</th>
+                    <th>状態</th>
+                    <th>詳細</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($customer as $list)
                     <tr>
-                        <th>{{$list -> tenchuhan}}</th>
+                        <th>{{$list -> kanji_name}}</th>
                         <th>
                             <div class="four">
                                 @if($list ->static ==1)

@@ -13,15 +13,15 @@ class UserController extends Controller
 {
     public function index()
     {
-        $user = Customer::paginate(2);
+        $user = Customer::paginate(5);
         return view('Admin.Manager.ManagerAccount.index', compact("user"));
     }
     public function search(Request $request){
-        $user = Customer::paginate(2);
-        $search = Customer::where('tenchuhan','like','%'.$request->key.'%')->orWhere('account_number',$request->key)->orWhere('sodienthoaididong','like','%'.$request->key.'%')
-        ->orWhere('diachinha','like','%'.$request->key.'%')->get();
 
-        return view('Admin.Manager.ManagerAccount.index',compact("search",'user'));
+        $search = Customer::where('kanji_name','like','%'.$request->key.'%')
+            ->orWhere('account_number',$request->key)->orWhere('phone_number','like','%'.$request->key.'%')
+            ->orWhere('address','like','%'.$request->key.'%')->get();
+        return view('Admin.searchview.index',compact("search"));
     }
 
     public function show($id)
@@ -51,7 +51,7 @@ class UserController extends Controller
             "static" =>$req->static
         ]);
         $cus->save();
-        return redirect()->route("showChanger");
+        return redirect()->route("checkImager");
     }
 
     public function checkImager() {

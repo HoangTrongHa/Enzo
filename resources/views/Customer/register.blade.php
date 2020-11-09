@@ -17,7 +17,7 @@
             @method("POST")
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
-                    Ten chu han
+                    かんじ名 chu han
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
@@ -29,7 +29,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
-                    tenphienam
+                    音名 phienam
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
@@ -41,19 +41,19 @@
             </div>
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
-                    Gioi tinh
+                    セックス
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
                     <div class="form-item form-group row">
 
                         <div class="item-input col-sm-8">
-                            <select class="custom-select form-custom" name="male" value="{{ old('male') }}">
+                            <select class="custom-select form-custom" name="male" value="{{ old('male') }}" style="width: 14%; background: #eeeeee;border: 1px solid;}">
                                 <option selected hidden></option>
                                 <option {{old('male') == "男" ? 'selected' : ''}} value="男">男</option>
                                 <option {{old('male') == "女" ? 'selected' : ''}} value="既婚">女</option>
                             </select>
-                            @error('family_structure')
+                            @error('male')
                             <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
                             @enderror
                         </div>
@@ -61,17 +61,10 @@
 
 
                 </div>
-
-
-
-
-
-
-
             </div>
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
-                    Sinh nhat
+                    生年月日
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
@@ -116,18 +109,15 @@
 
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
-                    家族の一員 thanh phan gia dinh
+                    家族の一員
                 </div>
-                {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
                     <div class="form-item form-group row">
-                        <label class="item-title col-sm-4">家族構成</label>
                         <div class="item-input col-sm-8">
-                            <select class="custom-select form-custom" name="thanhphangiadinh"
-                                    value="{{ old('thanhphangiadinh') }}">
+                            <select class="custom-select form-custom" name="family_structure" value="{{ old('family_structure') }}" style="width: 14%; background: #eeeeee;border: 1px solid;}">
                                 <option selected hidden></option>
-                                <option {{old('thanhphangiadinh') == "未婚" ? 'selected' : ''}} value="未婚">未婚</option>
-                                <option {{old('thanhphangiadinh') == "既婚" ? 'selected' : ''}} value="既婚">既婚</option>
+                                <option {{old('family_structure') == "男" ? 'selected' : ''}} value="未婚">未婚</option>
+                                <option {{old('family_structure') == "女" ? 'selected' : ''}} value="既婚">既婚</option>
                             </select>
                             @error('family_structure')
                             <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
@@ -138,6 +128,8 @@
 
                 </div>
             </div>
+
+
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
                     住 所 Dia chi
@@ -308,25 +300,59 @@
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
-                    <input type="text" name="thoigianlamviec" class="@error("thoigianlamviec") is-invalid  @enderror">
-                    @error("thoigianlamviec")
-                    <span class="error invalid-feedback">{{$message}}</span>
-                    @enderror
+                    <div class="form-item form-group row">
+                        <div class="item-input col-sm-10">
+                            <select id="thoigianlamviec" class="custom-select form-custom" name="thoigianlamviec"
+                                    value="{{ old('thoigianlamviec') }}">
+                                <option selected hidden></option>
+                                <option {{old('thoigianlamviec') == "1 時間" ? 'selected' : ''}} value="未婚">1 時間</option>
+                                <option {{old('thoigianlamviec') == "2 時間" ? 'selected' : ''}} value="既婚">2 時間</option>
+                                <option {{old('thoigianlamviec') == "3 時間" ? 'selected' : ''}} value="既婚">3 時間</option>
+                                <option {{old('thoigianlamviec') == "4 時間" ? 'selected' : ''}} value="既婚">4 時間</option>
+                                <option {{old('thoigianlamviec') == "5 時間" ? 'selected' : ''}} value="既婚">5 時間</option>
+                                <option {{old('thoigianlamviec') == "6 時間" ? 'selected' : ''}} value="既婚">6 時間</option>
+                                <option {{old('thoigianlamviec') == "7 時間" ? 'selected' : ''}} value="既婚">7 時間</option>
+                                <option {{old('thoigianlamviec') == "8 時間" ? 'selected' : ''}} value="既婚">8 時間</option>
+                                <option {{old('thoigianlamviec') == "9 時間" ? 'selected' : ''}} value="既婚">9 時間</option>
+                                <option {{old('thoigianlamviec') == "ああ" ? 'selected' : ''}} value="既婚">ああ</option>
+                            </select>
+                            @error('thoigianlamviec')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-2 col-form-label item-left">
-                    疑わしい時間
+                    労働時間 thoigiannghi
                 </div>
                 {{--            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>--}}
                 <div class="col-sm-10 item-right">
-                    <input type="text" name="thoigiannghi" class="@error("thoigiannghi") is-invalid  @enderror">
-                    @error("thoigiannghi")
-                    <span class="error invalid-feedback">{{$message}}</span>
-                    @enderror
-
+                    <div class="form-item form-group row">
+                        <div class="item-input col-sm-10">
+                            <select id="thoigianlamviec" class="custom-select form-custom" name="thoigiannghi"
+                                    value="{{ old('thoigiannghi') }}">
+                                <option selected hidden></option>
+                                <option {{old('thoigiannghi') == "1 時間" ? 'selected' : ''}} value="未婚">1 時間</option>
+                                <option {{old('thoigiannghi') == "2 時間" ? 'selected' : ''}} value="既婚">2 時間</option>
+                                <option {{old('thoigiannghi') == "3 時間" ? 'selected' : ''}} value="既婚">3 時間</option>
+                                <option {{old('thoigiannghi') == "4 時間" ? 'selected' : ''}} value="既婚">4 時間</option>
+                                <option {{old('thoigiannghi') == "5 時間" ? 'selected' : ''}} value="既婚">5 時間</option>
+                                <option {{old('thoigiannghi') == "6 時間" ? 'selected' : ''}} value="既婚">6 時間</option>
+                                <option {{old('thoigiannghi') == "7 時間" ? 'selected' : ''}} value="既婚">7 時間</option>
+                                <option {{old('thoigiannghi') == "8 時間" ? 'selected' : ''}} value="既婚">8 時間</option>
+                                <option {{old('thoigiannghi') == "9 時間" ? 'selected' : ''}} value="既婚">9 時間</option>
+                                <option {{old('thoigiannghi') == "ああ" ? 'selected' : ''}} value="既婚">ああ</option>
+                            </select>
+                            @error('thoigiannghi')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
                 </div>
             </div>
+
 
 
             <div class="row">
@@ -376,7 +402,7 @@
             <div class="clear"></div>
             <section>
                 <div class="container">
-                    <input type="radio" id="dewey" name="drone" value="dewey" style="width: 5%;">
+                    <input type="radio" id="dewey" name="drone" value="dewey" style="width: 5%;" require>
                     <label for="dewey">●個人情報の取り扱いについて</label>
                 </div>
             </section>
@@ -459,6 +485,14 @@
     </div>
 
     <style>
+        select{
+            margin-top: 3%;
+            background: #eeeeee;
+            border: 1px solid;
+        }
+        #thoigianlamviec{
+       width: 14%;background: #eee;border: 1px solid;
+        }
         #login-column {
             border-radius: 15px;
         }

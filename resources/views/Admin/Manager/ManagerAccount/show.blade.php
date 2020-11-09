@@ -23,7 +23,7 @@
                                         かんじ名</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$customer->tenchuhan}}</p>
+                                    <p>{{$customer->kanji_name}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -32,7 +32,7 @@
                                         電話名</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$customer->tenphienam}}</p>
+                                    <p>{{$customer->name_transliteration}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -47,28 +47,19 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>
-                                        携帯電話番号</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>{{$customer->sodienthoaicodinh}}</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>
-                                        作業位置</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>{{$customer->songuoilam}}</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>
                                         有効な電話番号</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$customer->sodienthoaididong}}</p>
+                                    <p>{{$customer->phone_number}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>
+                                        携帯電話番号</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$customer->landline_number}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -81,6 +72,25 @@
                                     <p>{{$customer->email}}</p>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>
+                                        本部</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$customer->company}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>
+                                        作業位置</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$customer->num_people}}</p>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>
@@ -90,49 +100,24 @@
                                     <p>{{$customer->linkweb}}</p>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>
-                                        本部</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>{{$customer->truso}}</p>
-                                </div>
-                            </div>
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>
                                         会社の電話番号</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$customer->sdtcty}}</p>
+                                    <p>{{$customer->company_phone}}</p>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>
-                                        社内の人数</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>{{$customer->songuoilam}}</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>
-                                        社内の人数</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>{{$customer->songuoilam}}</p>
-                                </div>
-                            </div>
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>
                                         就業年</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$customer->namcongtac}}</p>
+                                    <p>{{$customer->work_year}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -141,7 +126,16 @@
                                         労働時間</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$customer->thoigianlamviec}}</p>
+                                    <p>{{$customer->work_time}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>
+                                        労働時間</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{$customer->position}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -151,7 +145,7 @@
                                         疑わしい時間</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$customer->thoigiannghi}}</p>
+                                    <p>{{$customer->work_break}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -161,7 +155,7 @@
                                         保証人の名前</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$customer->nguoibaolanh}}</p>
+                                    <p>{{$customer->protector}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -172,7 +166,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$customer->diachinguoibaolanh}}</p>
+                                    <p>{{$customer->guardian_address}}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -183,7 +177,7 @@
                                     </label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{$customer->sdtnguoibaolanh}}</p>
+                                    <p>{{$customer->phone_number_guard}}</p>
                                 </div>
                             </div>
                             <div class="row">

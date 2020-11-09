@@ -30,9 +30,9 @@
                                     </div>
                             </div>
                         </th>
-                        <th>{{$list->tenphienam}}</th>
-                        <th>{{$list->tenchuhan}}</th>
-                        <th>{{$list->sodienthoaididong}}</th>
+                        <th>{{$list->name_transliteration}}</th>
+                        <th>{{$list->kanji_name}}</th>
+                        <th>{{$list->phone_number}}</th>
                         <th>{{$list->checklogin}}</th>
                         <th>
                             <a href="{{route("showgrantRightAdmin",['id' => $list->id])}}" class="badge badge-success badge-pill">Change</a>

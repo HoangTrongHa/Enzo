@@ -47,12 +47,8 @@ class LoginController extends Controller
         return view("auth.login");
     }
 
-    public function adminLogin(AdminCreateRequest $request)
+    public function postLoginAdmin(AdminCreateRequest $request)
     {
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required|min:3|max:20',
-        ]);
         if ($this->attemptLogin($request)) {
             return redirect()->route("home.admin");
         }

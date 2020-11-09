@@ -18,7 +18,6 @@ class CustomerController extends Controller
 {
 
 
-
     public function index()
     {
         return view("Customer.index");
@@ -33,33 +32,39 @@ class CustomerController extends Controller
     {
         $birthday = ($request->birth_year) . "/" . ($request->birth_month) . "/" . ($request->birth_day);
         $sinhnhat = $birthday;
-        $cus = Customer::create([
-            "tenchuhan" => $request->tenchuhan,
-            "tenphienam" => $request->tenphienam,
-            "male" => $request->male,
-            "sinhnhat" => $sinhnhat,
-            "thanhphangiadinh" => $request->thanhphangiadinh,
-            "diachinha" => $request->diachinha,
-            "sodienthoaicodinh" => $request->sodienthoaicodinh,
-            "sodienthoaididong" => $request->sodienthoaididong,
-            "email" => $request->email,
-            "linkweb" => $request->linkweb,
-            "truso" => $request->truso,
-            "sdtcty" => $request->sdtcty,
-            "songuoilam" => $request->songuoilam,
-            "chucvu" => $request->chucvu,
-            "namcongtac" => $request->namcongtac,
-            "thoigianlamviec" => $request->thoigianlamviec,
-            "thoigiannghi" => $request->thoigiannghi,
-            "nguoibaolanh" => $request->nguoibaolanh,
-            "diachinguoibaolanh" => $request->diachinguoibaolanh,
-            "sdtnguoibaolanh" => $request->sdtnguoibaolanh,
-            'password' => Hash::make($request['password']),
-        ]);
-        if ($cus) {
-            return redirect()->route("login")->with("success", "Sign Up Success...");
+        try {
+            $cus = Customer::create([
+                "kanji_name" => $request->tenchuhan,
+                "name_transliteration" => $request->tenphienam,
+                "male" => $request->male,
+                "birthday" => $sinhnhat,
+                "family_structure" => $request->family_structure,
+                "address" => $request->diachinha,
+                "landline_number" => $request->sodienthoaicodinh,
+                "phone_number" => $request->sodienthoaididong,
+                "email" => $request->email,
+                "linkweb" => $request->linkweb,
+                "company" => $request->truso,
+                "company_phone" => $request->sdtcty,
+                "num_people" => $request->songuoilam,
+                "position" => $request->chucvu,
+                "work_year" => $request->namcongtac,
+                "work_time" => $request->thoigianlamviec,
+                "work_break" => $request->thoigiannghi,
+                "protector" => $request->nguoibaolanh,
+                "guardian_address" => $request->diachinguoibaolanh,
+                "phone_number_guard" => $request->sdtnguoibaolanh,
+                'password' => Hash::make($request['password']),
+            ]);
+            if ($cus) {
+                return redirect()->route("login")->with("success", "Sign Up Success...");
+            }
+            return redirect()->back()->with("error", "Registration failed...");
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            return back();
         }
-        return redirect()->back()->with("error", "Registration failed...");
+
     }
 
     public function application()
@@ -68,7 +73,7 @@ class CustomerController extends Controller
         $up = $static->upload()->first();
 
         if ($up == null) {
-            return view("Customer.application",compact("static"));
+            return view("Customer.application", compact("static"));
         } else {
             if ($static->static == 1) {
                 return view("Customer.confirm");
@@ -78,7 +83,7 @@ class CustomerController extends Controller
         }
     }
 
-    public function upload(Request $request,$id)
+    public function upLoad(Request $request, $id)
     {
         try {
             if ($request->hasFile("avatar") || $request->hasFile('front') || $request->hasFile("idnhanhvien")
@@ -112,12 +117,12 @@ class CustomerController extends Controller
             $cus = Auth::guard("Customer")->user()->FindOrFail($id);
             $cus->update([
                 "name-bank" => $request->name_bank,
-                "account_holder" =>$request->account_holder,
+                "account_holder" => $request->account_holder,
                 "account_type" => $request->account_type,
-                "account_number" =>$request->account_number,
+                "account_number" => $request->account_number,
             ]);
             return view("Customer.confirm");
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             DB::rollBack();
             return back();
         }
@@ -127,31 +132,40 @@ class CustomerController extends Controller
     public function loan()
     {
         $static = Auth::guard("Customer")->user();
-        if ($static->loancus == null) {
+//        if ($static->static == 2 && ( $static->loancus == null || $static->loancustomer == 0) && ($static->loancus ==null || $static->loancus )) {
+//                return view("Customer.loan", compact("static"));
+//        } elseif ($static->static == 3 && ($static->maxtotal != 0 || $static->maxtotal != null) ) {
+//            return redirect()->route("sinsei3");
+//        } elseif ($static->static == 4) {
+//            return view("Customer.loan", compact("static"));
+//        } elseif ($static->static == 5) {
+//            return view("Customer.Confirm");
+//        } elseif ($static->static == 6) {
+//            return view("Customer.loan", compact("static"));
+//        }
+//        return view("Customer.Confirm");
+        if ($static->static == 2) {
             return view("Customer.loan", compact("static"));
-        } else {
-            if ($static->loancus != null && $static->receive != null) {
-                $his = History::where("customerid", $static->id)->first();
-                if ($his == null) {
-                    if ($static->loanrefund == null) {
-
-                        return redirect()->route("sinsei3");
-                    } else {
-                        return view("Customer.confirm");
-                    }
-                } else {
-                    return view("Customer.loan", compact("static"));
-                }
-            } else {
-                if ($static->maxtotal != null && $static->borrowing != null && $static->receive != null && $static->payment_term != null) {
-                    return view("Customer.loan", compact("static"));
-                }
-            }
+        } elseif ($static->static == 3) {
             return view("Customer.confirm");
+        } elseif ($static->static == 4) {
+            return redirect()->route("sinsei3");
+        } elseif ($static->static == 5) {
+            return view("Customer.confirm");
+        } elseif ($static->static == 6) {
+            return view("Customer.loan", compact("static"));
+        } elseif ($static->static == 7) {
+            return view("Customer.confirm");
+        } elseif ($static->static == 8) {
+            return view("Customer.loan", compact("static"));
+        } elseif ($static->static == 8 && $static->loanrefund != 0) {
+            return view("Customer.confirm");
+        } elseif ($static->static == 9) {
+            return view("Customer.loan", compact("static"));
         }
     }
 
-    public function sinsei()
+    public function sinSei()
     {
         return view("Customer.sinsei");
     }
@@ -161,21 +175,20 @@ class CustomerController extends Controller
         $id = Auth::guard("Customer")->user()->id;
         $cus = Customer::FindOrFail($id);
         $cus->loancus = $req->loancus;
+        $cus->static = 3;
         $cus->save();
         return view("Customer.confirm");
 
     }
 
-    public function sinsei3()
+    public function sinSei3()
     {
         $cus = Auth::guard("Customer")->user();
-        return view("Customer.sinssei3", compact("cus"));
-    }
-
-    public function customerbanking()
-    {
-        $cus = Auth::guard("Customer")->user();
-        return view("Customer.banking", compact("cus"));
+        if ($cus->static == 4) {
+            return view("Customer.sinssei3", compact("cus"));
+        } else {
+            return view("Customer.confirm");
+        }
     }
 
     public function postSinsei3(Request $req, $id)
@@ -185,32 +198,51 @@ class CustomerController extends Controller
             $cus = Auth::guard("Customer")->user()->FindOrFail($id);
 
             $cus->update([
-                "loancustomer" => $req->loancustomer
+                "loancustomer" => $req->loancustomer,
+                "static" => 5
             ]);
-
             History::create([
                 "customerid" => $req->customerid,
                 "maxtotal" => $req->maxtotal,
                 "Deducted" => $req->borrowing,
                 "receive" => $req->receive,
-                "payment_term" => $req->payment_term
+                "payment_term" => $req->payment_term,
+
             ]);
             DB::commit();
 
             return redirect()->route("loan");
         } catch (\Exception $exception) {
             DB::rollBack();
-            return back() ;
+            return back();
         }
 
     }
+
+
+    public function customerBanking()
+    {
+        $cus = Auth::guard("Customer")->user();
+        return view("Customer.banking", compact("cus"));
+    }
+
     public function postBankingCus($id, Request $req)
     {
-        $cus = Auth::guard("Customer")->user()->FindOrFail($id);
-        $cus->loanrefund = $req->loanrefund;
-        $cus->save();
-        return view("Customer.confirm");
+        try {
+            $cus = Auth::guard("Customer")->user()->FindOrFail($id);
+            if ($cus->static == 8) {
+                $cus->loanrefund = $req->loanrefund;
+            } else {
+                $cus->loanrefund = $req->loanrefund;
+                $cus->static = 7;
+            }
+            $cus->save();
+            return view("Customer.confirm");
 
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            return back();
+        }
     }
 
     public function moneyR()

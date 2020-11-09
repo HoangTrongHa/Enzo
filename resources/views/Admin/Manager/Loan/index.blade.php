@@ -44,12 +44,18 @@
                                     @endif
                                 </div>
                             </th>
-                            <th>{{$list->tenphienam}}</th>
-                            <th>{{$list->tenchuhan}}</th>
-                            <th>{{$list->sodienthoaididong}}</th>
+                            <th>{{$list->name_transliteration}}</th>
+                            <th>{{$list->kanji_name}}</th>
+                            <th>{{$list->phone_number}}</th>
                             <th>{{$list->checklogin}}</th>
                             <th>
-                                <a href="{{route("loan.createLoan",[$list->id])}}" class="badge badge-success badge-pill">Change</a>
+                                @if($list->static ==3)
+                                <a href="{{route("loan.createLoan",[$list->id])}}"
+                                   class="badge badge-success badge-pill">Change</a>
+                                @else
+                                    <a href="{{route("loan.createLoan",[$list->id])}}"
+                                       class="badge badge-warning">Check</a>
+                                @endif
                             </th>
                         </tr>
                     @endforeach
@@ -58,49 +64,70 @@
             </div>
         </div>
     </div>
+    {!! $user->links() !!}
     <style>
-        th{
+        th {
             text-align: center;
         }
+
         .four .button-wrap {
             width: 100px;
             margin: 40px auto 0;
             cursor: pointer;
         }
+
         .four .button-bg {
             width: 100%;
             height: 100%;
             background-color: #bb2222;
             border-radius: 40px;
             padding: 3px;
-            color:#fff;
-            transition:all 0.2s ease;
+            color: #fff;
+            transition: all 0.2s ease;
         }
+
         .four .button-switch {
-            position:relative;
-            left:0px;
+            position: relative;
+            left: 0px;
             width: 44px;
             height: 44px;
-            border:solid 13px;
-            background-color:#fff;
+            border: solid 13px;
+            background-color: #fff;
             border-radius: 36px;
-            transition:all 0.2s ease;
+            transition: all 0.2s ease;
         }
-        .four .button-active .button-switch { left:50px; }
+
+        .four .button-active .button-switch {
+            left: 50px;
+        }
+
         .four .button-in,
         .four .button-out {
-            position:absolute;
-            transition:all 0.2s ease;
-            padding-top:15px;
-            font-size:0.8em;
-            text-transform:uppercase;
-            font-weight:bold;
+            position: absolute;
+            transition: all 0.2s ease;
+            padding-top: 15px;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            font-weight: bold;
         }
-        .four .button-in { margin-left:76px; }
-        .four .button-out { margin-left:18px; }
-        .four .button-active .button-out {  }
-        .four .button-active .button-in {  }
-        .four .button-active .button-bg { background-color:#22bb22; }
+
+        .four .button-in {
+            margin-left: 76px;
+        }
+
+        .four .button-out {
+            margin-left: 18px;
+        }
+
+        .four .button-active .button-out {
+        }
+
+        .four .button-active .button-in {
+        }
+
+        .four .button-active .button-bg {
+            background-color: #22bb22;
+        }
 
     </style>
 
