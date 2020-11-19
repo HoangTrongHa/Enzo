@@ -31,13 +31,12 @@ class CustomerController extends Controller
     public function PostRegister(CustomerRegister $request)
     {
         $birthday = ($request->birth_year) . "/" . ($request->birth_month) . "/" . ($request->birth_day);
-        $sinhnhat = $birthday;
         try {
             $cus = Customer::create([
                 "kanji_name" => $request->tenchuhan,
                 "name_transliteration" => $request->tenphienam,
                 "male" => $request->male,
-                "birthday" => $sinhnhat,
+                "birthday" => $birthday,
                 "family_structure" => $request->family_structure,
                 "address" => $request->diachinha,
                 "landline_number" => $request->sodienthoaicodinh,
@@ -55,6 +54,10 @@ class CustomerController extends Controller
                 "guardian_address" => $request->diachinguoibaolanh,
                 "phone_number_guard" => $request->sdtnguoibaolanh,
                 'password' => Hash::make($request['password']),
+                'type_of_residence' =>$request->type_of_residence,
+                'electricmail' => $request->electricmail,
+                'head_office_address' => $request->head_office_address,
+                'number_of_residents' => $request->number_of_residents,
             ]);
             if ($cus) {
                 return redirect()->route("login")->with("success", "Sign Up Success...");
@@ -66,7 +69,6 @@ class CustomerController extends Controller
         }
 
     }
-
     public function application()
     {
         $static = Auth::guard("Customer")->user();
@@ -82,7 +84,6 @@ class CustomerController extends Controller
             }
         }
     }
-
     public function upLoad(Request $request, $id)
     {
         try {

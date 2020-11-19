@@ -11,7 +11,8 @@ class Customer extends Authenticatable
     protected $fillable = ["kanji_name","name_transliteration","male","birthday","family_structure","address","landline_number","phone_number",
         "password","email","linkweb","company","company_phone","num_people","position","work_year","work_time","work_break","protector",
         "guardian_address","phone_number_guard","static","maxtotal","borrowing","receive","payment_term","checklogin","loancus",
-        "loancustomer","loanrefund","account_number","account_holder","account_type","name-of-financial-institution","name-bank"];
+        "loancustomer","loanrefund","account_number","account_holder","account_type","name-of-financial-institution","name-bank",
+        "type_of_residence","electricmail","head_office_address","number_of_residents"];
     protected $hidden =[
         "password",'remember_token',
     ];
@@ -32,5 +33,4 @@ class Customer extends Authenticatable
     {
         return $this->hasMany(History::class, 'customerid');
     }
-
 }

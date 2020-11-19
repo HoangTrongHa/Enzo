@@ -45,7 +45,6 @@ Route::group(["prefix" => "admin"], function () {
             Route::get("/listAccount", "\App\Http\Controllers\Admin\UserController@index")->name("listAccount");
             Route::get('/send-email/destroy/{id}', '\App\Http\Controllers\Admin\MailController@refuse')->name("mail-refuse");
             Route::get('/send-email/moneytransfer/{id}', '\App\Http\Controllers\Admin\MailController@moneyTransfer')->name("money-transfer");
-
             Route::get("/app-new","\App\Http\Controllers\Admin\NewappController@index")->name("index-appnew");
             Route::get("/UserAccount/app-new/{id}", "\App\Http\Controllers\Admin\NewappController@show")->name("show-app");
 
@@ -78,15 +77,12 @@ Route::group(["prefix" => "admin"], function () {
     });
 
 });
-
-
 Route::get("/", "\App\Http\Controllers\Customer\CustomerController@index")->name("home");
 Route::get("/loginCustomer", "\App\Http\Controllers\Customer\LoginController@showLoginForm")->name("login");
 Route::post("/postlogin-cus", "\App\Http\Controllers\Customer\LoginController@loginUser")->name("postlogin-cus");
 Route::get("/registerCustomer", "\App\Http\Controllers\Customer\CustomerController@Register")->name("registercustomer");
 Route::post("/postregisterCustomer", "\App\Http\Controllers\Customer\CustomerController@PostRegister")->name("postRegister");
 Route::get("/application", "\App\Http\Controllers\Customer\CustomerController@application")->name("application");
-
 Route::group(['middleware' => 'customer'], function () {
     Route::get("/application", "\App\Http\Controllers\Customer\CustomerController@application")->name("application");
     Route::post("/postProfile/{id}", "\App\Http\Controllers\Customer\CustomerController@upLoad")->name("upload");

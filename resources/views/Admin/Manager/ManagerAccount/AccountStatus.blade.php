@@ -2,13 +2,8 @@
 @section("content")
     <div class="container emp-profile">
         <div id="img-profile">
-
-
             @foreach($customer->upload as $list)
-
                 <div class="container">
-
-
                     <div class="gallery">
                         <img src="{{Storage::URL($list->avatar)}}" alt="" data-toggle="modal" data-bigimage="{{Storage::URL($list->avatar)}}" data-target="#myModal" class="img-fluid img-modal">
                         <img src="{{Storage::URL($list->luong)}}" alt="" data-toggle="modal" data-bigimage="{{Storage::URL($list->luong)}}"  data-target="#myModal" class="img-fluid img-modal">
@@ -35,11 +30,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
             @endforeach
         </div>
         <div class="row">
@@ -315,7 +305,6 @@
 
 
     </style>
-
     <script>
         $(document).ready(function() {
             var $imageSrc;
@@ -331,5 +320,4 @@
             })
         });
     </script>
-
 @endsection

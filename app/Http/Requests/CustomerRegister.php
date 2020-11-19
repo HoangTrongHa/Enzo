@@ -15,7 +15,6 @@ class CustomerRegister extends FormRequest
     {
         return true;
     }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -25,49 +24,85 @@ class CustomerRegister extends FormRequest
     {
         return [
             "tenchuhan" => "required  | min:3",
-            "tenphienam" =>  "required  | min:3",
+
+            "tenphienam" => "required  | min:3",
+
+            "male" => "required",
+
             "diachinha" => "required | max:255",
-            "sodienthoaicodinh" => "min:10| max:11",
-            "sodienthoaididong" => "min:10| max:11",
-            "password" => "min:3",
-            "email" => "required",
-            "linkweb"=>"required",
-            "truso"=>"required",
-            "sdtcty"=>"required",
-            "songuoilam"=>"required",
-            "chucvu"=>"required",
-            "namcongtac"=>"required",
-            "thoigianlamviec"=>"required",
-            "thoigiannghi"=>"required",
-            "nguoibaolanh"=>"required",
-            "diachinguoibaolanh"=>"required",
-            "sdtnguoibaolanh"=>"required",
+
+            "sodienthoaicodinh" => "min:3| max:15 | required",
+
+            "sodienthoaididong" => "min:3| max:15  | required",
+
+            "electricmail" => "required | max:50 |required_with:electricmail-confirm|same:electricmail-confirm",
+
+            "electricmail-confirm" => "required | max:50",
+
+            "email" => "required |max:50 |required_with:email-confirm|same:email-confirm",
+            "email-confirm" => "required | max:50",
+
+            "password" => "required |max:50 |required_with:password-confirm|same:password-confirm",
+            "password-confirm" => "required | max:50",
+
+            "truso" => "required",
+            "head_office_address" => "required",
+
+            "sdtcty" => "required",
+
+            "nguoibaolanh" => "required",
+
+            "diachinguoibaolanh" => "required",
+            "sdtnguoibaolanh" => "required",
+            "checkbox" => "required"
         ];
     }
     public function messages()
     {
         return [
-            'tenchuhan.required' => __('Bạn chưa nhập Username.'),
-            'tenchuhan.min' => __('Ong than Phai Nhap TREN 3 KY TU.'),
-            'tenphienam.required' => __('Bạn chưa nhập Username.'),
-            'tenphienam.min' => __('Ong than Phai Nhap TREN 3 KY TU.'),
-            'diachinha.required' => __('Bạn chưa nhập Username'),
-            'diachinha.min' => __('Ong than Phai Nhap TREN 3 KY TU.'),
-            'sodienthoaicodinh.required' => __('Bạn chưa nhập Username'),
-            'sodienthoaididong.required' => __('Bạn chưa nhập Username'),
-            'matkhau.required' => __('Bạn chưa nhập Username'),
-            'email.required' => __('Bạn chưa nhập Username'),
-            'linkweb.required' => __('Bạn chưa nhập Username'),
-            'truso.required' => __('Bạn chưa nhập Username'),
-            'sdtcty.required' => __('Bạn chưa nhập Username'),
-            'songuoilam.required' => __('Bạn chưa nhập Username'),
-            'chucvu.required' => __('Bạn chưa nhập Username'),
-            'namcongtac.required' => __('Bạn chưa nhập Username'),
-            'thoigianlamviec.required' => __('Bạn chưa nhập Username'),
-            'nguoibaolanh.required' => __('Bạn chưa nhập Username'),
-            'thoigiannghi.required' => __('Bạn chưa nhập Username'),
-            'diachinguoibaolanh.required' => __('Bạn chưa nhập Username'),
-            'sdtnguoibaolanh.required' => __('Bạn chưa nhập Username'),
+            'tenchuhan.required' => __('漢字名を入力していません.'),
+            'tenchuhan.min' => __('名前は短すぎる.'),
+            'tenphienam.required' => __('漢字名を入力していません.'),
+            'tenphienam.min' => __('名前は短すぎる.'),
+            'male.required' => __('見逃してはいけません.'),
+
+            'diachinha.required' => __('見逃してはいけません'),
+            'diachinha.max' => __('長すぎる.'),
+
+            'sodienthoaicodinh.required' => __('見逃してはいけません.'),
+            'sodienthoaicodinh.min' => __('短すぎる.'),
+            'sodienthoaicodinh.max' => __('短すぎる.'),
+
+            'sodienthoaididong.required' => __('見逃してはいけません.'),
+            'sodienthoaididong.min' => __('短すぎる.'),
+            'sodienthoaididong.max' => __('短すぎる.'),
+
+            'electricmail.required'  => __('見逃してはいけません.'),
+            'electricmail.max' => __('短すぎる.'),
+
+            'electricmail-confirm'=> __('見逃してはいけません.'),
+            'electricmail-confirm.max' => __('短すぎる.'),
+
+            'email.required'  => __('見逃してはいけません.'),
+            'email.max' => __('短すぎる.'),
+
+            'email-confirm'=> __('見逃してはいけません.'),
+            'email-confirm.max' => __('短すぎる.'),
+
+            'password.required'  => __('見逃してはいけません.'),
+            'password.max' => __('短すぎる.'),
+
+            'password-confirm'=> __('見逃してはいけません.'),
+            'password-confirm.max' => __('短すぎる.'),
+
+            'truso.required'  => __('見逃してはいけません.'),
+            'head_office_address.required'  => __('見逃してはいけません.'),
+            'nguoibaolanh.required'  => __('見逃してはいけません.'),
+            'sdtcty.required'  => __('見逃してはいけません.'),
+
+            'diachinguoibaolanh.required' => __('見逃してはいけません.'),
+            'sdtnguoibaolanh.required' => __('見逃してはいけません.'),
+            'checkbox.required' => __('新しい振動アカウントを受け入れることができます登録できます'),
         ];
     }
 }
