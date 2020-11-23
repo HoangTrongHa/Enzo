@@ -31,8 +31,8 @@ class userlogin extends FormRequest
     public function messages()
     {
         return [
-            "email" => "required",
-            "password" => "required"
+            'password.required' => __('見逃してはいけません.'),
+            'email.required' => __('見逃してはいけません.'),
         ];
     }
 }

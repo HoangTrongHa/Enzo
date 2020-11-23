@@ -25,13 +25,54 @@
     </div>
     @include("Admin.Components.profile")
     <div class="button-submit">
-            <span class="text-left">
 
-                <a href="{{route("post-showbanking",[$cus->id])}}"
-                   class="btn btn-space btn-primary update-profile">送金手続き</a>
-            </span>
+                <a type="button" class="btn btn-primary update-profile" data-toggle="modal" data-target="#agree">
+                           <span class="text-left">
+                               送金手続き</span>
+                </a>
+        <form action="{{route("post-showbanking",[$cus->id])}}" method="POST">
+            @csrf
+            @method("POST")
+        <div class="modal fade" id="agree">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">転送確認</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>かんじ名</th>
+                                <th>払込金額</th>
+                                <th>支払条件</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{$cus->kanji_name}}</td>
+                                <td>{{$cus->receive}}</td>
+                                <td>{{$cus->payment_term}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">やめる</button>
+                        <button type="submit" class="btn btn-primary">確認</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+
+
         <span class="text-left">
-                <a href=" {{route("money-transfer",[$cus->id])}}" class="btn btn-space btn-primary update-profile">確認メール</a>
+                <a href=" {{route("money-transfer",[$cus->id])}}"
+                   class="btn btn-space btn-primary update-profile">確認メール</a>
             </span>
         <span class="text-left">
                 <a href="{{route("mail-refuse",[$cus->id])}}" class="btn btn-space btn-primary update-profile">非承認</a>
@@ -83,6 +124,9 @@
 
         .profile-banking {
             margin-top: 10%;
+        }
+        .modal-content{
+            color: black;
         }
     </style>
 

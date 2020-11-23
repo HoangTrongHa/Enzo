@@ -1,109 +1,76 @@
 @extends("Customer.Components.layout")
 
 @section("content")
-    <section style="background:#01897b ">
-        <div class="container">
-            <h1 class="login-h1">申し込み</h1>
+    <section id="banner-register">
+        <div class="title-register">
+            <span>申し込み</span>
         </div>
     </section>
-    <section>
-        <div class="container" style="margin: 5% auto;">
-            <div class="container">
-                <div id="login-row" class="row justify-content-center align-items-center">
-                    <div class="col-md-6 show-result">
-                        <form action="{{route("postSinsei3",[$cus->id])}}" method="POST">
-                            @csrf
-                            @method("POST")
-                            <div class="container">
+    <section id="sinse-3">
+        <div class="container">
+            <div class="sinse-3">
 
-                                <div class="confirm-cus">
-                                    <span>
-                                        結果
-                                    </span>
-                                </div>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-4 sinsei-left">
-                                            <span>借りたい金額</span>
-                                        </div>
-                                        <div class="col-6 amount">
-                                            <span>{{$cus->maxtotal}} </span>
-                                            <input type="hidden" name="maxtotal" value="{{$cus->maxtotal}} ">
-                                            <input type="hidden" name="borrowing" value="{{$cus->borrowing}} ">
-                                            <input type="hidden" name="receive" value="{{$cus->receive}} ">
-                                            <input type="hidden" name="payment_term" value="{{$cus->payment_term}} ">
-                                            <input type="hidden" name="customerid" value="{{$cus->id}}">
-                                            <input type="hidden" name="loancustomer" value="{{$cus->maxtotal}}">
-                                        </div>
+                <form action="{{route("postSinsei3",[$cus->id])}}" method="POST" id="form-sinse-3">
+                    @csrf
+                    @method("POST")
+                    <div class="title-sinse-3">
 
-                                    <div class="col-1  sinsei-left ">
-                                            <span>円</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="row bottom">
-                                        <div class="col-4 sinsei-left">
-                                            <span>受け取ったお金</span>
-                                        </div>
-                                        <div class="col-6 amount">
-                                            <span>{{$cus->receive}} </span>
-                                        </div>
-                                        <div class="col-1  sinsei-left ">
-                                            <span>円</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="type-button">
-                                        <button type="submit" class="btn btn-warning submit-cus">チャップナン
-                                        </button>
-                                        <a type="button" class="btn btn-info dissubmit">Info</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                        <span>〈   検査結果   〉</span>
                     </div>
-                </div>
+                    <div class="total-sinse-3">
+                        <div class="span-forward-to-money">
+                            <span>買取額</span>
+
+                        </div>
+                        <div class="forward-to-money">
+                            <input type="hidden" name="maxtotal" value="{{$cus->maxtotal}} ">
+                            <input type="hidden" name="borrowing" value="{{$cus->borrowing}} ">
+                            <input type="hidden" name="receive" value="{{$cus->receive}} ">
+                            <input type="hidden" name="payment_term" value="{{$cus->payment_term}} ">
+                            <input type="hidden" name="customerid" value="{{$cus->id}}">
+                            <input type="hidden" name="loancustomer" value="{{$cus->maxtotal}}">
+                            <span>{{$cus->maxtotal}}</span><span class="yen-sinse-3">円</span>
+                        </div>
+                    </div>
+                    <div class="total-sinse-3">
+                        <div class="span-forward-to-money">
+                            <span>送金額</span>
+
+                        </div>
+                        <div class="forward-to-money">
+                            <span>{{$cus->receive}} </span><span class="yen-sinse-3">円</span>
+                        </div>
+                    </div>
+                    <div class="title-footer-sinse-3">
+                        <span>上記審査金額でよろしいでしょうか？</span>
+                    </div>
+                    <div class="button-sinse-3">
+                        <div class="button-submit-sinse-3">
+                            <a href="#" id="button-submit-sinse-3">
+                                売却申</a>
+                        </div>
+                        <div class="button-back-sinse-3">
+                            <a href="#">戻る</a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
+
+
     </section>
-    <style>
-        .show-result {
-            background-color: #01897b;
-            color: white;
-            border-radius: 10px;
+    <div class="container container-button-sinse-1">
+        <div id="button-footer">
+            <div class="item-button-footer">
+                <a href="#">チャットで問い合わせる</a>
 
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("button-submit-sinse-3").onclick = function (){
+            document.getElementById("form-sinse-3").submit();
         }
-
-        .confirm-cus {
-            margin: 5% auto;
-            text-align: center;
-        }
-
-        .amount {
-            background-color: #313131;
-            padding: 4%;
-        }
-
-        .sinsei-left {
-            text-align: center;
-            padding: 4%;
-        }
-
-        .bottom {
-            margin-top: 10%;
-        }
-        .type-button{
-            margin-top: 10%;
-            margin-bottom: 10%;
-        }
-        .submit-cus{
-            width: 69%;
-            background-color: #e57b00;
-        }
-        .dissubmit{
-            width: 30%;
-            background-color: #00b7a4;
-        }
-    </style>
+    </script>
 @endsection
 

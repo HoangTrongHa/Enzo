@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Customer;
 
+use App\Http\Requests\AdminCreateRequest;
+use App\Http\Requests\userlogin;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -27,13 +29,11 @@ class LoginController extends Controller
 
     public function loginUser(Request $request)
     {
-
         if ($this->attemptLogin($request)) {
-            return $this->sendLoginResponse($request)->with('success', __('sdgdfgdfgdfgdfgd'));
+            return redirect()->route("home");
         }
         return $this->sendFailedLoginResponse($request);
     }
-
     public function logout(Request $request)
     {
         $this->guard()->logout();
@@ -43,17 +43,21 @@ class LoginController extends Controller
 
     protected function credentials(Request $request)
     {
+
         return [
-            'email' => $request->username,
+            'email' => $request->email,
             'password' => $request->password
         ];
     }
 
-    protected function sendFailedLoginResponse(Request $request)
+    protected function sendLoginResponse(Request $request)
     {
-        throw ValidationException::withMessages([
-            $this->username() => [__('アカウントまたはパスワードが間違っています。')],
-        ]);
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        return $this->authenticated($request, $this->guard()->user())
+            ?: redirect()->intended($this->redirectPath());
     }
 
     protected function guard()
@@ -64,6 +68,7 @@ class LoginController extends Controller
     {
         $user->update([
             "checklogin" => now()->toDateTimeString()
+
         ]);
     }
 

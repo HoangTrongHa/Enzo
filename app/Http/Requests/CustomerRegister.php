@@ -15,6 +15,7 @@ class CustomerRegister extends FormRequest
     {
         return true;
     }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -22,6 +23,7 @@ class CustomerRegister extends FormRequest
      */
     public function rules()
     {
+        $a = 1;
         return [
             "tenchuhan" => "required  | min:3",
 
@@ -31,7 +33,6 @@ class CustomerRegister extends FormRequest
 
             "diachinha" => "required | max:255",
 
-            "sodienthoaicodinh" => "min:3| max:15 | required",
 
             "sodienthoaididong" => "min:3| max:15  | required",
 
@@ -57,6 +58,7 @@ class CustomerRegister extends FormRequest
             "checkbox" => "required"
         ];
     }
+
     public function messages()
     {
         return [
@@ -69,36 +71,33 @@ class CustomerRegister extends FormRequest
             'diachinha.required' => __('見逃してはいけません'),
             'diachinha.max' => __('長すぎる.'),
 
-            'sodienthoaicodinh.required' => __('見逃してはいけません.'),
-            'sodienthoaicodinh.min' => __('短すぎる.'),
-            'sodienthoaicodinh.max' => __('短すぎる.'),
 
             'sodienthoaididong.required' => __('見逃してはいけません.'),
             'sodienthoaididong.min' => __('短すぎる.'),
             'sodienthoaididong.max' => __('短すぎる.'),
 
-            'electricmail.required'  => __('見逃してはいけません.'),
+            'electricmail.required' => __('見逃してはいけません.'),
             'electricmail.max' => __('短すぎる.'),
 
-            'electricmail-confirm'=> __('見逃してはいけません.'),
+            'electricmail-confirm' => __('見逃してはいけません.'),
             'electricmail-confirm.max' => __('短すぎる.'),
 
-            'email.required'  => __('見逃してはいけません.'),
+            'email.required' => __('見逃してはいけません.'),
             'email.max' => __('短すぎる.'),
 
-            'email-confirm'=> __('見逃してはいけません.'),
+            'email-confirm' => __('見逃してはいけません.'),
             'email-confirm.max' => __('短すぎる.'),
 
-            'password.required'  => __('見逃してはいけません.'),
+            'password.required' => __('見逃してはいけません.'),
             'password.max' => __('短すぎる.'),
 
-            'password-confirm'=> __('見逃してはいけません.'),
+            'password-confirm' => __('見逃してはいけません.'),
             'password-confirm.max' => __('短すぎる.'),
 
-            'truso.required'  => __('見逃してはいけません.'),
-            'head_office_address.required'  => __('見逃してはいけません.'),
-            'nguoibaolanh.required'  => __('見逃してはいけません.'),
-            'sdtcty.required'  => __('見逃してはいけません.'),
+            'truso.required' => __('見逃してはいけません.'),
+            'head_office_address.required' => __('見逃してはいけません.'),
+            'nguoibaolanh.required' => __('見逃してはいけません.'),
+            'sdtcty.required' => __('見逃してはいけません.'),
 
             'diachinguoibaolanh.required' => __('見逃してはいけません.'),
             'sdtnguoibaolanh.required' => __('見逃してはいけません.'),

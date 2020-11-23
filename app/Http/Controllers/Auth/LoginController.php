@@ -46,7 +46,6 @@ class LoginController extends Controller
     {
         return view("auth.login");
     }
-
     public function postLoginAdmin(AdminCreateRequest $request)
     {
         if ($this->attemptLogin($request)) {

@@ -29,6 +29,7 @@ class CustomerController extends Controller
     }
 
     public function PostRegister(CustomerRegister $request)
+
     {
         $birthday = ($request->birth_year) . "/" . ($request->birth_month) . "/" . ($request->birth_day);
         try {
@@ -54,7 +55,7 @@ class CustomerController extends Controller
                 "guardian_address" => $request->diachinguoibaolanh,
                 "phone_number_guard" => $request->sdtnguoibaolanh,
                 'password' => Hash::make($request['password']),
-                'type_of_residence' =>$request->type_of_residence,
+                'type_of_residence' => $request->type_of_residence,
                 'electricmail' => $request->electricmail,
                 'head_office_address' => $request->head_office_address,
                 'number_of_residents' => $request->number_of_residents,
@@ -69,6 +70,7 @@ class CustomerController extends Controller
         }
 
     }
+
     public function application()
     {
         $static = Auth::guard("Customer")->user();
@@ -84,6 +86,7 @@ class CustomerController extends Controller
             }
         }
     }
+
     public function upLoad(Request $request, $id)
     {
         try {
@@ -132,7 +135,7 @@ class CustomerController extends Controller
 
     public function loan()
     {
-        $static = Auth::guard("Customer")->user();
+        $cus = Auth::guard("Customer")->user();
 //        if ($static->static == 2 && ( $static->loancus == null || $static->loancustomer == 0) && ($static->loancus ==null || $static->loancus )) {
 //                return view("Customer.loan", compact("static"));
 //        } elseif ($static->static == 3 && ($static->maxtotal != 0 || $static->maxtotal != null) ) {
@@ -145,24 +148,24 @@ class CustomerController extends Controller
 //            return view("Customer.loan", compact("static"));
 //        }
 //        return view("Customer.Confirm");
-        if ($static->static == 2) {
-            return view("Customer.loan", compact("static"));
-        } elseif ($static->static == 3) {
+        if ($cus->static == 2) {
+            return view("Customer.loan", compact("cus"));
+        } elseif ($cus->static == 3) {
             return view("Customer.confirm");
-        } elseif ($static->static == 4) {
+        } elseif ($cus->static == 4) {
             return redirect()->route("sinsei3");
-        } elseif ($static->static == 5) {
+        } elseif ($cus->static == 5) {
             return view("Customer.confirm");
-        } elseif ($static->static == 6) {
-            return view("Customer.loan", compact("static"));
-        } elseif ($static->static == 7) {
+        } elseif ($cus->static == 6) {
+            return view("Customer.loan", compact("cus"));
+        } elseif ($cus->static == 7) {
             return view("Customer.confirm");
-        } elseif ($static->static == 8) {
-            return view("Customer.loan", compact("static"));
-        } elseif ($static->static == 8 && $static->loanrefund != 0) {
+        } elseif ($cus->static == 8) {
+            return view("Customer.loan", compact("cus"));
+        } elseif ($cus->static == 8 && $cus->loanrefund != 0) {
             return view("Customer.confirm");
-        } elseif ($static->static == 9) {
-            return view("Customer.loan", compact("static"));
+        } elseif ($cus->static == 9) {
+            return view("Customer.loan", compact("cus"));
         }
     }
 
@@ -255,9 +258,10 @@ class CustomerController extends Controller
     public function postMoneyR($id, Request $req)
     {
         $cus = Auth::guard("Customer")->user()->FindOrFail($id);
-        $cus->registercus = $req->registercus;
+        $cus->static = 7;
         $cus->save();
 
         return view("Customer.confirm");
     }
+
 }

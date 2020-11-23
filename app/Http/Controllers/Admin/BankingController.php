@@ -6,7 +6,7 @@ use App\Customer;
 use App\History;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use PDF;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 
 class BankingController extends Controller
@@ -31,12 +31,9 @@ class BankingController extends Controller
     public function postShowBanking($id)
     {
         try {
-            $cus = Customer::with(["history" => function ($query) {
-                $query->where("status", 2)->first();
-            }])->FindOrFail($id);
-
-            $pdf = PDF::loadView("Admin.pdf.index", compact("cus"));
-            $pdf->download('bill.pdf') ;
+            $cus = Customer::FindOrFail($id);
+//            $pdf = PDF::loadView("Admin.pdf.index", compact("cus"));
+//            $pdf->download('bill.pdf') ;
             $cus->update([
                 "static" => 6
             ]);

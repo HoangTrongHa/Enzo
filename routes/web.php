@@ -13,8 +13,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
-
 Route::group(["prefix" => "admin"], function () {
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name("logout-ad");
     Route::get('/login-admin', '\App\Http\Controllers\Auth\LoginController@showAdminLoginForm')->name("login-ad");
@@ -50,7 +48,7 @@ Route::group(["prefix" => "admin"], function () {
 
             Route::get("/banking","\App\Http\Controllers\Admin\BankingController@index")->name("index-banking");
             Route::get("/show-banking/{id}","\App\Http\Controllers\Admin\BankingController@showBanking")->name("show-banking");
-            Route::get('/pdf/{id}', '\App\Http\Controllers\Admin\BankingController@postShowBanking')->name("post-showbanking");
+            Route::post('/pdf/{id}', '\App\Http\Controllers\Admin\BankingController@postShowBanking')->name("post-showbanking");
 
             Route::get('/refund', '\App\Http\Controllers\Admin\refundController@index')->name("refund");
             Route::get('/show-refund/{id}', '\App\Http\Controllers\Admin\refundController@showrefund')->name("show-refund");
@@ -80,8 +78,8 @@ Route::group(["prefix" => "admin"], function () {
 Route::get("/", "\App\Http\Controllers\Customer\CustomerController@index")->name("home");
 Route::get("/loginCustomer", "\App\Http\Controllers\Customer\LoginController@showLoginForm")->name("login");
 Route::post("/postlogin-cus", "\App\Http\Controllers\Customer\LoginController@loginUser")->name("postlogin-cus");
-Route::get("/registerCustomer", "\App\Http\Controllers\Customer\CustomerController@Register")->name("registercustomer");
-Route::post("/postregisterCustomer", "\App\Http\Controllers\Customer\CustomerController@PostRegister")->name("postRegister");
+Route::get("/registerCustomer", "Customer\CustomerController@Register")->name("registercustomer");
+Route::post("/registerCustomer", "Customer\CustomerController@PostRegister")->name("postRegister");
 Route::get("/application", "\App\Http\Controllers\Customer\CustomerController@application")->name("application");
 Route::group(['middleware' => 'customer'], function () {
     Route::get("/application", "\App\Http\Controllers\Customer\CustomerController@application")->name("application");

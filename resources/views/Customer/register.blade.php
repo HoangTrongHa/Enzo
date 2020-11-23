@@ -6,13 +6,14 @@
 </head>
 <body>
 @include("Customer.Components.header")
+
 <section id="banner-register">
     <div class="title-register">
-        <span>必要と思われる項目のマスをご用意しております。</span>
+        <span>個人新規申し込み</span>
     </div>
 </section>
 <form action="{{route("postRegister")}}" method="POST">
-    @csrf
+    {{csrf_field()}}
     @method("POST")
 <section id="body-register">
     <div class="container header-body">
@@ -39,7 +40,7 @@
             </div>
             <div class="col-8 right-register">
                 <div class="margin-right-register">
-                    <input  class="input-full" type="text" name="tenchuhan">
+                    <input  class="input-full" type="text" name="tenchuhan" value="{{old("tenchuhan")}}">
                     @error('tenchuhan')
                     <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
                     @enderror
@@ -54,7 +55,7 @@
             </div>
             <div class="col-8 right-register">
                 <div class="margin-right-register">
-                    <input class="input-full" type="text" name="tenphienam">
+                    <input class="input-full" type="text" name="tenphienam" value="{{"tenphienam"}}">
                     @error('tenphienam')
                     <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
                     @enderror
@@ -147,7 +148,7 @@
             </div>
             <div class="col-8 right-register">
                 <div class="margin-right-register">
-                    <input class="input-full" type="text" name="diachinha">
+                    <input class="input-full" type="text" name="diachinha" value="{{old("diachinha")}}">
                     @error("diachinha")
                     <span class="text-danger">{{$message}}</span>
                     @enderror
@@ -196,7 +197,7 @@
             </div>
             <div class="col-8 right-register">
                 <div class="margin-right-register">
-                    <input class="input-full" type="number" name="sodienthoaididong">
+                    <input class="input-full" type="number" name="sodienthoaididong" value="{{old("sodienthoaididong")}}">
                     @error('sodienthoaididong')
                     <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
                     @enderror

@@ -1,77 +1,55 @@
 @extends("Customer.Components.layout")
-
 @section("content")
-    <section style="background:#01897b ">
-        <div class="container">
-            <h1 class="login-h1">申し込み</h1>
-        </div>
-    </section>
-    <section>
-        <div class="container" style="margin: 5% auto;">
+
+    <section id="sinse-2">
+        <form action="{{route("postSinsei")}}" method="POST" id="form-sinse-2">
+            @csrf
+            @method("POST")
             <div class="container">
-                <div id="login-row" class="row justify-content-center align-items-center">
-                    <div id="login-column" class="col-md-6">
-                        <form action="{{route("postSinsei")}}" method="POST">
-                            @csrf
-                            @method("POST")
-                            <div class="container">
-                                <div class="align-items-center loan-app">
-                                    <span class="span-1">so tien van con no</span><br>
-                                    <span class="span-2" style="font-size: 62px;">00,000,00</span>
-                                </div>
-                                <input type="checkbox" id="vehicle" name="vehicle1" value="Bike" required>
-                                <label for="vehicle1"> 未払いの負債はありません。 チェックせずにお金を借りること.</label>
-
-                                <label for="vehicle1">希望する金額</label>
-                                <input type="number" id="vehicle1" name="loancus" value="Bike">
-                                <label for="loancus">円</label>
-                                <div class="type-button">
-                                    <button type="submit" class=""
-                                            style="width: 65%;background-color: #00b7a4;color: white">登録
-                                    </button>
-                                    {{--                                    <button onclick="goBack()" class=""--}}
-                                    {{--                                            style="width: 30%;background-color: #00b7a4;color: white">Back--}}
-                                    {{--                                    </button>--}}
-                                </div>
-
+                <div class="sinse-2">
+                    <div class="container">
+                        <div class="head-sinse-2">
+                            <div class="margin-head-sinse-2">
+                                <span id="head-sinse">売却可能額</span>
                             </div>
-
-                        </form>
-
-
+                            <span id="total-price-sinse-2">00,000,000</span>
+                            <span id="yen-sinse-2">円</span>
+                        </div>
+                        <div class="check-box-register">
+                            <input type="checkbox" required>
+                            <label>金銭の貸し借りは無し</label><label id="label-sinse-2">未チェック時申請不可</label>
+                        </div>
+                        <div class="include">
+                            <span>希望売却額</span>
+                            <input type="number" value="00,000,000" name="loancus">
+                            <span style="margin-left: 7px">円</span>
+                        </div>
+                        <div class="button-sinse-2">
+                            <div class="button-submit-sinse-2">
+                                <a id="submit-sinse-2" href="#">売却申請</a>
+                            </div>
+                            <div class="button-back-sinse-2">
+                                <a href="#">戻る</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </section>
-    <style>
-        .loan-app {
-            background-color: black;
-            border-radius: 10px;
-            text-align: center;
-            color: white;
-        }
+    <div class="container container-button-sinse-1">
+        <div id="button-footer">
+            <div class="item-button-footer">
+                <a href="#">チャットで問い合わせる</a>
 
-        .loan-app span-1 {
-            font-size: 20px;
-
-        }
-
-        #vehicle1 {
-            background-color: black;
-            color: white;
-            width: 60%;
-        }
-
-        .type-button {
-            margin-top: 5%;
-            margin-bottom: 5%;
-        }
-    </style>
+            </div>
+        </div>
+    </div>
     <script>
-        function goBack() {
-            window.history.back();
+        document.getElementById("submit-sinse-2").onclick = function() {
+            document.getElementById("form-sinse-2").submit();
         }
     </script>
 @endsection
+
 
