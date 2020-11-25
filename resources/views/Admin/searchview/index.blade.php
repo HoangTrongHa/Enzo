@@ -63,7 +63,7 @@
         }
         .four .button-wrap {
             width: 100px;
-            margin: 40px auto 0;
+            margin: 0 auto;
             cursor: pointer;
         }
         .four .button-bg {

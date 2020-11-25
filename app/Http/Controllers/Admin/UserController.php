@@ -55,7 +55,7 @@ class UserController extends Controller
     }
 
     public function checkImager() {
-        $cus = Customer::where("static",1)->get();
+        $cus = Customer::where("static",1)->paginate(5);
         return view("Admin.Manager.ManagerAccount.checkImager",compact("cus"));
     }
 }

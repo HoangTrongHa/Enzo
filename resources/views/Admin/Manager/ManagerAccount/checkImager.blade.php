@@ -43,14 +43,16 @@
             </table>
         </div>
     </div>
+    {!! $cus->links() !!}
+
     <style>
         th{
             text-align: center;
         }
         .four .button-wrap {
             width: 100px;
-            margin: 40px auto 0;
             cursor: pointer;
+            margin: 0 auto;
         }
         .four .button-bg {
             width: 100%;

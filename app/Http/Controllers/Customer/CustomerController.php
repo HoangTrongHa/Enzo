@@ -136,18 +136,7 @@ class CustomerController extends Controller
     public function loan()
     {
         $cus = Auth::guard("Customer")->user();
-//        if ($static->static == 2 && ( $static->loancus == null || $static->loancustomer == 0) && ($static->loancus ==null || $static->loancus )) {
-//                return view("Customer.loan", compact("static"));
-//        } elseif ($static->static == 3 && ($static->maxtotal != 0 || $static->maxtotal != null) ) {
-//            return redirect()->route("sinsei3");
-//        } elseif ($static->static == 4) {
-//            return view("Customer.loan", compact("static"));
-//        } elseif ($static->static == 5) {
-//            return view("Customer.Confirm");
-//        } elseif ($static->static == 6) {
-//            return view("Customer.loan", compact("static"));
-//        }
-//        return view("Customer.Confirm");
+
         if ($cus->static == 2) {
             return view("Customer.loan", compact("cus"));
         } elseif ($cus->static == 3) {
@@ -156,16 +145,9 @@ class CustomerController extends Controller
             return redirect()->route("sinsei3");
         } elseif ($cus->static == 5) {
             return view("Customer.confirm");
-        } elseif ($cus->static == 6) {
+        }elseif ($cus->static ==6){
             return view("Customer.loan", compact("cus"));
-        } elseif ($cus->static == 7) {
-            return view("Customer.confirm");
-        } elseif ($cus->static == 8) {
-            return view("Customer.loan", compact("cus"));
-        } elseif ($cus->static == 8 && $cus->loanrefund != 0) {
-            return view("Customer.confirm");
-        } elseif ($cus->static == 9) {
-            return view("Customer.loan", compact("cus"));
+
         }
     }
 
@@ -184,7 +166,6 @@ class CustomerController extends Controller
         return view("Customer.confirm");
 
     }
-
     public function sinSei3()
     {
         $cus = Auth::guard("Customer")->user();
@@ -259,9 +240,13 @@ class CustomerController extends Controller
     {
         $cus = Auth::guard("Customer")->user()->FindOrFail($id);
         $cus->static = 7;
+        $cus->loanrefund = $req->loanrefund;
         $cus->save();
-
         return view("Customer.confirm");
     }
+        public function history($id){
+            $his =History::where("customerid",$id)->get();
 
+            return view("Customer.history",compact("his"));
+        }
 }

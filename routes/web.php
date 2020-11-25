@@ -93,9 +93,7 @@ Route::group(['middleware' => 'customer'], function () {
         Route::get("/customer/banking", "\App\Http\Controllers\Customer\CustomerController@customerBanking")->name("customerbanking");
         Route::POST('/customer/post-banking/{id}', '\App\Http\Controllers\Customer\CustomerController@postBankingCus')->name("customer-post-banking");
         Route::get("/customer/moneyR", "\App\Http\Controllers\Customer\CustomerController@moneyR")->name("moneyR");
+        Route::get("/customer/history-customer{id}", "\App\Http\Controllers\Customer\CustomerController@history")->name("history-customer");
         Route::post("/customer/moneyR/{id}", "\App\Http\Controllers\Customer\CustomerController@postMoneyR")->name("postMoneyR");
     });
 });
-
-
-

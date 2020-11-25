@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
@@ -27,13 +28,14 @@ class LoginController extends Controller
         return view("Customer.login");
     }
 
-    public function loginUser(Request $request)
+    public function loginUser(Request $request,$user)
     {
         if ($this->attemptLogin($request)) {
             return redirect()->route("home");
         }
         return $this->sendFailedLoginResponse($request);
     }
+
     public function logout(Request $request)
     {
         $this->guard()->logout();
@@ -64,12 +66,13 @@ class LoginController extends Controller
     {
         return Auth::guard('Customer');
     }
-    protected function authenticated(Request $request, $user)
+
+    function authenticated(Request $request, $user)
     {
         $user->update([
-            "checklogin" => now()->toDateTimeString()
-
+            'checklogin' => Carbon::now()->toDateTimeString()
         ]);
+        dd($user);
     }
 
 }

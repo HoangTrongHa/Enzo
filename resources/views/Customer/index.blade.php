@@ -64,7 +64,8 @@
                 <hr>
                 <img src="{{asset("image/feature1_img.png")}}">
                 <div class="footer-future">
-                    <span class="more-future">MORE <i  class="fa">&#xf144;</i>
+                    <span class="more-future">MORE <i class="fa fa-play"></i>
+
                     </span>
                 </div>
             </div>

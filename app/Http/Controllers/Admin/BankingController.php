@@ -13,8 +13,9 @@ class BankingController extends Controller
 {
     public function index()
     {
-        $cus =Customer::where("static",5)->whereNotNull("loancustomer")->Where("loancustomer","!=",0)->get();
-        return view("Admin.banking.index", compact("cus"));
+        $cus =Customer::where("static",5)->paginate(5);
+        $check = Customer::where("static" ,6)->paginate(5);
+        return view("Admin.banking.index", compact("cus","check"));
     }
 
     public function showBanking($id)
@@ -37,7 +38,7 @@ class BankingController extends Controller
             $cus->update([
                 "static" => 6
             ]);
-            return redirect()->route("refund");
+            return redirect()->route("index-banking");
         }catch (\Exception $exception){
             DB::rollBack();
             return back();

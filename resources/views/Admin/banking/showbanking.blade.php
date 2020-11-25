@@ -79,7 +79,7 @@
             </span>
 
         <span class="text-left">
-                <button type="submit" class="btn btn-space btn-primary update-profile">History</button>
+                <button  onclick="window.location.href='{{route("history",[$cus->id])}}'" class="btn btn-space btn-primary update-profile">歴史</button>
             </span>
         <span class="text-left">
                 <a href="{{route("index-banking")}}" class="btn btn-space btn-primary update-profile">Back</a>

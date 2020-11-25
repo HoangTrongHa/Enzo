@@ -15,10 +15,6 @@ class AdminController extends Controller
 
     public function index()
     {
-
-//        $request->user()->authorizeRoles(['employee', 'admin']);
-//        $ = Customer::where("static" ,)->get();
-
         return view('Admin.index');
     }
 

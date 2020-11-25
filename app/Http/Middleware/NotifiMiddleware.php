@@ -24,7 +24,7 @@ class NotifiMiddleware
             return $item1->id;
         })->count();
         $Authorized = Customer::where("static", 2)->get();
-        $loan = Customer::where("static",5)->whereNotNull("loancustomer")->Where("loancustomer","!=",0)->get();
+        $loan = Customer::where("static",7)->get();
         $loancus =count(Customer::whereNotNull("loancus")->Where("loancus","!=" ,0)->get());
         $refund = Customer::where("static",7)->get();
         $delay = count($cus = Customer::where("static", 8)->where("loancustomer", "!=", 0)->get());

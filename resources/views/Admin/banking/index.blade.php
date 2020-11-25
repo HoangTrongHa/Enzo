@@ -1,5 +1,7 @@
 @extends("Admin.Components.layout")
 @section("content")
+    <h3>
+        転送を待っています    </h3>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -15,12 +17,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($cus as $cus)
+                @foreach($cus as $item)
                     <tr>
-                        <th>{{$cus -> created_at}}</th>
+                        <th>{{$item -> created_at}}</th>
                         <th>
                             <div class="four">
-                                @if($cus ->static ==1)
+                                @if($item->static ==1)
                                     <div class="button-wrap">
                                         <div class="button-bg">
                                             <div class="button-out"></div>
@@ -28,7 +30,7 @@
                                             <div class="button-switch"></div>
                                         </div>
                                     </div>
-                                @else ($cus ->static ==2)
+                                @else ($item->static ==2)
                                     <div class="button-wrap button-active">
                                         <div class="button-bg">
                                             <div class="button-out"></div>
@@ -39,13 +41,71 @@
                                 @endif
                             </div>
                         </th>
-                        <th>{{$cus->name_transliteration}}</th>
-                        <th>{{$cus->kanji_name}}</th>
-                        <th>{{$cus->phone_number}}</th>
-                        <th>{{$cus->checklogin}}</th>
+                        <th>{{$item->name_transliteration}}</th>
+                        <th>{{$item->kanji_name}}</th>
+                        <th>{{$item->phone_number}}</th>
+                        <th>{{$item->checklogin}}</th>
                         <th>
-                            <a href="{{route("show-banking",['id' => $cus->id])}}"
+                            <a href="{{route("show-banking",['id' => $item->id])}}"
                                class="badge badge-success badge-pill">詳細</a>
+                        </th>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    {!! $cus->links() !!}
+    <h3>
+        送金リスト
+    </h3>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>申請日</th>
+                    <th>利用状況　</th>
+                    <th>名前</th>
+                    <th>名前</th>
+                    <th>電話番号</th>
+                    <th>最終利用日</th>
+                    <th>関数</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($check as $item)
+                    <tr>
+                        <th>{{$item -> created_at}}</th>
+                        <th>
+                            <div class="four">
+                                @if($item->static ==1)
+                                    <div class="button-wrap">
+                                        <div class="button-bg">
+                                            <div class="button-out"></div>
+                                            <div class="button-in"></div>
+                                            <div class="button-switch"></div>
+                                        </div>
+                                    </div>
+                                @else ($item->static ==2)
+                                    <div class="button-wrap button-active">
+                                        <div class="button-bg">
+                                            <div class="button-out"></div>
+                                            <div class="button-in"></div>
+                                            <div class="button-switch"></div>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                        </th>
+                        <th>{{$item->name_transliteration}}</th>
+                        <th>{{$item->kanji_name}}</th>
+                        <th>{{$item->phone_number}}</th>
+                        <th>{{$item->checklogin}}</th>
+                        <th>
+                            <a href="{{route("show-banking",['id' => $item->id])}}"
+                               class="btn btn-warning">詳細</a>
                         </th>
                     </tr>
                 @endforeach
@@ -53,6 +113,7 @@
             </table>
         </div>
     </div>
+    {!! $check->links() !!}
     <style>
         th {
             text-align: center;
@@ -60,7 +121,7 @@
 
         .four .button-wrap {
             width: 100px;
-            margin: 40px auto 0;
+            margin: 0 auto;
             cursor: pointer;
         }
 

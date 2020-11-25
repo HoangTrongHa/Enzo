@@ -3731,73 +3731,164 @@
   position: relative;
 }
 
-#modal-container .modal-background .modal .confirm {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  min-width: 280px;
-  max-width: 500px;
-  height: auto;
-  background: #01897b;
-  border-radius: 10px;
-  padding: 0;
-  margin: 0;
-  border-top: 1px solid #00b7a4;
-  -webkit-animation: fade 1s ease 1 forwards;
-          animation: fade 1s ease 1 forwards;
+#modal-container .modal-background .modal .left-register {
+  font-size: 30px;
+  letter-spacing: 1px;
+  line-height: 55px;
+  color: #000000;
+  font-weight: 500;
+  background-color: #9fdbd5;
+  border: 2px solid #01897b;
+  font-family: "Noto Sans CJ Kjp";
 }
 
-#modal-container .modal-background .modal .confirm h1 {
+#modal-container .modal-background .modal .left-register .margin-left-register {
+  margin: 35px 0 35px 5px;
+}
+
+#modal-container .modal-background .modal .left-register .margin-left-register .span-red {
+  font-size: 30px;
+  color: red;
+  margin-left: 12px;
+}
+
+#modal-container .modal-background .modal .left-register .margin-left-register-2 {
+  margin: 35px 0 35px 5px;
+}
+
+#modal-container .modal-background .modal .left-register .margin-left-register-2 span {
+  font-size: 29px;
+}
+
+#modal-container .modal-background .modal .left-register .margin-left-register-2 .span-red {
+  font-size: 28px;
+  color: red;
+  margin-left: 12px;
+}
+
+#modal-container .modal-background .modal .right-register {
+  border: 2px solid #01897b;
+}
+
+#modal-container .modal-background .modal .right-register input {
+  background-color: #eeeeee;
+}
+
+#modal-container .modal-background .modal .right-register .margin-right-register {
+  margin: 35px 0 35px 13px;
+  font-size: 30px;
+}
+
+#modal-container .modal-background .modal .right-register .margin-right-register .birthday-select {
+  background-color: #eeeeee;
+  width: 170px;
+  height: 46px;
+  margin-right: 10px;
+}
+
+#modal-container .modal-background .modal .right-register .margin-right-register .input-full {
+  width: 700px;
+  height: 46px;
+}
+
+#modal-container .modal-background .modal .right-register .margin-right-register .input-three {
+  width: 170px;
+  height: 46px;
+  margin-right: 10px;
+  margin-left: 15px;
+}
+
+#modal-container .modal-background .modal .right-register .margin-right-register .input-one-letter {
+  width: 601px;
+  height: 46px;
+}
+
+#modal-container .modal-background .modal .right-register .margin-right-register .radio-type {
+  width: 30px;
+  position: relative;
+  height: 30px;
+  top: 4px;
+  color: #eeeeee;
+}
+
+#modal-container .modal-background .modal .right-register .margin-right-register .radio-type .input-radio {
+  width: 30px;
+  position: relative;
+  height: 30px;
+  top: 4px;
+  background-color: #eeeeee;
+}
+
+#modal-container .modal-background .modal .right-register .margin-right-register .radio-type label {
+  color: #000000;
+}
+
+#modal-container .modal-background .modal .confirm form {
+  border-radius: 15px;
+  margin-top: 165px;
+  background-color: #01897b;
+  display: block;
   text-align: center;
-  font-size: 1.2rem;
-  margin: 1.5rem 1rem 0.5rem;
 }
 
-#modal-container .modal-background .modal .confirm p {
-  text-align: center;
-  font-size: 1rem;
-  margin: 0 2rem 4.5rem;
+#modal-container .modal-background .modal .confirm form h1 {
+  padding-top: 55px;
 }
 
-#modal-container .modal-background .modal .confirm button {
-  background: transparent;
-  border: none;
-  color: #ffffff;
-  height: 3rem;
-  font-size: 1rem;
+#modal-container .modal-background .modal .confirm form .button-modal {
+  width: 100%;
+  display: flex;
+}
+
+#modal-container .modal-background .modal .confirm form .button-modal button {
   width: 50%;
-  position: absolute;
-  bottom: 0;
-  cursor: pointer;
-}
-
-#modal-container .modal-background .modal .confirm button:nth-of-type(1) {
-  border-top: 1px solid #00b7a4;
+  background-color: #01897b;
   border-right: 1px solid #00b7a4;
-  left: 0;
-  border-radius: 0 0 0 10px;
+  border-left: 1px solid #00b7a4;
+  border-top: 4px solid #00b7a4;
+  border-bottom: 4px solid #00b7a4;
+  color: white;
+  padding: 40px 40px;
 }
 
-#modal-container .modal-background .modal .confirm button:nth-of-type(2) {
-  border-top: 1px solid #00b7a4;
-  right: 0;
-  border-radius: 0 0 10px 0;
+#modal-container .modal-background .modal .confirm form .button-modal button span {
+  font-size: 20px;
 }
 
-#modal-container .modal-background .modal .confirm button:focus {
-  font-weight: bold;
-  background: #01897b;
+#modal-container .modal-background .modal .confirm form .button-modal button:hover {
+  background-color: #00b7a4;
 }
 
-#modal-container .modal-background .modal .confirm button:hover {
-  font-weight: bold;
-  background: #00b7a4;
+#modal-container .modal-background .modal .confirm form .button-modal a {
+  width: 50%;
+  background-color: #01897b;
+  border-right: 1px solid #00b7a4;
+  border-left: 1px solid #00b7a4;
+  border-top: 4px solid #00b7a4;
+  border-bottom: 4px solid #00b7a4;
+  color: white;
+  padding: 40px 40px;
+  text-decoration: none;
 }
 
-#modal-container .modal-background .modal .confirm button:active {
-  background: #01897b;
+#modal-container .modal-background .modal .confirm form .button-modal a span {
+  font-size: 20px;
+}
+
+#modal-container .modal-background .modal .confirm form .button-modal a:hover {
+  background-color: #00b7a4;
+}
+
+#modal-container .modal-background .modal .confirm form .span-modal {
+  font-size: 20px;
+  margin: 30px 0 0 0;
+}
+
+#modal-container .modal-background .modal .confirm form input {
+  font-size: 30px;
+  padding: 30px 40px;
+  margin: 70px auto;
+  text-align: right;
 }
 
 #modal-container .modal-background .modal h2 {
@@ -3848,6 +3939,74 @@
 .content .buttons .button:hover {
   color: white;
   background: #009bd5;
+}
+
+.history-customer {
+  display: table;
+  margin: 115px auto 365px;
+  width: 450px;
+  height: 400px;
+  background-color: #01897b;
+  text-align: center;
+  color: white;
+  border-radius: 40px;
+}
+
+.history-customer button {
+  margin-top: 17px;
+  padding: 10px 10px;
+  background-color: #00b7a4;
+  color: white;
+  border-bottom: 2px solid #007764;
+  border-top: 2px solid #0bbaa8;
+  border-bottom: 2px solid #00806d;
+  border-bottom: 2px solid #00806d;
+}
+
+.history-customer p {
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+.history-customer .content-history {
+  width: 400px;
+  height: 200px;
+  background-color: white;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-y: scroll;
+}
+
+.history-customer .content-history .margin-history {
+  margin-left: 20px;
+}
+
+.history-customer .content-history .margin-history table {
+  color: black;
+  width: 100%;
+}
+
+.history-customer .content-history::-webkit-scrollbar {
+  width: 9px;
+}
+
+.history-customer .content-history::-webkit-scrollbar-track {
+  background: #d4d4d4;
+  border-left: 4px solid white;
+  border-right: 4px solid white;
+}
+
+.history-customer .content-history::-webkit-scrollbar-thumb {
+  background-color: #707070;
+}
+
+.history-customer .content-history #date-time {
+  color: #01897b;
+  font-size: 20px;
 }
 
 @-webkit-keyframes unfoldIn {
