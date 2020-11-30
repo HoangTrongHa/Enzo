@@ -8,7 +8,67 @@
     <section id="sinse-1">
         <div class="container">
             <div class="include-sinse-1">
+                @if($cus->static == 7 || $cus->static == 9 ||$cus->static == 8)
+                    <div class="sinse-left">
+                        <div class="profile-sinse-1">
+                            <div class="margin-span-sinse-1">
+                                <span>ログインID</span>
+                                <div id="margin-total">
+                                    <span id="total-price"> 00,000,000</span>
+                                    <span>円</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-sinse-left">
+                            <a href="" class="text-in-button">売却申請</a>
+                        </div>
+                        <div class="back-sinse-1">
+                            <a href="{{route("history-customer",$cus->id)}}" class="text-in-button">利用履歴</a>
+                        </div>
+                    </div>
+                    <div class="sinse-right">
+                        <div class="container">
+                            <div class="profile-sinse-right">
+                                <div class="heading-sinse-right">
+                                    <span>〈 お戻し金額 〉</span>
+                                </div>
+                                <div class="price-sinse-right">
+                                    <span id="total-price-right">00,000,000</span>
+                                    <span id="yen-sinse-right">円</span>
+                                </div>
+                                <div class="body-head-sinse-right">
+                                    <span>〈 お戻し金額 〉</span>
+                                </div>
+                                <div class="body-day">
+                                    <span>令和</span>
+                                    <div class="datetime">
+                                        <span>00</span>
+                                    </div>
+                                    <span>年</span>
+                                    <div class="datetime">
+                                        <span>00</span>
+                                    </div>
+                                    <span>月</span>
+                                    <div class="datetime">
+                                        <span>00</span>
+                                    </div>
+                                    <span>日</span>
+                                </div>
+                                <div class="body-head-sinse-right">
+                                    <span>〈 お戻し講座詳細 〉</span>
+                                </div>
+                                <div class="profile-banh-enzo">
+                                    <span>ViecomBank</span><br>
+                                    <span>Chi Nhanh Ky Dong</span><br>
+                                    <span>036201004021</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                @endif
                 @if($cus->static == 6)
+
                     <div class="sinse-left">
                         <div class="profile-sinse-1">
                             <div class="margin-span-sinse-1">
@@ -33,7 +93,7 @@
                                             <div class="span-modal">
                                                 <span>すでに転送している場合は、 "確認" それ以外の場合はを押してください "キャンセル"</span>
                                             </div>
-                                            <input type="number" name="loanrefund">
+                                            <input type="hidden" name="loanrefund" value="{{$cus->maxtotal}}">
                                             @csrf
                                             @method("POST")
                                             <div class="button-modal">
@@ -51,7 +111,7 @@
                             </div>
                         </div>
                         <div class="back-sinse-1">
-                            <a href="{{route("history-customer",[$cus->id])}}" class="text-in-button">利用履歴</a>
+                            <a onclick="{{route("history-customer",$cus->id)}}" class="text-in-button">利用履歴</a>
                         </div>
                     </div>
                     <div class="sinse-right">
@@ -98,7 +158,8 @@
                         </div>
 
                     </div>
-                @else
+                @endif
+                @if($cus->static == 2)
                     <div class="sinse-left">
                         <div class="profile-sinse-1">
                             <div class="margin-span-sinse-1">
@@ -111,10 +172,10 @@
                             </div>
                         </div>
                         <div class="button-sinse-left">
-                            <a href="#" class="text-in-button">売却申請</a>
+                            <a href="{{route("sinsei")}}" class="text-in-button">売却申請</a>
                         </div>
                         <div class="back-sinse-1">
-                            <a href="#" class="text-in-button">利用履歴</a>
+                            <a href="{{route("history-customer",$cus->id)}}" class="text-in-button">利用履歴</a>
                         </div>
                     </div>
                     <div class="sinse-right">
@@ -158,6 +219,7 @@
 
                     </div>
                 @endif
+
             </div>
         </div>
 
@@ -172,7 +234,6 @@
     </div>
 
     <script>
-
         $('.button-customer-refund').click(function () {
             var buttonId = $(this).attr('id');
             $('#modal-container').removeAttr('class').addClass(buttonId);

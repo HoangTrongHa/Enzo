@@ -20,23 +20,13 @@
                         <th>{{$cus -> payment_term}}</th>
                         <th>
                             <div class="four">
-                                @if($cus ->static ==1)
-                                    <div class="button-wrap">
-                                        <div class="button-bg">
-                                            <div class="button-out"></div>
-                                            <div class="button-in"></div>
-                                            <div class="button-switch"></div>
-                                        </div>
+                                <div class="button-wrap">
+                                    <div class="button-bg">
+                                        <div class="button-out"></div>
+                                        <div class="button-in"></div>
+                                        <div class="button-switch"></div>
                                     </div>
-                                @else ($cus ->static ==2)
-                                    <div class="button-wrap button-active">
-                                        <div class="button-bg">
-                                            <div class="button-out"></div>
-                                            <div class="button-in"></div>
-                                            <div class="button-switch"></div>
-                                        </div>
-                                    </div>
-                                @endif
+                                </div>
                             </div>
                         </th>
                         <th>{{$cus->name_transliteration}}</th>
@@ -45,7 +35,7 @@
                         <th>{{$cus->checklogin}}</th>
                         <th>
                             <a href="{{route("showDask",['id' => $cus->id])}}"
-                               class="badge badge-success badge-pill">詳細</a>
+                               class="btn btn-success">詳細</a>
                         </th>
                     </tr>
                 @endforeach

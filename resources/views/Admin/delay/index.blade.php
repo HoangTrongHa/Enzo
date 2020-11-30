@@ -1,5 +1,6 @@
 @extends("Admin.Components.layout")
 @section("content")
+    <span class="span-header">遅延リスト</span>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -15,12 +16,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($cus as $cus)
+                @foreach($cus as $item)
                     <tr>
-                        <th>{{$cus -> payment_term}}</th>
+                        <th>{{$item -> created_at}}</th>
                         <th>
                             <div class="four">
-                                @if($cus ->static ==1)
+                                @if($item->static ==1)
                                     <div class="button-wrap">
                                         <div class="button-bg">
                                             <div class="button-out"></div>
@@ -28,7 +29,7 @@
                                             <div class="button-switch"></div>
                                         </div>
                                     </div>
-                                @else ($cus ->static ==2)
+                                @else ($item->static ==2)
                                     <div class="button-wrap button-active">
                                         <div class="button-bg">
                                             <div class="button-out"></div>
@@ -39,13 +40,62 @@
                                 @endif
                             </div>
                         </th>
-                        <th>{{$cus->kanji_name}}</th>
-                        <th>{{$cus->name_transliteration}}</th>
-                        <th>{{$cus->phone_number}}</th>
-                        <th>{{$cus->checklogin}}</th>
+                        <th>{{$item->name_transliteration}}</th>
+                        <th>{{$item->kanji_name}}</th>
+                        <th>{{$item->phone_number}}</th>
+                        <th>{{$item->checklogin}}</th>
                         <th>
-                            <a href="{{route("show-delay",['id' => $cus->id])}}"
-                               class="badge badge-success badge-pill">詳細</a>
+                            <a href="{{route("show-delay",['id' => $item->id])}}"
+                               class="btn btn-success">詳細</a>
+                        </th>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    {!! $cus->links() !!}
+    <h3>
+        確認メールを送信しました    </h3>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>申請日</th>
+                    <th>利用状況　</th>
+                    <th>名前</th>
+                    <th>名前</th>
+                    <th>電話番号</th>
+                    <th>最終利用日</th>
+                    <th>関数</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($sent as $item)
+                    <tr>
+                        <th>{{$item -> created_at}}</th>
+                        <th>
+                            <div class="four">
+                                    <div class="button-wrap button-active">
+                                        <div class="button-bg">
+                                            <div class="button-out"></div>
+                                            <div class="button-in"></div>
+                                            <div class="button-switch"></div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </th>
+                        <th>{{$item->name_transliteration}}</th>
+                        <th>{{$item->kanji_name}}</th>
+                        <th>{{$item->phone_number}}</th>
+                        <th>{{$item->checklogin}}</th>
+                        <th>
+                            <a href="{{route("showSentMail",['id' => $item->id])}}"
+                               class="btn btn-danger">ブラックリスト
+                            </a>
+
                         </th>
                     </tr>
                 @endforeach
@@ -53,15 +103,19 @@
             </table>
         </div>
     </div>
+    {!! $sent->links() !!}
     <style>
+        h3{
+            font-weight: 600;
+        }
         th {
             text-align: center;
         }
 
         .four .button-wrap {
             width: 100px;
-            cursor: pointer;
             margin: 0 auto;
+            cursor: pointer;
         }
 
         .four .button-bg {
@@ -116,6 +170,12 @@
         .four .button-active .button-bg {
             background-color: #22bb22;
         }
-
+        .span-header{
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .card-body{
+            margin-top: 20px;
+        }
     </style>
 @endsection

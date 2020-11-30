@@ -68,14 +68,14 @@
     <li class="nav-item">
         <a class="nav-link" href="{{route("delay")}}">
             <i class="fas fa-exclamation-circle fa-tachometer-alt"></i>
-            <span>遅延者リスト danh sach tri hoan</span>
+            <span>遅延者リスト</span>
             <i style="color: red">{{$delay}}</i>
 
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{route("list-dark")}}">
-            <i class="material-icons fa-tachometer-alt"></i>
+            <i class="fa fa-close"></i>
             <span>ブラックリスト</span>
             <i style="color: red">{{$listDark}}</i>
         </a>

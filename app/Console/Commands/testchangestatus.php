@@ -14,7 +14,7 @@ class testchangestatus extends Command
      *
      * @var string
      */
-    protected $signature = 'test-change-status';
+    protected $signature = 'update:change_status';
 
     /**
      * The console command description.
@@ -40,15 +40,13 @@ class testchangestatus extends Command
      */
     public function handle()
     {
-        $test = Customer::get();
-
-
-        foreach ($test as $list) {
-            if ($list->payment_term == Carbon::now())
+        $test = Customer::where("static",7)->get();
+        foreach ($test as $item) {
+            if (strtotime($item->payment_term) < strtotime(Carbon::now()))
                 try {
-                    DB::transaction();
-                    $list->update([
-                        "status" => 7
+                    DB::beginTransaction();
+                    $item->update([
+                        "status" => 8,
                     ]);
                     DB::commit();
                 } catch (\Exception $exception) {

@@ -9,10 +9,15 @@
     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="get"
           role="search" action="{{route("search")}}">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" name="key">
+            <input type="search" onfocus="this.oldvalue = this.value;" class="form-control" name="key" onchange="onChangeTest(this);this.oldvalue = this.value;"/>
+            <script>
+                function onChangeTest(textbox) {
+                    console.log("New value: " + textbox.value + "\n" + "Old value: " + textbox.oldvalue);
+                }
+
+            </script>
         </div>
     </form>
-    <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
 
         <!-- Nav Item - Search Dropdown (Visible Only XS) -->

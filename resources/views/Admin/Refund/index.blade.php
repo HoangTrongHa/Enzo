@@ -1,5 +1,6 @@
 @extends("Admin.Components.layout")
 @section("content")
+    <span class="span-header">支払いを待っています</span>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -46,7 +47,7 @@
                         <th>{{$cus->checklogin}}</th>
                         <th>
                             <a href="{{route("show-refund",['id' => $cus->id])}}"
-                               class="badge badge-success badge-pill">詳細</a>
+                               class="btn btn-success">詳細</a>
                         </th>
                     </tr>
                 @endforeach
@@ -117,6 +118,12 @@
         .four .button-active .button-bg {
             background-color: #22bb22;
         }
-
+        .span-header{
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .card-body{
+            margin-top: 20px;
+        }
     </style>
 @endsection

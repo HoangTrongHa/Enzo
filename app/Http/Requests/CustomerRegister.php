@@ -25,34 +25,21 @@ class CustomerRegister extends FormRequest
     {
         $a = 1;
         return [
-            "tenchuhan" => "required  | min:3",
-
-            "tenphienam" => "required  | min:3",
-
+            "tenchuhan" => "required",
+            "tenphienam" => "required",
             "male" => "required",
-
             "diachinha" => "required | max:255",
-
-
             "sodienthoaididong" => "min:3| max:15  | required",
-
             "electricmail" => "required | max:50 |required_with:electricmail-confirm|same:electricmail-confirm",
-
             "electricmail-confirm" => "required | max:50",
-
             "email" => "required |max:50 |required_with:email-confirm|same:email-confirm",
             "email-confirm" => "required | max:50",
-
             "password" => "required |max:50 |required_with:password-confirm|same:password-confirm",
             "password-confirm" => "required | max:50",
-
             "truso" => "required",
             "head_office_address" => "required",
-
             "sdtcty" => "required",
-
             "nguoibaolanh" => "required",
-
             "diachinguoibaolanh" => "required",
             "sdtnguoibaolanh" => "required",
             "checkbox" => "required"

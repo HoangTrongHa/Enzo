@@ -13,8 +13,8 @@ class BankingController extends Controller
 {
     public function index()
     {
-        $cus =Customer::where("static",5)->paginate(5);
-        $check = Customer::where("static" ,6)->paginate(5);
+        $cus =Customer::where("static",5)->orderBy('created_at', 'desc')->paginate(5);
+        $check = Customer::where("static" ,6)->orderBy('updated_at', 'desc')->paginate(5);
         return view("Admin.banking.index", compact("cus","check"));
     }
 

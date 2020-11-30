@@ -1,7 +1,6 @@
 @extends("Admin.Components.layout")
 @section("content")
-    <h3>
-        転送を待っています    </h3>
+    <span class="span-header">転送を待っています</span>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -47,7 +46,7 @@
                         <th>{{$item->checklogin}}</th>
                         <th>
                             <a href="{{route("show-banking",['id' => $item->id])}}"
-                               class="badge badge-success badge-pill">詳細</a>
+                               class="btn btn-success">詳細</a>
                         </th>
                     </tr>
                 @endforeach
@@ -115,6 +114,9 @@
     </div>
     {!! $check->links() !!}
     <style>
+        h3{
+            font-weight: 600;
+        }
         th {
             text-align: center;
         }
@@ -177,6 +179,12 @@
         .four .button-active .button-bg {
             background-color: #22bb22;
         }
-
+        .span-header{
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .card-body{
+            margin-top: 20px;
+        }
     </style>
 @endsection

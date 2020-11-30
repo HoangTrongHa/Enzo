@@ -73,7 +73,7 @@
                 <div class="row">
                     <div class="col-4 left-infor-banking">
                         <div class="margin-left-infor-banking">
-                            <span>金融機関名</span><
+                            <span>金融機関名</span>
                         </div>
                     </div>
                     <div class="col-8 right-infor-banking">
@@ -85,7 +85,7 @@
                 <div class="row">
                     <div class="col-4 left-infor-banking">
                         <div class="margin-left-infor-banking">
-                            <span>口座番号</span><
+                            <span>口座番号</span>
                         </div>
                     </div>
                     <div class="col-8 right-infor-banking">
@@ -102,7 +102,7 @@
                 <div class="row">
                     <div class="col-4 left-infor-banking">
                         <div class="margin-left-infor-banking">
-                            <span>口座番号</span><
+                            <span>口座番号</span>
                         </div>
                     </div>
                     <div class="col-8 right-infor-banking">
@@ -114,7 +114,7 @@
                 <div class="row">
                     <div class="col-4 left-infor-banking">
                         <div class="margin-left-infor-banking">
-                            <span>口座番号</span><
+                            <span>口座番号</span>
                         </div>
                     </div>
                     <div class="col-8 right-infor-banking">

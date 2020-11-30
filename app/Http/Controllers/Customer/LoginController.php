@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Customer;
 
+use App\Customer;
 use App\Http\Requests\AdminCreateRequest;
 use App\Http\Requests\userlogin;
 use Carbon\Carbon;
@@ -28,9 +29,12 @@ class LoginController extends Controller
         return view("Customer.login");
     }
 
-    public function loginUser(Request $request,$user)
+    public function loginUser(Request $request)
     {
-        if ($this->attemptLogin($request)) {
+        if (Auth::guard('Customer')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+            Auth::guard('Customer')->user()->update([
+                'checklogin' => now(),
+            ]);
             return redirect()->route("home");
         }
         return $this->sendFailedLoginResponse($request);
@@ -38,9 +42,9 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        $this->guard()->logout();
+        Auth::guard('Customer')->logout();
         $request->session()->invalidate();
-        return $this->loggedOut($request) ?: redirect()->route('/');
+        return $this->loggedOut($request) ?: redirect()->route('home');
     }
 
     protected function credentials(Request $request)
@@ -70,9 +74,7 @@ class LoginController extends Controller
     function authenticated(Request $request, $user)
     {
         $user->update([
-            'checklogin' => Carbon::now()->toDateTimeString()
+            'checklogin' => now(),
         ]);
-        dd($user);
     }
-
 }

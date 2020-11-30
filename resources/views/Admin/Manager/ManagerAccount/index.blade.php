@@ -1,10 +1,7 @@
 @extends("Admin.Components.layout")
 @section("content")
-
+    <span class="span-header">アカウントのリスト </span>
     <div class="card shadow mb-4">
-        <h1 style="text-align: center">List Account </h1>
-
-
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -99,7 +96,13 @@
         .four .button-active .button-out {  }
         .four .button-active .button-in {  }
         .four .button-active .button-bg { background-color:#22bb22; }
-
+        .span-header{
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .card{
+            margin-top: 20px;
+        }
     </style>
 
 @endsection

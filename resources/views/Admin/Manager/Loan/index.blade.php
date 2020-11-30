@@ -1,8 +1,7 @@
 @extends("Admin.Components.layout")
 @section("content")
 
-    <h1 class="h3 mb-2 text-gray-800">List Account Manager</h1>
-
+    <span class="span-header">送金登録一覧</span>
     <div class="card shadow mb-4">
 
         <div class="card-body">
@@ -49,13 +48,67 @@
                             <th>{{$list->phone_number}}</th>
                             <th>{{$list->checklogin}}</th>
                             <th>
-                                @if($list->static ==3)
                                 <a href="{{route("loan.createLoan",[$list->id])}}"
-                                   class="badge badge-success badge-pill">Change</a>
-                                @else
-                                    <a href="{{route("loan.createLoan",[$list->id])}}"
-                                       class="badge badge-warning">Check</a>
-                                @endif
+                                   class="btn btn-success">変化する</a>
+                            </th>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {!! $user->links() !!}
+    <span class="span-header">ローン受理</span>
+    <div class="card shadow mb-4">
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>申請日</th>
+                        <th>利用状況　</th>
+                        <th>　名前</th>
+                        <th>　名前</th>
+                        <th>　　電話番号</th>
+                        <th>　　最終利用日</th>
+                        <th>関数</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($user as $list)
+                        <tr>
+                            <th>{{$list -> created_at}}</th>
+                            <th>
+                                <div class="four">
+                                    @if($list ->static ==1)
+                                        <div class="button-wrap">
+                                            <div class="button-bg">
+                                                <div class="button-out"></div>
+                                                <div class="button-in"></div>
+                                                <div class="button-switch"></div>
+                                            </div>
+                                        </div>
+                                    @else ($list ->static ==2)
+                                        <div class="button-wrap button-active">
+                                            <div class="button-bg">
+                                                <div class="button-out"></div>
+                                                <div class="button-in"></div>
+                                                <div class="button-switch"></div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                </div>
+                            </th>
+                            <th>{{$list->name_transliteration}}</th>
+                            <th>{{$list->kanji_name}}</th>
+                            <th>{{$list->phone_number}}</th>
+                            <th>{{$list->checklogin}}</th>
+                            <th>
+
+                                    <a href="{{route("loan.createLoan",[$list->id])}}" class="btn btn-warning">小切手</a>
+
                             </th>
                         </tr>
                     @endforeach
@@ -66,6 +119,13 @@
     </div>
     {!! $user->links() !!}
     <style>
+        .span-header{
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .card{
+            margin-top: 20px;
+        }
         th {
             text-align: center;
         }

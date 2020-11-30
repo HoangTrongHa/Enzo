@@ -12,7 +12,7 @@
         <span>個人新規申し込み</span>
     </div>
 </section>
-<form action="{{route("postRegister")}}" method="POST">
+<form action="{{route("postRegister")}}" method="POST" id="form-register">
     {{csrf_field()}}
     @method("POST")
 <section id="body-register">
@@ -254,7 +254,6 @@
 
             </div>
         </div>
-
         <div class="row">
             <div class="col-4 left-register">
                 <div class="margin-left-register-2">
@@ -733,13 +732,13 @@ Ehhhh...</span>
             </div>
         </div>
         <div class="button-register">
-            <button type="submit">参加する</button>
-            <button>戻って</button>
+            <button type="submit">戻って</button>
         </div>
     </div>
 </section>
 </form>
 @include("Customer.Components.button-scroll")
 @include("Customer.Components.footer")
+
 </body>
 </html>

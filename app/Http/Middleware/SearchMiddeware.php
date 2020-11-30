@@ -19,7 +19,6 @@ class SearchMiddeware
         $search = Customer::where('kanji_name', 'like', '%' . $request->key . '%')
             ->orWhere('name_transliteration', $request->key)->orWhere('phone_number', 'like', '%' . $request->key . '%')
             ->orWhere('address', 'like', '%' . $request->key . '%')->get();
-
         return $next($request);
     }
 }

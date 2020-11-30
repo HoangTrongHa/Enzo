@@ -16,15 +16,12 @@
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
-
-
                                 <div class="modal-body">
-
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
+                                    <img src="" alt="" id="image" class="img-fluid" data-zoom-image="img-modal">
 
-                                    <img src="//media.tenor.com/images/556e9ff845b7dd0c62dcdbbb00babb4b/tenor.gif" alt="" id="image" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -237,16 +234,17 @@
         </div>
         <div class="button-submit">
             <span class="text-left">
-                <button type="submit" class="btn btn-space btn-primary update-profile">Update</button>
+                <button type="submit" class="btn btn-space btn-primary update-profile">受け入れる</button>
             </span>
             <span class="text-left">
                 <a href="{{route("mail-refuse",$customer->id)}}" class="btn btn-space btn-primary update-profile">非承認</a>
             </span>
             <span class="text-left">
-                <button type="submit" class="btn btn-space btn-primary update-profile">ユーザーメモ ban ghi nho nguoi dung</button>
+                <button type="submit" class="btn btn-space btn-primary update-profile">ユーザーメモ</button>
             </span>
             <span class="text-left">
-                <button type="submit" class="btn btn-space btn-primary update-profile">Back</button>
+                <button onclick="goBack()" class="btn btn-space btn-primary update-profile">戻って</button>
+
             </span>
         </div>
 
@@ -302,8 +300,6 @@
         #image {
             min-height:200px;
         }
-
-
     </style>
     <script>
         $(document).ready(function() {
@@ -319,5 +315,8 @@
                 $("#image").attr('src','');
             })
         });
+        function goBack(){
+            window.history.back();
+        }
     </script>
 @endsection

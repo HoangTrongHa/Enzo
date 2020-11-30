@@ -29,7 +29,7 @@
                                 <a id="submit-sinse-2" href="#">売却申請</a>
                             </div>
                             <div class="button-back-sinse-2">
-                                <a href="#">戻る</a>
+                                <a href="#" onclick="window.history.back()">戻る</a>
                             </div>
                         </div>
                     </div>

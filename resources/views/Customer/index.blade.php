@@ -4,6 +4,10 @@
     @include("Customer.Components.head")
 </head>
 <body>
+<!-- Load Facebook SDK for JavaScript -->
+<!-- Load Facebook SDK for JavaScript -->
+
+
 @include("Customer.Components.header")
 <section id="banner">
     <div class="container">
@@ -43,7 +47,7 @@
         <div class="footer-about">
             <span>
                 サービスの詳細
-                <i  class="fa">&#xf144;</i>
+                <i class="fa">&#xf144;</i>
             </span>
 
 
@@ -64,9 +68,41 @@
                 <hr>
                 <img src="{{asset("image/feature1_img.png")}}">
                 <div class="footer-future">
-                    <span class="more-future">MORE <i class="fa fa-play"></i>
+                    <span class="more-future" data-toggle="modal" data-target="#future-1">MORE <i
+                            class="fa">&#xf144;</i>
 
                     </span>
+                    <div class="modal fade" id="future-1" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <i class="fa fa-close"></i>
+                                </button>
+                                <div class="modal-header">
+                                    <div class="span-future-header">
+                                        <span class="modal-title" id="exampleModalLongTitle">ご利用者様の手数料が業界最安値</span>
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="span-modal-body">
+
+                                        <span>8～25％</span>
+                                    </div>
+                                    <div class="img-modal-body">
+                                        <img src="{{asset("image/feature1_img.png")}}">
+                                    </div>
+                                </div>
+                                <div class="footer-modal-body">
+                                    <span>
+                                        ENZO独自のAIを使った適切なスコアリング審査によりご利用者様ごとに手数料や与信枠の最適化を実現し、適切な金額のご提案が可能
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
             <div class="item-future">
@@ -76,7 +112,34 @@
                 <hr>
                 <img src="{{asset("image/feature2_img.png")}}">
                 <div class="footer-future">
-                    <span class="more-future">MORE <i  class="fa">&#xf144;</i></span>
+
+                    <span class="more-future" data-toggle="modal" data-target="#future-2">MORE <i
+                            class="fa">&#xf144;</i>
+
+                    </span>
+                    <div class="modal fade" id="future-2" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <i class="fa fa-close"></i>
+                                </button>
+                                <div class="modal-header">
+                                    <div class="span-future-header">
+                                        <span class="modal-title" id="exampleModalLongTitle">独自の審査方法で審査が最短15分</span>
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="{{asset("image/feature2_popup.png")}}">
+                                </div>
+                                <div class="footer-modal-body">
+                                    <span>
+                               お金が必要なのはいつも急だから、せっかくファクタリング使いたくてもすぐに現金化できなきゃ意味がない。ENZOは最新のAI技術に
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -89,17 +152,113 @@
                 <hr>
                 <img src="{{asset("image/feature3_img.png")}}">
                 <div class="footer-future">
-                    <span class="more-future">MORE<i  class="fa">&#xf144;</i></span>
+                    <span class="more-future" data-toggle="modal" data-target="#future-3">MORE <i
+                            class="fa">&#xf144;</i>
+                        <div class="modal fade" id="future-3" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                             <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <i class="fa fa-close"></i>
+                                         </button>
+                                    <div class="modal-header">
+                                        <div class="span-future-header">
+                                              <span class="modal-title"
+                                                    id="exampleModalLongTitle">独自の審査方法で審査が最短15分</span>
+                                        </div>
+                                     </div>
+                                <div class="modal-body">
+                                    <div class="body-future-3">
+                                        <img src="{{asset("image/feature3_popup.png")}}">
+                                    </div>
+                                    <div class="body-future-3-right">
+                                        <img src="{{asset("image/feature3_img.png")}}">
+
+                                    </div>
+                                </div>
+                                <div class="footer-modal-body-future-3">
+                                    <span>
+                               ENZOへの入金期限は次のお給料日から3営業日（お給料日含む）。
+                                        <br>期日に余裕があるからお金の使い道をしっかり考えてからでも大丈
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </span>
                 </div>
             </div>
             <div class="item-future">
             <span class="item-future-heading">
                 ENZOが給料を買い取り 借金しないで現金化
             </span>
+
                 <hr>
                 <img src="{{asset("image/feature4_img.png")}}">
                 <div class="footer-future">
-                    <span class="more-future">MORE<i  class="fa">&#xf144;</i></span>
+                    <span class="more-future" data-toggle="modal" data-target="#future-4">MORE <i
+                            class="fa">&#xf144;</i>
+                         <div class="modal fade" id="future-4" tabindex="-1" role="dialog"
+                              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                             <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <i class="fa fa-close"></i>
+                                         </button>
+                                    <div class="modal-header">
+                                        <div class="span-future-header">
+                                              <span class="modal-title"
+                                                    id="exampleModalLongTitle">独自の審査方法で審査が最短15分</span>
+                                        </div>
+                                     </div>
+                                <div class="modal-body">
+                                    <div class="body-future-4">
+                                        <span>ご相談ください！</span>
+                                        <div class="content-top">
+                                            <div class="item-in-body-future-4">
+                                                <span>
+                                                    自己破産 <br>した方
+                                                </span>
+                                            </div>
+                                            <div class="margin-item">
+                                                <span>
+                                                   債務状況が<br> 気になる方
+                                                </span>
+                                            </div>
+                                            <div class="item-in-body-future-4">
+                                                <span>
+                                                    給料が<br> 手渡しの方
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="content-bottom">
+                                            <div class="margin-item">
+                                                <span>
+                                                   債務状況が<br> 気になる方
+                                                </span>
+                                            </div>
+                                            <div class="margin-item-1">
+                                                <span>
+                                                   債務状況が<br> 気になる方
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="body-future-4-bottom">
+                                        <img src="{{asset("image/feature4_img.png")}}">
+
+                                    </div>
+                                </div>
+
+                                <div class="footer-modal-body-future-3">
+                                    <span>
+                                         借金はお金を借りること。ENZOの給与ファクタリングはあなたの次の給料をENZOが買い取り、給料日前にお支払いするサービス。<br>
+                                        借金はお金を借りること。ENZOの給与ファクタリングはあなたの次の給料をENZOが買い取り、給料日前にお支払いするサービス。
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -173,6 +332,7 @@
         </div>
     </div>
 </section>
+
 <section id="factoring">
     <div class="container">
         <div class="heading-factoring">
@@ -205,11 +365,13 @@
             </div>
         </div>
         <div class="button-footer-factoring">
-            <div class="item-button-footer-factoring">
+            <a href="{{route("registercustomer")}}">
+                <div class="item-button-footer-factoring">
 
-                <span>法人新規申し込みはこちら</span>
-                <img src="{{asset("image/play.png")}}" alt="">
-            </div>
+                    <span>法人新規申し込みはこちら</span>
+                    <img src="{{asset("image/play.png")}}" alt="">
+                </div>
+            </a>
             <div class="item-button-footer-factoring">
                 <span>個人新規申し込みはこちら</span>
                 <img src="{{asset("image/play.png")}}" alt="">
@@ -242,11 +404,17 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                     <div class="right-information">
                         Đây là giai đoạn từ khi bầu cử xong đến lúc bắt đầu nhiệm kỳ tổng thống mới ngày 20/1.
 
-                        Tổng thống sắp tới tập hợp một nhóm được gọi là nhóm chuyển giao, bao gồm những người chuẩn bị nắm quyền ngay sau khi nhậm chức.
+                        Tổng thống sắp tới tập hợp một nhóm được gọi là nhóm chuyển giao, bao gồm những người chuẩn bị
+                        nắm quyền ngay sau khi nhậm chức.
 
-                        Nhóm của ông Biden hiện đã thiết lập một trang web cho quá trình tiếp quản. Họ sẽ chọn những người sẽ phục vụ trong Nội các, bàn bạc các ưu tiên chính sách và chuẩn bị cầm quyền. Các thành viên trong nhóm sẽ đến các cơ quan liên bang để nhận báo cáo tóm tắt về những thứ như thời hạn chót, ngân sách và nhân sự. Họ sẽ thu thập tất cả thông tin đó cho đội ngũ nhân sự sắp đảm trách công việc. Một số người của chính quyền trước có thể vẫn tiếp tục phục vụ.
+                        Nhóm của ông Biden hiện đã thiết lập một trang web cho quá trình tiếp quản. Họ sẽ chọn những
+                        người sẽ phục vụ trong Nội các, bàn bạc các ưu tiên chính sách và chuẩn bị cầm quyền. Các thành
+                        viên trong nhóm sẽ đến các cơ quan liên bang để nhận báo cáo tóm tắt về những thứ như thời hạn
+                        chót, ngân sách và nhân sự. Họ sẽ thu thập tất cả thông tin đó cho đội ngũ nhân sự sắp đảm trách
+                        công việc. Một số người của chính quyền trước có thể vẫn tiếp tục phục vụ.
 
-                        Năm 2016, Tổng thống Barack Obama đã gặp người kế nhiệm Donald Trump và những bức ảnh trong Phòng Bầu dục của họ phản ánh bầu không khí ấm áp chút ít giữa hai người.
+                        Năm 2016, Tổng thống Barack Obama đã gặp người kế nhiệm Donald Trump và những bức ảnh trong
+                        Phòng Bầu dục của họ phản ánh bầu không khí ấm áp chút ít giữa hai người.
                     </div>
                 </div>
                 <div class="d-flex item-information">
@@ -254,9 +422,15 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         YYYY.MM.DD
                     </div>
                     <div class="right-information">
-                        Vị cựu Phó Tổng thống đã dành nhiều tháng trời để tập hợp nhóm chuyển giao và quyên tiền mặt để tạo quỹ. Nhưng Cơ quan Quản lý Dịch vụ Tổng hợp - có nhiệm vụ chính thức công nhận tổng thống đắc cử và cung cấp ngân quỹ cũng như quyền tiếp cận các cơ quan liên bang mà nhóm của ông cần, cho đến nay vẫn chưa công nhận chiến thắng của chính trị gia Dân chủ. Người đứng đầu cơ quan này, Emily Murphy (được ông Trump bổ nhiệm) khẳng định chưa có "xác nhận" nào về người chiến thắng bầu cử được đưa ra.
+                        Vị cựu Phó Tổng thống đã dành nhiều tháng trời để tập hợp nhóm chuyển giao và quyên tiền mặt để
+                        tạo quỹ. Nhưng Cơ quan Quản lý Dịch vụ Tổng hợp - có nhiệm vụ chính thức công nhận tổng thống
+                        đắc cử và cung cấp ngân quỹ cũng như quyền tiếp cận các cơ quan liên bang mà nhóm của ông cần,
+                        cho đến nay vẫn chưa công nhận chiến thắng của chính trị gia Dân chủ. Người đứng đầu cơ quan
+                        này, Emily Murphy (được ông Trump bổ nhiệm) khẳng định chưa có "xác nhận" nào về người chiến
+                        thắng bầu cử được đưa ra.
 
-                        Nhóm ông Biden được cho là đang chuẩn bị hành động pháp lý nếu chính quyền ông Trump tiếp tục trì hoãn việc chuyển giao.
+                        Nhóm ông Biden được cho là đang chuẩn bị hành động pháp lý nếu chính quyền ông Trump tiếp tục
+                        trì hoãn việc chuyển giao.
                     </div>
                 </div>
                 <div class="d-flex item-information">
@@ -264,13 +438,20 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         YYYY.MM.DD
                     </div>
                     <div class="right-information">
-                        Tổng thống đắc cử: Một ứng viên tổng thống thắng cử nhưng chưa tuyên thệ nhậm chức sẽ được gọi như vậy.
+                        Tổng thống đắc cử: Một ứng viên tổng thống thắng cử nhưng chưa tuyên thệ nhậm chức sẽ được gọi
+                        như vậy.
 
-                        Nội các: Joe Biden sẽ sớm bắt đầu công bố những người mà ông ấy muốn có trong nội các của mình, đội ngũ cấp cao nhất của chính phủ. Đội này bao gồm những người đứng đầu của tất cả các bộ và cơ quan chủ chốt.
+                        Nội các: Joe Biden sẽ sớm bắt đầu công bố những người mà ông ấy muốn có trong nội các của mình,
+                        đội ngũ cấp cao nhất của chính phủ. Đội này bao gồm những người đứng đầu của tất cả các bộ và cơ
+                        quan chủ chốt.
 
-                        Điều trần phê chuẩn: Nhiều vị trí hàng đầu của chính phủ do Tổng thống bổ nhiệm cần được Thượng viện chấp thuận. Những người được ông Biden chọn sẽ được các ủy ban của Thượng viện thẩm vấn trong một cuộc điều trần, sau đó sẽ có một cuộc bỏ phiếu để chấp thuận hoặc từ chối.
+                        Điều trần phê chuẩn: Nhiều vị trí hàng đầu của chính phủ do Tổng thống bổ nhiệm cần được Thượng
+                        viện chấp thuận. Những người được ông Biden chọn sẽ được các ủy ban của Thượng viện thẩm vấn
+                        trong một cuộc điều trần, sau đó sẽ có một cuộc bỏ phiếu để chấp thuận hoặc từ chối.
 
-                        Celtic: Là Tổng thống đắc cử, ông Biden được Cơ quan Mật vụ tăng cường bảo vệ và mật danh của ông là Celtic. Những mật danh này được chính ứng viên lựa chọn. Ông Trump là Mogul còn bà Harris là Người tiên phong.
+                        Celtic: Là Tổng thống đắc cử, ông Biden được Cơ quan Mật vụ tăng cường bảo vệ và mật danh của
+                        ông là Celtic. Những mật danh này được chính ứng viên lựa chọn. Ông Trump là Mogul còn bà Harris
+                        là Người tiên phong.
                     </div>
                 </div>
                 <div class="d-flex item-information">
@@ -278,13 +459,19 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         YYYY.MM.DD
                     </div>
                     <div class="right-information">
-                        Chiến dịch tranh cử của Tổng thống Trump tuyên bố đâm đơn kiện ở một số bang mà ông Biden đã thắng hoặc dẫn trước sít sao. Ông Trump cáo buộc có tình trạng gian lận bỏ phiếu nhưng không đưa ra bằng chứng.
+                        Chiến dịch tranh cử của Tổng thống Trump tuyên bố đâm đơn kiện ở một số bang mà ông Biden đã
+                        thắng hoặc dẫn trước sít sao. Ông Trump cáo buộc có tình trạng gian lận bỏ phiếu nhưng không đưa
+                        ra bằng chứng.
 
                         Ông Trump có kế hoạch kiện tụng thế nào?
 
-                        Nỗ lực loại bỏ một số phiếu bầu qua thư sẽ bắt đầu ở các tòa án tiểu bang nhưng có thể kết thúc tại Tòa án Tối cao. Tuy nhiên, các chuyên gia pháp lý cho rằng các vụ kiện khó thành công trong việc thay đổi kết quả. Cũng có thể sẽ có kiểm phiếu lại ở một số bang, theo yêu cầu của chiến dịch Trump, nhưng chúng khó mà đảo ngược chiến thắng của ông Biden.
+                        Nỗ lực loại bỏ một số phiếu bầu qua thư sẽ bắt đầu ở các tòa án tiểu bang nhưng có thể kết thúc
+                        tại Tòa án Tối cao. Tuy nhiên, các chuyên gia pháp lý cho rằng các vụ kiện khó thành công trong
+                        việc thay đổi kết quả. Cũng có thể sẽ có kiểm phiếu lại ở một số bang, theo yêu cầu của chiến
+                        dịch Trump, nhưng chúng khó mà đảo ngược chiến thắng của ông Biden.
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -293,7 +480,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -302,7 +490,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -311,7 +500,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -320,7 +510,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -329,7 +520,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -338,7 +530,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -347,7 +540,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -356,7 +550,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -365,7 +560,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -374,7 +570,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -383,7 +580,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -392,7 +590,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -401,7 +600,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -410,7 +610,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -419,7 +620,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -428,7 +630,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -437,7 +640,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -446,7 +650,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -455,7 +660,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -464,7 +670,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -473,7 +680,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -482,7 +690,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -491,7 +700,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -500,7 +710,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -509,7 +720,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -518,7 +730,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -527,7 +740,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -536,7 +750,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -545,7 +760,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -554,7 +770,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -563,7 +780,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -572,7 +790,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -581,7 +800,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -590,7 +810,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -599,7 +820,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -608,7 +830,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -617,7 +840,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -626,7 +850,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -635,7 +860,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -644,7 +870,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -653,7 +880,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -662,7 +890,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -671,7 +900,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -680,7 +910,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -689,7 +920,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -698,7 +930,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -707,7 +940,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -716,7 +950,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -725,7 +960,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </div>
-                </div>   <div class="d-flex item-information">
+                </div>
+                <div class="d-flex item-information">
                     <div class="left-information">
                         YYYY.MM.DD
                     </div>
@@ -741,6 +977,32 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
 </section>
 @include("Customer.Components.button-scroll")
 @include("Customer.Components.footer")
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml            : true,
+            version          : 'v9.0'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/zh_HK/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-customerchat"
+     attribution=setup_tool
+     page_id="102536525038100"
+     theme_color="#01897b"
+     logged_in_greeting="お手伝いしましょう"
+     logged_out_greeting="お手伝いしましょう">
+</div>
+<div class="fb-customerchat"
+     attribution=setup_tool
+     page_id="102536525038100">
+</div>
 
 </body>
 </html>

@@ -33,7 +33,7 @@ class UserController extends Controller
 
     public function showChanger()
     {
-        $customer = Customer::all();
+        $customer = Customer::all()->orderby("created_at","DESC");
         return view("Admin.Manager.ManagerAccount.chang", compact("customer"));
     }
 
@@ -55,7 +55,7 @@ class UserController extends Controller
     }
 
     public function checkImager() {
-        $cus = Customer::where("static",1)->paginate(5);
+        $cus = Customer::where("static", 1)->orderBy('created_at', 'desc')->paginate(5);
         return view("Admin.Manager.ManagerAccount.checkImager",compact("cus"));
     }
 }

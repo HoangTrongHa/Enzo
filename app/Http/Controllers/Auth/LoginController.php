@@ -48,7 +48,7 @@ class LoginController extends Controller
     }
     public function postLoginAdmin(AdminCreateRequest $request)
     {
-        if ($this->attemptLogin($request)) {
+        if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
             return redirect()->route("home.admin");
         }
         return $this->sendFailedLoginResponse($request);

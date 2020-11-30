@@ -137,17 +137,22 @@ class CustomerController extends Controller
     {
         $cus = Auth::guard("Customer")->user();
 
-        if ($cus->static == 2) {
+        if ($cus->static == 2 ) {
             return view("Customer.loan", compact("cus"));
-        } elseif ($cus->static == 3) {
+        } elseif ($cus->static == 3 ) {
             return view("Customer.confirm");
-        } elseif ($cus->static == 4) {
+        } elseif ($cus->static == 4 ) {
             return redirect()->route("sinsei3");
-        } elseif ($cus->static == 5) {
+        } elseif ($cus->static == 5 ) {
             return view("Customer.confirm");
-        }elseif ($cus->static ==6){
+        }elseif ($cus->static == 6 ){
             return view("Customer.loan", compact("cus"));
-
+        }elseif ($cus->static == 7){
+            return view("Customer.loan", compact("cus"));
+        }elseif ($cus->static == 8){
+            return view("Customer.loan", compact("cus"));
+        }elseif ($cus->static == 9){
+            return view("Customer.loan", compact("cus"));
         }
     }
 
@@ -181,7 +186,6 @@ class CustomerController extends Controller
         try {
             DB::beginTransaction();
             $cus = Auth::guard("Customer")->user()->FindOrFail($id);
-
             $cus->update([
                 "loancustomer" => $req->loancustomer,
                 "static" => 5
@@ -203,7 +207,24 @@ class CustomerController extends Controller
         }
 
     }
-
+    public function refuseSinsei3(Request $request,$id){
+        try {
+            DB::beginTransaction();
+            $cus = Auth::guard("Customer")->user()->FindOrFail($id);
+            $cus->update([
+                "static"=>2,
+                "maxtotal"=>0,
+                "borrowing"=>0,
+                "payment_term"=>null,
+                "loancus"=>0,
+            ]);
+            DB::commit();
+            return redirect()->to("loan");
+        }catch (\Exception $exception){
+            DB::rollBack();
+            return back();
+        }
+    }
 
     public function customerBanking()
     {

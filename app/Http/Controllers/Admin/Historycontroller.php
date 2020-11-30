@@ -11,12 +11,7 @@ class Historycontroller extends Controller
 {
     public function index($id)
     {
-//       $cus = Customer::with(["history",function($query){
-//           $query->Where("customerid" ,$id)
-//       }])->get();
-        $his =History::where("customerid",$id)->get();
-
-
+        $his =History::where("customerid",$id)->orderBy('created_at', 'desc')->get();
         return view("Admin.history.index",compact("his"));
 
     }

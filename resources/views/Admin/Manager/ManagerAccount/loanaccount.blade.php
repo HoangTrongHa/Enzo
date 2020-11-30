@@ -31,7 +31,7 @@
                                     {{$item->stillowe}}
                             </th>
                             <th>
-                                <a href="{{route("creatLoanAccount",[$item->id])}}" class="badge badge-success badge-pill">Edit</a>
+                                <a href="{{route("creatLoanAccount",[$item->id])}}" class="btn btn-warning">Edit</a>
                             </th>
                             @endforeach
                         </tr>

@@ -1,5 +1,8 @@
 @extends("Admin.Components.layout")
 @section("content")
+    <span>
+
+    </span>
     <div class="container">
         <form>
             <div class="container">

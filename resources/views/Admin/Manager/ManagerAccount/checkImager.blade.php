@@ -1,5 +1,8 @@
 @extends("Admin.Components.layout")
 @section("content")
+    <span class="span-header">
+        写真認証リスト
+    </span>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -35,7 +38,7 @@
                         <th>{{$list->phone_number}}</th>
                         <th>{{$list->checklogin}}</th>
                         <th>
-                            <a href="{{route("showgrantRightAdmin",['id' => $list->id])}}" class="badge badge-success badge-pill">Change</a>
+                            <a href="{{route("showgrantRightAdmin",['id' => $list->id])}}" class="btn btn-success">変化する</a>
                         </th>
                     </tr>
                 @endforeach
@@ -46,6 +49,10 @@
     {!! $cus->links() !!}
 
     <style>
+        .span-header{
+            font-size: 30px;
+            font-weight: 600;
+        }
         th{
             text-align: center;
         }

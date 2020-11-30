@@ -25,6 +25,11 @@ class Customer extends Authenticatable
     {
         return $this->static;
     }
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
+
     public function upload()
     {
         return $this->hasMany(upload::class, 'customerid');

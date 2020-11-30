@@ -25,8 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('test-change-status')
-            ->daily();
+        $schedule->command('update:change_status')->daily();
     }
 
     /**

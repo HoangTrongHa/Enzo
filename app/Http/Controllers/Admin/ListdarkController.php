@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class ListdarkController extends Controller
 {
     public function index(){
-        $cus = Customer::where("static",9)->get();
+        $cus = Customer::where("static",9)->orderBy('created_at', 'desc')->get();
         return view("Admin.listdark.index",compact("cus"));
     }
 

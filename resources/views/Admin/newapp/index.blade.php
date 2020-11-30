@@ -1,5 +1,6 @@
 @extends("Admin.Components.layout")
 @section("content")
+    <span class="span-header">新しいアカウント</span>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -35,7 +36,7 @@
                         <th>{{$list->phone_number}}</th>
                         <th>{{$list->checklogin}}</th>
                         <th>
-                            <a href="{{route("show-app",['id' => $list->id])}}" class="badge badge-success badge-pill">詳細</a>
+                            <a href="{{route("show-app",['id' => $list->id])}}" class="btn btn-success">詳細</a>
                         </th>
                     </tr>
                 @endforeach
@@ -88,6 +89,12 @@
         .four .button-active .button-out {  }
         .four .button-active .button-in {  }
         .four .button-active .button-bg { background-color:#22bb22; }
-
+        .span-header{
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .card-body{
+            margin-top: 20px;
+        }
     </style>
 @endsection

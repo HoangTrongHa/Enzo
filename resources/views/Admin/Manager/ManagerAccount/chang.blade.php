@@ -37,7 +37,7 @@
 
                         </th>
                         <th>
-                            <a href="{{route("showgrantRightAdmin",[$list->id])}}" class="badge badge-success badge-pill">Change</a>
+                            <a href="{{route("showgrantRightAdmin",[$list->id])}}" class="btn btn-success">Change</a>
                         </th>
                     </tr>
                 @endforeach

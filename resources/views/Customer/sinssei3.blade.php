@@ -10,9 +10,6 @@
         <div class="container">
             <div class="sinse-3">
 
-                <form action="{{route("postSinsei3",[$cus->id])}}" method="POST" id="form-sinse-3">
-                    @csrf
-                    @method("POST")
                     <div class="title-sinse-3">
 
                         <span>〈   検査結果   〉</span>
@@ -23,12 +20,7 @@
 
                         </div>
                         <div class="forward-to-money">
-                            <input type="hidden" name="maxtotal" value="{{$cus->maxtotal}} ">
-                            <input type="hidden" name="borrowing" value="{{$cus->borrowing}} ">
-                            <input type="hidden" name="receive" value="{{$cus->receive}} ">
-                            <input type="hidden" name="payment_term" value="{{$cus->payment_term}} ">
-                            <input type="hidden" name="customerid" value="{{$cus->id}}">
-                            <input type="hidden" name="loancustomer" value="{{$cus->maxtotal}}">
+
                             <span>{{$cus->maxtotal}}</span><span class="yen-sinse-3">円</span>
                         </div>
                     </div>
@@ -46,14 +38,29 @@
                     </div>
                     <div class="button-sinse-3">
                         <div class="button-submit-sinse-3">
+
+                            <form action="{{route("postSinsei3",[$cus->id])}}" method="POST" id="form-sinse-3">
+                                @csrf
+                                @method("POST")
+                                <input type="hidden" name="maxtotal" value="{{$cus->maxtotal}} ">
+                                <input type="hidden" name="borrowing" value="{{$cus->borrowing}} ">
+                                <input type="hidden" name="receive" value="{{$cus->receive}} ">
+                                <input type="hidden" name="payment_term" value="{{$cus->payment_term}} ">
+                                <input type="hidden" name="customerid" value="{{$cus->id}}">
+                                <input type="hidden" name="loancustomer" value="{{$cus->maxtotal}}">
                             <a href="#" id="button-submit-sinse-3">
                                 売却申</a>
+                            </form>
                         </div>
                         <div class="button-back-sinse-3">
-                            <a href="#">戻る</a>
+                            <form action="{{route("refuse-sinsei-3",[$cus->id])}}" method="POST" id="form-refuse">
+                                @csrf
+                                @method("POST")
+                                <a id="button-refuse" href="#">戻る</a>
+                            </form>
                         </div>
                     </div>
-                </form>
+
             </div>
         </div>
 
@@ -70,6 +77,9 @@
     <script>
         document.getElementById("button-submit-sinse-3").onclick = function (){
             document.getElementById("form-sinse-3").submit();
+        }
+        document.getElementById("button-refuse").onclick = function (){
+            document.getElementById("form-refuse").submit();
         }
     </script>
 @endsection

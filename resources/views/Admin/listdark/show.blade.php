@@ -17,8 +17,7 @@
     <div class="container">
         <div class="button-show-delay">
             <a href="{{route("list-dark")}}">戻る</a>
-            <a href="#">ユーザーメモ</a>
-            <a href="{{route("history",$cus->id)}}">lich su</a>
+            <a href="{{route("history",$cus->id)}}">歴史</a>
         </div>
     </div>
 
