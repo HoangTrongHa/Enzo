@@ -8,20 +8,33 @@
                 </a>
             </div>
             <div class="heading-right">
-                <div class="button-login">
                 @if(auth()->guard("Customer")->check())
-                        <img src="{{asset("image/icon_login.png")}}" alt="">
-                        <a href="{{route("application")}}">応用</a>
-                    @else
-                        <img src="{{asset("image/icon_login.png")}}" alt="">
-                        <a href="{{route("login")}}">ログイン</a>
-                    @endif
-                </div>
-                <div class="button-login">
-                    <img src="{{asset("image/icon_qa.png")}}" alt="">
-                    <a href="#">FAQ</a>
-                </div>
-
+                    <a href="{{route("application")}}">
+                        <div class="button-login">
+                            <img src="{{asset("image/icon_login.png")}}" alt="">
+                            <span id="span-login">
+                          応用
+                          </span>
+                        </div>
+                    </a>
+                @else
+                    <a href="{{route("login")}}">
+                        <div class="button-login">
+                            <img src="{{asset("image/icon_login.png")}}" alt="">
+                            <span id="span-login">
+                          ログイン
+                          </span>
+                        </div>
+                    </a>
+                @endif
+                    <a href="#">
+                        <div class="button-login">
+                            <img src="{{asset("image/icon_qa.png")}}" alt="">
+                            <span id="span-login">
+                         FAQ
+                          </span>
+                        </div>
+                    </a>
             </div>
         </div>
     </div>

@@ -43,7 +43,7 @@
     width: 25px;
     height: 25px;
   }
-  header .heading .heading-right .button-login a {
+  header .heading .heading-right .button-login span {
     color: white !important;
     font-size: 10px;
   }
@@ -538,7 +538,7 @@
     text-decoration: none;
     margin-top: 100px;
   }
-  .container-button #button-footer .item-button-footer {
+  .container-button #button-footer a {
     height: 59px;
     width: 32%;
     background-color: #00b7a4;
@@ -546,10 +546,207 @@
     color: white;
     border-radius: 10px;
   }
-  .container-button #button-footer .item-button-footer span {
+  .container-button #button-footer a span {
     position: relative;
     font-size: 8px;
     top: 25%;
+  }
+  #banner-register {
+    text-align: center;
+    background-color: #01897b;
+  }
+  #banner-register .title-register {
+    padding: 60px;
+  }
+  #banner-register .title-register span {
+    color: white;
+    font-size: 30px;
+  }
+  #body-register .header-body {
+    padding: 70px;
+    border-bottom: 2px solid #01897b;
+    text-align: center;
+  }
+  #body-register .header-body #header-body {
+    font-size: 40px;
+    color: #231f20;
+    font-weight: 600;
+  }
+  #body-register .header-body #header-body-2 {
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 36px;
+    color: #01897b;
+    text-align: center;
+  }
+  #body-register .footer-header-body {
+    font-size: 10px;
+    letter-spacing: 2px;
+    line-height: 25px;
+    color: #000000;
+    text-align: center;
+  }
+  #body-register .footer-header-body .margin-footer-body {
+    margin-top: 35px;
+    margin-bottom: 40px;
+  }
+  #body-register .left-register {
+    background-color: #9fdbd5;
+    border: 2px solid #01897b;
+    font-family: "Noto Sans CJ Kjp", serif;
+  }
+  #body-register .left-register .margin-left-register {
+    margin: 35px 0 35px 5px;
+  }
+  #body-register .left-register .margin-left-register span {
+    font-size: 19px;
+    letter-spacing: 1px;
+    line-height: 55px;
+    color: #000000;
+    font-weight: 600;
+  }
+  #body-register .left-register .margin-left-register .span-red {
+    font-size: 20px;
+    color: red;
+    margin-left: 12px;
+  }
+  #body-register .left-register .margin-left-register-2 {
+    margin: 35px 0 35px 5px;
+  }
+  #body-register .left-register .margin-left-register-2 span {
+    font-size: 10px;
+    line-height: 55px;
+    color: #000000;
+    font-weight: 600;
+  }
+  #body-register .left-register .margin-left-register-2 .span-red {
+    font-size: 15px;
+    color: red;
+    margin-left: 12px;
+  }
+  #body-register .right-register {
+    border: 2px solid #01897b;
+  }
+  #body-register .right-register input {
+    background-color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register {
+    margin: 35px 0 35px 13px;
+    font-size: 30px;
+  }
+  #body-register .right-register .margin-right-register .input-full {
+    width: 100%;
+  }
+  #body-register .right-register .margin-right-register .input-three {
+    width: 20%;
+    margin-right: 10px;
+    margin-left: 15px;
+  }
+  #body-register .right-register .margin-right-register .input-one-letter {
+    width: 68%;
+  }
+  #body-register .right-register .margin-right-register .radio-type {
+    width: 30px;
+    position: relative;
+    height: 30px;
+    top: 4px;
+    color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register .radio-type .input-radio {
+    width: 20px;
+    position: relative;
+    height: 30px;
+    top: 4px;
+    background-color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register .radio-type label {
+    color: #000000;
+  }
+  #body-register .check-box-register {
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 55px;
+    color: #000000;
+    font-weight: 500;
+    margin-top: 100px;
+    font-family: "Noto Sans CJ Kjp";
+  }
+  #body-register .check-box-register input {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #000000;
+    -webkit-appearance: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    top: -4px;
+  }
+  #body-register .check-box-register input:checked {
+    background-color: #313131;
+  }
+  #body-register .rules {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 150px;
+  }
+  #body-register .rules .content-information {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar {
+    width: 9px;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar-track {
+    background: #d4d4d4;
+    border-left: 4px solid white;
+    border-right: 4px solid white;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar-thumb {
+    background-color: #707070;
+  }
+  #body-register .rules .content-information .item-information {
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #body-register .rules .content-information .item-information .content-rules {
+    line-height: 25px;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    text-align: initial;
+    color: black;
+  }
+  #body-register .button-register {
+    display: flex;
+    justify-content: center;
+  }
+  #body-register .button-register button {
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #efdf00;
+    cursor: pointer;
+    border-top: 5px solid #f8f295;
+    border-bottom: 5px solid #5b5500;
+    border-left: 5px solid #d5c700;
+    border-right: 5px solid #d5c700;
+    color: white;
+    padding: 20px 20px;
+    font-size: 20px;
+    width: 250px;
+  }
+  #body-register .button-register button:hover {
+    background-color: #d5c700;
   }
 }
 
@@ -587,7 +784,7 @@
     width: 30px;
     height: 30px;
   }
-  header .heading .heading-right .button-login a {
+  header .heading .heading-right .button-login span {
     color: white !important;
     font-size: 13px;
     margin-left: 5px;
@@ -1081,7 +1278,7 @@
     text-decoration: none;
     margin-top: 100px;
   }
-  .container-button #button-footer .item-button-footer {
+  .container-button #button-footer a {
     height: 59px;
     width: 32%;
     background-color: #00b7a4;
@@ -1089,10 +1286,210 @@
     color: white;
     border-radius: 10px;
   }
-  .container-button #button-footer .item-button-footer span {
+  .container-button #button-footer a span {
     position: relative;
     font-size: 8px;
     top: 25%;
+  }
+  #banner-register {
+    text-align: center;
+    background-color: #01897b;
+  }
+  #banner-register .title-register {
+    padding: 130px;
+  }
+  #banner-register .title-register span {
+    color: white;
+    font-size: 52px;
+  }
+  #body-register .header-body {
+    padding: 70px;
+    border-bottom: 2px solid #01897b;
+    text-align: center;
+  }
+  #body-register .header-body #header-body {
+    font-size: 50px;
+    color: #231f20;
+    font-weight: 600;
+  }
+  #body-register .header-body #header-body-2 {
+    font-size: 21px;
+    letter-spacing: 2px;
+    line-height: 36px;
+    color: #01897b;
+    text-align: center;
+  }
+  #body-register .footer-header-body {
+    width: 1012px;
+    height: 117px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 31px;
+    color: #000000;
+    text-align: center;
+  }
+  #body-register .footer-header-body .margin-footer-body {
+    margin-top: 44px;
+    margin-bottom: 96px;
+  }
+  #body-register .left-register {
+    background-color: #9fdbd5;
+    border: 2px solid #01897b;
+    font-family: "Noto Sans CJ Kjp", serif;
+  }
+  #body-register .left-register .margin-left-register {
+    margin: 35px 0 35px 5px;
+  }
+  #body-register .left-register .margin-left-register span {
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 55px;
+    color: #000000;
+    font-weight: 600;
+  }
+  #body-register .left-register .margin-left-register .span-red {
+    font-size: 20px;
+    color: red;
+    margin-left: 12px;
+  }
+  #body-register .left-register .margin-left-register-2 {
+    margin: 35px 0 35px 5px;
+  }
+  #body-register .left-register .margin-left-register-2 span {
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 55px;
+    color: #000000;
+    font-weight: 600;
+  }
+  #body-register .left-register .margin-left-register-2 .span-red {
+    font-size: 15px;
+    color: red;
+    margin-left: 12px;
+  }
+  #body-register .right-register {
+    border: 2px solid #01897b;
+  }
+  #body-register .right-register input {
+    background-color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register {
+    margin: 35px 0 35px 13px;
+    font-size: 30px;
+  }
+  #body-register .right-register .margin-right-register .input-full {
+    width: 100%;
+  }
+  #body-register .right-register .margin-right-register .input-three {
+    width: 20%;
+    margin-right: 10px;
+    margin-left: 15px;
+  }
+  #body-register .right-register .margin-right-register .input-one-letter {
+    width: 68%;
+  }
+  #body-register .right-register .margin-right-register .radio-type {
+    width: 30px;
+    position: relative;
+    height: 30px;
+    top: 4px;
+    color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register .radio-type .input-radio {
+    width: 20px;
+    position: relative;
+    height: 30px;
+    top: 4px;
+    background-color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register .radio-type label {
+    color: #000000;
+  }
+  #body-register .check-box-register {
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 55px;
+    color: #000000;
+    font-weight: 500;
+    margin-top: 100px;
+    font-family: "Noto Sans CJ Kjp";
+  }
+  #body-register .check-box-register input {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #000000;
+    -webkit-appearance: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    top: -4px;
+  }
+  #body-register .check-box-register input:checked {
+    background-color: #313131;
+  }
+  #body-register .rules {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 150px;
+  }
+  #body-register .rules .content-information {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar {
+    width: 9px;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar-track {
+    background: #d4d4d4;
+    border-left: 4px solid white;
+    border-right: 4px solid white;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar-thumb {
+    background-color: #707070;
+  }
+  #body-register .rules .content-information .item-information {
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #body-register .rules .content-information .item-information .content-rules {
+    line-height: 25px;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    text-align: initial;
+    color: black;
+  }
+  #body-register .button-register {
+    display: flex;
+    justify-content: center;
+  }
+  #body-register .button-register button {
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #efdf00;
+    cursor: pointer;
+    border-top: 5px solid #f8f295;
+    border-bottom: 5px solid #5b5500;
+    border-left: 5px solid #d5c700;
+    border-right: 5px solid #d5c700;
+    color: white;
+    padding: 20px 20px;
+    font-size: 20px;
+    width: 250px;
+  }
+  #body-register .button-register button:hover {
+    background-color: #d5c700;
   }
 }
 
@@ -1127,7 +1524,7 @@
     width: 40px;
     height: 40px;
   }
-  header .heading .heading-right .button-login a {
+  header .heading .heading-right .button-login span {
     color: white !important;
     margin-left: 10px;
   }
@@ -1617,7 +2014,7 @@
     text-decoration: none;
     margin-top: 100px;
   }
-  .container-button #button-footer .item-button-footer {
+  .container-button #button-footer a {
     height: 76px;
     width: 32%;
     background-color: #00b7a4;
@@ -1625,10 +2022,210 @@
     color: white;
     border-radius: 5px;
   }
-  .container-button #button-footer .item-button-footer span {
+  .container-button #button-footer a span {
     position: relative;
     font-size: 12px;
     top: 35%;
+  }
+  #banner-register {
+    text-align: center;
+    background-color: #01897b;
+  }
+  #banner-register .title-register {
+    padding: 130px;
+  }
+  #banner-register .title-register span {
+    color: white;
+    font-size: 52px;
+  }
+  #body-register .header-body {
+    padding: 70px;
+    border-bottom: 2px solid #01897b;
+    text-align: center;
+  }
+  #body-register .header-body #header-body {
+    font-size: 50px;
+    color: #231f20;
+    font-weight: 600;
+  }
+  #body-register .header-body #header-body-2 {
+    font-size: 21px;
+    letter-spacing: 2px;
+    line-height: 36px;
+    color: #01897b;
+    text-align: center;
+  }
+  #body-register .footer-header-body {
+    width: 1012px;
+    height: 117px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 31px;
+    color: #000000;
+    text-align: center;
+  }
+  #body-register .footer-header-body .margin-footer-body {
+    margin-top: 44px;
+    margin-bottom: 96px;
+  }
+  #body-register .left-register {
+    background-color: #9fdbd5;
+    border: 2px solid #01897b;
+    font-family: "Noto Sans CJ Kjp", serif;
+  }
+  #body-register .left-register .margin-left-register {
+    margin: 35px 0 35px 5px;
+  }
+  #body-register .left-register .margin-left-register span {
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 55px;
+    color: #000000;
+    font-weight: 600;
+  }
+  #body-register .left-register .margin-left-register .span-red {
+    font-size: 20px;
+    color: red;
+    margin-left: 12px;
+  }
+  #body-register .left-register .margin-left-register-2 {
+    margin: 35px 0 35px 5px;
+  }
+  #body-register .left-register .margin-left-register-2 span {
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 55px;
+    color: #000000;
+    font-weight: 600;
+  }
+  #body-register .left-register .margin-left-register-2 .span-red {
+    font-size: 15px;
+    color: red;
+    margin-left: 12px;
+  }
+  #body-register .right-register {
+    border: 2px solid #01897b;
+  }
+  #body-register .right-register input {
+    background-color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register {
+    margin: 35px 0 35px 13px;
+    font-size: 30px;
+  }
+  #body-register .right-register .margin-right-register .input-full {
+    width: 100%;
+  }
+  #body-register .right-register .margin-right-register .input-three {
+    width: 20%;
+    margin-right: 10px;
+    margin-left: 15px;
+  }
+  #body-register .right-register .margin-right-register .input-one-letter {
+    width: 77%;
+  }
+  #body-register .right-register .margin-right-register .radio-type {
+    width: 30px;
+    position: relative;
+    height: 30px;
+    top: 4px;
+    color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register .radio-type .input-radio {
+    width: 20px;
+    position: relative;
+    height: 30px;
+    top: 4px;
+    background-color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register .radio-type label {
+    color: #000000;
+  }
+  #body-register .check-box-register {
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 55px;
+    color: #000000;
+    font-weight: 500;
+    margin-top: 100px;
+    font-family: "Noto Sans CJ Kjp";
+  }
+  #body-register .check-box-register input {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #000000;
+    -webkit-appearance: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    top: -4px;
+  }
+  #body-register .check-box-register input:checked {
+    background-color: #313131;
+  }
+  #body-register .rules {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 150px;
+  }
+  #body-register .rules .content-information {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar {
+    width: 9px;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar-track {
+    background: #d4d4d4;
+    border-left: 4px solid white;
+    border-right: 4px solid white;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar-thumb {
+    background-color: #707070;
+  }
+  #body-register .rules .content-information .item-information {
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #body-register .rules .content-information .item-information .content-rules {
+    line-height: 25px;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    text-align: initial;
+    color: black;
+  }
+  #body-register .button-register {
+    display: flex;
+    justify-content: center;
+  }
+  #body-register .button-register button {
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #efdf00;
+    cursor: pointer;
+    border-top: 5px solid #f8f295;
+    border-bottom: 5px solid #5b5500;
+    border-left: 5px solid #d5c700;
+    border-right: 5px solid #d5c700;
+    color: white;
+    padding: 20px 20px;
+    font-size: 20px;
+    width: 250px;
+  }
+  #body-register .button-register button:hover {
+    background-color: #d5c700;
   }
 }
 
@@ -1665,7 +2262,7 @@
     width: 50px;
     height: 50px;
   }
-  header .heading .heading-right .button-login a {
+  header .heading .heading-right .button-login span {
     color: white !important;
     margin-left: 20px;
   }
@@ -2150,7 +2747,7 @@
     text-decoration: none;
     margin-top: 100px;
   }
-  .container-button #button-footer .item-button-footer {
+  .container-button #button-footer a {
     height: 76px;
     width: 32%;
     background-color: #00b7a4;
@@ -2158,14 +2755,207 @@
     color: white;
     border-radius: 5px;
   }
-  .container-button #button-footer .item-button-footer:hover {
+  .container-button #button-footer a:hover {
     background-color: #808080;
   }
-  .container-button #button-footer .item-button-footer a {
+  .container-button #button-footer a a {
     position: relative;
     font-size: 17px;
     top: 35%;
     color: white;
+  }
+  #banner-register {
+    text-align: center;
+    background-color: #01897b;
+  }
+  #banner-register .title-register {
+    padding: 130px;
+  }
+  #banner-register .title-register span {
+    color: white;
+    font-size: 52px;
+  }
+  #body-register .header-body {
+    padding: 70px;
+    border-bottom: 2px solid #01897b;
+    text-align: center;
+  }
+  #body-register .header-body #header-body {
+    font-size: 50px;
+    color: #231f20;
+    font-weight: 600;
+  }
+  #body-register .header-body #header-body-2 {
+    font-size: 21px;
+    letter-spacing: 2px;
+    line-height: 36px;
+    color: #01897b;
+    text-align: center;
+  }
+  #body-register .footer-header-body {
+    width: 1012px;
+    height: 117px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 31px;
+    color: #000000;
+    text-align: center;
+  }
+  #body-register .footer-header-body .margin-footer-body {
+    margin-top: 44px;
+    margin-bottom: 96px;
+  }
+  #body-register .left-register {
+    background-color: #9fdbd5;
+    border: 2px solid #01897b;
+    font-family: "Noto Sans CJ Kjp";
+  }
+  #body-register .left-register .margin-left-register {
+    margin: 35px 0 35px 5px;
+  }
+  #body-register .left-register .margin-left-register .span-red {
+    font-size: 30px;
+    color: red;
+    margin-left: 12px;
+  }
+  #body-register .left-register .margin-left-register-2 {
+    margin: 35px 0 35px 5px;
+  }
+  #body-register .left-register .margin-left-register-2 span {
+    font-size: 23px;
+    letter-spacing: 1px;
+    line-height: 55px;
+    color: #000000;
+    font-weight: 500;
+  }
+  #body-register .left-register .margin-left-register-2 .span-red {
+    font-size: 28px;
+    color: red;
+    margin-left: 12px;
+  }
+  #body-register .right-register {
+    border: 2px solid #01897b;
+  }
+  #body-register .right-register input {
+    background-color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register {
+    margin: 35px 0 35px 13px;
+    font-size: 30px;
+  }
+  #body-register .right-register .margin-right-register .input-full {
+    width: 100%;
+  }
+  #body-register .right-register .margin-right-register .input-three {
+    width: 20%;
+    margin-right: 10px;
+    margin-left: 15px;
+  }
+  #body-register .right-register .margin-right-register .input-one-letter {
+    width: 83%;
+  }
+  #body-register .right-register .margin-right-register .radio-type {
+    width: 30px;
+    position: relative;
+    height: 30px;
+    top: 4px;
+    color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register .radio-type .input-radio {
+    width: 20px;
+    position: relative;
+    height: 30px;
+    top: 4px;
+    background-color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register .radio-type label {
+    color: #000000;
+  }
+  #body-register .check-box-register {
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 55px;
+    color: #000000;
+    font-weight: 500;
+    margin-top: 100px;
+    font-family: "Noto Sans CJ Kjp";
+  }
+  #body-register .check-box-register input {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #000000;
+    -webkit-appearance: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    top: -4px;
+  }
+  #body-register .check-box-register input:checked {
+    background-color: #313131;
+  }
+  #body-register .rules {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 150px;
+  }
+  #body-register .rules .content-information {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar {
+    width: 9px;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar-track {
+    background: #d4d4d4;
+    border-left: 4px solid white;
+    border-right: 4px solid white;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar-thumb {
+    background-color: #707070;
+  }
+  #body-register .rules .content-information .item-information {
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #body-register .rules .content-information .item-information .content-rules {
+    line-height: 25px;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    text-align: initial;
+    color: black;
+  }
+  #body-register .button-register {
+    display: flex;
+    justify-content: center;
+  }
+  #body-register .button-register button {
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #efdf00;
+    cursor: pointer;
+    border-top: 5px solid #f8f295;
+    border-bottom: 5px solid #5b5500;
+    border-left: 5px solid #d5c700;
+    border-right: 5px solid #d5c700;
+    color: white;
+    padding: 20px 20px;
+    font-size: 20px;
+    width: 250px;
+  }
+  #body-register .button-register button:hover {
+    background-color: #d5c700;
   }
 }
 
@@ -2201,7 +2991,7 @@
     width: 50px;
     height: 50px;
   }
-  header .heading .heading-right .button-login a {
+  header .heading .heading-right .button-login span {
     color: white !important;
     margin-left: 20px;
   }
@@ -2913,7 +3703,7 @@
     text-decoration: none;
     margin-top: 100px;
   }
-  .container-button #button-footer .item-button-footer {
+  .container-button #button-footer a {
     height: 76px;
     width: 32%;
     background-color: #00b7a4;
@@ -2921,251 +3711,218 @@
     color: white;
     border-radius: 5px;
   }
-  .container-button #button-footer .item-button-footer span {
+  .container-button #button-footer a:hover {
+    background-color: #707070;
+  }
+  .container-button #button-footer a span {
     position: relative;
     font-size: 17px;
     top: 35%;
+    color: white;
   }
-}
-
-#banner-register {
-  text-align: center;
-  background-color: #01897b;
-}
-
-#banner-register .title-register {
-  padding: 130px;
-}
-
-#banner-register .title-register span {
-  color: white;
-  font-size: 52px;
-}
-
-#body-register .header-body {
-  padding: 70px;
-  border-bottom: 2px solid #01897b;
-  text-align: center;
-}
-
-#body-register .header-body #header-body {
-  font-size: 50px;
-  color: #231f20;
-  font-weight: 600;
-}
-
-#body-register .header-body #header-body-2 {
-  font-size: 21px;
-  letter-spacing: 2px;
-  line-height: 36px;
-  color: #01897b;
-  text-align: center;
-}
-
-#body-register .footer-header-body {
-  width: 1012px;
-  height: 117px;
-  font-size: 18px;
-  letter-spacing: 2px;
-  line-height: 31px;
-  color: #000000;
-  text-align: center;
-}
-
-#body-register .footer-header-body .margin-footer-body {
-  margin-top: 44px;
-  margin-bottom: 96px;
-}
-
-#body-register .left-register {
-  font-size: 30px;
-  letter-spacing: 1px;
-  line-height: 55px;
-  color: #000000;
-  font-weight: 500;
-  background-color: #9fdbd5;
-  border: 2px solid #01897b;
-  font-family: "Noto Sans CJ Kjp";
-}
-
-#body-register .left-register .margin-left-register {
-  margin: 35px 0 35px 5px;
-}
-
-#body-register .left-register .margin-left-register .span-red {
-  font-size: 30px;
-  color: red;
-  margin-left: 12px;
-}
-
-#body-register .left-register .margin-left-register-2 {
-  margin: 35px 0 35px 5px;
-}
-
-#body-register .left-register .margin-left-register-2 span {
-  font-size: 29px;
-}
-
-#body-register .left-register .margin-left-register-2 .span-red {
-  font-size: 28px;
-  color: red;
-  margin-left: 12px;
-}
-
-#body-register .right-register {
-  border: 2px solid #01897b;
-}
-
-#body-register .right-register input {
-  background-color: #eeeeee;
-}
-
-#body-register .right-register .margin-right-register {
-  margin: 35px 0 35px 13px;
-  font-size: 30px;
-}
-
-#body-register .right-register .margin-right-register .birthday-select {
-  background-color: #eeeeee;
-  width: 170px;
-  height: 46px;
-  margin-right: 10px;
-}
-
-#body-register .right-register .margin-right-register .input-full {
-  width: 700px;
-  height: 46px;
-}
-
-#body-register .right-register .margin-right-register .input-three {
-  width: 170px;
-  height: 46px;
-  margin-right: 10px;
-  margin-left: 15px;
-}
-
-#body-register .right-register .margin-right-register .input-one-letter {
-  width: 601px;
-  height: 46px;
-}
-
-#body-register .right-register .margin-right-register .radio-type {
-  width: 30px;
-  position: relative;
-  height: 30px;
-  top: 4px;
-  color: #eeeeee;
-}
-
-#body-register .right-register .margin-right-register .radio-type .input-radio {
-  width: 30px;
-  position: relative;
-  height: 30px;
-  top: 4px;
-  background-color: #eeeeee;
-}
-
-#body-register .right-register .margin-right-register .radio-type label {
-  color: #000000;
-}
-
-#body-register .check-box-register {
-  font-size: 30px;
-  letter-spacing: 1px;
-  line-height: 55px;
-  color: #000000;
-  font-weight: 500;
-  margin-top: 100px;
-  font-family: "Noto Sans CJ Kjp";
-}
-
-#body-register .check-box-register input {
-  width: 30px;
-  height: 30px;
-  background-color: white;
-  border-radius: 50%;
-  vertical-align: middle;
-  border: 1px solid #000000;
-  -webkit-appearance: none;
-  outline: none;
-  position: relative;
-  cursor: pointer;
-  top: -4px;
-}
-
-#body-register .check-box-register input:checked {
-  background-color: #313131;
-}
-
-#body-register .rules {
-  text-align: center;
-  width: 100%;
-  margin-bottom: 150px;
-}
-
-#body-register .rules .content-information {
-  display: flex;
-  flex-direction: column;
-  width: 75%;
-  height: 400px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 50px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-#body-register .rules .content-information::-webkit-scrollbar {
-  width: 9px;
-}
-
-#body-register .rules .content-information::-webkit-scrollbar-track {
-  background: #d4d4d4;
-  border-left: 4px solid white;
-  border-right: 4px solid white;
-}
-
-#body-register .rules .content-information::-webkit-scrollbar-thumb {
-  background-color: #707070;
-}
-
-#body-register .rules .content-information .item-information {
-  margin-top: 35px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#body-register .rules .content-information .item-information .content-rules {
-  line-height: 25px;
-  width: 100%;
-  overflow: hidden;
-  display: block;
-  text-align: initial;
-  color: black;
-}
-
-#body-register .button-register {
-  display: flex;
-  justify-content: center;
-}
-
-#body-register .button-register button {
-  margin-left: 15px;
-  margin-right: 15px;
-  background-color: #efdf00;
-  cursor: pointer;
-  border-top: 5px solid #f8f295;
-  border-bottom: 5px solid #5b5500;
-  border-left: 5px solid #d5c700;
-  border-right: 5px solid #d5c700;
-  color: white;
-  padding: 20px 20px;
-  font-size: 20px;
-  width: 250px;
-}
-
-#body-register .button-register button:hover {
-  background-color: #d5c700;
+  #banner-register {
+    text-align: center;
+    background-color: #01897b;
+  }
+  #banner-register .title-register {
+    padding: 130px;
+  }
+  #banner-register .title-register span {
+    color: white;
+    font-size: 52px;
+  }
+  #body-register .header-body {
+    padding: 70px;
+    border-bottom: 2px solid #01897b;
+    text-align: center;
+  }
+  #body-register .header-body #header-body {
+    font-size: 50px;
+    color: #231f20;
+    font-weight: 600;
+  }
+  #body-register .header-body #header-body-2 {
+    font-size: 21px;
+    letter-spacing: 2px;
+    line-height: 36px;
+    color: #01897b;
+    text-align: center;
+  }
+  #body-register .footer-header-body {
+    width: 1012px;
+    height: 117px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 31px;
+    color: #000000;
+    text-align: center;
+  }
+  #body-register .footer-header-body .margin-footer-body {
+    margin-top: 44px;
+    margin-bottom: 96px;
+  }
+  #body-register .left-register {
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 55px;
+    color: #000000;
+    font-weight: 500;
+    background-color: #9fdbd5;
+    border: 2px solid #01897b;
+    font-family: "Noto Sans CJ Kjp";
+  }
+  #body-register .left-register .margin-left-register {
+    margin: 35px 0 35px 5px;
+  }
+  #body-register .left-register .margin-left-register .span-red {
+    font-size: 30px;
+    color: red;
+    margin-left: 12px;
+  }
+  #body-register .left-register .margin-left-register-2 {
+    margin: 35px 0 35px 5px;
+  }
+  #body-register .left-register .margin-left-register-2 span {
+    font-size: 29px;
+  }
+  #body-register .left-register .margin-left-register-2 .span-red {
+    font-size: 28px;
+    color: red;
+    margin-left: 12px;
+  }
+  #body-register .right-register {
+    border: 2px solid #01897b;
+  }
+  #body-register .right-register input {
+    background-color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register {
+    margin: 35px 0 35px 13px;
+    font-size: 30px;
+  }
+  #body-register .right-register .margin-right-register .birthday-select {
+    background-color: #eeeeee;
+    width: 170px;
+    height: 46px;
+    margin-right: 10px;
+  }
+  #body-register .right-register .margin-right-register .input-full {
+    width: 700px;
+    height: 46px;
+  }
+  #body-register .right-register .margin-right-register .input-three {
+    width: 170px;
+    height: 46px;
+    margin-right: 10px;
+    margin-left: 15px;
+  }
+  #body-register .right-register .margin-right-register .input-one-letter {
+    width: 601px;
+    height: 46px;
+  }
+  #body-register .right-register .margin-right-register .radio-type {
+    width: 30px;
+    position: relative;
+    height: 30px;
+    top: 4px;
+    color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register .radio-type .input-radio {
+    width: 30px;
+    position: relative;
+    height: 30px;
+    top: 4px;
+    background-color: #eeeeee;
+  }
+  #body-register .right-register .margin-right-register .radio-type label {
+    color: #000000;
+  }
+  #body-register .check-box-register {
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 55px;
+    color: #000000;
+    font-weight: 500;
+    margin-top: 100px;
+    font-family: "Noto Sans CJ Kjp";
+  }
+  #body-register .check-box-register input {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #000000;
+    -webkit-appearance: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    top: -4px;
+  }
+  #body-register .check-box-register input:checked {
+    background-color: #313131;
+  }
+  #body-register .rules {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 150px;
+  }
+  #body-register .rules .content-information {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar {
+    width: 9px;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar-track {
+    background: #d4d4d4;
+    border-left: 4px solid white;
+    border-right: 4px solid white;
+  }
+  #body-register .rules .content-information::-webkit-scrollbar-thumb {
+    background-color: #707070;
+  }
+  #body-register .rules .content-information .item-information {
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #body-register .rules .content-information .item-information .content-rules {
+    line-height: 25px;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    text-align: initial;
+    color: black;
+  }
+  #body-register .button-register {
+    display: flex;
+    justify-content: center;
+  }
+  #body-register .button-register button {
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #efdf00;
+    cursor: pointer;
+    border-top: 5px solid #f8f295;
+    border-bottom: 5px solid #5b5500;
+    border-left: 5px solid #d5c700;
+    border-right: 5px solid #d5c700;
+    color: white;
+    padding: 20px 20px;
+    font-size: 20px;
+    width: 250px;
+  }
+  #body-register .button-register button:hover {
+    background-color: #d5c700;
+  }
 }
 
 #upload .margin-body-upload {
@@ -3278,7 +4035,7 @@
   margin-top: 115px;
 }
 
-#upload .button-upload .submit-upload {
+#upload .button-upload .submit-application {
   background-color: #efdf00;
   padding: 10px 130px 10px 130px;
   color: white;
@@ -3289,7 +4046,7 @@
   cursor: pointer;
 }
 
-#upload .button-upload .back-upload {
+#upload .button-upload .back-register {
   background-color: #efdf00;
   padding: 10px 130px 10px 130px;
   color: white;
@@ -3298,10 +4055,6 @@
   border-right: 4px solid #d5c700;
   border-top: 4px solid #f7ef83;
   cursor: pointer;
-}
-
-#upload .button-upload .back-upload a {
-  color: #ffffff;
 }
 
 #sinse-1 .include-sinse-1 {
@@ -3351,7 +4104,7 @@
   padding-bottom: 25px;
 }
 
-#sinse-1 .include-sinse-1 .button-sinse-left {
+#sinse-1 .include-sinse-1 .text-in-button {
   cursor: pointer;
   margin-top: 34px;
   width: 250px;
@@ -3368,13 +4121,20 @@
   border-bottom: 4px solid #007764;
   border-left: 2px solid #009a87;
   border-right: 2px solid #009a87;
+  color: white;
 }
 
-#sinse-1 .include-sinse-1 .button-sinse-left:hover {
+#sinse-1 .include-sinse-1 .text-in-button:hover {
   background-color: #6fd6cc;
 }
 
-#sinse-1 .include-sinse-1 .button-sinse-left .text-in-button {
+#sinse-1 .include-sinse-1 .text-in-button span {
+  position: relative;
+  top: 12%;
+  color: #ffffff;
+}
+
+#sinse-1 .include-sinse-1 .text-in-button .text-in-button {
   position: relative;
   top: 12%;
   color: #ffffff;
@@ -3401,9 +4161,15 @@
   background-color: #6fd6cc;
 }
 
-#sinse-1 .include-sinse-1 .back-sinse-1 .text-in-button {
+#sinse-1 .include-sinse-1 .back-sinse-1 .text-in-button-abutton-sinse-3 {
   position: relative;
   top: 12%;
+  color: #ffffff;
+}
+
+#sinse-1 .include-sinse-1 .back-sinse-1 .text-in-button-a {
+  position: relative;
+  top: 17%;
   color: #ffffff;
 }
 
@@ -3784,12 +4550,13 @@
   margin-top: 18px;
 }
 
-#sinse-3 .sinse-3 .button-sinse-3 .button-submit-sinse-3 {
+#sinse-3 .sinse-3 .button-sinse-3 #button-submit-sinse-3 {
   width: 250px;
   height: 50px;
   text-align: center;
   margin-left: 18px;
   cursor: pointer;
+  color: white;
   background-color: #e57b00;
   border-bottom: 2px solid #a53b00;
   border-left: 2px solid #ae4400;
@@ -3797,13 +4564,13 @@
   border-top: 2px solid #e6810b;
 }
 
-#sinse-3 .sinse-3 .button-sinse-3 .button-submit-sinse-3 #form-sinse-3 {
+#sinse-3 .sinse-3 .button-sinse-3 #button-submit-sinse-3 #form-sinse-3 {
   position: relative;
   top: 20%;
   color: #ffffff;
 }
 
-#sinse-3 .sinse-3 .button-sinse-3 .button-submit-sinse-3 #form-sinse-3 a {
+#sinse-3 .sinse-3 .button-sinse-3 #button-submit-sinse-3 #form-sinse-3 a {
   color: white;
 }
 

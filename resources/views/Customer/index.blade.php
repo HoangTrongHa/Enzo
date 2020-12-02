@@ -4,9 +4,6 @@
     @include("Customer.Components.head")
 </head>
 <body>
-<!-- Load Facebook SDK for JavaScript -->
-<!-- Load Facebook SDK for JavaScript -->
-
 
 @include("Customer.Components.header")
 <section id="banner">

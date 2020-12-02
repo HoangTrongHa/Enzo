@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +20,7 @@
         </span>
     </div>
 </section>
-<form action="{{route("upload",[$static->id])}}" method="POST" enctype="multipart/form-data">
+<form action="{{route("upload",[$static->id])}}" method="POST" id="img_upload" enctype="multipart/form-data">
     @csrf
     @method("POST")
     <section id="upload">
@@ -33,38 +32,59 @@
                     <input id="anhchandung" type="file" name="avatar" class="inputfile"
                            data-multiple-caption=" {count} files selected" multiple/>
                     <label for="anhchandung">アップロード</label>
+                    @error("avatar")
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                 </div>
                 <div class="margin-body-upload-top">
                     <span>身分証表アップ</span><br>
                     <input id="cmt" type="file" name="front" class="inputfile"
                            data-multiple-caption="{count} files selected" multiple/>
                     <label for="cmt">アップロード</label>
+                    @error("Front")
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                 </div>
                 <div class="margin-body-upload-top">
                     <span>身分証裏アップ（あれば撮影）</span><br>
                     <input id="file-3" type="file" name="back" class="inputfile"
                            data-multiple-caption="{count} files selected" multiple/>
                     <label for="file-3">アップロード</label>
+                    @error("idnhanhvien")
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                 </div>
                 <div class="margin-body-upload-top">
                     <span>通帳表紙</span><br>
                     <input id="file-4" type="file" name="idnhanhvien" class="inputfile"/>
                     <label for="file-4">アップロード</label>
+                    @error("Back")
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                 </div>
                 <div class="margin-body-upload-top">
                     <span>給与直近三ヶ月分の写真</span><br>
                     <input id="sotietkiem" type="file" name="sotietkiem" class="inputfile"/>
                     <label for="sotietkiem">アップロード</label>
+                    @error("luong")
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                 </div>
                 <div class="margin-body-upload-top">
                     <span>給与直近三ヶ月分の写真</span><br>
                     <input id="3thangluong" type="file" name="3thangluong" class="inputfile"/>
                     <label for="3thangluong">アップロード</label>
+                    @error("Biasotietkiem")
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                 </div>
                 <div class="margin-body-upload-top">
                     <span>給与直近三ヶ月分の写真</span><br>
                     <input id="nhieuanh" type="file" name="nhieuanh" class="inputfile"/>
                     <label for="nhieuanh">アップロード</label>
+                    @error("manypicture")
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                 </div>
                 <input type="hidden" class="front" name="customerid" value="{{auth()->guard("Customer")->id()}}">
 
@@ -125,31 +145,22 @@
                 </div>
             </div>
             <div class="button-upload">
-                <div class="submit-upload">
-                    <button type="submit">申し込み のコピー</button>
-                </div>
-                <div class="back-upload">
-                    <a href="#">戻る のコピー</a>
-                </div>
+                <a onclick="document.getElementById('img_upload').submit()" class="submit-application">
+                    <span>
+                        申し込み のコピー
+                    </span>
+                </a>
+                <a href="#" class="back-register">
+                    <span>
+                    戻る のコピー
+                    </span>
+
+                </a>
             </div>
         </div>
-
     </section>
 </form>
-<div class="container container-button">
-    <div id="button-footer">
-        <div class="item-button-footer">
-            <span>法人のファクタリング相談はこちら</span>
-        </div>
-        <div class="item-button-footer">
-            <span>個人新規申し込みはこちら</span>
-        </div>
-        <div class="item-button-footer">
-            <span>チャットで問い合わせる</span>
-
-        </div>
-    </div>
-</div>
+@include("Customer.Components.button-scroll")
 @include("Customer.Components.footer")
 <script>
     $(document).ready(function () {

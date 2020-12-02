@@ -16,7 +16,6 @@ class refundController extends Controller
         $cus = Customer::where("static", 7)->where("loancustomer", "!=", 0)->orderBy('created_at', 'desc')->get();
         return view("Admin.Refund.index", compact("cus"));
     }
-
     public function showrefund($id)
     {
         $cus = Customer::where("static", 7)->FindOrFail($id);
@@ -24,7 +23,6 @@ class refundController extends Controller
 
         return view("Admin.Refund.show", compact("cus", "end"));
     }
-
     public function changStatus(Request $req, $id)
     {
         try {
@@ -49,7 +47,6 @@ class refundController extends Controller
             return back();
         }
     }
-
     public function changStatusDelay($id, Request $req)
     {
         try {
@@ -67,7 +64,6 @@ class refundController extends Controller
             return back();
         }
     }
-
     public function haveBalance($id, Request $req)
     {
         try {

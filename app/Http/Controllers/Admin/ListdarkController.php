@@ -13,11 +13,9 @@ class ListdarkController extends Controller
         $cus = Customer::where("static",9)->orderBy('created_at', 'desc')->get();
         return view("Admin.listdark.index",compact("cus"));
     }
-
     public function importlist($id){
         try {
             $cus = Customer::Where("id",$id)->first();
-
             $cus-> update([
                 "static" => 9,
                 "loancus"=>null,

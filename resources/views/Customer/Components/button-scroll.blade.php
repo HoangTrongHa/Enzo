@@ -1,13 +1,13 @@
 <div class="container container-button">
     <div id="button-footer">
-        <div class="item-button-footer">
-            <a href="{{route("registercustomer")}}">法人新規申し込みはこちら</a>
-        </div>
-        <div class="item-button-footer">
-            <a href="#">個人新規申し込みはこちら</a>
-        </div>
-        <div class="item-button-footer">
-            <a href="#">チャットで問い合わせる</a>
-        </div>
+        <a href="{{route("registercustomer")}}">
+            <span>法人新規申し込みはこちら</span>
+        </a>
+        <a href="{{route("registercustomer")}}">
+            <span>個人新規申し込みはこちら</span>
+        </a>
+        <a href="{{route("registercustomer")}}">
+            <span>チャットで問い合わせる</span>
+        </a>
     </div>
 </div>

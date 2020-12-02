@@ -55,7 +55,7 @@
             </div>
             <div class="col-8 right-register">
                 <div class="margin-right-register">
-                    <input class="input-full" type="text" name="tenphienam" value="{{"tenphienam"}}">
+                    <input class="input-full" type="text" name="tenphienam" value="{{old("tenphienam")}}">
                     @error('tenphienam')
                     <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
                     @enderror
@@ -71,11 +71,11 @@
             </div>
             <div class="col-8 right-register">
                 <div class="row margin-right-register">
-                    <div class="col-2 radio-type">
+                    <div class="col-3 radio-type">
                         <input class="input-radio"  type="radio" name="male" value="男">
                         <label>男</label><br>
                     </div>
-                    <div class="col-2 radio-type">
+                    <div class="col-3 radio-type">
                         <input class="input-radio" type="radio" name="male" value="女">
                         <label>女</label><br>
 
@@ -98,7 +98,7 @@
             </div>
             <div class="col-8 right-register">
                 <div class="margin-right-register">
-                    <select style="border: 2px solid black; background-color: #eeeeee ;width: 170px;height: 46px; margin-right: 10px;" class="birthday-select" name="birth_year" id="year_id">
+                    <select style="border: 2px solid black; background-color: #eeeeee ;width: 170px;height: 46px; margin-right: 10px;" class="input-three" name="birth_year" id="year_id">
                         <option></option>
                         @for ($year = 2019; $year >= 1930; $year--)
                             <option
@@ -106,14 +106,14 @@
                             </option>
                         @endfor
                     </select>年
-                    <select style="    border: 2px solid black;background-color: #eeeeee ;width: 170px;height: 46px; margin-right: 10px; margin-left: 15px;" class="birthday-select" name="birth_month" id="month_id">
+                    <select style="    border: 2px solid black;background-color: #eeeeee ;width: 170px;height: 46px; margin-right: 10px; margin-left: 15px;" class="input-three" name="birth_month" id="month_id">
                         <option></option>
                         @for ($month = 1; $month <= 12; $month++)
                             <option
                                 {{old('birth_month') == $month ? 'selected' : ''}} value="{{sprintf('%02d', $month)}}">{{sprintf('%02d', $month)}}</option>
                         @endfor
                     </select>月
-                    <select style="background-color: #eeeeee ;    border: 2px solid black;width: 170px;height: 46px; margin-right: 10px; margin-left: 15px;" class="birthday-select" name="birth_day" id="day_id">
+                    <select style="background-color: #eeeeee ;    border: 2px solid black;width: 170px;height: 46px; margin-right: 10px; margin-left: 15px;" class="input-three" name="birth_day" id="day_id">
                         <option></option>
                         @for ($day = 1; $day <= 31; $day++)
                             <option

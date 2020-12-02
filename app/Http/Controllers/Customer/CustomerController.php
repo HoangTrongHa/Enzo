@@ -6,6 +6,7 @@ use App\Customer;
 use App\History;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CustomerRegister;
+use App\Http\Requests\uploadrequest;
 use App\upload;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -68,9 +69,7 @@ class CustomerController extends Controller
             DB::rollBack();
             return back();
         }
-
     }
-
     public function application()
     {
         $static = Auth::guard("Customer")->user();

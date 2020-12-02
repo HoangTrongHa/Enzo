@@ -23,7 +23,6 @@ class CustomerRegister extends FormRequest
      */
     public function rules()
     {
-        $a = 1;
         return [
             "tenchuhan" => "required",
             "tenphienam" => "required",

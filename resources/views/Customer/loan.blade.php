@@ -19,11 +19,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="button-sinse-left">
-                            <a href="" class="text-in-button">売却申請</a>
-                        </div>
+                        <a href="" class="text-in-button">
+                             <span>
+                                売却申請
+                             </span>
+
+                        </a>
                         <div class="back-sinse-1">
-                            <a href="{{route("history-customer",$cus->id)}}" class="text-in-button">利用履歴</a>
+                            <a href="{{route("history-customer",$cus->id)}}" class="text-in-button-a">利用履歴</a>
                         </div>
                     </div>
                     <div class="sinse-right">
@@ -111,7 +114,7 @@
                             </div>
                         </div>
                         <div class="back-sinse-1">
-                            <a onclick="{{route("history-customer",$cus->id)}}" class="text-in-button">利用履歴</a>
+                            <a onclick="{{route("history-customer",$cus->id)}}" class="text-in-button-a">利用履歴</a>
                         </div>
                     </div>
                     <div class="sinse-right">
@@ -171,11 +174,14 @@
 
                             </div>
                         </div>
-                        <div class="button-sinse-left">
-                            <a href="{{route("sinsei")}}" class="text-in-button">売却申請</a>
-                        </div>
+                        <a href="{{route("sinsei")}}" class="text-in-button">
+                             <span>
+                                売却申請
+                             </span>
+
+                        </a>
                         <div class="back-sinse-1">
-                            <a href="{{route("history-customer",$cus->id)}}" class="text-in-button">利用履歴</a>
+                            <a href="{{route("history-customer",$cus->id)}}" class="text-in-button-a">利用履歴</a>
                         </div>
                     </div>
                     <div class="sinse-right">

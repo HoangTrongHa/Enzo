@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $user = Customer::paginate(5);
+        $user = Customer::orderby("created_at","DESC")->paginate(5);
         return view('Admin.Manager.ManagerAccount.index', compact("user"));
     }
     public function search(Request $request){
@@ -21,9 +21,9 @@ class UserController extends Controller
         $search = Customer::where('kanji_name','like','%'.$request->key.'%')
             ->orWhere('account_number',$request->key)->orWhere('phone_number','like','%'.$request->key.'%')
             ->orWhere('address','like','%'.$request->key.'%')->get();
-        return view('Admin.searchview.index',compact("search"));
+        $session = $request->key;
+        return view('Admin.searchview.index',compact("search","session"));
     }
-
     public function show($id)
     {
         $customer = Customer::FindOrFail($id);

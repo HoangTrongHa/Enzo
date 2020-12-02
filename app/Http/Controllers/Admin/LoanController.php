@@ -16,16 +16,13 @@ class LoanController extends Controller
         $cus = Customer::where("static",4)->get();
         return view("Admin.Manager.Loan.index", compact("user","cus"));
     }
-
     public function createLoan($id)
     {
         $cus = Customer::findOrFail($id);
         return view("Admin.Manager.Loan.createLoan", compact("cus"));
     }
-
     public function postLoan($id, Request $req)
     {
-
         $cus = Customer::FindOrFail($id);
         $cus->maxtotal = $req->maxtotal;
         $cus->borrowing = $req->borrowing;
@@ -35,7 +32,6 @@ class LoanController extends Controller
         $cus->save();
         return redirect()->route("loan.index")->with("success", "Update products successfully");
     }
-
     public function deleteLoan($id)
     {
 

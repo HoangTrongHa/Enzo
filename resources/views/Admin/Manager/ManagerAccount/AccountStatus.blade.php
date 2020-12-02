@@ -219,18 +219,21 @@
     <form action="{{route("PostgrantRight",[$customer->id])}}" id="basicform" method="POST">
         @csrf
         @method("POST")
-        <div class="form-group">
-            <label for="inputUserName">Email*</label>
-            <input id="inputipt" type="text" readonly="true" data-parsley-trigger="change" value="{{$customer->email}}"
-                   placeholder="Enter Arrtibute values name" autocomplete="off" class="form-control">
+        <div class="row">
 
-        </div>
-        <div class="form-group">
-            <label for="">Grant Right*</label>
-            <select class="form-control" name="static">
-                <option value="1" {{($customer->static==1)?"selected":""}} >Close</option>
-                <option value="2" {{($customer->static==2)?"selected":""}} >Active</option>
-            </select>
+            <div class="col-md-6">
+                <label for="inputUserName">Eメール*</label>
+                <input id="inputipt" type="text" readonly="true" data-parsley-trigger="change" value="{{$customer->email}}"
+                       placeholder="Enter Arrtibute values name" autocomplete="off" class="form-control">
+
+            </div>
+            <div class="col-md-6">
+                <label for="">付与権*</label>
+                <select class="form-control" id="select" name="static">
+                    <option value="1" {{($customer->static==1)?"selected":""}} >閉じる</option>
+                    <option value="2" {{($customer->static==2)?"selected":""}} >アクティブ</option>
+                </select>
+            </div>
         </div>
         <div class="button-submit">
             <span class="text-left">
@@ -284,7 +287,10 @@
         }
 
 
-
+        #inputipt{
+            padding: 35px 35px;
+            font-size: 30px;
+        }
 
         .close {
             position:absolute;
@@ -296,7 +302,10 @@
             color:#fff;
             opacity:1;
         }
-
+        #select{
+            padding: 35px 35px;
+            font-size: 30px;
+        }
         #image {
             min-height:200px;
         }
@@ -319,4 +328,5 @@
             window.history.back();
         }
     </script>
+
 @endsection

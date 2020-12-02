@@ -33,6 +33,7 @@ Route::group(["prefix" => "admin"], function () {
             Route::post("updateLoan/{id}","\App\Http\Controllers\Admin\LoanController@postLoan")->name("loan.postcreateLoan");
             Route::get("/写真認証リスト","\App\Http\Controllers\Admin\UserController@checkImager")->name("checkImager");
             Route::get("/search-customer","\App\Http\Controllers\Admin\UserController@search")->name("search");
+            Route::get("/search-customer-find/{id}","\App\Http\Controllers\Admin\SearchController@findSearch")->name("findSearch");
             Route::get("/UserAccount/changer", "\App\Http\Controllers\Admin\UserController@showChanger")->name("showChanger");
             Route::get("/UserAccount/{id}", "\App\Http\Controllers\Admin\UserController@show")->name("showuser");
             Route::get("/UserAccount/grantRight/{id}", "\App\Http\Controllers\Admin\UserController@grantRight")->name("showgrantRightAdmin");

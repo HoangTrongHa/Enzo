@@ -37,8 +37,7 @@
                         <span>上記審査金額でよろしいでしょうか？</span>
                     </div>
                     <div class="button-sinse-3">
-                        <div class="button-submit-sinse-3">
-
+                        <a id="button-submit-sinse-3">
                             <form action="{{route("postSinsei3",[$cus->id])}}" method="POST" id="form-sinse-3">
                                 @csrf
                                 @method("POST")
@@ -48,10 +47,11 @@
                                 <input type="hidden" name="payment_term" value="{{$cus->payment_term}} ">
                                 <input type="hidden" name="customerid" value="{{$cus->id}}">
                                 <input type="hidden" name="loancustomer" value="{{$cus->maxtotal}}">
-                            <a href="#" id="button-submit-sinse-3">
-                                売却申</a>
+                                <span>
+                                    売却申
+                                </span>
                             </form>
-                        </div>
+                        </a>
                         <div class="button-back-sinse-3">
                             <form action="{{route("refuse-sinsei-3",[$cus->id])}}" method="POST" id="form-refuse">
                                 @csrf
@@ -60,11 +60,8 @@
                             </form>
                         </div>
                     </div>
-
             </div>
         </div>
-
-
     </section>
     <div class="container container-button-sinse-1">
         <div id="button-footer">

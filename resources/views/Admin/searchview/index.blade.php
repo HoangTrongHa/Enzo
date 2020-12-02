@@ -13,6 +13,7 @@
                         <th>　名前</th>
                         <th>　　電話番号</th>
                         <th>　　最終利用日</th>
+                        <th>　関数</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -45,6 +46,10 @@
                             <th>{{$list->kanji_name}}</th>
                             <th>{{$list->phone_number}}</th>
                             <th>{{$list->checklogin}}</th>
+                            <th>
+                                <a href="{{route("findSearch",['id' => $list->id])}}"
+                                   class="btn btn-primary">詳細</a>
+                            </th>
                         </tr>
                     @endforeach
                     </tbody>
