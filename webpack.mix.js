@@ -16,7 +16,5 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/enzo.scss', 'public/css').options({
     processCssUrls: false
 });
-
-
 mix.version();
 

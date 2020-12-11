@@ -40,6 +40,4 @@ class DelayController extends Controller
         $end = ($cus->loancustomer) - ($cus->loanrefund);
         return view ("Admin.delay.sent-mail",compact("cus","end"));
     }
-
-
 }

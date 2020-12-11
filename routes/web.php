@@ -39,6 +39,7 @@ Route::group(["prefix" => "admin"], function () {
             Route::get("/UserAccount/grantRight/{id}", "\App\Http\Controllers\Admin\UserController@grantRight")->name("showgrantRightAdmin");
             Route::post("/UserAccount/PostgrantRight/{id}", "\App\Http\Controllers\Admin\UserController@PostgrantRight")->name("PostgrantRight");
             Route::get("/listAccount", "\App\Http\Controllers\Admin\UserController@index")->name("listAccount");
+            Route::get("/listAccount/{id}", "\App\Http\Controllers\Admin\UserController@watchInformation")->name("watchInformation");
             Route::get('/send-email/destroy/{id}', '\App\Http\Controllers\Admin\MailController@refuse')->name("mail-refuse");
             Route::get('/send-email/moneytransfer/{id}', '\App\Http\Controllers\Admin\MailController@moneyTransfer')->name("money-transfer");
             Route::get("/app-new","\App\Http\Controllers\Admin\NewappController@index")->name("index-appnew");

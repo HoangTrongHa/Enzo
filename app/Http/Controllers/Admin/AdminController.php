@@ -28,6 +28,7 @@ class AdminController extends Controller
     {
         if ($req->hasFile('avatar-admin')) {
             $file1 = Storage::disk()->put('public/avatar-admin', $req->file("avatar-admin"));
+
         }
         $User = User::create([
             'name' => $req['name'],

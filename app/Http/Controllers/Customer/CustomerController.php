@@ -91,6 +91,7 @@ class CustomerController extends Controller
         try {
             if ($request->hasFile("avatar") || $request->hasFile('front') || $request->hasFile("idnhanhvien")
                 || $request->hasFile("sotietkiem") || $request->hasFile("3thangluong") || $request->hasFile("nhieuanh")) {
+
                 $file1 = Storage::disk()->put('public/front', $request->file("front"));
 
                 $file2 = Storage::disk()->put('public/back', $request->file("back"));

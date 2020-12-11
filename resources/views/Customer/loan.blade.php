@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="sinse-right">
-                        <div class="container">
+                        <div class="box-sinse-right">
                             <div class="profile-sinse-right">
                                 <div class="heading-sinse-right">
                                     <span>〈 お戻し金額 〉</span>
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                     <div class="sinse-right">
-                        <div class="container">
+                        <div class="box-sinse-right">
                             <div class="profile-sinse-right">
                                 <div class="heading-sinse-right">
                                     <span>〈 お戻し金額 〉</span>
@@ -185,7 +185,7 @@
                         </div>
                     </div>
                     <div class="sinse-right">
-                        <div class="container">
+                        <div class="box-sinse-right">
                             <div class="profile-sinse-right">
                                 <div class="heading-sinse-right">
                                     <span>〈 お戻し金額 〉</span>
@@ -234,7 +234,6 @@
         <div id="button-footer">
             <div class="item-button-footer">
                 <a href="#">チャットで問い合わせる</a>
-
             </div>
         </div>
     </div>

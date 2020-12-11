@@ -1,505 +1,499 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  @include("Customer.Components.head")
-</head>
-<body>
-@include("Customer.Components.header")
-
-<section id="banner-register">
-    <div class="title-register">
-        <span>個人新規申し込み</span>
-    </div>
-</section>
-<form action="{{route("postRegister")}}" method="POST" id="form-register">
-    {{csrf_field()}}
-    @method("POST")
-<section id="body-register">
-    <div class="container header-body">
-        <span id="header-body">Entry</span>
-        <br>
-        <span id="header-body-2">
+@extends("Customer.Components.layout")
+@section("content")
+    <section id="banner-register">
+        <div class="title-register">
+            <span>個人新規申し込み</span>
+        </div>
+    </section>
+    <form action="{{route("postRegister")}}" method="POST" id="form-register">
+        {{csrf_field()}}
+        @method("POST")
+        <section id="body-register">
+            <div class="container header-body">
+                <span id="header-body">Entry</span>
+                <br>
+                <span id="header-body-2">
                 申し込み
         </span>
-    </div>
-    <div class="container footer-header-body">
-        <div class="margin-footer-body">
-            <span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
-            <span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
-        </div>
-
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register">
-                    <span>氏名（漢字)</span><span class="span-red">※</span>
-
-                </div>
             </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input  class="input-full" type="text" name="tenchuhan" value="{{old("tenchuhan")}}">
-                    @error('tenchuhan')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register">
-                    <span>氏名(カナ)</span><span class="span-red">※</span>
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="text" name="tenphienam" value="{{old("tenphienam")}}">
-                    @error('tenphienam')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
+            <div class="container footer-header-body">
+                <div class="margin-footer-body">
+                    <span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+                    <span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
                 </div>
 
             </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register">
-                    <span>性別</span><span class="span-red">※</span>
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="row margin-right-register">
-                    <div class="col-3 radio-type">
-                        <input class="input-radio"  type="radio" name="male" value="男">
-                        <label>男</label><br>
+            <div class="container">
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register">
+                            <span>氏名（漢字)</span><span class="span-red">※</span>
+
+                        </div>
                     </div>
-                    <div class="col-3 radio-type">
-                        <input class="input-radio" type="radio" name="male" value="女">
-                        <label>女</label><br>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input  class="input-full" type="text" name="tenchuhan" value="{{old("tenchuhan")}}">
+                            @error('tenchuhan')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register">
+                            <span>氏名(カナ)</span><span class="span-red">※</span>
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="text" name="tenphienam" value="{{old("tenphienam")}}">
+                            @error('tenphienam')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
 
                     </div>
-                    <div class="col-6 radio-type">
-                        @error("male")
-                        <span class="text-danger">{{$message}}</span>
-                        @enderror
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register">
+                            <span>性別</span><span class="span-red">※</span>
+                        </div>
                     </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <div class="radio-type">
+                                <input class="input-radio"  type="radio" name="male" value="男">
+                                <span>男</span><br>
+                            </div>
+                            <div class="radio-type">
+                                <input class="input-radio" type="radio" name="male" value="女">
+                                <span>女</span><br>
 
-                </div>
+                            </div>
+                            <div class="radio-type">
+                                @error("male")
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
+                            </div>
 
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register">
-                    <span>生年月日</span><span class="span-red">※</span>
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <select style="border: 2px solid black; background-color: #eeeeee ;width: 170px;height: 46px; margin-right: 10px;" class="input-three" name="birth_year" id="year_id">
-                        <option></option>
-                        @for ($year = 2019; $year >= 1930; $year--)
-                            <option
-                                {{old('birth_year') == $year ? 'selected' : ''}} value="{{$year}}">{{$year}}
-                            </option>
-                        @endfor
-                    </select>年
-                    <select style="    border: 2px solid black;background-color: #eeeeee ;width: 170px;height: 46px; margin-right: 10px; margin-left: 15px;" class="input-three" name="birth_month" id="month_id">
-                        <option></option>
-                        @for ($month = 1; $month <= 12; $month++)
-                            <option
-                                {{old('birth_month') == $month ? 'selected' : ''}} value="{{sprintf('%02d', $month)}}">{{sprintf('%02d', $month)}}</option>
-                        @endfor
-                    </select>月
-                    <select style="background-color: #eeeeee ;    border: 2px solid black;width: 170px;height: 46px; margin-right: 10px; margin-left: 15px;" class="input-three" name="birth_day" id="day_id">
-                        <option></option>
-                        @for ($day = 1; $day <= 31; $day++)
-                            <option
-                                {{old('birth_day') == $day ? 'selected' : ''}}  value="{{sprintf('%02d', $day)}}">{{sprintf('%02d', $day)}}</option>
-                        @endfor
-                    </select>日
-                </div>
+                        </div>
 
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register">
-                    <span>家族構成</span>
-
+                    </div>
                 </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="text" name="family_structure">
-                    @error('family_structure')
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register">
+                            <span>生年月日</span><span class="span-red">※</span>
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <select class="input-three" name="birth_year" id="year_id">
+                                <option></option>
+                                @for ($year = 2019; $year >= 1930; $year--)
+                                    <option
+                                        {{old('birth_year') == $year ? 'selected' : ''}} value="{{$year}}">{{$year}}
+                                    </option>
+                                @endfor
+                            </select>年
+                            <select class="input-three" name="birth_month" id="month_id">
+                                <option></option>
+                                @for ($month = 1; $month <= 12; $month++)
+                                    <option
+                                        {{old('birth_month') == $month ? 'selected' : ''}} value="{{sprintf('%02d', $month)}}">{{sprintf('%02d', $month)}}</option>
+                                @endfor
+                            </select>月
+                            <select class="input-three" name="birth_day" id="day_id">
+                                <option></option>
+                                @for ($day = 1; $day <= 31; $day++)
+                                    <option
+                                        {{old('birth_day') == $day ? 'selected' : ''}}  value="{{sprintf('%02d', $day)}}">{{sprintf('%02d', $day)}}</option>
+                                @endfor
+                            </select>日
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register">
+                            <span>家族構成</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="text" name="family_structure">
+                            @error('family_structure')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register">
+                            <span>住所</span><span class="span-red">※</span>
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="text" name="diachinha" value="{{old("diachinha")}}">
+                            @error("diachinha")
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register">
+                            <span>住居の種類</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="number" name="type_of_residence">
+                            @error('type_of_residence')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register">
+                            <span>住居人数</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="number" name="number_of_residents">
+                            @error('number_of_residents')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register">
+                            <span>携帯電話</span><span class="span-red">※</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="number" name="sodienthoaididong" value="{{old("sodienthoaididong")}}">
+                            @error('sodienthoaididong')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register">
+                            <span>自宅番号</span>
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="text" name="diachinha">
+                            @error('diachinha')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>スマホメールアドレス</span><span class="span-red">※</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="text" name="electricmail">
+                            @error('electricmail')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>スマホメールアドレス</span><span class="span-red">※</span>
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <span>確認用</span>
+                            <input class="input-one-letter" type="text" name="electricmail-confirm">
+                            @error('electricmail-confirm')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>E-mailアドレス</span><span class="span-red">※</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="email" name="email">
+                            @error('email')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>E-mailアドレス</span><span class="span-red">※</span>
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <span>確認用</span>
+                            <input class="input-one-letter" type="email" name="email-confirm">
+                            @error('email-confirm')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>パスワード</span><span class="span-red">※</span>
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="password" name="password">
+                            @error('password')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>パスワード</span><span class="span-red">※</span>
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <span>確認用</span>
+                            <input class="input-one-letter" type="password" name="password-confirm">
+                            @error('password-confirm')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>勤務先本社名</span><span class="span-red">※</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="text" name="truso">
+                            @error('truso')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>勤務先本社住所</span><span class="span-red">※</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="text" name="head_office_address">
+                            @error('head_office_address')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>勤務先本社電話番号</span><span class="span-red">※</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="number" name="sdtcty">
+                            @error('sdtcty')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>常駐先名</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="text" name="nguoibaolanh">
+                            @error('nguoibaolanh')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>常駐先住所</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="text" name="diachinguoibaolanh">
+                            @error('diachinguoibaolanh')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>常駐先電話番号</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="number" name="sdtnguoibaolanh">
+                            @error('sdtnguoibaolanh')
+                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>従業員数</span>
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="number" name="songuoilam">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>雇用形態</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="text" name="chucvu">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>勤続年数</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="number">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>勤続時間帯</span>
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="text" name="thoigianlamviec">
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="left-register">
+                        <div class="margin-left-register-2">
+                            <span>お休み</span>
+
+                        </div>
+                    </div>
+                    <div class="right-register">
+                        <div class="margin-right-register">
+                            <input class="input-full" type="text" name="thoigiannghi">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="check-box-register">
+                    <input type="checkbox" name="checkbox">
+                    <span>個人情報の取り扱いについて</span>
+                    @error('checkbox')
                     <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
                     @enderror
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register">
-                    <span>住所</span><span class="span-red">※</span>
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="text" name="diachinha" value="{{old("diachinha")}}">
-                    @error("diachinha")
-                    <span class="text-danger">{{$message}}</span>
-                    @enderror
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register">
-                    <span>住居の種類</span>
-
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="number" name="type_of_residence">
-                    @error('type_of_residence')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register">
-                    <span>住居人数</span>
-
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="number" name="number_of_residents">
-                    @error('number_of_residents')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register">
-                    <span>携帯電話</span><span class="span-red">※</span>
-
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="number" name="sodienthoaididong" value="{{old("sodienthoaididong")}}">
-                    @error('sodienthoaididong')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register">
-                    <span>自宅番号</span>
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="text" name="diachinha">
-                    @error('diachinha')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>スマホメールアドレス</span><span class="span-red">※</span>
-
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="text" name="electricmail">
-                    @error('electricmail')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>スマホメールアドレス</span><span class="span-red">※</span>
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <label>確認用</label>
-                   <input class="input-one-letter" type="text" name="electricmail-confirm">
-                    @error('electricmail-confirm')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>E-mailアドレス</span><span class="span-red">※</span>
-
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="email" name="email">
-                    @error('email')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>E-mailアドレス</span><span class="span-red">※</span>
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <label>確認用</label>
-                    <input class="input-one-letter" type="email" name="email-confirm">
-                    @error('email-confirm')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>パスワード</span><span class="span-red">※</span>
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="password" name="password">
-                    @error('password')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>パスワード</span><span class="span-red">※</span>
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <label>確認用</label>
-                    <input class="input-one-letter" type="password" name="password-confirm">
-                    @error('password-confirm')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>勤務先本社名</span><span class="span-red">※</span>
-
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="text" name="truso">
-                    @error('truso')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>勤務先本社住所</span><span class="span-red">※</span>
-
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="text" name="head_office_address">
-                    @error('head_office_address')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>勤務先本社電話番号</span><span class="span-red">※</span>
-
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="number" name="sdtcty">
-                    @error('sdtcty')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>常駐先名</span>
-
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="text" name="nguoibaolanh">
-                    @error('nguoibaolanh')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>常駐先住所</span>
-
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="text" name="diachinguoibaolanh">
-                    @error('diachinguoibaolanh')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>常駐先電話番号</span>
-
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="number" name="sdtnguoibaolanh">
-                    @error('sdtnguoibaolanh')
-                    <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                    @enderror
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>従業員数</span>
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="number" name="songuoilam">
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>雇用形態</span>
-
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="text" name="chucvu">
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>勤続年数</span>
-
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="number">
-                </div>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>勤続時間帯</span>
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="text" name="thoigianlamviec">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 left-register">
-                <div class="margin-left-register-2">
-                    <span>お休み</span>
-
-                </div>
-            </div>
-            <div class="col-8 right-register">
-                <div class="margin-right-register">
-                    <input class="input-full" type="text" name="thoigiannghi">
-                </div>
-
-            </div>
-        </div>
-        <div class="check-box-register">
-            <input type="checkbox" name="checkbox">
-            <label>個人情報の取り扱いについて</label>
-            @error('checkbox')
-            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-            @enderror
-        </div>
-        <div class="rules">
-            <div class="content-information">
-                <div class="d-flex item-information">
-                    <div class="content-rules">
+                <div class="rules">
+                    <div class="content-information">
+                        <div class="d-flex item-information">
+                            <div class="content-rules">
                         <span>Exactly
 Trao cho anh, trao cho anh đê
 Trao cho anh, trao cho anh đê
@@ -726,19 +720,16 @@ Xin đừng quay lưng xoá
 Yên bình nơi nào đây
 Chôn vùi theo làn mây
 Ehhhh...</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-
+                <div class="button-register">
+                    <button type="submit">戻って</button>
+                </div>
             </div>
-        </div>
-        <div class="button-register">
-            <button type="submit">戻って</button>
-        </div>
-    </div>
-</section>
-</form>
-@include("Customer.Components.button-scroll")
-@include("Customer.Components.footer")
+        </section>
+    </form>
 
-</body>
-</html>
+@endsection

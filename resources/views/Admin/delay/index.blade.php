@@ -20,25 +20,26 @@
                     <tr>
                         <th>{{$item -> created_at}}</th>
                         <th>
-                            <div class="four">
-                                @if($item->static ==1)
-                                    <div class="button-wrap">
-                                        <div class="button-bg">
-                                            <div class="button-out"></div>
-                                            <div class="button-in"></div>
-                                            <div class="button-switch"></div>
-                                        </div>
-                                    </div>
-                                @else ($item->static ==2)
-                                    <div class="button-wrap button-active">
-                                        <div class="button-bg">
-                                            <div class="button-out"></div>
-                                            <div class="button-in"></div>
-                                            <div class="button-switch"></div>
-                                        </div>
-                                    </div>
-                                @endif
-                            </div>
+
+                            @if($item ->static ==1)
+                                <span class="text-danger">承認待ち</span>
+                            @elseif($item ->static ==2)
+                                <span class="text-primary">借りることができます</span>
+                            @elseif($item->static ==3)
+                                <span class="text-info">貸付金額待ち</span>
+                            @elseif($item->static == 4)
+                                <span class="text-primary">確認済み</span>
+                            @elseif($item->static == 5)
+                                <span class="text-primary">送金を待っています</span>
+                            @elseif($item->static == 6)
+                                <span class="text-success">送金を待っています</span>
+                            @elseif($item->static == 7)
+                                <span class="text-warning">支払い日が来ました</span>
+                            @elseif($item->static == 8)
+                                <span class="text-warning">メールを送信</span>
+                            @elseif($item->static == 9)
+                                <span class="text-danger">ブラックリストン</span>
+                            @endif
                         </th>
                         <th>{{$item->name_transliteration}}</th>
                         <th>{{$item->kanji_name}}</th>

@@ -4,10 +4,15 @@
     @include("Customer.Components.head")
 </head>
 <body>
-@include("Customer.Components.header")
-@yield("content")
-
-@include("Customer.Components.footer")
-
+<section class="screen-desktop">
+    @include("Customer.Components.header")
+    @yield("content")
+    @include("Customer.Components.footer")
+</section>
+<section class="smart-phone">
+    @include("Customer.Components-sp.header")
+    @yield("content")
+    @include("Customer.Components-sp.footer")
+</section>
 </body>
 </html>

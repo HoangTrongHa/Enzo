@@ -1,5 +1,4 @@
 @extends("Customer.Components.layout")
-
 @section("content")
     <section id="banner-register">
         <div class="title-register">

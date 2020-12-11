@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    @include("Customer.Components.head")
-</head>
-<body>
-@include("Customer.Components.header")
-<section id="banner-register">
-    <div class="title-register">
-        <span>申し込み</span>
-    </div>
 
-</section>
+@extends("Customer.Components.layout")
+@section("content")
+    <section id="banner-register">
+        <div class="title-register">
+            <span>個人新規申し込み</span>
+        </div>
+    </section>
 <section id="body-register">
     <div class="container header-body">
         <span id="header-body">  Entry</span>
@@ -90,25 +85,25 @@
 
             </div>
             <div class="infor-banking">
-                <div class="row">
-                    <div class="col-4 left-infor-banking">
+                <div class="d-flex justify-content-center align-content-center">
+                    <div class="left-infor-banking">
                         <div class="margin-left-infor-banking">
                             <span>金融機関名</span>
                         </div>
                     </div>
-                    <div class="col-8 right-infor-banking">
+                    <div class="right-infor-banking">
                         <div class="margin-right-infor-banking">
                             <input class="input-full" type="text" name="name_bank">
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-4 left-infor-banking">
+                <div class="d-flex justify-content-center align-content-center">
+                    <div class="left-infor-banking">
                         <div class="margin-left-infor-banking">
                             <span>口座番号</span>
                         </div>
                     </div>
-                    <div class="col-8 right-infor-banking">
+                    <div class="right-infor-banking">
                         <div class="margin-right-infor-banking">
                             <input class="input-radio" type="radio" name="account_type">
                             <label>普通</label>
@@ -119,25 +114,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-4 left-infor-banking">
+                <div class="d-flex justify-content-center align-content-center">
+                    <div class="left-infor-banking">
                         <div class="margin-left-infor-banking">
                             <span>口座番号</span>
                         </div>
                     </div>
-                    <div class="col-8 right-infor-banking">
+                    <div class="right-infor-banking">
                         <div class="margin-right-infor-banking">
                             <input account_number class="input-full" type="number">
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-4 left-infor-banking">
+                <div class="d-flex justify-content-center align-content-center">
+                    <div class="left-infor-banking">
                         <div class="margin-left-infor-banking">
                             <span>口座番号</span>
                         </div>
                     </div>
-                    <div class="col-8 right-infor-banking">
+                    <div class="right-infor-banking">
                         <div class="margin-right-infor-banking">
                             <input class="input-full" type="text" name="account_holder">
                         </div>
@@ -161,18 +156,16 @@
     </section>
 </form>
 @include("Customer.Components.button-scroll")
-@include("Customer.Components.footer")
-<script>
-    $(document).ready(function () {
-        $('body').on('change', '.inputfile', function () {
-            let name = null;
-            name = this.files[0]['name'];
-            if (name != null && name.length > 10) {
-                name = name.substring(0, 10) + '...';
-            }
-            $(this).parent().find('label').text(name);
+    <script>
+        $(document).ready(function () {
+            $('body').on('change', '.inputfile', function () {
+                let name = null;
+                name = this.files[0]['name'];
+                if (name != null && name.length > 10) {
+                    name = name.substring(0, 10) + '...';
+                }
+                $(this).parent().find('label').text(name);
+            })
         })
-    })
-</script>
-</body>
-</html>
+    </script>
+@endsection

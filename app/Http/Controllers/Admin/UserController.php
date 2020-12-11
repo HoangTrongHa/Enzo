@@ -16,6 +16,10 @@ class UserController extends Controller
         $user = Customer::orderby("created_at","DESC")->paginate(5);
         return view('Admin.Manager.ManagerAccount.index', compact("user"));
     }
+    public function watchInformation($id){
+        $user = Customer::with('upload')->findOrfail($id);
+        return view("Admin.Manager.ManagerAccount.watchinformation",compact("user"));
+    }
     public function search(Request $request){
 
         $search = Customer::where('kanji_name','like','%'.$request->key.'%')
@@ -30,13 +34,11 @@ class UserController extends Controller
         $upload = upload::where("customerid", $customer->id)->get();
         return view("Admin.Manager.ManagerAccount.show", compact("customer", "upload"));
     }
-
     public function showChanger()
     {
         $customer = Customer::all()->orderby("created_at","DESC");
         return view("Admin.Manager.ManagerAccount.chang", compact("customer"));
     }
-
     public function grantRight($id)
     {
         $customer = Customer::with('upload')->findOrfail($id);
@@ -53,7 +55,6 @@ class UserController extends Controller
         $cus->save();
         return redirect()->route("checkImager");
     }
-
     public function checkImager() {
         $cus = Customer::where("static", 1)->orderBy('created_at', 'desc')->paginate(5);
         return view("Admin.Manager.ManagerAccount.checkImager",compact("cus"));

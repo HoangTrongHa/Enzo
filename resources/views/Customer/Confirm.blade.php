@@ -9,18 +9,16 @@
         <div class="confirm-customer">
                     <div class="content-confirm">
                         <div class="box-yeallow">
-                            <span>申請受け付けました</span>
+                            <span>申請受け付けました。</span>
                             <div>
                                 連絡が来るまで、しばらくお待ちください。
                             </div>
                         </div>
                     </div>
-            <div class="button-confirm">
-                <a href="{{route("home")}}" class="a-button">
+                <a href="{{route("home")}}" class="button-confirm">
                     <span>
-                        ホームページで
-                    </span></a>
-            </div>
+戻る                    </span>
+                </a>
         </div>
     </section>
 @endsection

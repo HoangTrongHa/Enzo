@@ -1,6 +1,10 @@
 @extends("Customer.Components.layout")
 @section("content")
-
+    <section id="banner-register">
+        <div class="title-register">
+            <span>申し込み</span>
+        </div>
+    </section>
     <section id="sinse-2">
         <form action="{{route("postSinsei")}}" method="POST" id="form-sinse-2">
             @csrf
