@@ -1,22 +1,11 @@
+
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
         <i class="fa fa-bars"></i>
     </button>
-    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="get"
-          role="search" action="{{route("search")}}">
-        <div class="input-group">
-            <input type="search" class="form-control" name="key" value=""/>
 
-            <script>
-                function onChangeTest(textbox) {
-                    console.log("New value: " + textbox.value + "\n" + "Old value: " + textbox.oldvalue);
-                }
-
-            </script>
-        </div>
-    </form>
     <ul class="navbar-nav ml-auto">
 
         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
@@ -78,7 +67,7 @@
     </ul>
 
 </nav>
-<!-- Modal -->
+
 <div class="modal fade" id="post-create" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">

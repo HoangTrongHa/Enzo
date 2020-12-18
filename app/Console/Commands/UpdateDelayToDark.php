@@ -40,7 +40,6 @@ class UpdateDelayToDark extends Command
     public function handle()
     {
         $change = Customer::where("static",8)->get();
-
         foreach ($change as $item) {
             if (strtotime($item->payment_term) < strtotime(Carbon::now())) {
 

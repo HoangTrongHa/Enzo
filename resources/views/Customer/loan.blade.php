@@ -1,4 +1,7 @@
-@extends("Customer.Components.layout")
+@extends("Customer.layout.app")
+@section('css')
+    <link rel="stylesheet" href="{{asset("css/sinse1.css")}}">
+@endsection
 @section("content")
     <section id="banner-register">
         <div class="title-register">
@@ -8,7 +11,7 @@
     <section id="sinse-1">
         <div class="container">
             <div class="include-sinse-1">
-                @if($cus->static == 7 || $cus->static == 9 ||$cus->static == 8)
+                @if( $cus->static == 9)
                     <div class="sinse-left">
                         <div class="profile-sinse-1">
                             <div class="margin-span-sinse-1">
@@ -23,7 +26,6 @@
                              <span>
                                 売却申請
                              </span>
-
                         </a>
                         <div class="back-sinse-1">
                             <a href="{{route("history-customer",$cus->id)}}" class="text-in-button-a">利用履歴</a>
@@ -70,8 +72,7 @@
 
                     </div>
                 @endif
-                @if($cus->static == 6)
-
+                @if($cus->static == 6 || $cus->static == 7 || $cus->static == 8)
                     <div class="sinse-left">
                         <div class="profile-sinse-1">
                             <div class="margin-span-sinse-1">
@@ -82,37 +83,37 @@
                                 </div>
                             </div>
                         </div>
-
-                        <button id="one" class="button-sinse-left text-in-button button-customer-refund text-white">
+                        <button type="button" class="button-sinse-left text-in-button button-customer-refund text-white"
+                                data-toggle="modal" data-target="#modal-sinse-refund">
                             払い戻し
                         </button>
-                        <div id="modal-container">
-                            <div class="modal-background">
-                                <div class="modal">
-                                    <img src="{{asset("image/logo_header_2.png")}}">
-                                    <div class="container confirm">
+                        <div class="modal fade" id="modal-sinse-refund" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">送金確認</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span>すでに転送している場合は、 "確認" それ以外の場合はを押してください "キャンセル"</span>
+                                    </div>
+                                    <div class="modal-footer">
                                         <form action="{{route("postMoneyR",$cus->id)}}" method="POST">
-                                            <h1>送金確認</h1>
-                                            <div class="span-modal">
-                                                <span>すでに転送している場合は、 "確認" それ以外の場合はを押してください "キャンセル"</span>
-                                            </div>
-                                            <input type="hidden" name="loanrefund" value="{{$cus->maxtotal}}">
                                             @csrf
                                             @method("POST")
-                                            <div class="button-modal">
-                                                <button type="submit">
-                                                    <span>確認</span>
-                                                </button>
-                                                <a href='{{route("loan")}}'>
-                                                    <span>キャンセル</span>
-                                                </a>
-                                            </div>
+                                            <input type="hidden" name="loanrefund" value="{{$cus->maxtotal}}">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル
+                                            </button>
+                                            <button type="submit" class="btn btn-success">確認</button>
                                         </form>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="back-sinse-1">
                             <a onclick="{{route("history-customer",$cus->id)}}" class="text-in-button-a">利用履歴</a>
                         </div>
@@ -237,13 +238,9 @@
             </div>
         </div>
     </div>
+@endsection
 
-    <script>
-        $('.button-customer-refund').click(function () {
-            var buttonId = $(this).attr('id');
-            $('#modal-container').removeAttr('class').addClass(buttonId);
-            $('body').addClass('modal-active');
-        })
-    </script>
+@section('script')
+
 @endsection
 

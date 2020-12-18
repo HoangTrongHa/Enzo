@@ -1,7 +1,16 @@
 @extends("Admin.Components.layout")
 @section("content")
+    <div class="container search-profile">
+
+    <span class="span-header">
+       検索リスト
+    </span>
+        <input id="max-total" type="text" readonly="true" data-parsley-trigger="change"
+               value="{{$session}}"
+               autocomplete="off" class="form-control"
+               style="text-align: right;font-size: 30px;height: 100%">
+    </div>
     <div class="card shadow mb-4">
-        <h1 style="text-align: center">検索リスト</h1>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -60,48 +69,21 @@
     </div>
 
     <style>
+        .search-profile{
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .search-profile input{
+            width: 50%;
+        }
         th{
             text-align: center;
         }
-        .four .button-wrap {
-            width: 100px;
-            margin: 0 auto;
-            cursor: pointer;
+        .span-header{
+            font-size: 30px;
+            font-weight: 600;
         }
-        .four .button-bg {
-            width: 100%;
-            height: 100%;
-            background-color: #bb2222;
-            border-radius: 40px;
-            padding: 3px;
-            color:#fff;
-            transition:all 0.2s ease;
-        }
-        .four .button-switch {
-            position:relative;
-            left:0px;
-            width: 44px;
-            height: 44px;
-            border:solid 13px;
-            background-color:#fff;
-            border-radius: 36px;
-            transition:all 0.2s ease;
-        }
-        .four .button-active .button-switch { left:50px; }
-        .four .button-in,
-        .four .button-out {
-            position:absolute;
-            transition:all 0.2s ease;
-            padding-top:15px;
-            font-size:0.8em;
-            text-transform:uppercase;
-            font-weight:bold;
-        }
-        .four .button-in { margin-left:76px; }
-        .four .button-out { margin-left:18px; }
-        .four .button-active .button-out {  }
-        .four .button-active .button-in {  }
-        .four .button-active .button-bg { background-color:#22bb22; }
 
     </style>
 

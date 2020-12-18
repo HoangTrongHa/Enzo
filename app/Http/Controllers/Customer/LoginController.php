@@ -31,6 +31,10 @@ class LoginController extends Controller
 
     public function loginUser(Request $request)
     {
+        $this->validate($request, [
+            'email'           => 'required|max:255|email',
+            'password'           => 'required',
+        ]);
         if (Auth::guard('Customer')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
             Auth::guard('Customer')->user()->update([
                 'checklogin' => now(),
@@ -70,11 +74,16 @@ class LoginController extends Controller
     {
         return Auth::guard('Customer');
     }
-
     function authenticated(Request $request, $user)
     {
         $user->update([
             'checklogin' => now(),
+        ]);
+    }
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        throw ValidationException::withMessages([
+            $this->username() => "正しくログインしない",
         ]);
     }
 }

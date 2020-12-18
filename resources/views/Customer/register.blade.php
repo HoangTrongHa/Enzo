@@ -1,5 +1,7 @@
-
-@extends("Customer.Components.layout")
+@extends("Customer.layout.app")
+@section('css')
+    <link rel="stylesheet" href="{{asset("css/register.css")}}">
+@endsection
 @section("content")
     <section id="banner-register">
         <div class="title-register">
@@ -19,8 +21,7 @@
             </div>
             <div class="container footer-header-body">
                 <div class="margin-footer-body">
-                    <span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
-                    <span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+
                 </div>
 
             </div>

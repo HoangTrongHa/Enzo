@@ -1,4 +1,8 @@
-@extends("Customer.Components.layout")
+@extends("Customer.layout.app")
+@section("css")
+    <link rel="stylesheet" href="{{asset("css/login.css")}}">
+@endsection
+
 @section("content")
     <section id="banner-register">
         <div class="title-register">
@@ -15,18 +19,14 @@
                         <span>ログインID</span><br>
                         <input type="email" name="email" value="{{ old('email') }}">
                         @error('email')
-                        <span class="invalid-feedback" role="alert">
-                         <strong>{{ $message }}</strong>
-                    </span>
+                            <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="content-login">
                         <span>ユーザーのパスワード</span><br>
                         <input type="password" name="password">
                         @error('password')
-                        <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
+                            <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="button-login-sp">

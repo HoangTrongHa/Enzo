@@ -1,4 +1,7 @@
-@extends("Customer.Components.layout")
+@extends("Customer.layout.app")
+@section("css")
+    <link rel="stylesheet" href="{{asset("css/sinse-3.css")}}">
+@endsection
 @section("content")
     <section id="banner-register">
         <div class="title-register">
@@ -8,9 +11,7 @@
     <section id="sinse-3">
         <div class="container">
             <div class="sinse-3">
-
                     <div class="title-sinse-3">
-
                         <span>〈   検査結果   〉</span>
                     </div>
                     <div class="total-sinse-3">

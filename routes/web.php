@@ -13,7 +13,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
 Route::group(["prefix" => "admin"], function () {
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name("logout-ad");
     Route::get('/login-admin', '\App\Http\Controllers\Auth\LoginController@showAdminLoginForm')->name("login-ad");
@@ -46,7 +45,8 @@ Route::group(["prefix" => "admin"], function () {
             Route::get("/UserAccount/app-new/{id}", "\App\Http\Controllers\Admin\NewappController@show")->name("show-app");
             Route::get("/banking","\App\Http\Controllers\Admin\BankingController@index")->name("index-banking");
             Route::get("/show-banking/{id}","\App\Http\Controllers\Admin\BankingController@showBanking")->name("show-banking");
-            Route::post('/pdf/{id}', '\App\Http\Controllers\Admin\BankingController@postShowBanking')->name("post-showbanking");
+            Route::post('/post-banking/{id}', '\App\Http\Controllers\Admin\BankingController@postShowBanking')->name("post-showbanking");
+            Route::get('/pdf/{id}', '\App\Http\Controllers\Admin\BankingController@pirntfPdf')->name("pirntfPdf");
             Route::get('/refund', '\App\Http\Controllers\Admin\refundController@index')->name("refund");
             Route::get('/show-refund/{id}', '\App\Http\Controllers\Admin\refundController@showrefund')->name("show-refund");
             Route::post('/chang-status-history/{id}', '\App\Http\Controllers\Admin\refundController@changStatus')->name("change-status-history");
@@ -62,12 +62,11 @@ Route::group(["prefix" => "admin"], function () {
                 Route::get("/","\App\Http\Controllers\Admin\ListdarkController@index")->name("list-dark");
                 Route::post("/change-status-to-list-dark/{id}","\App\Http\Controllers\Admin\ListdarkController@importlist")->name("import-list");
                 Route::get("/show-dark/{id}","\App\Http\Controllers\Admin\ListdarkController@showDask")->name("showDask");
-
+                Route::get("delete/customer/{id}","\App\Http\Controllers\Admin\ListdarkController@deleteInfor")->name("delete-customer");
             });
         });
 
     });
-
 });
 Route::get("/", "\App\Http\Controllers\Customer\CustomerController@index")->name("home");
 Route::get("/loginCustomer", "\App\Http\Controllers\Customer\LoginController@showLoginForm")->name("login");
@@ -95,6 +94,5 @@ Route::group(['middleware' => 'customer'], function () {
         Route::get('/sender', 'ChatsController@fetchMessages');
         Route::post('/sender', 'ChatsController@PostfetchMessages')->name("post-sender");
         Route::post('/messages', 'ChatsController@sendMessage');
-
     });
 });

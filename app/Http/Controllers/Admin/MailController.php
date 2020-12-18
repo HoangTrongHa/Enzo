@@ -30,9 +30,6 @@ class MailController extends Controller
         }
 
     }
-
-
-
     public function moneyTransfer($id)
     {
 
@@ -42,9 +39,7 @@ class MailController extends Controller
         Mail::send('Admin.mail.refund', ['cus' => $cus], function ($message) use ($cus) {
             $message->from('hahtth1907023@fpt.edu.vn', 'admin');
             $message->to($cus["email"])->subject('Enzo With Love');
-
         });
-        return redirect()->route("index-banking");
+        return redirect()->route("show-banking",$cus->id);
     }
-
 }

@@ -12,7 +12,6 @@
                         <img src="{{Storage::URL($list->Biasotietkiem)}}" alt="" data-toggle="modal" data-bigimage="{{Storage::URL($list->Biasotietkiem)}}"  data-target="#myModal" class="img-fluid img-modal">
                         <img src="{{Storage::URL($list->manypicture)}}" alt="" data-toggle="modal" data-bigimage="{{Storage::URL($list->manypicture)}}"  data-target="#myModal" class="img-fluid img-modal">
                     </div>
-                    <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -29,282 +28,173 @@
                 </div>
             @endforeach
         </div>
-        <div class="row">
-
-            <div class="col-md-12">
-                <div class="tab-content profile-tab" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    かんじ名</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->kanji_name}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    電話名</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->name_transliteration}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    セックス</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->male}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    有効な電話番号</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->phone_number}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    携帯電話番号</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->landline_number}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    Eメール</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->email}}</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    本部</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->company}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    作業位置</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->num_people}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    会社は働いています</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->linkweb}}</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    会社の電話番号</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->company_phone}}</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    就業年</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->work_year}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    労働時間</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->work_time}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    労働時間</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->position}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    疑わしい時間</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->work_break}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    保証人の名前</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->protector}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    確実の住所
-                                </label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->guardian_address}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    確実な電話番号
-                                </label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->phone_number_guard}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    アカウントが作成されました
-
-                                </label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->created_at}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
+    </div>
+    <div class="container emp-profile">
+        <table>
+            <tr>
+                <th>漢字名</th>
+                <td>{{$customer->kanji_name}}</td>
+                <th>名前の音訳</th>
+                <td>{{$customer->name_transliteration}}</td>
+                <th>男性</th>
+                <td>{{$customer->male}}</td>
+            </tr>
+            <tr>
+                <th>家族構成</th>
+                <td>{{$customer->family_structure}}</td>
+                <th>住所</th>
+                <td>{{$customer->address}}</td>
+                <th>固定電話番号</th>
+                <td>{{$customer->landline_number}}</td>
+            </tr>
+            <tr>
+                <th>電話番号</th>
+                <td>{{$customer->phone_number}}</td>
+                <th>email</th>
+                <td>{{$customer->email}}</td>
+                <th>就業年</th>
+                <td>{{$customer->work_year}}</td>
+            </tr>
+            <tr>
+                <th>休憩</th>
+                <td>{{$customer->work_break}}</td>
+                <th>プロテクター</th>
+                <td>{{$customer->protector}}</td>
+                <th>保護者の住所</th>
+                <td>{{$customer->guardian_address}}</td>
+            </tr>
+            <tr>
+                <th>電話番号ガード</th>
+                <td>{{$customer->phone_number_guard}}</td>
+                <th>口座番号</th>
+                <td>{{$customer->account_number}}</td>
+                <th>
+                    口座名義人
+                </th>
+                <td>{{$customer->account_holder}}</td>
+            </tr>
+        </table>
     </div>
     <form action="{{route("PostgrantRight",[$customer->id])}}" id="basicform" method="POST">
         @csrf
         @method("POST")
-        <div class="row">
+        <div class="container">
+            <table>
+                <tr>
+                    <th>付与権*</th>
+                    <td>
+                        <select class="form-control" id="select" name="static">
+                            <option disabled selected value> アクティブなアカウント </option>
+                            <option value="1">
+                                <span class="text-danger">
+                                    閉じる
+                                </span>
+                            </option>
+                            <option value="2">
+                                <span class="text-success">
+                                    アクティブ
+                                </span>
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
 
-            <div class="col-md-6">
-                <label for="inputUserName">Eメール*</label>
-                <input id="inputipt" type="text" readonly="true" data-parsley-trigger="change" value="{{$customer->email}}"
-                       placeholder="Enter Arrtibute values name" autocomplete="off" class="form-control">
-
-            </div>
-            <div class="col-md-6">
-                <label for="">付与権*</label>
-                <select class="form-control" id="select" name="static">
-                    <option value="1" {{($customer->static==1)?"selected":""}} >閉じる</option>
-                    <option value="2" {{($customer->static==2)?"selected":""}} >アクティブ</option>
-                </select>
+            <div class="button-submit">
+                <button type="submit" class="update-profile">受け入れる</button>
+                <a href="{{route("mail-refuse",$customer->id)}}" class="update-profile refuse-upload">非承認</a>
+                <button onclick="goBack()" class="update-profile-1">戻って</button>
             </div>
         </div>
-        <div class="button-submit">
-            <span class="text-left">
-                <button type="submit" class="btn btn-space btn-primary update-profile">受け入れる</button>
-            </span>
-            <span class="text-left">
-                <a href="{{route("mail-refuse",$customer->id)}}" class="btn btn-space btn-primary update-profile">非承認</a>
-            </span>
-            <span class="text-left">
-                <button type="submit" class="btn btn-space btn-primary update-profile">ユーザーメモ</button>
-            </span>
-            <span class="text-left">
-                <button onclick="goBack()" class="btn btn-space btn-primary update-profile">戻って</button>
 
-            </span>
-        </div>
 
     </form>
     <style>
+        table{
+            margin-top: 50px;
+            width: 100%;
+        }
+        table th{
+            background: #007bff;
+            color: #b9dcf3;
+        }
+        table td, table th {
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+        table th:hover {
+            color: #ffffff;
+        }
+        table td:hover {
+            background-color: #ddd;
+        }
+        table td{
+            margin:10px;
+        }
+        select option[value="1"] {
+          color:red;
+        }
+        select option[value="2"] {
+           color:#28a745;
+        }
         .img-modal{
             width:100%;
             max-width:15%
         }
         .button-submit{
-            width: 30%;
-            float: right;
+            width: 100%;
+          display: flex;
+            justify-content: flex-end;
         }
         .button-submit .update-profile{
-            width: 45%;
-            margin: 2%;
+            margin: 30px 0 30px 30px;
+            padding: 15px 40px;
+            font-size: 20px;
             color: white;
+            background-color: #28a745;
+            border: 1px solid transparent;
 
+        }
+        .button-submit .update-profile:hover{background-color: #1f8236}
+        .button-submit .update-profile-1{
+            margin: 30px 0 30px 30px;
+            padding: 15px 40px;
+            font-size: 20px;
+            color: white;
+            background-color: #007bff;
+            border: 1px solid transparent;
+
+        }
+        .button-submit .update-profile-1:hover{
+            background-color: #007BC1;
+        }
+        .button-submit .refuse-upload{
+            background-color: red;
+            padding: 15px 40px;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+        }
+        .button-submit .refuse-upload:hover{
+            background-color: #e20606;
         }
         #img-profile {
             display: flex;
             justify-content: flex-start;
         }
-
         .modal-dialog {
             max-width: 800px;
             margin: 30px auto;
         }
-
-
-
         .modal-body {
             position:relative;
             padding:0px;
             min-height:400px;
             background:#ccc;
-        }
-
-
-        #inputipt{
-            padding: 35px 35px;
-            font-size: 30px;
-        }
-
-        .close {
-            position:absolute;
-            right:-30px;
-            top:0;
-            z-index:999;
-            font-size:2rem;
-            font-weight: normal;
-            color:#fff;
-            opacity:1;
-        }
-        #select{
-            padding: 35px 35px;
-            font-size: 30px;
         }
         #image {
             min-height:200px;

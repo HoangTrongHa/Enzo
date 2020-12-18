@@ -1,0 +1,873 @@
+@import "variables";
+@media only screen and (max-width: 600px) {
+    .smart-phone {
+        display: block;
+        #upload {
+            .margin-body-upload {
+                margin-top: 30px;
+                span {
+                    font-size: 10px;
+                    letter-spacing: 1px;
+                    line-height: 45px;
+                    color: #000000;
+                    font-family: "Yu Gothic";
+                }
+
+                .inputfile {
+                    width: 0.1px;
+                    height: 0.1px;
+                    opacity: 0;
+                    overflow: hidden;
+                    position: absolute;
+                    z-index: -1;
+
+                    + {
+                        label {
+                            letter-spacing: 1px;
+                            line-height: 30px;
+                            color: #000000;
+                            padding: 0 50px 0 50px;
+                            font-size: 10px;
+                            background-color: #efdf00;
+                            display: inline-block;
+                            cursor: pointer;
+                            border-top: 2px solid #f8f295;
+                            border-bottom: 2px solid #5b5500;
+                            border-left: 2px solid #d5c700;
+                            border-right: 2px solid #d5c700;
+                            font-family: "Yu Gothic";
+
+                            &:hover {
+                                background-color: #d5c700;
+                            }
+                        }
+                    }
+
+                    &:focus {
+                        + {
+                            label {
+                                background-color: #d5c700;
+                                outline: 1px dotted #5b5500;
+                                outline: -webkit-focus-ring-color auto 5px;
+                            }
+                        }
+                    }
+
+                    + {
+                        label {
+                            &:hover {
+                                background-color: #d5c700;
+                            }
+                        }
+                    }
+
+                }
+
+                .inputfile.has-focus {
+                    + {
+                        label {
+                            background-color: #d5c700;
+                        }
+                    }
+                }
+            }
+
+            .infor-banking {
+                margin-top: 150px;
+
+                .left-infor-banking {
+                    background-color: #9fdbd5;
+                    border: 1px solid #01897b;
+                    width: 30%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-content: center;
+                    align-items: center;
+
+                    .margin-left-infor-banking {
+                        font-size: 10px;
+                        letter-spacing: 1px;
+                        margin-left: 10px;
+                        font-family: "Koz Go Pr6 N";
+                    }
+                }
+
+                .right-infor-banking {
+                    border: 1px solid #01897b;
+                    width: 70%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    align-content: center;
+
+                    .margin-right-infor-banking {
+                        font-size: 10px;
+                        width: 90%;
+                        margin: 10px;
+                        display: flex;
+                        justify-content: space-evenly;
+
+                        .input-full {
+                            background-color: #eeee;
+                            width: 100%;
+                            border-top: 1px solid #b8b8b8;
+                            border-left: 1px solid #dddddd;
+                            border-right: 1px solid #dddddd;
+                            border-bottom: 1px solid #f1f1f1;
+                        }
+
+                        .input-radio {
+                            width: 15px;
+                            height: 15px;
+                            background-color: #eeeeee;
+
+                            &:checked {
+                                background-color: #313131;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .button-upload {
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+
+                .submit-application {
+                    align-items: center;
+                    font-size: 10px;
+                    display: flex;
+                    background-color: #efdf00;
+                    padding: 5px 10px;
+                    color: white;
+                    border-bottom: 2px solid #5b5500;
+                    border-left: 2px solid #d5c700;
+                    border-right: 2px solid #d5c700;
+                    border-top: 2px solid #f7ef83;
+                    cursor: pointer;
+                    margin-right: 10px;
+                }
+
+                .back-register {
+                    align-items: center;
+                    font-size: 10px;
+                    display: flex;
+                    background-color: #efdf00;
+                    padding: 5px 10px;
+                    color: white;
+                    border-bottom: 2px solid #5b5500;
+                    border-left: 2px solid #d5c700;
+                    border-right: 2px solid #d5c700;
+                    border-top: 2px solid #f7ef83;
+                    cursor: pointer;
+                    margin-left: 10px;
+
+                }
+            }
+        }
+    }
+    .screen-desktop {
+        display: none;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .smart-phone {
+        display: none;
+    }
+    .screen-desktop {
+        display: block;
+        #upload {
+            .margin-body-upload {
+                margin-top: 30px;
+
+                span {
+                    font-size: 15px;
+                    letter-spacing: 1px;
+                    line-height: 45px;
+                    color: #000000;
+                    font-family: "Yu Gothic";
+                }
+
+                .inputfile {
+                    width: 0.1px;
+                    height: 0.1px;
+                    opacity: 0;
+                    overflow: hidden;
+                    position: absolute;
+                    z-index: -1;
+
+                    + {
+                        label {
+                            letter-spacing: 1px;
+                            line-height: 30px;
+                            color: #000000;
+                            padding: 0 50px 0 50px;
+                            font-size: 15px;
+                            background-color: #efdf00;
+                            display: inline-block;
+                            cursor: pointer;
+                            border-top: 2px solid #f8f295;
+                            border-bottom: 2px solid #5b5500;
+                            border-left: 2px solid #d5c700;
+                            border-right: 2px solid #d5c700;
+                            font-family: "Yu Gothic";
+
+                            &:hover {
+                                background-color: #d5c700;
+                            }
+                        }
+                    }
+
+                    &:focus {
+                        + {
+                            label {
+                                background-color: #d5c700;
+                                outline: 1px dotted #5b5500;
+                                outline: -webkit-focus-ring-color auto 5px;
+                            }
+                        }
+                    }
+
+                    + {
+                        label {
+                            &:hover {
+                                background-color: #d5c700;
+                            }
+                        }
+                    }
+
+                }
+
+                .inputfile.has-focus {
+                    + {
+                        label {
+                            background-color: #d5c700;
+                        }
+                    }
+                }
+            }
+
+            .infor-banking {
+                margin-top: 150px;
+
+                .left-infor-banking {
+                    background-color: #9fdbd5;
+                    border: 1px solid #01897b;
+                    width: 30%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-content: center;
+                    align-items: center;
+
+                    .margin-left-infor-banking {
+                        font-size: 15px;
+                        letter-spacing: 1px;
+                        margin-left: 10px;
+                        font-family: "Koz Go Pr6 N";
+                    }
+                }
+
+                .right-infor-banking {
+                    border: 1px solid #01897b;
+                    width: 70%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    align-content: center;
+
+                    .margin-right-infor-banking {
+                        font-size: 15px;
+                        width: 90%;
+                        margin: 10px;
+                        display: flex;
+                        justify-content: space-evenly;
+
+                        .input-full {
+                            background-color: #eeee;
+                            width: 100%;
+                            border-top: 1px solid #b8b8b8;
+                            border-left: 1px solid #dddddd;
+                            border-right: 1px solid #dddddd;
+                            border-bottom: 1px solid #f1f1f1;
+                        }
+
+                        .input-radio {
+                            width: 15px;
+                            height: 15px;
+                            background-color: #eeeeee;
+
+                            &:checked {
+                                background-color: #313131;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .button-upload {
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+
+                .submit-application {
+                    align-items: center;
+                    font-size: 15px;
+                    display: flex;
+                    background-color: #efdf00;
+                    padding: 5px 10px;
+                    color: white;
+                    border-bottom: 2px solid #5b5500;
+                    border-left: 2px solid #d5c700;
+                    border-right: 2px solid #d5c700;
+                    border-top: 2px solid #f7ef83;
+                    cursor: pointer;
+                    margin-right: 10px;
+                }
+
+                .back-register {
+                    align-items: center;
+                    font-size: 10px;
+                    display: flex;
+                    background-color: #efdf00;
+                    padding: 5px 10px;
+                    color: white;
+                    border-bottom: 2px solid #5b5500;
+                    border-left: 2px solid #d5c700;
+                    border-right: 2px solid #d5c700;
+                    border-top: 2px solid #f7ef83;
+                    cursor: pointer;
+                    margin-left: 10px;
+
+                }
+            }
+        }
+
+    }
+}
+@media only screen and (min-width: 768px) {
+    .smart-phone {
+        display: none;
+    }
+    .screen-desktop {
+        #upload {
+            .margin-body-upload {
+                margin-top: 30px;
+
+                span {
+                    font-size: 20px;
+                    letter-spacing: 1px;
+                    line-height: 45px;
+                    color: #000000;
+                    font-family: "Yu Gothic";
+                }
+
+                .inputfile {
+                    width: 0.1px;
+                    height: 0.1px;
+                    opacity: 0;
+                    overflow: hidden;
+                    position: absolute;
+                    z-index: -1;
+
+                    + {
+                        label {
+                            letter-spacing: 1px;
+                            line-height: 30px;
+                            color: #000000;
+                            padding: 0 50px 0 50px;
+                            font-size: 20px;
+                            background-color: #efdf00;
+                            display: inline-block;
+                            cursor: pointer;
+                            border-top: 2px solid #f8f295;
+                            border-bottom: 2px solid #5b5500;
+                            border-left: 2px solid #d5c700;
+                            border-right: 2px solid #d5c700;
+                            font-family: "Yu Gothic";
+
+                            &:hover {
+                                background-color: #d5c700;
+                            }
+                        }
+                    }
+
+                    &:focus {
+                        + {
+                            label {
+                                background-color: #d5c700;
+                                outline: 1px dotted #5b5500;
+                                outline: -webkit-focus-ring-color auto 5px;
+                            }
+                        }
+                    }
+
+                    + {
+                        label {
+                            &:hover {
+                                background-color: #d5c700;
+                            }
+                        }
+                    }
+
+                }
+
+                .inputfile.has-focus {
+                    + {
+                        label {
+                            background-color: #d5c700;
+                        }
+                    }
+                }
+            }
+
+            .infor-banking {
+                margin-top: 150px;
+
+                .left-infor-banking {
+                    background-color: #9fdbd5;
+                    border: 1px solid #01897b;
+                    width: 30%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-content: center;
+                    align-items: center;
+
+                    .margin-left-infor-banking {
+                        font-size: 20px;
+                        letter-spacing: 1px;
+                        margin-left: 10px;
+                        font-family: "Koz Go Pr6 N";
+                    }
+                }
+
+                .right-infor-banking {
+                    border: 1px solid #01897b;
+                    width: 70%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    align-content: center;
+
+                    .margin-right-infor-banking {
+                        font-size: 20px;
+                        width: 90%;
+                        margin: 10px;
+                        display: flex;
+                        justify-content: space-evenly;
+
+                        .input-full {
+                            background-color: #eeee;
+                            width: 100%;
+                            border-top: 1px solid #b8b8b8;
+                            border-left: 1px solid #dddddd;
+                            border-right: 1px solid #dddddd;
+                            border-bottom: 1px solid #f1f1f1;
+                        }
+
+                        .input-radio {
+                            width: 30px;
+                            height: 30px;
+                            background-color: #eeeeee;
+
+                            &:checked {
+                                background-color: #313131;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .button-upload {
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+
+                .submit-application {
+                    align-items: center;
+                    font-size: 20px;
+                    display: flex;
+                    background-color: #efdf00;
+                    padding: 5px 10px;
+                    color: white;
+                    border-bottom: 2px solid #5b5500;
+                    border-left: 2px solid #d5c700;
+                    border-right: 2px solid #d5c700;
+                    border-top: 2px solid #f7ef83;
+                    cursor: pointer;
+                    margin-right: 10px;
+                }
+
+                .back-register {
+                    align-items: center;
+                    font-size: 20px;
+                    display: flex;
+                    background-color: #efdf00;
+                    padding: 5px 10px;
+                    color: white;
+                    border-bottom: 2px solid #5b5500;
+                    border-left: 2px solid #d5c700;
+                    border-right: 2px solid #d5c700;
+                    border-top: 2px solid #f7ef83;
+                    cursor: pointer;
+                    margin-left: 10px;
+
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 992px) {
+    .smart-phone {
+        display: none;
+    }
+    .screen-desktop {
+        #upload {
+            .margin-body-upload {
+                margin-top: 30px;
+
+                span {
+                    font-weight: 500;
+                    font-size: 30px;
+                    letter-spacing: 1px;
+                    line-height: 50px;
+                    color: #000000;
+                    font-family: "Yu Gothic";
+                }
+
+                .inputfile {
+                    width: 0.1px;
+                    height: 0.1px;
+                    opacity: 0;
+                    overflow: hidden;
+                    position: absolute;
+                    z-index: -1;
+
+                    + {
+                        label {
+                            letter-spacing: 1px;
+                            line-height: 30px;
+                            color: #000000;
+                            font-size: 30px;
+                            background-color: #efdf00;
+                            display: inline-block;
+                            cursor: pointer;
+                            border-top: 4px solid #f8f295;
+                            border-bottom: 4px solid #5b5500;
+                            border-left: 4px solid #d5c700;
+                            border-right: 4px solid #d5c700;
+                            font-family: "Yu Gothic";
+                            padding: 15px 60px;
+
+                            &:hover {
+                                background-color: #d5c700;
+                            }
+                        }
+                    }
+
+                    &:focus {
+                        + {
+                            label {
+                                background-color: #d5c700;
+                                outline: 1px dotted #5b5500;
+                                outline: -webkit-focus-ring-color auto 5px;
+                            }
+                        }
+                    }
+
+                    + {
+                        label {
+                            &:hover {
+                                background-color: #d5c700;
+                            }
+                        }
+                    }
+
+                }
+
+                .inputfile.has-focus {
+                    + {
+                        label {
+                            background-color: #d5c700;
+                        }
+                    }
+                }
+            }
+
+            .infor-banking {
+                margin-top: 150px;
+
+                .left-infor-banking {
+                    background-color: #9fdbd5;
+                    border: 1px solid #01897b;
+                    width: 30%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-content: center;
+                    align-items: center;
+
+                    .margin-left-infor-banking {
+                        font-size: 30px;
+                        letter-spacing: 1px;
+                        margin-left: 10px;
+                        font-family: "Koz Go Pr6 N";
+                    }
+                }
+
+                .right-infor-banking {
+                    border: 1px solid #01897b;
+                    width: 70%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    align-content: center;
+
+                    .margin-right-infor-banking {
+                        font-size: 30px;
+                        width: 90%;
+                        margin: 10px;
+                        display: flex;
+                        justify-content: space-evenly;
+
+                        .input-full {
+                            background-color: #eeee;
+                            width: 100%;
+                            border-top: 1px solid #b8b8b8;
+                            border-left: 1px solid #dddddd;
+                            border-right: 1px solid #dddddd;
+                            border-bottom: 1px solid #f1f1f1;
+                        }
+
+                        .input-radio {
+                            width: 30px;
+                            height: 30px;
+                            background-color: #eeeeee;
+
+                            &:checked {
+                                background-color: #313131;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .button-upload {
+                display: flex;
+                justify-content: center;
+                margin-top: 80px;
+
+                .submit-application {
+                    align-items: center;
+                    font-size: 30px;
+                    display: flex;
+                    background-color: #efdf00;
+                    padding: 15px 10px;
+                    color: white;
+                    border-bottom: 2px solid #5b5500;
+                    border-left: 2px solid #d5c700;
+                    border-right: 2px solid #d5c700;
+                    border-top: 2px solid #f7ef83;
+                    cursor: pointer;
+                    margin-right: 10px;
+                }
+
+                .back-register {
+                    align-items: center;
+                    font-size: 30px;
+                    display: flex;
+                    background-color: #efdf00;
+                    padding: 15px 10px;
+                    color: white;
+                    border-bottom: 2px solid #5b5500;
+                    border-left: 2px solid #d5c700;
+                    border-right: 2px solid #d5c700;
+                    border-top: 2px solid #f7ef83;
+                    cursor: pointer;
+                    margin-left: 10px;
+
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .smart-phone {
+        display: none;
+    }
+    .screen-desktop {
+        #upload {
+            .margin-body-upload {
+                margin-top: 35px;
+                span {
+                    font-weight: 500;
+                    font-size: 35px;
+                    letter-spacing: 1px;
+                    line-height: 50px;
+                    color: #000000;
+                    font-family: "Yu Gothic";
+                }
+
+                .inputfile {
+                    width: 0.1px;
+                    height: 0.1px;
+                    opacity: 0;
+                    overflow: hidden;
+                    position: absolute;
+                    z-index: -1;
+
+                    + {
+                        label {
+                            letter-spacing: 1px;
+                            line-height: 30px;
+                            color: #000000;
+                            font-size: 30px;
+                            background-color: #efdf00;
+                            display: inline-block;
+                            cursor: pointer;
+                            border-top: 4px solid #f8f295;
+                            border-bottom: 4px solid #5b5500;
+                            border-left: 4px solid #d5c700;
+                            border-right: 4px solid #d5c700;
+                            font-family: "Yu Gothic";
+                            padding: 15px 60px;
+
+                            &:hover {
+                                background-color: #d5c700;
+                            }
+                        }
+                    }
+
+                    &:focus {
+                        + {
+                            label {
+                                background-color: #d5c700;
+                                outline: 1px dotted #5b5500;
+                                outline: -webkit-focus-ring-color auto 5px;
+                            }
+                        }
+                    }
+
+                    + {
+                        label {
+                            &:hover {
+                                background-color: #d5c700;
+                            }
+                        }
+                    }
+
+                }
+
+                .inputfile.has-focus {
+                    + {
+                        label {
+                            background-color: #d5c700;
+                        }
+                    }
+                }
+            }
+
+            .infor-banking {
+                margin-top: 150px;
+
+                .left-infor-banking {
+                    background-color: #9fdbd5;
+                    border: 1px solid #01897b;
+                    width: 30%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-content: center;
+                    align-items: center;
+
+                    .margin-left-infor-banking {
+                        font-size: 30px;
+                        letter-spacing: 1px;
+                        margin-left: 10px;
+                        font-family: "Koz Go Pr6 N";
+                    }
+                }
+
+                .right-infor-banking {
+                    border: 1px solid #01897b;
+                    width: 70%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    align-content: center;
+
+                    .margin-right-infor-banking {
+                        font-size: 30px;
+                        width: 90%;
+                        margin: 10px;
+                        display: flex;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        align-content: center;
+
+                        .input-full {
+                            background-color: #eeee;
+                            width: 100%;
+                            border-top: 1px solid #b8b8b8;
+                            border-left: 1px solid #dddddd;
+                            border-right: 1px solid #dddddd;
+                            border-bottom: 1px solid #f1f1f1;
+                        }
+
+                        .input-radio {
+                            width: 30px;
+                            height: 30px;
+                            background-color: #eeeeee;
+
+                            &:checked {
+                                background-color: #313131;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .button-upload {
+                display: flex;
+                justify-content: center;
+                margin-top: 80px;
+
+                .submit-application {
+                    align-items: center;
+                    font-size: 30px;
+                    display: flex;
+                    background-color: #efdf00;
+                    padding: 15px 20px;
+                    color: white;
+                    border-bottom: 4px solid #5b5500;
+                    border-left: 4px solid #d5c700;
+                    border-right: 4px solid #d5c700;
+                    border-top: 4px solid #f7ef83;
+                    cursor: pointer;
+                    margin-right: 40px;
+                    text-decoration: none;
+                }
+
+                .back-register {
+                    align-items: center;
+                    font-size: 30px;
+                    display: flex;
+                    background-color: #efdf00;
+                    padding: 15px 20px;
+                    color: white;
+                    border-bottom: 4px solid #5b5500;
+                    border-left: 4px solid #d5c700;
+                    border-right: 4px solid #d5c700;
+                    border-top: 4px solid #f7ef83;
+                    cursor: pointer;
+                    margin-right: 40px;
+                    text-decoration: none;
+
+                }
+            }
+        }
+    }
+}

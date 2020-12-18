@@ -1,41 +1,85 @@
 @extends("Admin.Components.layout")
 @section("content")
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <label for="inputnumber">デジタルマネーの欠如</label>
-            <input type="number" class="form-control" id="inputtotal"
-                   name="maxtotal" value="{{$cus->loancustomer}}" readonly>
-        </div>
-        <div class="form-group col-md-4">
-            <label for="inputnumber">払込金額
-            </label>
-            <input type="number" class="form-control" id="inputtotal"
-                   name="maxtotal" value="{{$cus->loanrefund}}" readonly>
-        </div>
-        <div class="form-group col-md-4">
-            <label for="inputnumber">余剰</label>
-            <input type="number" class="form-control" id="inputtotal"
-                   value="{{$end}}" readonly>
-        </div>
+    <table>
+        <tr>
+            <th>有効期限</th>
+            <td>
+                @if($cus->payment_term ==0 || $cus->payment_term == null)
+                    <input type="datetime-local" class="form-control" id="inputtotal" name="payment_term" required>
+                @else
+                    <input type="text" class="form-control" value="{{$cus->payment_term}}" readonly>
+                @endif
+            </td>
 
-        <div class="form-group col-md-12">
-            <label for="inputCity">Deadtime</label>
-
-            @if($cus->payment_term ==0 || $cus->payment_term == null)
-                <input type="datetime-local" class="form-control" id="inputtotal" name="payment_term" required>
-            @else
-                <input type="text" class="form-control" value="{{$cus->payment_term}}" readonly>
-            @endif
-
-        </div>
-    </div>
-    @include("Admin.Components.profile")
+        </tr>
+        <tr>
+            <th>
+                払込金額
+            </th>
+            <td>
+                {{$cus->loanrefund}}
+            </td>
+            <th>
+                払込金額
+            </th>
+            <td>
+                {{$cus->loanrefund}}
+            </td>
+            <th>
+                払込金額
+            </th>
+            <td>
+                {{$end}}
+            </td>
+        </tr>
+        <tr>
+            <th>漢字名</th>
+            <td>{{$cus->kanji_name}}</td>
+            <th>名前の音訳</th>
+            <td>{{$cus->name_transliteration}}</td>
+            <th>男性</th>
+            <td>{{$cus->male}}</td>
+        </tr>
+        <tr>
+            <th>家族構成</th>
+            <td>{{$cus->family_structure}}</td>
+            <th>住所</th>
+            <td>{{$cus->address}}</td>
+            <th>固定電話番号</th>
+            <td>{{$cus->number_of_residents}}</td>
+        </tr>
+        <tr>
+            <th>電話番号</th>
+            <td>{{$cus->phone_number}}</td>
+            <th>email</th>
+            <td>{{$cus->email}}</td>
+            <th>就業年</th>
+            <td>{{$cus->head_office_address}}</td>
+        </tr>
+        <tr>
+            <th>休憩</th>
+            <td>{{$cus->work_break}}</td>
+            <th>プロテクター</th>
+            <td>{{$cus->protector}}</td>
+            <th>保護者の住所</th>
+            <td>{{$cus->guardian_address}}</td>
+        </tr>
+        <tr>
+            <th>電話番号ガード</th>
+            <td>{{$cus->phone_number_guard}}</td>
+            <th>口座番号</th>
+            <td>{{$cus->account_type}}</td>
+            <th>
+                口座名義人
+            </th>
+            <td>{{$cus->account_holder}}</td>
+        </tr>
+    </table>
     <div class="container">
         <div class="button-show-delay">
-            <a href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <a href="#" type="button" class="accept-the-loan" data-toggle="modal" data-target="#exampleModalCenter">
                 精算
             </a>
-
             <form action="{{route("change-status-history",[$cus->id])}}" method="POST">
                 @csrf
                 @method("POST")
@@ -60,7 +104,7 @@
                 </div>
             </form>
 
-            <a href="#" type="button" class="btn-warning" data-toggle="modal" data-target="#sendMail">バランスがあります</a>
+            <a href="#" type="button" class="send-mail-refuse" data-toggle="modal" data-target="#sendMail">バランスがあります</a>
             <form action="{{route("send-Mail",[$cus->id])}}" method="POST">
                 @csrf
                 @method("POST")
@@ -88,8 +132,7 @@
                 </div>
             </form>
 
-            <a href="#" type="button" class="btn-danger" data-toggle="modal" data-target="#list-dark">ブラックリスト</a>
-
+            <a href="#" type="button" class="import-líst-dark" data-toggle="modal" data-target="#list-dark">ブラックリスト</a>
             <form action="{{route("import-list",[$cus->id])}}" method="POST">
                 @csrf
                 @method("POST")
@@ -120,20 +163,17 @@
     </div>
     <div class="container">
         <div class="button-show-delay">
-            <a href="{{route("history",[$cus->id])}}">ローン履歴</a>
-            <a href="{{route("delay")}}">戻る</a>
-
+            <a class="text-decoration-none" href="{{route("history",[$cus->id])}}">ローン履歴</a>
+            <a class="back-show-delay" href="{{route("delay")}}">戻る</a>
         </div>
     </div>
-
-
-
     <style>
 
         .button-show-delay {
             display: flex;
-            flex-direction: row-reverse;
-            margin-top: 2%;
+            justify-content: flex-end;
+            width: 100%;
+            margin-top: 50px;
 
         }
 
@@ -149,27 +189,61 @@
 
         }
 
-        .show-maxtotal {
-            display: flex;
-            align-items: flex-end;
+        .button-show-delay .accept-the-loan{
+            background-color: #28a745;
+            text-decoration: none;
+        }
+        .button-show-delay .accept-the-loan:hover{
+            background-color:#1e9539 ;
+        }
+        .button-show-delay .send-mail-refuse{
+            background-color: #ffc107;
+            color: white;
+            text-decoration: none;
+        }
+        .button-show-delay .send-mail-refuse:hover{
+            background-color:#d1a00c ;
+        }
+        .button-show-delay .back-show-delay{
+            background-color: #ffc107;
+            color: white;
+            text-decoration: none;
+        }
+        .button-show-delay .back-show-delay:hover{
+            background-color:#d1a00c ;
         }
 
-        .maxtotal-left {
-            width: 30%;
-            margin-right: 15%;
+        .button-show-delay .import-líst-dark{
+            background-color: red;
+            color: white;
+            text-decoration: none;
         }
-
-        .maxtotal-right {
-            width: 30%;
-            text-align: end;
+        .button-show-delay .import-líst-dark:hover{
+            background-color:#cb1023 ;
         }
-
         .maxtotal-right span {
             font-size: 30px;
         }
-
-        .profile-banking {
-            margin-top: 10%;
+        table {
+            margin-top: 50px;
+            width: 100%;
+        }
+        table th {
+            background: #007bff;
+            color: #b9dcf3;
+        }
+        table td, table th {
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+        table th:hover {
+            color: #ffffff;
+        }
+        table td:hover {
+            background-color: #ddd;
+        }
+        table td {
+            margin: 10px;
         }
     </style>
 

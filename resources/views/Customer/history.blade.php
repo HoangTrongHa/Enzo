@@ -1,5 +1,10 @@
-@extends("Customer.Components.layout")
+@extends("Customer.layout.app")
 @section("content")
+    <section id="banner-register">
+        <div class="title-register">
+            <span>申し込み</span>
+        </div>
+    </section>
     <div class="container">
      <div class="history-customer">
          <p> < ローン履歴 ></p>

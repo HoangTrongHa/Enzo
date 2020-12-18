@@ -6,6 +6,7 @@ use App\Customer;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class testchangestatus extends Command
 {
@@ -21,7 +22,7 @@ class testchangestatus extends Command
      *
      * @var string
      */
-    protected $description = 'Da thay doi status cua customer';
+    protected $description = 'Da thay doi stats cua customer';
 
     /**
      * Create a new command instance.
@@ -40,20 +41,20 @@ class testchangestatus extends Command
      */
     public function handle()
     {
-        $test = Customer::where("static",7)->get();
+        $test = Customer::where("static",6)->get();
         foreach ($test as $item) {
             if (strtotime($item->payment_term) < strtotime(Carbon::now()))
                 try {
                     DB::beginTransaction();
                     $item->update([
-                        "status" => 8,
+                        "status" => 7,
                     ]);
                     DB::commit();
                 } catch (\Exception $exception) {
                     DB::rollBack();
                 }
-
         }
+        Log::info("Dang Chay Roi Khong Phai Test!");
 
     }
 }

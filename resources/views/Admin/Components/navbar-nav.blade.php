@@ -1,18 +1,12 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-    <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route("home.admin")}}">
-
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+        <div class="sidebar-brand-icon">
+{{--            <i class="fas fa-laugh-wink"></i>--}}
+{{--            <img src="{{asset("image/ENZO_bank_logo_white.png")}}" alt="">--}}
         </div>
         <div class="sidebar-brand-text mx-3">Enzo Admin</div>
     </a>
-
-    <!-- Divider -->
     <hr class="sidebar-divider my-0">
-
-    <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
         <a class="nav-link" href="{{route("home.admin")}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -27,14 +21,14 @@
             <i style="color: red">{{$countUser}}</i>
         </a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{route("index-appnew")}}">
-            <i class="fa fa-folder-open fa-tachometer-alt"></i>
-            <span>新規申し込みリスト </span>
-            <i style="color: red">{{$wait}}</i>
+{{--    <li class="nav-item">--}}
+{{--        <a class="nav-link" href="{{route("index-appnew")}}">--}}
+{{--            <i class="fa fa-folder-open fa-tachometer-alt"></i>--}}
+{{--            <span>新規申し込みリスト </span>--}}
+{{--            <i style="color: red">{{$wait}}</i>--}}
 
-        </a>
-    </li>
+{{--        </a>--}}
+{{--    </li>--}}
     <li class="nav-item">
         <a class="nav-link" href="{{route("checkImager")}}">
             <i class="fas fa-image fa-tachometer-alt"></i>

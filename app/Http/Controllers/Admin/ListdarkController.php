@@ -35,4 +35,9 @@ class ListdarkController extends Controller
         $cus = Customer::FindOrFail($id);
         return view ("Admin.listdark.show",compact("cus"));
     }
+    public function deleteInfor($id){
+        $cus = Customer::FindOrFail($id);
+        $cus->delete();
+        return redirect()->route("list-dark");
+    }
 }

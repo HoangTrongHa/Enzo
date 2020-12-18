@@ -20,6 +20,7 @@ class UserController extends Controller
         $user = Customer::with('upload')->findOrfail($id);
         return view("Admin.Manager.ManagerAccount.watchinformation",compact("user"));
     }
+
     public function search(Request $request){
 
         $search = Customer::where('kanji_name','like','%'.$request->key.'%')
@@ -28,6 +29,8 @@ class UserController extends Controller
         $session = $request->key;
         return view('Admin.searchview.index',compact("search","session"));
     }
+
+
     public function show($id)
     {
         $customer = Customer::FindOrFail($id);

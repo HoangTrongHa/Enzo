@@ -3,19 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Customer;
-use App\History;
 use App\Http\Controllers\Controller;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Support\Facades\DB;
-use Barryvdh\DomPDF\PDF;
-use Illuminate\Http\Request;
+use mysql_xdevapi\Exception;
 
 class BankingController extends Controller
 {
     public function index()
     {
-        $cus =Customer::where("static",5)->orderBy('created_at', 'desc')->paginate(5);
-        $check = Customer::where("static" ,6)->orderBy('updated_at', 'desc')->paginate(5);
-        return view("Admin.banking.index", compact("cus","check"));
+        $cus = Customer::where("static", 5)->orderBy('created_at', 'desc')->paginate(5);
+        $check = Customer::where("static", 6)->orderBy('updated_at', 'desc')->paginate(5);
+        return view("Admin.banking.index", compact("cus", "check"));
     }
 
     public function showBanking($id)
@@ -33,17 +32,26 @@ class BankingController extends Controller
     {
         try {
             $cus = Customer::FindOrFail($id);
-//            $pdf = PDF::loadView("Admin.pdf.index", compact("cus"));
-//            $pdf->download('bill.pdf') ;
             $cus->update([
                 "static" => 6
             ]);
             return redirect()->route("index-banking");
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             DB::rollBack();
             return back();
         }
+    }
 
+    public function pirntfPdf($id)
+    {
+        try {
+            $cus = Customer::FindOrFail($id);
+            $pdf = PDF::loadView("Admin.pdf.index", compact("cus"));
+            return $pdf->download('bill.pdf');
+        }catch (Exception $exception){
+            DB::rollBack();
+            return back();
+        }
     }
 
 }

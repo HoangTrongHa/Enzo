@@ -12,13 +12,13 @@ class LoanController extends Controller
 {
     public function index()
     {
-        $user = Customer::whereNotNull("loancus")->Where("loancus","!=" ,0)->orderBy('created_at', 'desc')->paginate(5);
-        $cus = Customer::where("static",4)->get();
+        $user = Customer::where("static",3)->orderBy('created_at', 'desc')->paginate(5);
+        $cus = Customer::where("static",4)->orderBy('created_at', 'desc')->paginate(5);
         return view("Admin.Manager.Loan.index", compact("user","cus"));
     }
     public function createLoan($id)
     {
-        $cus = Customer::findOrFail($id);
+        $cus = Customer::with("upload")->findOrFail($id);
         return view("Admin.Manager.Loan.createLoan", compact("cus"));
     }
     public function postLoan($id, Request $req)

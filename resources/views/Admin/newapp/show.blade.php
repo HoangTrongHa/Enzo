@@ -1,193 +1,74 @@
 @extends("Admin.Components.layout")
 @section("content")
     <div class="container emp-profile">
-        <div class="row">
-
-            <div class="col-md-12">
-                <div class="tab-content profile-tab" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    かんじ名</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->kanji_name}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    電話名</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->name_transliteration}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    セックス</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->male}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    有効な電話番号</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->phone_number}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    携帯電話番号</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->landline_number}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    Eメール</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->email}}</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    本部</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->company}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    作業位置</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->num_people}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    会社は働いています</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->linkweb}}</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    会社の電話番号</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->company_phone}}</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    就業年</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->work_year}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    労働時間</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->work_time}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    労働時間</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->position}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    疑わしい時間</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->work_break}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    保証人の名前</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->protector}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    確実の住所
-                                </label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->guardian_address}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    確実な電話番号
-                                </label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->phone_number_guard}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    アカウントが作成されました
-
-                                </label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$customer->created_at}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
+        <table>
+            <tr>
+                <th>漢字名</th>
+                <td>{{$customer->kanji_name}}</td>
+                <th>名前の音訳</th>
+                <td>{{$customer->name_transliteration}}</td>
+                <th>男性</th>
+                <td>{{$customer->male}}</td>
+            </tr>
+            <tr>
+                <th>家族構成</th>
+                <td>{{$customer->family_structure}}</td>
+                <th>住所</th>
+                <td>{{$customer->address}}</td>
+                <th>固定電話番号</th>
+                <td>{{$customer->landline_number}}</td>
+            </tr>
+            <tr>
+                <th>電話番号</th>
+                <td>{{$customer->phone_number}}</td>
+                <th>email</th>
+                <td>{{$customer->email}}</td>
+                <th>就業年</th>
+                <td>{{$customer->work_year}}</td>
+            </tr>
+            <tr>
+                <th>休憩</th>
+                <td>{{$customer->work_break}}</td>
+                <th>プロテクター</th>
+                <td>{{$customer->protector}}</td>
+                <th>保護者の住所</th>
+                <td>{{$customer->guardian_address}}</td>
+            </tr>
+            <tr>
+                <th>電話番号ガード</th>
+                <td>{{$customer->phone_number_guard}}</td>
+                <th>口座番号</th>
+                <td>{{$customer->account_number}}</td>
+                <th>
+                    口座名義人
+                </th>
+                <td>{{$customer->account_holder}}</td>
+            </tr>
+        </table>
     </div>
+    <style>
+        table{
+            margin-top: 50px;
+            width: 100%;
+        }
+        table th{
+            background: #007bff;
+            color: #b9dcf3;
+        }
+        table td, table th {
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+        table th:hover {
+            color: #ffffff;
+        }
+        table td:hover {
+            background-color: #ddd;
+        }
+        table td{
+            margin:10px;
+        }
+    </style>
 {{--    <form action="{{route("PostgrantRight",[$customer->id])}}" id="basicform" method="POST">--}}
 {{--        @csrf--}}
 {{--        @method("POST")--}}

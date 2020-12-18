@@ -12,9 +12,16 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
+    // .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/style.scss', 'public/css')
+    .sass('resources/sass/upload.scss', 'public/css')
+    .sass('resources/sass/login.scss', 'public/css')
+    .sass('resources/sass/sinse1.scss', 'public/css')
+    .sass('resources/sass/confirm.scss', 'public/css')
+    .sass('resources/sass/register.scss', 'public/css')
+    .sass('resources/sass/sinse-3.scss', 'public/css')
     .sass('resources/sass/enzo.scss', 'public/css').options({
-    processCssUrls: false
-});
+        processCssUrls: false
+    });
 mix.version();
 

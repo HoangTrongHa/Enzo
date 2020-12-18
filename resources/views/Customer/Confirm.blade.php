@@ -1,4 +1,8 @@
-@extends("Customer.Components.layout")
+@extends("Customer.layout.app")
+@section('css')
+    <link rel="stylesheet" href="{{asset("css/confirm.css")}}">
+
+@endsection
 @section("content")
     <section id="banner-register">
         <div class="title-register">

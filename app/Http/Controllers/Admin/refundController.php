@@ -13,7 +13,7 @@ class refundController extends Controller
 {
     public function index()
     {
-        $cus = Customer::where("static", 7)->where("loancustomer", "!=", 0)->orderBy('created_at', 'desc')->get();
+        $cus = Customer::where("static", 7)->orderBy('created_at', 'desc')->get();
         return view("Admin.Refund.index", compact("cus"));
     }
     public function showrefund($id)

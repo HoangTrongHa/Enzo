@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     @include("Customer.Components.head")
+    <link rel="stylesheet" href="{{asset("css/docs.theme.min.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/owl.carousel.min.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/owl.theme.default.min.css")}}">
 </head>
 <body>
 <section class="screen-desktop">
@@ -1121,31 +1124,6 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                             </div>
                         </div>
                     </div>
-                    <script>
-                        $(document).ready(function () {
-                            $('.owl-carousel').owlCarousel({
-                                loop: true,
-                                margin: 10,
-                                responsiveClass: true,
-                                responsive: {
-                                    0: {
-                                        items: 1,
-                                        nav: true
-                                    },
-                                    600: {
-                                        items: 3,
-                                        nav: false
-                                    },
-                                    1000: {
-                                        items: 5,
-                                        nav: true,
-                                        loop: false,
-                                        margin: 20
-                                    }
-                                }
-                            })
-                        })
-                    </script>
                 </div>
             </div>
         </div>
@@ -1330,13 +1308,13 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                         </div>
                         <div class="botton-wall-paper">
                             <span class="content-span-information">
-研究所に続く沿道には一般の人たちが集まり、「おかえりなさい」などと書かれた手作りの横断幕やボードを掲げトラックの到着を待ちました。
+                                研究所に続く沿道には一般の人たちが集まり、「おかえりなさい」などと書かれた手作りの横断幕やボードを掲げトラックの到着を待ちました。
 
-そして午前10時半ごろ、カプセルを積んだとみられるトラックが姿を見せると集まった人は写真を撮りながら「おかえり」と拍手をして迎えました。
+                                そして午前10時半ごろ、カプセルを積んだとみられるトラックが姿を見せると集まった人は写真を撮りながら「おかえり」と拍手をして迎えました。
 
-トラックはそのまま研究所内に入り、専用施設の近くに停車すると、連絡を受けたプロジェクトチームのメンバーらが走って駆けつけました。
+                                トラックはそのまま研究所内に入り、専用施設の近くに停車すると、連絡を受けたプロジェクトチームのメンバーらが走って駆けつけました。
 
-そして、トラックの前に並んで、バンザイと叫んだり、拍手をしたりして、カプセルの帰還を喜んでいました
+                                そして、トラックの前に並んで、バンザイと叫んだり、拍手をしたりして、カプセルの帰還を喜んでいました
 
                             </span>
                         </div>
@@ -1404,6 +1382,66 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
 
     </section>
 </section>
+<script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            responsiveClass: true,
+            autoplay:true,
+            autoplayTimeout:5000,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 5,
+                    nav: true,
+                    loop: false,
+                    margin: 20
+                }
+            }
+        })
+    })
+</script>
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml            : true,
+            version          : 'v9.0'
+        });
+    };
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/zh_HK/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your Chat Plugin code -->
+<div class="fb-customerchat"
+     attribution=setup_tool
+     page_id="102536525038100"
+     theme_color="#fa3c4c"
+     logged_in_greeting="「こんにちは！どうすればお手伝いできますか？」"
+     logged_out_greeting="「こんにちは！どうすればお手伝いできますか？」">
+</div>
 </body>
 </html>
-@include("Customer.Components.script")

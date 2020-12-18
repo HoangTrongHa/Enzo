@@ -42,199 +42,114 @@
                 </div>
             @endforeach
         </div>
-        <div class="row">
-
-            <div class="col-md-12">
-                <div class="tab-content profile-tab" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    かんじ名</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->kanji_name}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    電話名</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->name_transliteration}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    セックス</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->male}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    有効な電話番号</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->phone_number}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    携帯電話番号</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->landline_number}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    Eメール</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->email}}</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    本部</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->company}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    作業位置</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->num_people}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    会社は働いています</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->linkweb}}</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    会社の電話番号</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->company_phone}}</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    就業年</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->work_year}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    労働時間</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->work_time}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-                                    労働時間</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->position}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    疑わしい時間</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->work_break}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    保証人の名前</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->protector}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    確実の住所
-                                </label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->guardian_address}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    確実な電話番号
-                                </label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->phone_number_guard}}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>
-
-                                    アカウントが作成されました
-
-                                </label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>{{$cus->created_at}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
     </div>
-    <div class="form-group">
-        <label for="inputUserName">Email*</label>
-        <input id="inputipt" type="text" readonly="true" data-parsley-trigger="change" value="{{$cus->email}}"
-               placeholder="Enter Arrtibute values name" autocomplete="off" class="form-control">
+    <div class="container emp-profile">
+        <table>
+            <tr>
+                <th>漢字名</th>
+                <td>{{$cus->kanji_name}}</td>
+                <th>名前の音訳</th>
+                <td>{{$cus->name_transliteration}}</td>
+                <th>男性</th>
+                <td>{{$cus->male}}</td>
+            </tr>
+            <tr>
+                <th>家族構成</th>
+                <td>{{$cus->family_structure}}</td>
+                <th>住所</th>
+                <td>{{$cus->address}}</td>
+                <th>固定電話番号</th>
+                <td>{{$cus->landline_number}}</td>
+            </tr>
+            <tr>
+                <th>電話番号</th>
+                <td>{{$cus->phone_number}}</td>
+                <th>email</th>
+                <td>{{$cus->email}}</td>
+                <th>就業年</th>
+                <td>{{$cus->work_year}}</td>
+            </tr>
+            <tr>
+                <th>休憩</th>
+                <td>{{$cus->work_break}}</td>
+                <th>プロテクター</th>
+                <td>{{$cus->protector}}</td>
+                <th>保護者の住所</th>
+                <td>{{$cus->guardian_address}}</td>
+            </tr>
+            <tr>
+                <th>電話番号ガード</th>
+                <td>{{$cus->phone_number_guard}}</td>
+                <th>口座番号</th>
+                <td>{{$cus->account_number}}</td>
+                <th>
+                    口座名義人
+                </th>
+                <td>{{$cus->account_holder}}</td>
+            </tr>
+        </table>
     </div>
+
     <style>
+        .box-button-list-dark {
+            justify-content: flex-end;
+            margin-top: 50px;
+            display: flex;
+        }
+
+        .box-button-list-dark .back-list-dark {
+            padding: 15px 35px;
+            background-color: #007bff;
+            color: white;
+            margin-left: 30px;
+            border: 0px solid transparent;
+            text-decoration: none;
+        }
+
+        .box-button-list-dark .back-list-dark:hover {
+            background-color: #065ab5;
+        }
+
+        .box-button-list-dark .history-list-dark {
+            padding: 15px 35px;
+            background-color: #ffc107;
+            color: white;
+            margin-left: 30px;
+            border: 0px solid transparent;
+            text-decoration: none;
+        }
+
+        .box-button-list-dark .history-list-dark:hover {
+            background-color: #d19e06;
+        }
+
+        table {
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        table th {
+            background: #007bff;
+            color: #b9dcf3;
+        }
+
+        table td, table th {
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        table th:hover {
+            color: #ffffff;
+        }
+
+        table td:hover {
+            background-color: #ddd;
+        }
+
+        table td {
+            margin: 10px;
+        }
+
         .img-modal {
             width: 100%;
             max-width: 15%
@@ -286,6 +201,10 @@
             min-height: 200px;
         }
     </style>
+    <div class="container box-button-list-dark">
+        <a class="history-list-dark" href="{{route("history",$cus->id)}}">歴史</a>
+        <a class="back-list-dark" href="{{route("search")}}">戻る</a>
+    </div>
     <script>
         $(document).ready(function () {
             var $imageSrc;

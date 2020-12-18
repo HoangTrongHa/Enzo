@@ -48,6 +48,33 @@
                         <th>
                             <a href="{{route("show-delay",['id' => $item->id])}}"
                                class="btn btn-success">詳細</a>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                探す
+                            </button>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">何を探していますか ？</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="get"
+                                                  role="search" action="{{route("search")}}">
+                                                <div class="input-group">
+                                                    <input type="search" class="form-control" name="key" value="{{session()->forget('key')}}"/>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">バック</button>
+                                            <button type="button" class="btn btn-primary">探す</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </th>
                     </tr>
                 @endforeach
@@ -78,15 +105,26 @@
                     <tr>
                         <th>{{$item -> created_at}}</th>
                         <th>
-                            <div class="four">
-                                    <div class="button-wrap button-active">
-                                        <div class="button-bg">
-                                            <div class="button-out"></div>
-                                            <div class="button-in"></div>
-                                            <div class="button-switch"></div>
-                                        </div>
-                                    </div>
-                            </div>
+
+                            @if($item ->static ==1)
+                                <span class="text-danger">承認待ち</span>
+                            @elseif($item ->static ==2)
+                                <span class="text-primary">借りることができます</span>
+                            @elseif($item->static ==3)
+                                <span class="text-info">貸付金額待ち</span>
+                            @elseif($item->static == 4)
+                                <span class="text-primary">確認済み</span>
+                            @elseif($item->static == 5)
+                                <span class="text-primary">送金を待っています</span>
+                            @elseif($item->static == 6)
+                                <span class="text-success">送金を待っています</span>
+                            @elseif($item->static == 7)
+                                <span class="text-warning">支払い日が来ました</span>
+                            @elseif($item->static == 8)
+                                <span class="text-danger">メールを送信</span>
+                            @elseif($item->static == 9)
+                                <span class="text-danger">ブラックリストン</span>
+                            @endif
                         </th>
                         <th>{{$item->name_transliteration}}</th>
                         <th>{{$item->kanji_name}}</th>
@@ -96,7 +134,33 @@
                             <a href="{{route("showSentMail",['id' => $item->id])}}"
                                class="btn btn-danger">ブラックリスト
                             </a>
-
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                探す
+                            </button>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">何を探していますか ？</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="get"
+                                                  role="search" action="{{route("search")}}">
+                                                <div class="input-group">
+                                                    <input type="search" class="form-control" name="key" value="{{session()->forget('key')}}"/>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">バック</button>
+                                            <button type="button" class="btn btn-primary">探す</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </th>
                     </tr>
                 @endforeach
@@ -111,65 +175,6 @@
         }
         th {
             text-align: center;
-        }
-
-        .four .button-wrap {
-            width: 100px;
-            margin: 0 auto;
-            cursor: pointer;
-        }
-
-        .four .button-bg {
-            width: 100%;
-            height: 100%;
-            background-color: #bb2222;
-            border-radius: 40px;
-            padding: 3px;
-            color: #fff;
-            transition: all 0.2s ease;
-        }
-
-        .four .button-switch {
-            position: relative;
-            left: 0px;
-            width: 44px;
-            height: 44px;
-            border: solid 13px;
-            background-color: #fff;
-            border-radius: 36px;
-            transition: all 0.2s ease;
-        }
-
-        .four .button-active .button-switch {
-            left: 50px;
-        }
-
-        .four .button-in,
-        .four .button-out {
-            position: absolute;
-            transition: all 0.2s ease;
-            padding-top: 15px;
-            font-size: 0.8em;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .four .button-in {
-            margin-left: 76px;
-        }
-
-        .four .button-out {
-            margin-left: 18px;
-        }
-
-        .four .button-active .button-out {
-        }
-
-        .four .button-active .button-in {
-        }
-
-        .four .button-active .button-bg {
-            background-color: #22bb22;
         }
         .span-header{
             font-size: 30px;

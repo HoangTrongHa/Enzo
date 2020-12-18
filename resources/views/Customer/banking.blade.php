@@ -1,9 +1,5 @@
 @extends("Customer.Components.layout")
-
 @section("content")
-
-
-
     <form action="{{route("customer-post-banking",[$cus->id])}}" method="POST">
         @csrf
         @method("POST")
