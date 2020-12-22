@@ -1001,7 +1001,6 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
     <section id="banner-smart">
         <div class="container banner-content">
             <div class="margin-span-top-smart">
-
             <span>
               給料即日払い<small>の</small>
             </span>
@@ -1417,7 +1416,6 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
         })
     })
 </script>
-<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>
     window.fbAsyncInit = function() {
@@ -1434,8 +1432,6 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
         js.src = 'https://connect.facebook.net/zh_HK/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-
-<!-- Your Chat Plugin code -->
 <div class="fb-customerchat"
      attribution=setup_tool
      page_id="102536525038100"

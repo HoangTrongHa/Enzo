@@ -137,6 +137,8 @@
     .smart-phone .relative-hamburger {
       left: 285px;
       position: absolute; }
+      .smart-phone .relative-hamburger a {
+        scroll-behavior: smooth; }
       .smart-phone .relative-hamburger .hamburger_menu {
         width: 3rem;
         height: 2px;

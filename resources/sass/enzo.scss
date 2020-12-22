@@ -175,8 +175,10 @@
                 width: 150px;
             }
         }
-
         .relative-hamburger {
+            a{
+                scroll-behavior: smooth;
+            }
             left: 285px;
             position: absolute;
             .hamburger_menu {
