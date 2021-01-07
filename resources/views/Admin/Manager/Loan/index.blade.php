@@ -1,17 +1,19 @@
 @extends("Admin.Components.layout")
 @section("content")
-
-    <span class="span-header">送金登録一覧</span>
     <div class="card shadow mb-4">
-
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <div class="span-title">
+                        <span class="span-header">
+                           送金登録一覧
+                        </span>
+                    </div>
                     <thead>
                     <tr>
                         <th>申請日</th>
                         <th>利用状況　</th>
-                        <th>　名前</th>
+                        <th>　名前の音訳</th>
                         <th>　名前</th>
                         <th>　　電話番号</th>
                         <th>　　最終利用日</th>
@@ -23,7 +25,6 @@
                         <tr>
                             <th>{{$list -> created_at}}</th>
                             <th>
-
                                 @if($list ->static ==1)
                                     <span class="text-danger">承認待ち</span>
                                 @elseif($list ->static ==2)
@@ -50,34 +51,8 @@
                             <th>{{$list->checklogin}}</th>
                             <th>
                                 <a href="{{route("loan.createLoan",[$list->id])}}"
-                                   class="btn btn-success">変化する</a>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                    探す
-                                </button>
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">何を探していますか ？</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="get"
-                                                      role="search" action="{{route("search")}}">
-                                                    <div class="input-group">
-                                                        <input type="search" class="form-control" name="key" value="{{session()->forget('key')}}"/>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">バック</button>
-                                                <button type="button" class="btn btn-primary">探す</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                   class="btn btn-success">変化する
+                                </a>
                             </th>
                         </tr>
                     @endforeach
@@ -87,12 +62,16 @@
         </div>
     </div>
     {!! $user->links() !!}
-    <span class="span-header">ローン受理</span>
+    {!! Toastr::message() !!}
     <div class="card shadow mb-4">
-
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <div class="span-title">
+                        <span class="span-header">
+                           ローン受理
+                        </span>
+                    </div>
                     <thead>
                     <tr>
                         <th>申請日</th>
@@ -135,33 +114,6 @@
                             <th>{{$list->checklogin}}</th>
                             <th>
                                     <a href="{{route("loan.createLoan",[$list->id])}}" class="btn btn-warning">小切手</a>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                    探す
-                                </button>
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">何を探していますか ？</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="get"
-                                                      role="search" action="{{route("search")}}">
-                                                    <div class="input-group">
-                                                        <input type="search" class="form-control" name="key" value="{{session()->forget('key')}}"/>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">バック</button>
-                                                <button type="button" class="btn btn-primary">探す</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </th>
                         </tr>
                     @endforeach
@@ -172,9 +124,10 @@
     </div>
     {!! $user->links() !!}
     <style>
-        .span-header{
+       .span-title  .span-header{
             font-size: 30px;
             font-weight: 600;
+           margin-bottom: 25px;
         }
         .card{
             margin-top: 20px;
@@ -182,66 +135,6 @@
         th {
             text-align: center;
         }
-
-        .four .button-wrap {
-            width: 100px;
-            cursor: pointer;
-            margin: 0 auto;
-        }
-
-        .four .button-bg {
-            width: 100%;
-            height: 100%;
-            background-color: #bb2222;
-            border-radius: 40px;
-            padding: 3px;
-            color: #fff;
-            transition: all 0.2s ease;
-        }
-
-        .four .button-switch {
-            position: relative;
-            left: 0px;
-            width: 44px;
-            height: 44px;
-            border: solid 13px;
-            background-color: #fff;
-            border-radius: 36px;
-            transition: all 0.2s ease;
-        }
-
-        .four .button-active .button-switch {
-            left: 50px;
-        }
-
-        .four .button-in,
-        .four .button-out {
-            position: absolute;
-            transition: all 0.2s ease;
-            padding-top: 15px;
-            font-size: 0.8em;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .four .button-in {
-            margin-left: 76px;
-        }
-
-        .four .button-out {
-            margin-left: 18px;
-        }
-
-        .four .button-active .button-out {
-        }
-
-        .four .button-active .button-in {
-        }
-
-        .four .button-active .button-bg {
-            background-color: #22bb22;
-        }
-
     </style>
 
 @endsection

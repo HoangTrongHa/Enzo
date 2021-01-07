@@ -29,16 +29,19 @@
                 <div class="d-flex">
                     <div class="left-register">
                         <div class="margin-left-register">
-                            <span>氏名（漢字)</span><span class="span-red">※</span>
+                            <span>氏名（漢字)</span>
+                            <span class="span-red">※</span>
 
                         </div>
                     </div>
                     <div class="right-register">
                         <div class="margin-right-register">
                             <input  class="input-full" type="text" name="tenchuhan" value="{{old("tenchuhan")}}">
-                            @error('tenchuhan')
-                            <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
-                            @enderror
+                            <div class="error-register">
+                                @error('tenchuhan')
+                                <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -51,9 +54,11 @@
                     <div class="right-register">
                         <div class="margin-right-register">
                             <input class="input-full" type="text" name="tenphienam" value="{{old("tenphienam")}}">
+                            <div class="error-register">
                             @error('tenphienam')
                             <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
                             @enderror
+                            </div>
                         </div>
 
                     </div>
@@ -66,16 +71,19 @@
                     </div>
                     <div class="right-register">
                         <div class="margin-right-register">
-                            <div class="radio-type">
-                                <input class="input-radio"  type="radio" name="male" value="男">
-                                <span>男</span><br>
-                            </div>
-                            <div class="radio-type">
-                                <input class="input-radio" type="radio" name="male" value="女">
-                                <span>女</span><br>
+                            <div class="box-radio-type">
 
+                                <div class="radio-type">
+                                    <input class="input-radio"  type="radio" name="male" value="男">
+                                    <span>男</span><br>
+                                </div>
+                                <div class="radio-type">
+                                    <input class="input-radio" type="radio" name="male" value="女">
+                                    <span>女</span><br>
+
+                                </div>
                             </div>
-                            <div class="radio-type">
+                            <div class="error-message">
                                 @error("male")
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
@@ -487,6 +495,9 @@
                 <div class="check-box-register">
                     <input type="checkbox" name="checkbox">
                     <span>個人情報の取り扱いについて</span>
+                </div>
+                <div class="">
+
                     @error('checkbox')
                     <span class="text-danger" style="display: block;margin-bottom: -10px;">{{ $message }}</span>
                     @enderror
@@ -727,7 +738,7 @@ Ehhhh...</span>
                     </div>
                 </div>
                 <div class="button-register">
-                    <button type="submit">戻って</button>
+                    <button type="submit">登録</button>
                 </div>
             </div>
         </section>

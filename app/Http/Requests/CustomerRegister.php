@@ -57,7 +57,6 @@ class CustomerRegister extends FormRequest
             'diachinha.required' => __('見逃してはいけません'),
             'diachinha.max' => __('長すぎる.'),
 
-
             'sodienthoaididong.required' => __('見逃してはいけません.'),
             'sodienthoaididong.min' => __('短すぎる.'),
             'sodienthoaididong.max' => __('短すぎる.'),
@@ -80,13 +79,14 @@ class CustomerRegister extends FormRequest
             'password-confirm' => __('見逃してはいけません.'),
             'password-confirm.max' => __('短すぎる.'),
 
-            'truso.required' => __('見逃してはいけません.'),
-            'head_office_address.required' => __('見逃してはいけません.'),
-            'nguoibaolanh.required' => __('見逃してはいけません.'),
-            'sdtcty.required' => __('見逃してはいけません.'),
+//            'truso.required' => __('見逃してはいけません.'),
+//            'head_office_address.required' => __('見逃してはいけません.'),
+//            'nguoibaolanh.required' => __('見逃してはいけません.'),
+//            'sdtcty.required' => __('見逃してはいけません.'),
+//
+//            'diachinguoibaolanh.required' => __('見逃してはいけません.'),
+//            'sdtnguoibaolanh.required' => __('見逃してはいけません.'),
 
-            'diachinguoibaolanh.required' => __('見逃してはいけません.'),
-            'sdtnguoibaolanh.required' => __('見逃してはいけません.'),
             'checkbox.required' => __('新しい振動アカウントを受け入れることができます登録できます'),
         ];
     }

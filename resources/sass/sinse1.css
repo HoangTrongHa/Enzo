@@ -53,6 +53,7 @@
     border-right: 1px solid #009a87;
     color: white;
     padding: 2px 10px;
+    text-decoration: none;
   }
   .smart-phone #sinse-1 .include-sinse-1 .sinse-left .text-in-button:hover {
     background-color: #6fd6cc;
@@ -63,28 +64,31 @@
   .smart-phone #sinse-1 .include-sinse-1 .sinse-left .text-in-button .text-in-button {
     color: #ffffff;
   }
-  .smart-phone #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 {
+  .smart-phone #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 {
+    margin-top: 10px;
+    letter-spacing: 2px;
     cursor: pointer;
     font-size: 10px;
-    letter-spacing: 2px;
     font-family: "Seurat Pro";
     text-align: center;
     background-color: #00b7a4;
-    margin: 5px auto;
+    margin-left: auto;
+    margin-right: auto;
     border-top: 2px solid #6fd6cc;
     border-bottom: 2px solid #007764;
     border-left: 1px solid #009a87;
     border-right: 1px solid #009a87;
     color: white;
     padding: 2px 10px;
+    text-decoration: none;
   }
-  .smart-phone #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1:hover {
+  .smart-phone #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1:hover {
     background-color: #6fd6cc;
   }
-  .smart-phone #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 .text-in-button-abutton-sinse-3 {
+  .smart-phone #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 .text-in-button-abutton-sinse-3 {
     color: #ffffff;
   }
-  .smart-phone #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 .text-in-button-a {
+  .smart-phone #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 .text-in-button-a {
     color: #ffffff;
   }
   .smart-phone #sinse-1 .include-sinse-1 .sinse-right {
@@ -233,6 +237,7 @@
     border-right: 1px solid #009a87;
     color: white;
     padding: 5px 20px;
+    text-decoration: none;
   }
   .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button:hover {
     background-color: #6fd6cc;
@@ -243,8 +248,8 @@
   .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button .text-in-button {
     color: #ffffff;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 {
-    margin-bottom: 15px;
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 {
+    margin: 10px auto;
     letter-spacing: 2px;
     cursor: pointer;
     font-size: 10px;
@@ -257,14 +262,15 @@
     border-right: 1px solid #009a87;
     color: white;
     padding: 5px 20px;
+    text-decoration: none;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1:hover {
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1:hover {
     background-color: #6fd6cc;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 .text-in-button-abutton-sinse-3 {
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 .text-in-button-abutton-sinse-3 {
     color: #ffffff;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 .text-in-button-a {
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 .text-in-button-a {
     color: #ffffff;
   }
   .screen-desktop #sinse-1 .include-sinse-1 .sinse-right {
@@ -413,6 +419,7 @@
     border-right: 1px solid #009a87;
     color: white;
     padding: 10px 45px;
+    text-decoration: none;
   }
   .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button:hover {
     background-color: #6fd6cc;
@@ -423,8 +430,8 @@
   .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button .text-in-button {
     color: #ffffff;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 {
-    margin: 20px;
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 {
+    margin: 20px auto;
     letter-spacing: 2px;
     cursor: pointer;
     font-size: 15px;
@@ -437,14 +444,15 @@
     border-right: 1px solid #009a87;
     color: white;
     padding: 10px 45px;
+    text-decoration: none;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1:hover {
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1:hover {
     background-color: #6fd6cc;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 .text-in-button-abutton-sinse-3 {
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 .text-in-button-abutton-sinse-3 {
     color: #ffffff;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 .text-in-button-a {
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 .text-in-button-a {
     color: #ffffff;
   }
   .screen-desktop #sinse-1 .include-sinse-1 .sinse-right {
@@ -598,6 +606,7 @@
     border-right: 1px solid #009a87;
     color: white;
     padding: 10px 45px;
+    text-decoration: none;
   }
   .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button:hover {
     background-color: #6fd6cc;
@@ -608,8 +617,8 @@
   .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button .text-in-button {
     color: #ffffff;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 {
-    margin-bottom: 20px;
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 {
+    margin: 20px auto;
     letter-spacing: 2px;
     cursor: pointer;
     font-size: 15px;
@@ -622,14 +631,15 @@
     border-right: 1px solid #009a87;
     color: white;
     padding: 10px 45px;
+    text-decoration: none;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1:hover {
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1:hover {
     background-color: #6fd6cc;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 .text-in-button-abutton-sinse-3 {
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 .text-in-button-abutton-sinse-3 {
     color: #ffffff;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 .text-in-button-a {
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 .text-in-button-a {
     color: #ffffff;
   }
   .screen-desktop #sinse-1 .include-sinse-1 .sinse-right {
@@ -782,9 +792,10 @@
     border-right: 1px solid #009a87;
     color: white;
     padding: 10px 70px;
+    text-decoration: none;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 {
-    margin-bottom: 45px;
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 {
+    margin: 40px auto;
     letter-spacing: 2px;
     cursor: pointer;
     font-size: 20px;
@@ -797,14 +808,15 @@
     border-right: 1px solid #009a87;
     color: white;
     padding: 10px 70px;
+    text-decoration: none;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1:hover {
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1:hover {
     background-color: #6fd6cc;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 .text-in-button-abutton-sinse-3 {
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 .text-in-button-abutton-sinse-3 {
     color: #ffffff;
   }
-  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .back-sinse-1 .text-in-button-a {
+  .screen-desktop #sinse-1 .include-sinse-1 .sinse-left .text-in-button-1 .text-in-button-a {
     color: #ffffff;
   }
   .screen-desktop #sinse-1 .include-sinse-1 .sinse-right {

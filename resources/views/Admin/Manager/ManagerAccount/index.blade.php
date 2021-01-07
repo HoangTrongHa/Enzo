@@ -1,9 +1,27 @@
 @extends("Admin.Components.layout")
 @section("content")
-    <span class="span-header">アカウントのリスト </span>
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
+                <div class="header-table">
+                    <div class="span-title">
+                        <span class="title-table">
+                            アカウントのリスト
+                        </span>
+                    </div>
+                    <div class="search">
+                        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="get"
+                              role="search" action="{{route("search")}}">
+                            <div class="input-group">
+{{--                                <input type="search" class="form-control" name="key" value="{{session()->forget('key')}}"/>--}}
+                                <input type="text" placeholder="探す" id="search"  name="key">
+                                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
@@ -16,7 +34,7 @@
                         <th>関数</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="data" style=" width:auto;height:500px;overflow-y:scroll; overflow-x: scroll">
                     @foreach($user as $list)
                         <tr>
                             <th>{{$list -> created_at}}</th>
@@ -47,35 +65,8 @@
                             <th>{{$list->phone_number}}</th>
                             <th>{{$list->checklogin}}</th>
                             <th>
-                                <a href="{{route("watchInformation",['id' => $list->id])}}" class="btn btn-success">詳細</a>
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                    探す
-                                </button>
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">何を探していますか ？</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="get"
-                                                      role="search" action="{{route("search")}}">
-                                                    <div class="input-group">
-                                                        <input type="search" class="form-control" name="key" value="{{session()->forget('key')}}"/>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">バック</button>
-                                                <button type="button" class="btn btn-primary">探す</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <a href="{{route("watchInformation",['id' => $list->id])}}"
+                                   class="btn btn-success">詳細</a>
                             </th>
                         </tr>
                     @endforeach
@@ -84,12 +75,24 @@
             </div>
         </div>
     </div>
-    {!! $user->links() !!}
     <style>
+        .header-table{
+            display: flex;
+            justify-content: space-between;
+        }
+        .table-responsive .title-table {
+            font-size: 30px;
+            font-weight: bold;
+
+        }
+        #search{
+            text-align: right;
+            margin-right: 15px;
+        }
         th {
             text-align: center;
         }
-        .span-header{
+        caption {
             font-size: 30px;
             font-weight: 600;
         }
@@ -97,5 +100,14 @@
             margin-top: 20px;
         }
     </style>
-
+    <script>
+        $(document).ready(function(){
+            $("#search").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#data tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
 @endsection

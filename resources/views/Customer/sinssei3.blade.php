@@ -21,7 +21,7 @@
                         </div>
                         <div class="forward-to-money">
 
-                            <span>{{$cus->maxtotal}}</span><span class="yen-sinse-3">円</span>
+                            <span>{{number_format($cus->maxtotal)}}</span><span class="yen-sinse-3">円</span>
                         </div>
                     </div>
                     <div class="total-sinse-3">

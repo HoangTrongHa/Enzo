@@ -1,9 +1,7 @@
 @import "variables";
-
 @media only screen and (max-width: 600px) {
     .smart-phone {
         display: block;
-
         #body-register {
             .header-body {
                 padding: 30px;
@@ -23,7 +21,6 @@
                     text-align: center;
                 }
             }
-
             .footer-header-body {
                 font-size: 9px;
                 line-height: 20px;
@@ -51,13 +48,13 @@
                     align-content: center;
 
                     span {
-                        font-size: 12px;
+                        font-size: 9px;
                         color: #000000;
                         font-weight: 600;
                     }
 
                     .span-red {
-                        font-size: 20px;
+                        font-size: 10px;
                         color: red;
                         margin-left: 5px;
                     }
@@ -70,13 +67,13 @@
                     align-content: center;
 
                     span {
-                        font-size: 8px;
+                        font-size:9px;
                         color: #000000;
                         font-weight: 600;
                     }
 
                     .span-red {
-                        font-size: 20px;
+                        font-size: 10px;
                         color: red;
                         margin-left: 5px;
                     }
@@ -96,13 +93,15 @@
 
                 .margin-right-register {
                     font-size: 10px;
-                    display: flex;
+                    display: block;
                     width: 90%;
                     justify-content: space-between;
                     align-items: center;
                     align-content: center;
                     margin: 10px auto;
-
+                    .box-radio-type{
+                        display: flex;
+                    }
                     .input-full {
                         width: 100%;
                         border-top: 1px solid #b8b8b8;
@@ -371,18 +370,13 @@
                 }
 
                 .margin-right-register {
-                    font-size: 15px;
-                    display: flex;
                     width: 90%;
-                    justify-content: space-between;
-                    align-items: center;
-                    align-content: center;
                     margin: 20px auto;
-
-                    input {
-                        height: 35px;
+                    font-size: 16px;
+                    display: block;
+                    .box-radio-type{
+                        display: flex;
                     }
-
                     .input-full {
                         width: 100%;
                         border-top: 1px solid #b8b8b8;
@@ -392,55 +386,37 @@
                     }
 
                     .input-three {
-                        width: 25%;
-                        height: 20px;
-                        background: #eeee;
+                        width: 20%;;
+                        margin: 0 10px;
                         border-top: 1px solid #b8b8b8;
                         border-left: 1px solid #dddddd;
                         border-right: 1px solid #dddddd;
                         border-bottom: 1px solid #f1f1f1;
-                    }
-
-                    select {
-                        &::-ms-expand {
-                            display: none;
-                        }
-
-                        -webkit-appearance: none;
-                        appearance: none;
                     }
 
                     .input-one-letter {
-                        width: 80%;
+                        width: 81%;
                         border-top: 1px solid #b8b8b8;
                         border-left: 1px solid #dddddd;
                         border-right: 1px solid #dddddd;
                         border-bottom: 1px solid #f1f1f1;
-                        background: #eeee;
-
                     }
 
                     .radio-type {
-                        display: flex;
-                        width: 20%;
-                        justify-content: space-around;
+                        width: 85px;
+                        height: 35px;
                         color: #eeeeee;
-                        align-content: center;
+                        display: flex;
                         align-items: center;
+                        span {
+                            font-size: 20px;
+                            color: black;
+                        }
 
                         .input-radio {
                             width: 20px;
                             height: 30px;
                             background-color: #eeeeee;
-
-                            &:checked:after {
-                                background-color: black;
-                            }
-                        }
-
-                        span {
-                            color: black;
-                            font-size: 15px;
                         }
 
                         label {
@@ -650,76 +626,41 @@
                 }
 
                 .margin-right-register {
-                    font-size: 15px;
-                    display: flex;
                     width: 90%;
-                    justify-content: space-between;
-                    align-items: center;
-                    align-content: center;
-                    margin: 20px auto;
-
-                    input {
-                        height: 50px;
+                    font-size: 20px;
+                    display: block;
+                    .box-radio-type{
+                        display: flex;
                     }
-
                     .input-full {
                         width: 100%;
-                        border-top: 1px solid #b8b8b8;
-                        border-left: 1px solid #dddddd;
-                        border-right: 1px solid #dddddd;
-                        border-bottom: 1px solid #f1f1f1;
                     }
 
                     .input-three {
-                        width: 25%;
-                        height: 20px;
-                        background: #eeee;
-                        border-top: 1px solid #b8b8b8;
-                        border-left: 1px solid #dddddd;
-                        border-right: 1px solid #dddddd;
-                        border-bottom: 1px solid #f1f1f1;
-                    }
-
-                    select {
-                        &::-ms-expand {
-                            display: none;
-                        }
-
-                        -webkit-appearance: none;
-                        appearance: none;
+                        width: 20%;;
+                        margin-right: 10px;
+                        margin-left: 15px;
                     }
 
                     .input-one-letter {
-                        width: 80%;
-                        border-top: 1px solid #b8b8b8;
-                        border-left: 1px solid #dddddd;
-                        border-right: 1px solid #dddddd;
-                        border-bottom: 1px solid #f1f1f1;
-                        background: #eeee;
-
+                        width: 81%;
                     }
 
                     .radio-type {
-                        display: flex;
-                        width: 20%;
-                        justify-content: space-around;
+                        width: 85px;
+                        height: 35px;
                         color: #eeeeee;
-                        align-content: center;
+                        display: flex;
                         align-items: center;
+                        span {
+                            font-size: 20px;
+                            color: black;
+                        }
 
                         .input-radio {
                             width: 20px;
-                            height: 30px;
+                            height: 40px;
                             background-color: #eeeeee;
-
-                            &:checked:after {
-                                background-color: black;
-                            }
-                        }
-
-                        span {
-                            color: black;
-                            font-size: 15px;
                         }
 
                         label {
@@ -928,76 +869,41 @@
                 }
 
                 .margin-right-register {
-                    font-size: 26px;
-                    display: flex;
                     width: 90%;
-                    justify-content: space-between;
-                    align-items: center;
-                    align-content: center;
-                    margin: 20px auto;
-
-                    input {
-                        height: 50px;
+                    font-size: 30px;
+                    display: block;
+                    .box-radio-type{
+                        display: flex;
                     }
-
                     .input-full {
                         width: 100%;
-                        border-top: 1px solid #b8b8b8;
-                        border-left: 1px solid #dddddd;
-                        border-right: 1px solid #dddddd;
-                        border-bottom: 1px solid #f1f1f1;
                     }
 
                     .input-three {
-                        width: 25%;
-                        height: 45px;
-                        background: #eeee;
-                        border-top: 1px solid #b8b8b8;
-                        border-left: 1px solid #dddddd;
-                        border-right: 1px solid #dddddd;
-                        border-bottom: 1px solid #f1f1f1;
-                    }
-
-                    select {
-                        &::-ms-expand {
-                            display: none;
-                        }
-
-                        -webkit-appearance: none;
-                        appearance: none;
+                        width: 20%;;
+                        margin-right: 10px;
+                        margin-left: 15px;
                     }
 
                     .input-one-letter {
-                        width: 80%;
-                        border-top: 1px solid #b8b8b8;
-                        border-left: 1px solid #dddddd;
-                        border-right: 1px solid #dddddd;
-                        border-bottom: 1px solid #f1f1f1;
-                        background: #eeee;
-
+                        width: 81%;
                     }
 
                     .radio-type {
-                        display: flex;
-                        width: 20%;
-                        justify-content: space-around;
+                        width: 85px;
+                        height: 35px;
                         color: #eeeeee;
-                        align-content: center;
+                        display: flex;
                         align-items: center;
-
-                        .input-radio {
-                            width: 20px;
-                            height: 30px;
-                            background-color: #eeeeee;
-
-                            &:checked:after {
-                                background-color: black;
-                            }
+                        span {
+                            font-size: 35px;
+                            color: black;
                         }
 
-                        span {
-                            color: black;
-                            font-size: 15px;
+                        .input-radio {
+                            width: 30px;
+                            height: 50px;
+                            background-color: #eeeeee;
                         }
 
                         label {
@@ -1203,7 +1109,10 @@
                 .margin-right-register {
                     margin: 35px 0 35px 13px;
                     font-size: 30px;
-
+                    display: block;
+                    .box-radio-type{
+                        display: flex;
+                    }
                     .input-full {
                         width: 100%;
                     }
@@ -1215,7 +1124,7 @@
                     }
 
                     .input-one-letter {
-                        width: 68%;
+                        width: 84%;
                     }
 
                     .radio-type {
@@ -1318,7 +1227,6 @@
             .button-register {
                 display: flex;
                 justify-content: center;
-
                 button {
                     margin-left: 15px;
                     margin-right: 15px;
@@ -1329,10 +1237,9 @@
                     border-left: 5px solid #d5c700;
                     border-right: 5px solid #d5c700;
                     color: white;
-                    padding: 20px 20px;
+                    padding: 10px 20px;
                     font-size: 20px;
                     width: 250px;
-
                     &:hover {
                         background-color: #d5c700;
                     }

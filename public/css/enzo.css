@@ -1,131 +1,22 @@
-#sinse-2 .sinse-2 {
-  display: flow-root;
-  width: 450px;
-  height: 400px;
-  border-radius: 20px;
-  background-color: #01897b;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 116px; }
-  #sinse-2 .sinse-2 .head-sinse-2 {
-    width: 350px;
-    height: 131px;
-    background-color: #313131;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 50px;
-    text-align: center;
-    color: #ffffff;
-    border-top: 4px solid #191919;
-    border-bottom: 4px solid #646464;
-    border-left: 2px solid #282829;
-    border-right: 2px solid #282829; }
-    #sinse-2 .sinse-2 .head-sinse-2 #total-price-sinse-2 {
-      font-size: 45px;
-      letter-spacing: 2px;
-      line-height: 35px;
-      color: #ffffff;
-      font-family: "Noto Sans CJ Kjp";
-      text-align: center; }
-    #sinse-2 .sinse-2 .head-sinse-2 #yen-sinse-2 {
-      font-size: 20px;
-      letter-spacing: 2px;
-      line-height: 35px;
-      color: #ffffff;
-      font-family: "Noto Sans CJ Kjp";
-      text-align: right;
-      margin-left: 10px; }
-    #sinse-2 .sinse-2 .head-sinse-2 .margin-head-sinse-2 {
-      font-size: 20px;
-      line-height: 70px; }
-  #sinse-2 .sinse-2 .check-box-register {
-    font-size: 15px;
-    letter-spacing: 1px;
-    line-height: 55px;
-    color: #000000;
-    margin-top: 15px;
-    margin-left: 9%;
-    font-family: "Noto Sans CJ Kjp"; }
-    #sinse-2 .sinse-2 .check-box-register #label-sinse-2 {
-      color: #d3c500; }
-    #sinse-2 .sinse-2 .check-box-register input {
-      width: 17px;
-      height: 17px;
-      border-radius: 9px;
-      background-color: #ffffff;
-      vertical-align: middle;
-      border: 1px solid #000000;
-      -webkit-appearance: none;
-      outline: none;
-      position: relative;
-      cursor: pointer;
-      top: -4px; }
-      #sinse-2 .sinse-2 .check-box-register input:checked {
-        background-color: #313131; }
-  #sinse-2 .sinse-2 .include {
-    display: flex;
-    width: 350px;
-    margin-left: auto;
-    margin-right: auto; }
-    #sinse-2 .sinse-2 .include input {
-      text-align: end; }
-    #sinse-2 .sinse-2 .include span {
-      font-size: 20px;
-      color: #ffffff;
-      margin-top: 15px;
-      margin-right: 10px; }
-    #sinse-2 .sinse-2 .include .input-sinse-2 {
-      width: 199px;
-      height: 50px;
-      background-color: #313131;
-      font-size: 30px;
-      letter-spacing: 2px;
-      line-height: 35px;
-      color: #ffffff;
-      font-family: "Noto Sans CJ Kjp";
-      text-align: right; }
-      #sinse-2 .sinse-2 .include .input-sinse-2 span {
-        position: relative;
-        top: 13%;
-        right: 11px; }
-  #sinse-2 .sinse-2 .button-sinse-2 {
-    display: flex;
-    width: 350px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 18px; }
-    #sinse-2 .sinse-2 .button-sinse-2 .button-submit-sinse-2 {
-      width: 250px;
-      height: 50px;
-      background-color: #00b7a4;
-      text-align: center;
-      margin-left: 18px;
-      border-bottom: 4px solid #007764;
-      border-left: 2px solid #009a87;
-      border-right: 2px solid #009a87;
-      border-top: 4px solid #7adad0; }
-      #sinse-2 .sinse-2 .button-sinse-2 .button-submit-sinse-2 a {
-        position: relative;
-        top: 14%;
-        color: #ffffff; }
-    #sinse-2 .sinse-2 .button-sinse-2 .button-back-sinse-2 {
-      text-align: center;
-      margin-left: 18px;
-      width: 81px;
-      height: 50px;
-      background-color: #00b7a4;
-      border-bottom: 4px solid #007764;
-      border-left: 2px solid #009a87;
-      border-right: 2px solid #009a87;
-      border-top: 4px solid #7adad0; }
-      #sinse-2 .sinse-2 .button-sinse-2 .button-back-sinse-2 a {
-        position: relative;
-        top: 14%;
-        color: #ffffff; }
-
 @media only screen and (max-width: 600px) {
   .smart-phone {
     display: block; }
+    .smart-phone .p-4 {
+      display: grid; }
+    .smart-phone .collapse {
+      background-color: #01897b;
+      color: white; }
+      .smart-phone .collapse a {
+        color: white;
+        padding: 10px 0; }
+        .smart-phone .collapse a:hover {
+          color: #808080; }
+    .smart-phone .navbar {
+      display: flex;
+      justify-content: flex-end;
+      height: 0px; }
+    .smart-phone .VizExIcon__IconWrapper-sc-13nooa1-0 {
+      display: none; }
     .smart-phone header {
       display: flex;
       justify-content: center;
@@ -134,16 +25,6 @@
       margin: 20px 0; }
       .smart-phone header img {
         width: 150px; }
-    .smart-phone .relative-hamburger {
-      left: 285px;
-      position: absolute; }
-      .smart-phone .relative-hamburger a {
-        scroll-behavior: smooth; }
-      .smart-phone .relative-hamburger .hamburger_menu {
-        width: 3rem;
-        height: 2px;
-        background-color: #7d7d7d;
-        margin-top: 10px; }
     .smart-phone #banner-smart {
       background-color: #01897b; }
       .smart-phone #banner-smart .banner-content {
@@ -693,59 +574,13 @@
           .smart-phone .content .buttons .button:hover {
             color: white;
             background: #009bd5; }
-    .smart-phone .history-customer {
-      display: table;
-      margin: 115px auto 365px;
-      width: 450px;
-      height: 400px;
-      background-color: #01897b;
-      text-align: center;
-      color: white;
-      border-radius: 40px; }
-      .smart-phone .history-customer button {
-        margin-top: 17px;
-        padding: 10px 10px;
-        background-color: #00b7a4;
-        color: white;
-        border-bottom: 2px solid #007764;
-        border-top: 2px solid #0bbaa8;
-        border-bottom: 2px solid #00806d;
-        border-bottom: 2px solid #00806d; }
-      .smart-phone .history-customer p {
-        font-size: 20px;
-        margin-top: 50px; }
-      .smart-phone .history-customer .content-history {
-        width: 400px;
-        height: 200px;
-        background-color: white;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        overflow-x: hidden;
-        text-align: left;
-        word-wrap: break-word;
-        overflow-y: scroll; }
-        .smart-phone .history-customer .content-history .margin-history {
-          margin-left: 20px; }
-          .smart-phone .history-customer .content-history .margin-history table {
-            color: black;
-            width: 100%; }
-        .smart-phone .history-customer .content-history::-webkit-scrollbar {
-          width: 9px; }
-        .smart-phone .history-customer .content-history::-webkit-scrollbar-track {
-          background: #d4d4d4;
-          border-left: 4px solid white;
-          border-right: 4px solid white; }
-        .smart-phone .history-customer .content-history::-webkit-scrollbar-thumb {
-          background-color: #707070; }
-        .smart-phone .history-customer .content-history #date-time {
-          color: #01897b;
-          font-size: 20px; }
   .screen-desktop {
     display: none; } }
 
 @media only screen and (min-width: 600px) {
   .smart-phone {
+    display: none; }
+  .screen-desktop .VizExIcon__IconWrapper-sc-13nooa1-0 {
     display: none; }
   .screen-desktop header {
     background-color: white;
@@ -762,10 +597,6 @@
         display: flex;
         justify-content: space-between; }
         .screen-desktop header .heading .heading-right .button-login {
-          background-color: #60565E; }
-          .screen-desktop header .heading .heading-right .button-login:hover {
-            background-color: #a0a0a0; }
-        .screen-desktop header .heading .heading-right .button-login {
           display: flex;
           justify-content: end;
           align-items: center;
@@ -775,6 +606,8 @@
           background-color: #60565E;
           width: 115px;
           height: 40px; }
+          .screen-desktop header .heading .heading-right .button-login:hover {
+            background-color: #a0a0a0; }
           .screen-desktop header .heading .heading-right .button-login img {
             border-radius: 75px;
             width: 40px;
@@ -782,7 +615,7 @@
           .screen-desktop header .heading .heading-right .button-login span {
             color: white !important;
             font-size: 13px;
-            margin-left: 5px; }
+            margin: 0 auto; }
         .screen-desktop header .heading .heading-right img {
           width: 160px;
           height: 50px; }
@@ -1380,58 +1213,12 @@
         cursor: pointer; }
         .screen-desktop .content .buttons .button:hover {
           color: white;
-          background: #009bd5; }
-  .screen-desktop .history-customer {
-    display: table;
-    margin: 115px auto 365px;
-    width: 450px;
-    height: 400px;
-    background-color: #01897b;
-    text-align: center;
-    color: white;
-    border-radius: 40px; }
-    .screen-desktop .history-customer button {
-      margin-top: 17px;
-      padding: 10px 10px;
-      background-color: #00b7a4;
-      color: white;
-      border-bottom: 2px solid #007764;
-      border-top: 2px solid #0bbaa8;
-      border-bottom: 2px solid #00806d;
-      border-bottom: 2px solid #00806d; }
-    .screen-desktop .history-customer p {
-      font-size: 20px;
-      margin-top: 50px; }
-    .screen-desktop .history-customer .content-history {
-      width: 400px;
-      height: 200px;
-      background-color: white;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
-      text-align: left;
-      word-wrap: break-word;
-      overflow-y: scroll; }
-      .screen-desktop .history-customer .content-history .margin-history {
-        margin-left: 20px; }
-        .screen-desktop .history-customer .content-history .margin-history table {
-          color: black;
-          width: 100%; }
-      .screen-desktop .history-customer .content-history::-webkit-scrollbar {
-        width: 9px; }
-      .screen-desktop .history-customer .content-history::-webkit-scrollbar-track {
-        background: #d4d4d4;
-        border-left: 4px solid white;
-        border-right: 4px solid white; }
-      .screen-desktop .history-customer .content-history::-webkit-scrollbar-thumb {
-        background-color: #707070; }
-      .screen-desktop .history-customer .content-history #date-time {
-        color: #01897b;
-        font-size: 20px; } }
+          background: #009bd5; } }
 
 @media only screen and (min-width: 768px) {
   .smart-phone {
+    display: none; }
+  .screen-desktop .VizExIcon__IconWrapper-sc-13nooa1-0 {
     display: none; }
   .screen-desktop header {
     background-color: white;
@@ -1447,8 +1234,6 @@
         width: 40%;
         display: flex;
         justify-content: space-between; }
-        .screen-desktop header .heading .heading-right .button-login {
-          background-color: #60565E; }
         .screen-desktop header .heading .heading-right .button-login {
           display: flex;
           justify-content: end;
@@ -1466,7 +1251,7 @@
           .screen-desktop header .heading .heading-right .button-login span {
             color: white !important;
             font-size: 13px;
-            margin-left: 5px; }
+            margin: 0 auto; }
         .screen-desktop header .heading .heading-right img {
           width: 160px;
           height: 50px; }
@@ -1978,58 +1763,12 @@
         cursor: pointer; }
         .screen-desktop .content .buttons .button:hover {
           color: white;
-          background: #009bd5; }
-  .screen-desktop .history-customer {
-    display: table;
-    margin: 115px auto 365px;
-    width: 450px;
-    height: 400px;
-    background-color: #01897b;
-    text-align: center;
-    color: white;
-    border-radius: 40px; }
-    .screen-desktop .history-customer button {
-      margin-top: 17px;
-      padding: 10px 10px;
-      background-color: #00b7a4;
-      color: white;
-      border-bottom: 2px solid #007764;
-      border-top: 2px solid #0bbaa8;
-      border-bottom: 2px solid #00806d;
-      border-bottom: 2px solid #00806d; }
-    .screen-desktop .history-customer p {
-      font-size: 20px;
-      margin-top: 50px; }
-    .screen-desktop .history-customer .content-history {
-      width: 400px;
-      height: 200px;
-      background-color: white;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
-      text-align: left;
-      word-wrap: break-word;
-      overflow-y: scroll; }
-      .screen-desktop .history-customer .content-history .margin-history {
-        margin-left: 20px; }
-        .screen-desktop .history-customer .content-history .margin-history table {
-          color: black;
-          width: 100%; }
-      .screen-desktop .history-customer .content-history::-webkit-scrollbar {
-        width: 9px; }
-      .screen-desktop .history-customer .content-history::-webkit-scrollbar-track {
-        background: #d4d4d4;
-        border-left: 4px solid white;
-        border-right: 4px solid white; }
-      .screen-desktop .history-customer .content-history::-webkit-scrollbar-thumb {
-        background-color: #707070; }
-      .screen-desktop .history-customer .content-history #date-time {
-        color: #01897b;
-        font-size: 20px; } }
+          background: #009bd5; } }
 
 @media only screen and (min-width: 992px) {
   .smart-phone {
+    display: none; }
+  .screen-desktop .VizExIcon__IconWrapper-sc-13nooa1-0 {
     display: none; }
   .screen-desktop header {
     background-color: white;
@@ -2045,8 +1784,6 @@
         width: 30%;
         display: flex;
         justify-content: space-between; }
-        .screen-desktop header .heading .heading-right .button-login {
-          background-color: #60565E; }
         .screen-desktop header .heading .heading-right .button-login {
           display: flex;
           justify-content: end;
@@ -2064,7 +1801,7 @@
           .screen-desktop header .heading .heading-right .button-login span {
             color: white !important;
             font-size: 13px;
-            margin-left: 5px; }
+            margin: 0 auto; }
         .screen-desktop header .heading .heading-right img {
           width: 160px;
           height: 50px; }
@@ -2553,6 +2290,8 @@
 @media only screen and (min-width: 1200px) {
   .smart-phone {
     display: none; }
+  .screen-desktop .VizExIcon__IconWrapper-sc-13nooa1-0 {
+    display: none; }
   .screen-desktop header {
     background-color: white;
     margin-top: 30px;
@@ -2567,8 +2306,6 @@
         width: 40%;
         display: flex;
         justify-content: space-between; }
-        .screen-desktop header .heading .heading-right .button-login {
-          background-color: #60565E; }
         .screen-desktop header .heading .heading-right .button-login {
           display: flex;
           justify-content: end;
@@ -2586,7 +2323,7 @@
           .screen-desktop header .heading .heading-right .button-login span {
             color: white !important;
             font-size: 20px;
-            margin-left: 5px; }
+            margin: 0 auto; }
         .screen-desktop header .heading .heading-right img {
           width: 160px;
           height: 50px; }
@@ -3224,7 +2961,7 @@
     justify-content: flex-end; }
     .screen-desktop .container-button-sinse-1 .item-button-footer {
       background: #01897b;
-      padding: 15px 20px;
+      padding: 15px 50px;
       color: white;
       font-size: 25px; }
       .screen-desktop .container-button-sinse-1 .item-button-footer a {

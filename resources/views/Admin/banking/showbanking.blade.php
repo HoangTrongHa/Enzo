@@ -117,7 +117,7 @@
             </div>
         @endif
     </div>
-
+    {!! Toastr::message() !!}
     <style>
 
         .button-submit{

@@ -1,18 +1,27 @@
 @extends("Admin.Components.layout")
 @section("content")
-    <div class="container search-profile">
-
-    <span class="span-header">
-       検索リスト
-    </span>
-        <input id="max-total" type="text" readonly="true" data-parsley-trigger="change"
-               value="{{$session}}"
-               autocomplete="off" class="form-control"
-               style="text-align: right;font-size: 30px;height: 100%">
-    </div>
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
+                <div class="header-table">
+                    <div class="span-title">
+                        <span class="title-table">
+                            アカウントのリスト
+                        </span>
+                    </div>
+                    <div class="search">
+                        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="get"
+                              role="search" action="{{route("search")}}">
+                            <div class="input-group">
+                                {{--                                <input type="search" class="form-control" name="key" value="{{session()->forget('key')}}"/>--}}
+                                <input type="text" id="search"  name="key"   value="{{$session}}">
+                                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
@@ -84,8 +93,29 @@
             font-size: 30px;
             font-weight: 600;
         }
+        .header-table{
+            display: flex;
+            justify-content: space-between;
+        }
+        .table-responsive .title-table {
+            font-size: 30px;
+            font-weight: bold;
 
+        }
+        #search{
+            text-align: right;
+            margin-right: 15px;
+        }
     </style>
-
+    <script>
+        $(document).ready(function(){
+            $("#search").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#data tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
 @endsection
 

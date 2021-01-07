@@ -25,24 +25,32 @@ class uploadrequest extends FormRequest
     {
         return [
             "avatar"=>"required",
-            "Front"=>"required",
+            'avatar.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            "front"=>"required",
+            'front.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'idnhanhvien.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             "idnhanhvien"=>"required",
-            "Back"=>"required",
-            "luong"=>"required",
-            "Biasotietkiem"=>"required",
-            "manypicture"=>"required"
+
+            "back"=>"required",
+            'back.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'sotietkiem.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            "sotietkiem"=>"required",
+            "3thangluong"=>"required",
+            '3thangluong.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            "filename"=>"required",
+            'filename.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
     public function messages()
     {
         return [
-            'avatar.required' => __('漢字名を入力していません.'),
-            'Front.required' => __('漢字名を入力していません.'),
+            'avatar.required' => __('見逃してはいけません.'),
+            'front.required' => __('見逃してはいけません.'),
             'idnhanhvien.required' => __('見逃してはいけません.'),
-            'Back.required' => __('見逃してはいけません'),
-            'luong.required' => __('見逃してはいけません'),
-            'Biasotietkiem.required' => __('見逃してはいけません'),
-            'manypicture.required' => __('見逃してはいけません')
+            'back.required' => __('見逃してはいけません'),
+            'sotietkiem.required' => __('見逃してはいけません'),
+            '3thangluong.required' => __('見逃してはいけません'),
+            'filename.required' => __('見逃してはいけません')
         ];
     }
 }

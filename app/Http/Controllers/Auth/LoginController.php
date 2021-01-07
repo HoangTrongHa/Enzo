@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminCreateRequest;
 use App\Http\Requests\User;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,14 +24,12 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
     protected $redirectTo = '/admin';
-
     /**
      * Create a new controller instance.
      *
@@ -49,11 +48,12 @@ class LoginController extends Controller
     public function postLoginAdmin(AdminCreateRequest $request)
     {
         if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+            Toastr::success('働きましょう','こんにちは');
             return redirect()->route("home.admin");
         }
+        Toastr::error('アカウントを確認してください','お願いします');
         return $this->sendFailedLoginResponse($request);
     }
-
     protected function sendLoginResponse(Request $request)
     {
         $request->session()->regenerate();

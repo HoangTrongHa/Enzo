@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,7 +9,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 Route::group(["prefix" => "admin"], function () {
@@ -65,7 +63,6 @@ Route::group(["prefix" => "admin"], function () {
                 Route::get("delete/customer/{id}","\App\Http\Controllers\Admin\ListdarkController@deleteInfor")->name("delete-customer");
             });
         });
-
     });
 });
 Route::get("/", "\App\Http\Controllers\Customer\CustomerController@index")->name("home");

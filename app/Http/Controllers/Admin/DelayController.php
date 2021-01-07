@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Mail;
 class DelayController extends Controller
 {
    public function index(){
-       $cus =Customer::where("static",7)->orderBy('created_at', 'desc')->paginate(5);
+       $cus =Customer::where("static",7)->orderBy('updated_at', 'desc')->paginate(5);
        $sent = Customer::where("static" ,8)->orderBy('updated_at', 'desc')->paginate(5);
        return view("Admin.delay.index", compact("cus","sent"));
    }

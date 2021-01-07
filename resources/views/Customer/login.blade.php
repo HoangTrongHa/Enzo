@@ -2,7 +2,6 @@
 @section("css")
     <link rel="stylesheet" href="{{asset("css/login.css")}}">
 @endsection
-
 @section("content")
     <section id="banner-register">
         <div class="title-register">
@@ -19,21 +18,19 @@
                         <span>ログインID</span><br>
                         <input type="email" name="email" value="{{ old('email') }}">
                         @error('email')
-                            <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="content-login">
                         <span>ユーザーのパスワード</span><br>
                         <input type="password" name="password">
                         @error('password')
-                            <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="button-login-sp">
-
-                        <button type="submit">ログイン</button>
+                        <button onclick="checkvalidate()" type="submit">ログイン</button>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -45,5 +42,4 @@
             </div>
         </div>
     </form>
-
 @endsection

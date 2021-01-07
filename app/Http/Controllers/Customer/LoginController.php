@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Customer;
 use App\Customer;
 use App\Http\Requests\AdminCreateRequest;
 use App\Http\Requests\userlogin;
+use Brian2694\Toastr\Facades\Toastr;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -43,7 +44,12 @@ class LoginController extends Controller
         }
         return $this->sendFailedLoginResponse($request);
     }
-
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        throw ValidationException::withMessages([
+            $this->username() => "正しくログインしない",
+        ]);
+    }
     public function logout(Request $request)
     {
         Auth::guard('Customer')->logout();
@@ -80,10 +86,5 @@ class LoginController extends Controller
             'checklogin' => now(),
         ]);
     }
-    protected function sendFailedLoginResponse(Request $request)
-    {
-        throw ValidationException::withMessages([
-            $this->username() => "正しくログインしない",
-        ]);
-    }
+
 }

@@ -43475,6 +43475,17 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
 
 /***/ }),
 
+/***/ "./resources/sass/history.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/history.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/login.scss":
 /*!***********************************!*\
   !*** ./resources/sass/login.scss ***!
@@ -43490,6 +43501,17 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
 /*!**************************************!*\
   !*** ./resources/sass/register.scss ***!
   \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/sinse-2.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/sinse-2.scss ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -43542,20 +43564,22 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/style.scss ./resources/sass/upload.scss ./resources/sass/login.scss ./resources/sass/sinse1.scss ./resources/sass/confirm.scss ./resources/sass/register.scss ./resources/sass/sinse-3.scss ./resources/sass/enzo.scss ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/style.scss ./resources/sass/sinse-2.scss ./resources/sass/upload.scss ./resources/sass/login.scss ./resources/sass/sinse1.scss ./resources/sass/confirm.scss ./resources/sass/register.scss ./resources/sass/sinse-3.scss ./resources/sass/history.scss ./resources/sass/enzo.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\Enzo\larastart\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\Enzo\larastart\resources\sass\style.scss */"./resources/sass/style.scss");
+__webpack_require__(/*! C:\Enzo\larastart\resources\sass\sinse-2.scss */"./resources/sass/sinse-2.scss");
 __webpack_require__(/*! C:\Enzo\larastart\resources\sass\upload.scss */"./resources/sass/upload.scss");
 __webpack_require__(/*! C:\Enzo\larastart\resources\sass\login.scss */"./resources/sass/login.scss");
 __webpack_require__(/*! C:\Enzo\larastart\resources\sass\sinse1.scss */"./resources/sass/sinse1.scss");
 __webpack_require__(/*! C:\Enzo\larastart\resources\sass\confirm.scss */"./resources/sass/confirm.scss");
 __webpack_require__(/*! C:\Enzo\larastart\resources\sass\register.scss */"./resources/sass/register.scss");
 __webpack_require__(/*! C:\Enzo\larastart\resources\sass\sinse-3.scss */"./resources/sass/sinse-3.scss");
+__webpack_require__(/*! C:\Enzo\larastart\resources\sass\history.scss */"./resources/sass/history.scss");
 module.exports = __webpack_require__(/*! C:\Enzo\larastart\resources\sass\enzo.scss */"./resources/sass/enzo.scss");
 
 

@@ -55,6 +55,5 @@ class testchangestatus extends Command
                 }
         }
         Log::info("Dang Chay Roi Khong Phai Test!");
-
     }
 }

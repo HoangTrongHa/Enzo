@@ -21,14 +21,6 @@
             <i style="color: red">{{$countUser}}</i>
         </a>
     </li>
-{{--    <li class="nav-item">--}}
-{{--        <a class="nav-link" href="{{route("index-appnew")}}">--}}
-{{--            <i class="fa fa-folder-open fa-tachometer-alt"></i>--}}
-{{--            <span>新規申し込みリスト </span>--}}
-{{--            <i style="color: red">{{$wait}}</i>--}}
-
-{{--        </a>--}}
-{{--    </li>--}}
     <li class="nav-item">
         <a class="nav-link" href="{{route("checkImager")}}">
             <i class="fas fa-image fa-tachometer-alt"></i>

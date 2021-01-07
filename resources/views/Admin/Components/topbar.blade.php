@@ -1,14 +1,16 @@
-
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
         <i class="fa fa-bars"></i>
     </button>
-
     <ul class="navbar-nav ml-auto">
-
-        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+        </li>
+        <li class="nav-item" style="    display: flex;
+    align-items: center;">
+            <a href="https://app.hubspot.com/live-messages/9104470/inbox/757685577#reply-editor">
+                <i class="fa">&#xf0e0;</i>
+            </a>
+        </li>
         <li class="nav-item dropdown no-arrow d-sm-none">
             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
@@ -30,8 +32,6 @@
                 </form>
             </div>
         </li>
-
-
         <div class="topbar-divider d-none d-sm-block"></div>
 
         <!-- Nav Item - User Information -->
@@ -59,13 +59,11 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{route("logout-ad")}}" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Logout
+                    ログアウト
                 </a>
             </div>
         </li>
-
     </ul>
-
 </nav>
 
 <div class="modal fade" id="post-create" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -182,3 +180,21 @@
         </div>
     </div>
 </div>
+<style>
+    .modal-header{
+        background-color: #007bff;
+    }
+    .modal-header h5{
+        color: white;
+    }
+    .modal-body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight:bold;
+
+    }
+    .modal-body span{
+        width: 25%;
+    }
+</style>

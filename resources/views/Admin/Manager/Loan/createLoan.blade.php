@@ -155,6 +155,7 @@
             </div>
         </div>
     </div>
+    {!! Toastr::message() !!}
     <style>
         #percent {
             width: 50%;

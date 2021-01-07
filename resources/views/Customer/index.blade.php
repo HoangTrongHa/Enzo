@@ -1005,7 +1005,10 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
               給料即日払い<small>の</small>
             </span>
             </div>
-            <img src="{{asset("image/ENZO_bank_logo_white.png")}}">
+            <a href="{{route("home")}}">
+
+                <img src="{{asset("image/ENZO_bank_logo_white.png")}}">
+            </a>
             <div class="d-flex justify-content-center margin-circle">
                 <div class="circle-banner-smart">
                 <span>
@@ -1328,13 +1331,10 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
 
 東京都は「感染経路が追えないケースが多いため、クラスターではない」と説明しています。
 
-東京・豊洲市場ではことし8月以降、水産仲卸業者の従業員を中心に感染の確認が相次ぎ、481の事業者で自主的な検査を進めた結果、3111人中、71人の感染が確認されました。
+東京・豊洲市場ではことし8月以降、水産仲卸業者の従業員を中心に感染の確認が相次ぎ、481の事業者で自主的な検査を進めた結果、3111人中、71人の感染が確認されました。このほか、散発的に感染が確認された人や濃厚接触者として検査を受けて確認された89人を合わせると、市場全体では7日までに160人になりました。市場の業務に影響は、ないということです。
+                                都によりますと、160人のうち感染経路が分かっている人は16人で、中には同じ水産仲卸業者の従業員もいるということです。
 
-このほか、散発的に感染が確認された人や濃厚接触者として検査を受けて確認された89人を合わせると、市場全体では7日までに160人になりました。市場の業務に影響は、ないということです。
-
-都によりますと、160人のうち感染経路が分かっている人は16人で、中には同じ水産仲卸業者の従業員もいるということです。
-
-都は「同じ事業者でも短期間で一気に5人以上が確認されたことはなく、別の人の感染が分かるまで2週間以上、空いたケースもあり、保健所からは濃厚接触者にあたらないと説明された。感染経路が追えないケースが多いため、クラスターではない。ただ、対策が甘かったのではないかという声は真摯（しんし）に受け止めている」と話しています。
+                                都は「同じ事業者でも短期間で一気に5人以上が確認されたことはなく、別の人の感染が分かるまで2週間以上、空いたケースもあり、保健所からは濃厚接触者にあたらないと説明された。感染経路が追えないケースが多いため、クラスターではない。ただ、対策が甘かったのではないかという声は真摯（しんし）に受け止めている」と話しています。
                             </span>
                         </div>
 
@@ -1378,7 +1378,6 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
                 <span>Copyright © 2019 XXXXXXXXXXXXX All rights reserved. </span>
             </div>
         </div>
-
     </section>
 </section>
 <script
@@ -1386,8 +1385,12 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous">
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
     $(document).ready(function () {
@@ -1395,8 +1398,8 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
             loop: true,
             margin: 10,
             responsiveClass: true,
-            autoplay:true,
-            autoplayTimeout:5000,
+            autoplay: true,
+            autoplayTimeout: 5000,
             responsive: {
                 0: {
                     items: 1,
@@ -1416,28 +1419,30 @@ Vậy nếu chính thức thắng cử, ông Joe Biden và bà Kamala Harris s�
         })
     })
 </script>
-<div id="fb-root"></div>
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            xfbml            : true,
-            version          : 'v9.0'
-        });
-    };
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/9104470.js"></script>
 
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/zh_HK/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-<div class="fb-customerchat"
-     attribution=setup_tool
-     page_id="102536525038100"
-     theme_color="#fa3c4c"
-     logged_in_greeting="「こんにちは！どうすればお手伝いできますか？」"
-     logged_out_greeting="「こんにちは！どうすればお手伝いできますか？」">
-</div>
+{{--<div id="fb-root"></div>--}}
+{{--<script>--}}
+{{--    window.fbAsyncInit = function() {--}}
+{{--        FB.init({--}}
+{{--            xfbml            : true,--}}
+{{--            version          : 'v9.0'--}}
+{{--        });--}}
+{{--    };--}}
+
+{{--    (function(d, s, id) {--}}
+{{--        var js, fjs = d.getElementsByTagName(s)[0];--}}
+{{--        if (d.getElementById(id)) return;--}}
+{{--        js = d.createElement(s); js.id = id;--}}
+{{--        js.src = 'https://connect.facebook.net/zh_HK/sdk/xfbml.customerchat.js';--}}
+{{--        fjs.parentNode.insertBefore(js, fjs);--}}
+{{--    }(document, 'script', 'facebook-jssdk'));</script>--}}
+{{--<div class="fb-customerchat"--}}
+{{--     attribution=setup_tool--}}
+{{--     page_id="102536525038100"--}}
+{{--     theme_color="#fa3c4c"--}}
+{{--     logged_in_greeting="「こんにちは！どうすればお手伝いできますか？」"--}}
+{{--     logged_out_greeting="「こんにちは！どうすればお手伝いできますか？」">--}}
+{{--</div>--}}
 </body>
 </html>

@@ -1,11 +1,13 @@
 {
-    "/js/app.js": "/js/app.js?id=b5c2f527e85a6762633c",
+    "/js/app.js": "/js/app.js?id=c252ab8b949d47484c4f",
     "/css/style.css": "/css/style.css?id=28eb93ae53980c17ef64",
-    "/css/upload.css": "/css/upload.css?id=8ffadbe729ce784ee07e",
-    "/css/login.css": "/css/login.css?id=3336b9a2e1ac6d83110a",
-    "/css/sinse1.css": "/css/sinse1.css?id=635a9afc6f9265bf9e1f",
-    "/css/confirm.css": "/css/confirm.css?id=bd6f25a67c392f2a5d2e",
-    "/css/register.css": "/css/register.css?id=946ee3527e19b95ecdc8",
-    "/css/sinse-3.css": "/css/sinse-3.css?id=fcf58f224d5752f1ba4a",
-    "/css/enzo.css": "/css/enzo.css?id=cbce126e5d5c6ee1c71b"
+    "/css/sinse-2.css": "/css/sinse-2.css?id=36a4a807b0cdd0d750ab",
+    "/css/upload.css": "/css/upload.css?id=1dd29037fa9c4fd96146",
+    "/css/login.css": "/css/login.css?id=ff42180bf7548a75e096",
+    "/css/sinse1.css": "/css/sinse1.css?id=f8a5788eb144fe8b3b7d",
+    "/css/confirm.css": "/css/confirm.css?id=0b5640a69e6a90096256",
+    "/css/register.css": "/css/register.css?id=7a7f4ac254c9c273660d",
+    "/css/sinse-3.css": "/css/sinse-3.css?id=3dc32c2a4aaef777f26f",
+    "/css/history.css": "/css/history.css?id=1ffff008cc0539081714",
+    "/css/enzo.css": "/css/enzo.css?id=109575aa60726e66745d"
 }

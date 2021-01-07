@@ -27,9 +27,11 @@
                                 売却申請
                              </span>
                         </a>
-                        <div class="back-sinse-1">
-                            <a href="{{route("history-customer",$cus->id)}}" class="text-in-button-a">利用履歴</a>
-                        </div>
+                        <a href="{{route("history-customer",$cus->id)}}" class="text-in-button-1">
+                             <span>
+                                利用履歴
+                             </span>
+                        </a>
                     </div>
                     <div class="sinse-right">
                         <div class="box-sinse-right">
@@ -113,10 +115,12 @@
                                 </div>
                             </div>
                         </div>
+                        <a href="{{route("history-customer",$cus->id)}}" class="text-in-button-1">
+                             <span>
+                                利用履歴
+                             </span>
 
-                        <div class="back-sinse-1">
-                            <a onclick="{{route("history-customer",$cus->id)}}" class="text-in-button-a">利用履歴</a>
-                        </div>
+                        </a>
                     </div>
                     <div class="sinse-right">
                         <div class="box-sinse-right">
@@ -135,7 +139,7 @@
                                 <div class="body-day">
                                     <span>令和</span>
                                     <div class="datetime">
-                                        <span>{{\Carbon\Carbon::parse($cus->payment_term)->format('d')}}
+                                        <span>{{\Carbon\Carbon::parse($cus->payment_term)->format('y')}}
                                         </span>
                                     </div>
                                     <span>年</span>
@@ -145,7 +149,7 @@
                                     </div>
                                     <span>月</span>
                                     <div class="datetime">
-                                         <span>{{\Carbon\Carbon::parse($cus->payment_term)->format('y')}}
+                                        <span>{{\Carbon\Carbon::parse($cus->payment_term)->format('d')}}
                                         </span>
                                     </div>
                                     <span>日</span>
@@ -181,9 +185,12 @@
                              </span>
 
                         </a>
-                        <div class="back-sinse-1">
-                            <a href="{{route("history-customer",$cus->id)}}" class="text-in-button-a">利用履歴</a>
-                        </div>
+                        <a href="{{route("history-customer",$cus->id)}}" class="text-in-button-1">
+                             <span>
+                                利用履歴
+                             </span>
+
+                        </a>
                     </div>
                     <div class="sinse-right">
                         <div class="box-sinse-right">

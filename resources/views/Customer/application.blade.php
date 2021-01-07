@@ -1,22 +1,11 @@
 @extends("Customer.layout.app")
 @section("css")
     <link rel="stylesheet" href="{{asset("css/upload.css")}}">
-
 @endsection
 @section("content")
-
     <section id="banner-register">
         <div class="title-register">
             <span>個人新規申し込み</span>
-        </div>
-    </section>
-    <section id="body-register">
-        <div class="container header-body">
-            <span id="header-body">  Entry</span>
-            <br>
-            <span id="header-body-2">
-               写真、口座登録
-        </span>
         </div>
     </section>
     <form action="{{route("upload",[$static->id])}}" method="POST" id="img_upload" enctype="multipart/form-data">
@@ -27,7 +16,6 @@
                 <div class="margin-body-upload">
                     <div class="margin-body-upload-top">
                         <span>身分証明証、撮影日記載の紙を持ち、自撮り。撮影例</span>
-
                         <input id="anhchandung" type="file" name="avatar" class="inputfile"
                                data-multiple-caption=" {count} files selected" multiple/>
                         <label for="anhchandung">アップロード</label>
@@ -40,7 +28,7 @@
                         <input id="cmt" type="file" name="front" class="inputfile"
                                data-multiple-caption="{count} files selected" multiple/>
                         <label for="cmt">アップロード</label>
-                        @error("Front")
+                        @error("front")
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
@@ -57,7 +45,7 @@
                         <span>通帳表紙</span><br>
                         <input id="file-4" type="file" name="idnhanhvien" class="inputfile"/>
                         <label for="file-4">アップロード</label>
-                        @error("Back")
+                        @error("back")
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
@@ -65,7 +53,7 @@
                         <span>給与直近三ヶ月分の写真</span><br>
                         <input id="sotietkiem" type="file" name="sotietkiem" class="inputfile"/>
                         <label for="sotietkiem">アップロード</label>
-                        @error("luong")
+                        @error("3thangluong")
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
@@ -73,20 +61,19 @@
                         <span>給与直近三ヶ月分の写真</span><br>
                         <input id="3thangluong" type="file" name="3thangluong" class="inputfile"/>
                         <label for="3thangluong">アップロード</label>
-                        @error("Biasotietkiem")
+                        @error("sotietkiem")
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
                     <div class="margin-body-upload-top">
                         <span>給与直近三ヶ月分の写真</span><br>
-                        <input id="nhieuanh" type="file" name="nhieuanh" class="inputfile"/>
+                        <input id="nhieuanh" type="file" name="filename" class="inputfile" multiple/>
                         <label for="nhieuanh">アップロード</label>
-                        @error("manypicture")
+                        @error("filename[]")
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
                     <input type="hidden" class="front" name="customerid" value="{{auth()->guard("Customer")->id()}}">
-
                 </div>
                 <div class="infor-banking">
                     <div class="d-flex justify-content-center align-content-center">
@@ -146,7 +133,7 @@
                 <div class="button-upload">
                     <a onclick="document.getElementById('img_upload').submit()" class="submit-application">
                     <span>
-                        申し込み のコピー
+                        フォームを送信する
                     </span>
                     </a>
                     <a href="#" class="back-register">
@@ -174,5 +161,7 @@
             })
         })
     </script>
+
+
 @endsection
 

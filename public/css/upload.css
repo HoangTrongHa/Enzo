@@ -98,6 +98,8 @@
         border-top: 2px solid #f7ef83;
         cursor: pointer;
         margin-right: 10px; }
+        .smart-phone #upload .button-upload .submit-application:hover {
+          background-color: #d5c700; }
       .smart-phone #upload .button-upload .back-register {
         align-items: center;
         font-size: 10px;
@@ -111,6 +113,8 @@
         border-top: 2px solid #f7ef83;
         cursor: pointer;
         margin-left: 10px; }
+        .smart-phone #upload .button-upload .back-register:hover {
+          background-color: #d5c700; }
   .screen-desktop {
     display: none; } }
 
@@ -216,6 +220,8 @@
         border-top: 2px solid #f7ef83;
         cursor: pointer;
         margin-right: 10px; }
+        .screen-desktop #upload .button-upload .submit-application:hover {
+          background-color: #d5c700; }
       .screen-desktop #upload .button-upload .back-register {
         align-items: center;
         font-size: 10px;
@@ -228,7 +234,9 @@
         border-right: 2px solid #d5c700;
         border-top: 2px solid #f7ef83;
         cursor: pointer;
-        margin-left: 10px; } }
+        margin-left: 10px; }
+        .screen-desktop #upload .button-upload .back-register:hover {
+          background-color: #d5c700; } }
 
 @media only screen and (min-width: 768px) {
   .smart-phone {
@@ -330,6 +338,8 @@
       border-top: 2px solid #f7ef83;
       cursor: pointer;
       margin-right: 10px; }
+      .screen-desktop #upload .button-upload .submit-application:hover {
+        background-color: #d5c700; }
     .screen-desktop #upload .button-upload .back-register {
       align-items: center;
       font-size: 20px;
@@ -342,7 +352,9 @@
       border-right: 2px solid #d5c700;
       border-top: 2px solid #f7ef83;
       cursor: pointer;
-      margin-left: 10px; } }
+      margin-left: 10px; }
+      .screen-desktop #upload .button-upload .back-register:hover {
+        background-color: #d5c700; } }
 
 @media only screen and (min-width: 992px) {
   .smart-phone {

@@ -7,13 +7,14 @@ use App\History;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User;
 use App\upload;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function index()
     {
-        $user = Customer::orderby("created_at","DESC")->paginate(5);
+        $user = Customer::orderby("created_at","DESC")->get();
         return view('Admin.Manager.ManagerAccount.index', compact("user"));
     }
     public function watchInformation($id){
@@ -53,9 +54,10 @@ class UserController extends Controller
     {
         $cus = Customer::findOrFail($id);
         $cus->update([
-            "static" =>$req->static
+            "static" =>2
         ]);
         $cus->save();
+        Toastr::success('管理者が正常に追加されました','成功');
         return redirect()->route("checkImager");
     }
     public function checkImager() {

@@ -79,35 +79,12 @@
         @csrf
         @method("POST")
         <div class="container">
-            <table>
-                <tr>
-                    <th>付与権*</th>
-                    <td>
-                        <select class="form-control" id="select" name="static">
-                            <option disabled selected value> アクティブなアカウント </option>
-                            <option value="1">
-                                <span class="text-danger">
-                                    閉じる
-                                </span>
-                            </option>
-                            <option value="2">
-                                <span class="text-success">
-                                    アクティブ
-                                </span>
-                            </option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-
             <div class="button-submit">
                 <button type="submit" class="update-profile">受け入れる</button>
                 <a href="{{route("mail-refuse",$customer->id)}}" class="update-profile refuse-upload">非承認</a>
                 <button onclick="goBack()" class="update-profile-1">戻って</button>
             </div>
         </div>
-
-
     </form>
     <style>
         table{

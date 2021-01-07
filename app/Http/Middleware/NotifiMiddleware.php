@@ -26,8 +26,8 @@ class NotifiMiddleware
         $Authorized = Customer::where("static", 2)->get();
         $loan = Customer::where("static",5)->get();
         $loancus =count(Customer::where("static",3)->get());
-        $refund = Customer::where("static",6)->get();
-        $delay = count($cus = Customer::where("static", 7)->where("loancustomer", "!=", 0)->get());
+        $refund = Customer::where("static",7)->get();
+        $delay = count($cus = Customer::where("static", 8)->get());
         $listDark = count(Customer::where("static",9)->get());
         view()->share([
             'wait' => $wait,

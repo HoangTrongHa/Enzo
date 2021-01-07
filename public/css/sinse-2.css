@@ -1,0 +1,893 @@
+@media only screen and (max-width: 600px) {
+  .smart-phone {
+    display: block; }
+    .smart-phone #sinse-2 #container {
+      display: flex; }
+      .smart-phone #sinse-2 #container .error-check-box-sinse {
+        right: 4%;
+        top: 115px;
+        background: #e3342f;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 75px;
+        height: 75px;
+        text-align: center;
+        border-radius: 100%;
+        padding: 0px 10px; }
+        .smart-phone #sinse-2 #container .error-check-box-sinse:after {
+          content: "";
+          width: 0px;
+          height: 0px;
+          position: absolute;
+          border-left: 0px solid #e3342f;
+          border-right: 20px solid transparent;
+          border-top: 20px solid #e3342f;
+          border-bottom: 0 solid transparent;
+          left: 88%;
+          bottom: 10%;
+          transform: rotate(15deg) translateX(-24%); }
+        .smart-phone #sinse-2 #container .error-check-box-sinse span {
+          font-size: 5px;
+          color: white; }
+      .smart-phone #sinse-2 #container .error-register-loan {
+        padding: 0 20px;
+        left: 4%;
+        top: 178px;
+        background: #e3342f;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 75px;
+        height: 75px;
+        text-align: center;
+        border-radius: 100%; }
+        .smart-phone #sinse-2 #container .error-register-loan:before {
+          content: "";
+          width: 0px;
+          height: 0px;
+          position: absolute;
+          border-left: 0px solid #e3342f;
+          border-right: 20px solid transparent;
+          border-top: 20px solid #e3342f;
+          border-bottom: 0 solid transparent;
+          left: -10%;
+          bottom: 40%;
+          transform: rotate(65deg) translateX(-24%); }
+        .smart-phone #sinse-2 #container .error-register-loan span {
+          font-size: 5px;
+          color: white; }
+      .smart-phone #sinse-2 #container .sinse-2 {
+        display: flow-root;
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+        background-color: #01897b;
+        margin: 65px auto; }
+        .smart-phone #sinse-2 #container .sinse-2 .head-sinse-2 {
+          width: 170px;
+          height: 60px;
+          background-color: #313131;
+          margin-right: auto;
+          margin-left: auto;
+          margin-top: 20px;
+          text-align: center;
+          color: #ffffff;
+          border-top: 2px solid #191919;
+          border-bottom: 2px solid #646464;
+          border-left: 1px solid #282829;
+          border-right: 1px solid #282829; }
+          .smart-phone #sinse-2 #container .sinse-2 .head-sinse-2 #total-price-sinse-2 {
+            font-size: 25px;
+            color: #ffffff;
+            font-family: "Noto Sans CJ Kjp";
+            text-align: center; }
+          .smart-phone #sinse-2 #container .sinse-2 .head-sinse-2 #yen-sinse-2 {
+            font-size: 10px;
+            letter-spacing: 2px;
+            line-height: 35px;
+            color: #ffffff;
+            font-family: "Noto Sans CJ Kjp";
+            text-align: right; }
+          .smart-phone #sinse-2 #container .sinse-2 .head-sinse-2 .margin-head-sinse-2 {
+            letter-spacing: 1px;
+            font-size: 9px;
+            line-height: 18px; }
+        .smart-phone #sinse-2 #container .sinse-2 .check-box-register {
+          font-size: 6px;
+          letter-spacing: 1px;
+          color: #000000;
+          margin-top: 10px;
+          font-family: "Noto Sans CJ Kjp"; }
+          .smart-phone #sinse-2 #container .sinse-2 .check-box-register #label-sinse-2 {
+            color: #d3c500; }
+          .smart-phone #sinse-2 #container .sinse-2 .check-box-register input {
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            background-color: #ffffff;
+            vertical-align: middle;
+            border: 1px solid #000000;
+            -webkit-appearance: none;
+            outline: none;
+            cursor: pointer; }
+            .smart-phone #sinse-2 #container .sinse-2 .check-box-register input:checked {
+              background-color: #313131; }
+        .smart-phone #sinse-2 #container .sinse-2 .include {
+          align-items: flex-end;
+          display: flex;
+          justify-content: center;
+          margin: 15px auto; }
+          .smart-phone #sinse-2 #container .sinse-2 .include input {
+            width: 50%;
+            height: 20px;
+            margin: auto 5px;
+            text-align: end; }
+          .smart-phone #sinse-2 #container .sinse-2 .include span {
+            font-size: 10px;
+            color: #ffffff; }
+          .smart-phone #sinse-2 #container .sinse-2 .include .input-sinse-2 {
+            background-color: #313131;
+            font-size: 30px;
+            letter-spacing: 2px;
+            color: #ffffff;
+            font-family: "Noto Sans CJ Kjp";
+            text-align: right; }
+            .smart-phone #sinse-2 #container .sinse-2 .include .input-sinse-2 span {
+              font-size: 15px; }
+        .smart-phone #sinse-2 #container .sinse-2 .button-sinse-2 {
+          display: flex;
+          margin: 20px auto;
+          justify-content: center; }
+          .smart-phone #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2 {
+            display: flex;
+            width: 65%;
+            justify-content: center;
+            align-items: center;
+            background-color: #00b7a4;
+            border-bottom: 2px solid #007764;
+            border-left: 1px solid #009a87;
+            border-right: 1px solid #009a87;
+            border-top: 2px solid #7adad0;
+            padding: 5px 0px; }
+            .smart-phone #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2:hover {
+              background-color: #7adad0; }
+            .smart-phone #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2 a {
+              color: #ffffff;
+              font-size: 10px;
+              letter-spacing: 2px; }
+          .smart-phone #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2 {
+            width: 35%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            background-color: #00b7a4;
+            text-align: center;
+            margin-left: 18px;
+            border-bottom: 2px solid #007764;
+            border-left: 1px solid #009a87;
+            border-right: 1px solid #009a87;
+            border-top: 2px solid #7adad0; }
+            .smart-phone #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2:hover {
+              background-color: #7adad0; }
+            .smart-phone #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2 a {
+              color: #ffffff;
+              font-size: 10px;
+              letter-spacing: 2px; }
+  .screen-desktop {
+    display: none; } }
+
+@media only screen and (min-width: 600px) {
+  .smart-phone {
+    display: none; }
+  .screen-desktop #sinse-2 #container {
+    display: flex; }
+    .screen-desktop #sinse-2 #container .error-check-box-sinse {
+      right: 4%;
+      top: 191px;
+      background: #e3342f;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      border-radius: 100%;
+      padding: 0 20px; }
+      .screen-desktop #sinse-2 #container .error-check-box-sinse:after {
+        content: "";
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border-left: 0px solid #e3342f;
+        border-right: 20px solid transparent;
+        border-top: 20px solid #e3342f;
+        border-bottom: 0 solid transparent;
+        left: 88%;
+        bottom: 10%;
+        transform: rotate(15deg) translateX(-24%); }
+      .screen-desktop #sinse-2 #container .error-check-box-sinse span {
+        font-size: 10px;
+        color: white; }
+    .screen-desktop #sinse-2 #container .error-register-loan {
+      padding: 0 20px;
+      left: 5%;
+      top: 273px;
+      background: #e3342f;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      border-radius: 100%; }
+      .screen-desktop #sinse-2 #container .error-register-loan:before {
+        content: "";
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border-left: 0px solid #e3342f;
+        border-right: 20px solid transparent;
+        border-top: 20px solid #e3342f;
+        border-bottom: 0 solid transparent;
+        left: -10%;
+        bottom: 40%;
+        transform: rotate(65deg) translateX(-24%); }
+      .screen-desktop #sinse-2 #container .error-register-loan span {
+        font-size: 10px;
+        color: white; }
+    .screen-desktop #sinse-2 #container .sinse-2 {
+      display: flow-root;
+      width: 350px;
+      height: 300px;
+      border-radius: 20px;
+      background-color: #01897b;
+      margin: 120px auto; }
+      .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 {
+        width: 270px;
+        height: 90px;
+        background-color: #313131;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 20px;
+        text-align: center;
+        color: #ffffff;
+        border-top: 4px solid #191919;
+        border-bottom: 4px solid #646464;
+        border-left: 2px solid #282829;
+        border-right: 2px solid #282829; }
+        .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 #total-price-sinse-2 {
+          font-size: 40px;
+          line-height: 35px;
+          color: #ffffff;
+          font-family: "Noto Sans CJ Kjp";
+          text-align: center; }
+        .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 #yen-sinse-2 {
+          font-size: 15px;
+          letter-spacing: 2px;
+          line-height: 35px;
+          color: #ffffff;
+          font-family: "Noto Sans CJ Kjp";
+          text-align: right; }
+        .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 .margin-head-sinse-2 {
+          letter-spacing: 3px;
+          font-size: 10px;
+          line-height: 35px; }
+      .screen-desktop #sinse-2 #container .sinse-2 .check-box-register {
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: #000000;
+        margin-top: 20px;
+        font-family: "Noto Sans CJ Kjp"; }
+        .screen-desktop #sinse-2 #container .sinse-2 .check-box-register #label-sinse-2 {
+          color: #d3c500; }
+        .screen-desktop #sinse-2 #container .sinse-2 .check-box-register input {
+          width: 20px;
+          height: 20px;
+          border-radius: 100%;
+          background-color: #ffffff;
+          vertical-align: middle;
+          border: 1px solid #000000;
+          -webkit-appearance: none;
+          outline: none;
+          cursor: pointer; }
+          .screen-desktop #sinse-2 #container .sinse-2 .check-box-register input:checked {
+            background-color: #313131; }
+      .screen-desktop #sinse-2 #container .sinse-2 .include {
+        align-items: flex-end;
+        display: flex;
+        justify-content: center;
+        margin: 15px auto; }
+        .screen-desktop #sinse-2 #container .sinse-2 .include input {
+          width: 50%;
+          height: 35px;
+          margin: auto 10px;
+          text-align: end; }
+        .screen-desktop #sinse-2 #container .sinse-2 .include span {
+          font-size: 15px;
+          color: #ffffff; }
+        .screen-desktop #sinse-2 #container .sinse-2 .include .input-sinse-2 {
+          background-color: #313131;
+          font-size: 30px;
+          letter-spacing: 2px;
+          color: #ffffff;
+          font-family: "Noto Sans CJ Kjp";
+          text-align: right; }
+          .screen-desktop #sinse-2 #container .sinse-2 .include .input-sinse-2 span {
+            font-size: 15px; }
+      .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 {
+        display: flex;
+        margin: 25px auto;
+        justify-content: center; }
+        .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2 {
+          display: flex;
+          width: 65%;
+          justify-content: center;
+          padding: 10px 0;
+          align-items: center;
+          background-color: #00b7a4;
+          border-bottom: 2px solid #007764;
+          border-left: 1px solid #009a87;
+          border-right: 1px solid #009a87;
+          border-top: 2px solid #7adad0; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2:hover {
+            background-color: #7adad0; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2 a {
+            color: #ffffff;
+            font-size: 15px;
+            letter-spacing: 2px; }
+        .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2 {
+          display: flex;
+          align-items: center;
+          background-color: #00b7a4;
+          text-align: center;
+          margin-left: 18px;
+          border-bottom: 2px solid #007764;
+          border-left: 1px solid #009a87;
+          border-right: 1px solid #009a87;
+          border-top: 2px solid #7adad0;
+          padding: 10px 20px; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2:hover {
+            background-color: #7adad0; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2 a {
+            color: #ffffff;
+            font-size: 15px;
+            letter-spacing: 2px; } }
+
+@media only screen and (min-width: 768px) {
+  .smart-phone {
+    display: none; }
+  .screen-desktop #sinse-2 #container {
+    display: flex; }
+    .screen-desktop #sinse-2 #container .error-check-box-sinse {
+      right: 6%;
+      top: 226px;
+      background: #e3342f;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 150px;
+      padding: 30px;
+      text-align: center;
+      border-radius: 100%; }
+      .screen-desktop #sinse-2 #container .error-check-box-sinse:after {
+        content: "";
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border-left: 0px solid #e3342f;
+        border-right: 40px solid transparent;
+        border-top: 40px solid #e3342f;
+        border-bottom: 0 solid transparent;
+        left: 88%;
+        bottom: 10%;
+        transform: rotate(15deg) translateX(-24%); }
+      .screen-desktop #sinse-2 #container .error-check-box-sinse span {
+        color: white; }
+    .screen-desktop #sinse-2 #container .error-register-loan {
+      left: 6%;
+      top: 333px;
+      background: #e3342f;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 150px;
+      padding: 30px;
+      text-align: center;
+      border-radius: 100%; }
+      .screen-desktop #sinse-2 #container .error-register-loan:before {
+        content: "";
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border-left: 0px solid #e3342f;
+        border-right: 40px solid transparent;
+        border-top: 40px solid #e3342f;
+        border-bottom: 0 solid transparent;
+        left: -8%;
+        bottom: 40%;
+        transform: rotate(65deg) translateX(-24%); }
+      .screen-desktop #sinse-2 #container .error-register-loan span {
+        color: white; }
+    .screen-desktop #sinse-2 #container .sinse-2 {
+      display: flow-root;
+      width: 450px;
+      height: 400px;
+      border-radius: 20px;
+      background-color: #01897b;
+      margin: 120px auto; }
+      .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 {
+        width: 370px;
+        height: 140px;
+        background-color: #313131;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 30px;
+        text-align: center;
+        color: #ffffff;
+        border-top: 4px solid #191919;
+        border-bottom: 4px solid #646464;
+        border-left: 2px solid #282829;
+        border-right: 2px solid #282829; }
+        .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 #total-price-sinse-2 {
+          font-size: 60px;
+          letter-spacing: 2px;
+          line-height: 35px;
+          color: #ffffff;
+          font-family: "Noto Sans CJ Kjp";
+          text-align: center; }
+        .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 #yen-sinse-2 {
+          font-size: 20px;
+          letter-spacing: 2px;
+          line-height: 35px;
+          color: #ffffff;
+          font-family: "Noto Sans CJ Kjp";
+          text-align: right; }
+        .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 .margin-head-sinse-2 {
+          letter-spacing: 3px;
+          font-size: 20px;
+          line-height: 80px; }
+      .screen-desktop #sinse-2 #container .sinse-2 .check-box-register {
+        font-size: 15px;
+        letter-spacing: 1px;
+        color: #000000;
+        margin-top: 20px;
+        font-family: "Noto Sans CJ Kjp"; }
+        .screen-desktop #sinse-2 #container .sinse-2 .check-box-register #label-sinse-2 {
+          color: #d3c500; }
+        .screen-desktop #sinse-2 #container .sinse-2 .check-box-register input {
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          background-color: #ffffff;
+          vertical-align: middle;
+          border: 1px solid #000000;
+          -webkit-appearance: none;
+          outline: none;
+          cursor: pointer; }
+          .screen-desktop #sinse-2 #container .sinse-2 .check-box-register input:checked {
+            background-color: #313131; }
+      .screen-desktop #sinse-2 #container .sinse-2 .include {
+        align-items: flex-end;
+        display: flex;
+        justify-content: center;
+        margin: 15px auto; }
+        .screen-desktop #sinse-2 #container .sinse-2 .include input {
+          width: 50%;
+          height: 50px;
+          margin: auto 10px;
+          text-align: end; }
+        .screen-desktop #sinse-2 #container .sinse-2 .include span {
+          font-size: 15px;
+          color: #ffffff; }
+        .screen-desktop #sinse-2 #container .sinse-2 .include .input-sinse-2 {
+          background-color: #313131;
+          font-size: 30px;
+          letter-spacing: 2px;
+          color: #ffffff;
+          font-family: "Noto Sans CJ Kjp";
+          text-align: right; }
+          .screen-desktop #sinse-2 #container .sinse-2 .include .input-sinse-2 span {
+            font-size: 15px; }
+      .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 {
+        display: flex;
+        margin: 25px auto;
+        justify-content: center; }
+        .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2 {
+          display: flex;
+          width: 65%;
+          justify-content: center;
+          padding: 10px 0;
+          align-items: center;
+          background-color: #00b7a4;
+          border-bottom: 2px solid #007764;
+          border-left: 1px solid #009a87;
+          border-right: 1px solid #009a87;
+          border-top: 2px solid #7adad0; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2:hover {
+            background-color: #7adad0; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2 a {
+            color: #ffffff;
+            font-size: 15px;
+            letter-spacing: 2px; }
+        .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2 {
+          display: flex;
+          align-items: center;
+          background-color: #00b7a4;
+          text-align: center;
+          margin-left: 18px;
+          border-bottom: 2px solid #007764;
+          border-left: 1px solid #009a87;
+          border-right: 1px solid #009a87;
+          border-top: 2px solid #7adad0;
+          padding: 10px 20px; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2:hover {
+            background-color: #7adad0; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2 a {
+            color: #ffffff;
+            font-size: 15px;
+            letter-spacing: 2px; } }
+
+@media only screen and (min-width: 992px) {
+  .smart-phone {
+    display: none; }
+  .screen-desktop #sinse-2 #container {
+    display: flex; }
+    .screen-desktop #sinse-2 #container .error-check-box-sinse {
+      left: 6%;
+      top: 226px;
+      background: #e3342f;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 150px;
+      padding: 30px;
+      text-align: center;
+      border-radius: 100%; }
+      .screen-desktop #sinse-2 #container .error-check-box-sinse:after {
+        content: "";
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border-left: 0px solid #e3342f;
+        border-right: 40px solid transparent;
+        border-top: 40px solid #e3342f;
+        border-bottom: 0 solid transparent;
+        left: 88%;
+        bottom: 10%;
+        transform: rotate(15deg) translateX(-24%); }
+      .screen-desktop #sinse-2 #container .error-check-box-sinse span {
+        color: white; }
+    .screen-desktop #sinse-2 #container .error-register-loan {
+      left: -65px;
+      top: 333px;
+      background: #e3342f;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 150px;
+      padding: 30px;
+      text-align: center;
+      border-radius: 100%; }
+      .screen-desktop #sinse-2 #container .error-register-loan:before {
+        content: "";
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border-left: 0px solid #e3342f;
+        border-right: 40px solid transparent;
+        border-top: 40px solid #e3342f;
+        border-bottom: 0 solid transparent;
+        left: -8%;
+        bottom: 40%;
+        transform: rotate(65deg) translateX(-24%); }
+      .screen-desktop #sinse-2 #container .error-register-loan span {
+        color: white; }
+    .screen-desktop #sinse-2 #container .sinse-2 {
+      display: flow-root;
+      width: 450px;
+      height: 400px;
+      border-radius: 20px;
+      background-color: #01897b;
+      margin: 120px auto; }
+      .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 {
+        width: 370px;
+        height: 140px;
+        background-color: #313131;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 30px;
+        text-align: center;
+        color: #ffffff;
+        border-top: 4px solid #191919;
+        border-bottom: 4px solid #646464;
+        border-left: 2px solid #282829;
+        border-right: 2px solid #282829; }
+        .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 #total-price-sinse-2 {
+          font-size: 60px;
+          letter-spacing: 2px;
+          line-height: 35px;
+          color: #ffffff;
+          font-family: "Noto Sans CJ Kjp";
+          text-align: center; }
+        .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 #yen-sinse-2 {
+          font-size: 20px;
+          letter-spacing: 2px;
+          line-height: 35px;
+          color: #ffffff;
+          font-family: "Noto Sans CJ Kjp";
+          text-align: right; }
+        .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 .margin-head-sinse-2 {
+          letter-spacing: 3px;
+          font-size: 20px;
+          line-height: 80px; }
+      .screen-desktop #sinse-2 #container .sinse-2 .check-box-register {
+        font-size: 17px;
+        letter-spacing: 1px;
+        color: #000000;
+        margin-top: 20px;
+        font-family: "Noto Sans CJ Kjp"; }
+        .screen-desktop #sinse-2 #container .sinse-2 .check-box-register #label-sinse-2 {
+          color: #d3c500; }
+        .screen-desktop #sinse-2 #container .sinse-2 .check-box-register input {
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          background-color: #ffffff;
+          vertical-align: middle;
+          border: 1px solid #000000;
+          -webkit-appearance: none;
+          outline: none;
+          cursor: pointer; }
+          .screen-desktop #sinse-2 #container .sinse-2 .check-box-register input:checked {
+            background-color: #313131; }
+      .screen-desktop #sinse-2 #container .sinse-2 .include {
+        align-items: flex-end;
+        display: flex;
+        justify-content: center;
+        margin: 15px auto; }
+        .screen-desktop #sinse-2 #container .sinse-2 .include input {
+          width: 50%;
+          height: 50px;
+          margin: auto 10px;
+          text-align: end; }
+        .screen-desktop #sinse-2 #container .sinse-2 .include span {
+          font-size: 15px;
+          color: #ffffff; }
+        .screen-desktop #sinse-2 #container .sinse-2 .include .input-sinse-2 {
+          background-color: #313131;
+          font-size: 30px;
+          letter-spacing: 2px;
+          color: #ffffff;
+          font-family: "Noto Sans CJ Kjp";
+          text-align: right; }
+          .screen-desktop #sinse-2 #container .sinse-2 .include .input-sinse-2 span {
+            font-size: 15px; }
+      .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 {
+        display: flex;
+        margin: 25px auto;
+        justify-content: center; }
+        .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2 {
+          display: flex;
+          width: 65%;
+          justify-content: center;
+          padding: 10px 0;
+          align-items: center;
+          background-color: #00b7a4;
+          border-bottom: 2px solid #007764;
+          border-left: 1px solid #009a87;
+          border-right: 1px solid #009a87;
+          border-top: 2px solid #7adad0; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2:hover {
+            background-color: #7adad0; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2 a {
+            color: #ffffff;
+            font-size: 15px;
+            letter-spacing: 2px; }
+        .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2 {
+          display: flex;
+          align-items: center;
+          background-color: #00b7a4;
+          text-align: center;
+          margin-left: 18px;
+          border-bottom: 2px solid #007764;
+          border-left: 1px solid #009a87;
+          border-right: 1px solid #009a87;
+          border-top: 2px solid #7adad0;
+          padding: 10px 20px; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2:hover {
+            background-color: #7adad0; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2 a {
+            color: #ffffff;
+            font-size: 15px;
+            letter-spacing: 2px; } }
+
+@media only screen and (min-width: 1200px) {
+  .smart-phone {
+    display: none; }
+  .screen-desktop #sinse-2 #container {
+    display: flex; }
+    .screen-desktop #sinse-2 #container .error-check-box-sinse {
+      left: 14%;
+      top: 226px;
+      background: #e3342f;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 150px;
+      padding: 30px;
+      text-align: center;
+      border-radius: 100%; }
+      .screen-desktop #sinse-2 #container .error-check-box-sinse:after {
+        content: "";
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border-left: 0px solid #e3342f;
+        border-right: 40px solid transparent;
+        border-top: 40px solid #e3342f;
+        border-bottom: 0 solid transparent;
+        left: 88%;
+        bottom: 10%;
+        transform: rotate(15deg) translateX(-24%); }
+      .screen-desktop #sinse-2 #container .error-check-box-sinse span {
+        color: white; }
+    .screen-desktop #sinse-2 #container .error-register-loan {
+      left: -145px;
+      top: 333px;
+      background: #e3342f;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 150px;
+      padding: 30px;
+      text-align: center;
+      border-radius: 100%; }
+      .screen-desktop #sinse-2 #container .error-register-loan:before {
+        content: "";
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border-left: 0px solid #e3342f;
+        border-right: 40px solid transparent;
+        border-top: 40px solid #e3342f;
+        border-bottom: 0 solid transparent;
+        left: -8%;
+        bottom: 40%;
+        transform: rotate(65deg) translateX(-24%); }
+      .screen-desktop #sinse-2 #container .error-register-loan span {
+        color: white; }
+    .screen-desktop #sinse-2 #container .sinse-2 {
+      display: flow-root;
+      width: 450px;
+      height: 400px;
+      border-radius: 20px;
+      background-color: #01897b;
+      margin: 120px auto; }
+      .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 {
+        width: 370px;
+        height: 140px;
+        background-color: #313131;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 30px;
+        text-align: center;
+        color: #ffffff;
+        border-top: 4px solid #191919;
+        border-bottom: 4px solid #646464;
+        border-left: 2px solid #282829;
+        border-right: 2px solid #282829; }
+        .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 #total-price-sinse-2 {
+          font-size: 60px;
+          letter-spacing: 2px;
+          line-height: 35px;
+          color: #ffffff;
+          font-family: "Noto Sans CJ Kjp";
+          text-align: center; }
+        .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 #yen-sinse-2 {
+          font-size: 20px;
+          letter-spacing: 2px;
+          line-height: 35px;
+          color: #ffffff;
+          font-family: "Noto Sans CJ Kjp";
+          text-align: right; }
+        .screen-desktop #sinse-2 #container .sinse-2 .head-sinse-2 .margin-head-sinse-2 {
+          letter-spacing: 3px;
+          font-size: 20px;
+          line-height: 80px; }
+      .screen-desktop #sinse-2 #container .sinse-2 .check-box-register {
+        font-size: 17px;
+        letter-spacing: 1px;
+        color: #000000;
+        margin-top: 20px;
+        font-family: "Noto Sans CJ Kjp"; }
+        .screen-desktop #sinse-2 #container .sinse-2 .check-box-register #label-sinse-2 {
+          color: #d3c500; }
+        .screen-desktop #sinse-2 #container .sinse-2 .check-box-register input {
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          background-color: #ffffff;
+          vertical-align: middle;
+          border: 1px solid #000000;
+          -webkit-appearance: none;
+          outline: none;
+          cursor: pointer; }
+          .screen-desktop #sinse-2 #container .sinse-2 .check-box-register input:checked {
+            background-color: #313131; }
+      .screen-desktop #sinse-2 #container .sinse-2 .include {
+        align-items: flex-end;
+        display: flex;
+        justify-content: center;
+        margin: 15px auto; }
+        .screen-desktop #sinse-2 #container .sinse-2 .include input {
+          width: 50%;
+          height: 50px;
+          margin: auto 10px;
+          text-align: end; }
+        .screen-desktop #sinse-2 #container .sinse-2 .include span {
+          font-size: 15px;
+          color: #ffffff; }
+        .screen-desktop #sinse-2 #container .sinse-2 .include .input-sinse-2 {
+          background-color: #313131;
+          font-size: 30px;
+          letter-spacing: 2px;
+          color: #ffffff;
+          font-family: "Noto Sans CJ Kjp";
+          text-align: right; }
+          .screen-desktop #sinse-2 #container .sinse-2 .include .input-sinse-2 span {
+            font-size: 15px; }
+      .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 {
+        display: flex;
+        margin: 25px auto;
+        justify-content: center; }
+        .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2 {
+          display: flex;
+          width: 65%;
+          justify-content: center;
+          padding: 10px 0;
+          align-items: center;
+          background-color: #00b7a4;
+          border-bottom: 2px solid #007764;
+          border-left: 1px solid #009a87;
+          border-right: 1px solid #009a87;
+          border-top: 2px solid #7adad0; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2:hover {
+            background-color: #7adad0; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-submit-sinse-2 a {
+            color: #ffffff;
+            font-size: 15px;
+            letter-spacing: 2px; }
+        .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2 {
+          display: flex;
+          align-items: center;
+          background-color: #00b7a4;
+          text-align: center;
+          margin-left: 18px;
+          border-bottom: 2px solid #007764;
+          border-left: 1px solid #009a87;
+          border-right: 1px solid #009a87;
+          border-top: 2px solid #7adad0;
+          padding: 10px 20px; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2:hover {
+            background-color: #7adad0; }
+          .screen-desktop #sinse-2 #container .sinse-2 .button-sinse-2 .button-back-sinse-2 a {
+            color: #ffffff;
+            font-size: 15px;
+            letter-spacing: 2px; } }

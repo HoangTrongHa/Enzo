@@ -43,12 +43,12 @@
     align-content: center;
   }
   .smart-phone #body-register .left-register .margin-left-register span {
-    font-size: 12px;
+    font-size: 9px;
     color: #000000;
     font-weight: 600;
   }
   .smart-phone #body-register .left-register .margin-left-register .span-red {
-    font-size: 20px;
+    font-size: 10px;
     color: red;
     margin-left: 5px;
   }
@@ -59,12 +59,12 @@
     align-content: center;
   }
   .smart-phone #body-register .left-register .margin-left-register-2 span {
-    font-size: 8px;
+    font-size: 9px;
     color: #000000;
     font-weight: 600;
   }
   .smart-phone #body-register .left-register .margin-left-register-2 .span-red {
-    font-size: 20px;
+    font-size: 10px;
     color: red;
     margin-left: 5px;
   }
@@ -80,12 +80,15 @@
   }
   .smart-phone #body-register .right-register .margin-right-register {
     font-size: 10px;
-    display: flex;
+    display: block;
     width: 90%;
     justify-content: space-between;
     align-items: center;
     align-content: center;
     margin: 10px auto;
+  }
+  .smart-phone #body-register .right-register .margin-right-register .box-radio-type {
+    display: flex;
   }
   .smart-phone #body-register .right-register .margin-right-register .input-full {
     width: 100%;
@@ -317,16 +320,13 @@
     background-color: #eeeeee;
   }
   .screen-desktop #body-register .right-register .margin-right-register {
-    font-size: 15px;
-    display: flex;
     width: 90%;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
     margin: 20px auto;
+    font-size: 16px;
+    display: block;
   }
-  .screen-desktop #body-register .right-register .margin-right-register input {
-    height: 35px;
+  .screen-desktop #body-register .right-register .margin-right-register .box-radio-type {
+    display: flex;
   }
   .screen-desktop #body-register .right-register .margin-right-register .input-full {
     width: 100%;
@@ -336,48 +336,35 @@
     border-bottom: 1px solid #f1f1f1;
   }
   .screen-desktop #body-register .right-register .margin-right-register .input-three {
-    width: 25%;
-    height: 20px;
-    background: #eeee;
+    width: 20%;
+    margin: 0 10px;
     border-top: 1px solid #b8b8b8;
     border-left: 1px solid #dddddd;
     border-right: 1px solid #dddddd;
     border-bottom: 1px solid #f1f1f1;
-  }
-  .screen-desktop #body-register .right-register .margin-right-register select {
-    -webkit-appearance: none;
-    appearance: none;
-  }
-  .screen-desktop #body-register .right-register .margin-right-register select::-ms-expand {
-    display: none;
   }
   .screen-desktop #body-register .right-register .margin-right-register .input-one-letter {
-    width: 80%;
+    width: 81%;
     border-top: 1px solid #b8b8b8;
     border-left: 1px solid #dddddd;
     border-right: 1px solid #dddddd;
     border-bottom: 1px solid #f1f1f1;
-    background: #eeee;
   }
   .screen-desktop #body-register .right-register .margin-right-register .radio-type {
-    display: flex;
-    width: 20%;
-    justify-content: space-around;
+    width: 85px;
+    height: 35px;
     color: #eeeeee;
-    align-content: center;
+    display: flex;
     align-items: center;
+  }
+  .screen-desktop #body-register .right-register .margin-right-register .radio-type span {
+    font-size: 20px;
+    color: black;
   }
   .screen-desktop #body-register .right-register .margin-right-register .radio-type .input-radio {
     width: 20px;
     height: 30px;
     background-color: #eeeeee;
-  }
-  .screen-desktop #body-register .right-register .margin-right-register .radio-type .input-radio:checked:after {
-    background-color: black;
-  }
-  .screen-desktop #body-register .right-register .margin-right-register .radio-type span {
-    color: black;
-    font-size: 15px;
   }
   .screen-desktop #body-register .right-register .margin-right-register .radio-type label {
     color: #000000;
@@ -552,67 +539,39 @@
     background-color: #eeeeee;
   }
   .screen-desktop #body-register .right-register .margin-right-register {
-    font-size: 15px;
-    display: flex;
     width: 90%;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    margin: 20px auto;
+    font-size: 20px;
+    display: block;
   }
-  .screen-desktop #body-register .right-register .margin-right-register input {
-    height: 50px;
+  .screen-desktop #body-register .right-register .margin-right-register .box-radio-type {
+    display: flex;
   }
   .screen-desktop #body-register .right-register .margin-right-register .input-full {
     width: 100%;
-    border-top: 1px solid #b8b8b8;
-    border-left: 1px solid #dddddd;
-    border-right: 1px solid #dddddd;
-    border-bottom: 1px solid #f1f1f1;
   }
   .screen-desktop #body-register .right-register .margin-right-register .input-three {
-    width: 25%;
-    height: 20px;
-    background: #eeee;
-    border-top: 1px solid #b8b8b8;
-    border-left: 1px solid #dddddd;
-    border-right: 1px solid #dddddd;
-    border-bottom: 1px solid #f1f1f1;
-  }
-  .screen-desktop #body-register .right-register .margin-right-register select {
-    -webkit-appearance: none;
-    appearance: none;
-  }
-  .screen-desktop #body-register .right-register .margin-right-register select::-ms-expand {
-    display: none;
+    width: 20%;
+    margin-right: 10px;
+    margin-left: 15px;
   }
   .screen-desktop #body-register .right-register .margin-right-register .input-one-letter {
-    width: 80%;
-    border-top: 1px solid #b8b8b8;
-    border-left: 1px solid #dddddd;
-    border-right: 1px solid #dddddd;
-    border-bottom: 1px solid #f1f1f1;
-    background: #eeee;
+    width: 81%;
   }
   .screen-desktop #body-register .right-register .margin-right-register .radio-type {
-    display: flex;
-    width: 20%;
-    justify-content: space-around;
+    width: 85px;
+    height: 35px;
     color: #eeeeee;
-    align-content: center;
+    display: flex;
     align-items: center;
+  }
+  .screen-desktop #body-register .right-register .margin-right-register .radio-type span {
+    font-size: 20px;
+    color: black;
   }
   .screen-desktop #body-register .right-register .margin-right-register .radio-type .input-radio {
     width: 20px;
-    height: 30px;
+    height: 40px;
     background-color: #eeeeee;
-  }
-  .screen-desktop #body-register .right-register .margin-right-register .radio-type .input-radio:checked:after {
-    background-color: black;
-  }
-  .screen-desktop #body-register .right-register .margin-right-register .radio-type span {
-    color: black;
-    font-size: 15px;
   }
   .screen-desktop #body-register .right-register .margin-right-register .radio-type label {
     color: #000000;
@@ -787,67 +746,39 @@
     background-color: #eeeeee;
   }
   .screen-desktop #body-register .right-register .margin-right-register {
-    font-size: 26px;
-    display: flex;
     width: 90%;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    margin: 20px auto;
+    font-size: 30px;
+    display: block;
   }
-  .screen-desktop #body-register .right-register .margin-right-register input {
-    height: 50px;
+  .screen-desktop #body-register .right-register .margin-right-register .box-radio-type {
+    display: flex;
   }
   .screen-desktop #body-register .right-register .margin-right-register .input-full {
     width: 100%;
-    border-top: 1px solid #b8b8b8;
-    border-left: 1px solid #dddddd;
-    border-right: 1px solid #dddddd;
-    border-bottom: 1px solid #f1f1f1;
   }
   .screen-desktop #body-register .right-register .margin-right-register .input-three {
-    width: 25%;
-    height: 45px;
-    background: #eeee;
-    border-top: 1px solid #b8b8b8;
-    border-left: 1px solid #dddddd;
-    border-right: 1px solid #dddddd;
-    border-bottom: 1px solid #f1f1f1;
-  }
-  .screen-desktop #body-register .right-register .margin-right-register select {
-    -webkit-appearance: none;
-    appearance: none;
-  }
-  .screen-desktop #body-register .right-register .margin-right-register select::-ms-expand {
-    display: none;
+    width: 20%;
+    margin-right: 10px;
+    margin-left: 15px;
   }
   .screen-desktop #body-register .right-register .margin-right-register .input-one-letter {
-    width: 80%;
-    border-top: 1px solid #b8b8b8;
-    border-left: 1px solid #dddddd;
-    border-right: 1px solid #dddddd;
-    border-bottom: 1px solid #f1f1f1;
-    background: #eeee;
+    width: 81%;
   }
   .screen-desktop #body-register .right-register .margin-right-register .radio-type {
-    display: flex;
-    width: 20%;
-    justify-content: space-around;
+    width: 85px;
+    height: 35px;
     color: #eeeeee;
-    align-content: center;
+    display: flex;
     align-items: center;
   }
-  .screen-desktop #body-register .right-register .margin-right-register .radio-type .input-radio {
-    width: 20px;
-    height: 30px;
-    background-color: #eeeeee;
-  }
-  .screen-desktop #body-register .right-register .margin-right-register .radio-type .input-radio:checked:after {
-    background-color: black;
-  }
   .screen-desktop #body-register .right-register .margin-right-register .radio-type span {
+    font-size: 35px;
     color: black;
-    font-size: 15px;
+  }
+  .screen-desktop #body-register .right-register .margin-right-register .radio-type .input-radio {
+    width: 30px;
+    height: 50px;
+    background-color: #eeeeee;
   }
   .screen-desktop #body-register .right-register .margin-right-register .radio-type label {
     color: #000000;
@@ -1019,6 +950,10 @@
   .screen-desktop #body-register .right-register .margin-right-register {
     margin: 35px 0 35px 13px;
     font-size: 30px;
+    display: block;
+  }
+  .screen-desktop #body-register .right-register .margin-right-register .box-radio-type {
+    display: flex;
   }
   .screen-desktop #body-register .right-register .margin-right-register .input-full {
     width: 100%;
@@ -1029,7 +964,7 @@
     margin-left: 15px;
   }
   .screen-desktop #body-register .right-register .margin-right-register .input-one-letter {
-    width: 68%;
+    width: 84%;
   }
   .screen-desktop #body-register .right-register .margin-right-register .radio-type {
     width: 85px;
@@ -1126,7 +1061,7 @@
     border-left: 5px solid #d5c700;
     border-right: 5px solid #d5c700;
     color: white;
-    padding: 20px 20px;
+    padding: 10px 20px;
     font-size: 20px;
     width: 250px;
   }

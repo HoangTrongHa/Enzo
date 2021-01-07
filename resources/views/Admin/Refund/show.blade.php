@@ -11,7 +11,6 @@
                            style="text-align: right;font-size: 30px;height: 100%">
                 </td>
             <tr>
-
                 <th>コンプリート</th>
                 <td>
                     <input id="loan-cus" type="text" readonly="true" data-parsley-trigger="change"
@@ -21,7 +20,6 @@
                 </td>
             </tr>
             <tr>
-
                 <th>
                     行方不明
                 </th>
@@ -34,7 +32,6 @@
             </tr>
         </table>
     </div>
-
     @include("Admin.Components.profile")
     <div class="container">
         <div class="button-submit">
@@ -53,24 +50,32 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
+                        <span>お知らせ</span>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="body-modal-refund">
                         <span>確認完了</span>
                     </div>
                     <div class="modal-footer">
                         <input type="hidden" value="2" name="status">
                         <input type="hidden" value="0" name="reset">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                        <button type="submit" class="btn btn-primary">変更内容を保存</button>
                     </div>
                 </div>
             </div>
         </div>
     </form>
+    {!! Toastr::message() !!}
     <style>
+        .modal-header{
+            background-color: #007bff;
+        }
+        .modal-header span{
+            color: white;
+        }
         .button-submit {
             display: flex;
             justify-content: flex-end;
@@ -78,7 +83,13 @@
             margin-top: 50px;
             margin-bottom: 100px;
         }
+        .body-modal-refund{
+            display: flex;
+            margin: 20px;
 
+            align-items: center;
+            font-weight: bold;
+        }
         .button-submit .accept-the-loan {
             padding: 15px 40px;
             font-size: 20px;
@@ -120,29 +131,6 @@
 
         .button-submit .show-history:hover {
             background-color: #128293;
-        }
-
-        .show-maxtotal {
-            display: flex;
-            align-items: flex-end;
-        }
-
-        .maxtotal-left {
-            width: 30%;
-            margin-right: 15%;
-        }
-
-        .maxtotal-right {
-            width: 30%;
-            text-align: end;
-        }
-
-        .maxtotal-right span {
-            font-size: 30px;
-        }
-
-        .profile-banking {
-            margin-top: 10%;
         }
     </style>
 @endsection

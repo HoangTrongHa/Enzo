@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Customer;
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -22,7 +23,7 @@ class MailController extends Controller
                 $message->to($cus["email"])->subject('Enzo With Love');
             });
             $cus->delete();
-            $cus->save();
+            Toastr::error('成功した操作','お知らせ');
             return redirect()->route("checkImager");
         } catch (\Exception $exception) {
             DB::rollBack();
@@ -40,6 +41,7 @@ class MailController extends Controller
             $message->from('hahtth1907023@fpt.edu.vn', 'admin');
             $message->to($cus["email"])->subject('Enzo With Love');
         });
+        Toastr::success('メールが正常に送信されました','削除');
         return redirect()->route("show-banking",$cus->id);
     }
 }

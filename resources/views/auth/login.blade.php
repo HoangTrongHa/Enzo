@@ -59,7 +59,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">サインイン</button>
                                 </form>
                                 <hr>
                             </div>
@@ -73,6 +73,8 @@
     </div>
 
 </div>
+
+{!! Toastr::message() !!}
 @include("Admin.Components.script")
 </body>
 </html>

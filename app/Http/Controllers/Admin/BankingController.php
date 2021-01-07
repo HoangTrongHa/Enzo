@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Customer;
 use App\Http\Controllers\Controller;
 use Barryvdh\DomPDF\Facade as PDF;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\DB;
 use mysql_xdevapi\Exception;
 
@@ -12,7 +13,7 @@ class BankingController extends Controller
 {
     public function index()
     {
-        $cus = Customer::where("static", 5)->orderBy('created_at', 'desc')->paginate(5);
+        $cus = Customer::where("static", 5)->orderBy('updated_at', 'desc')->paginate(5);
         $check = Customer::where("static", 6)->orderBy('updated_at', 'desc')->paginate(5);
         return view("Admin.banking.index", compact("cus", "check"));
     }
@@ -35,6 +36,7 @@ class BankingController extends Controller
             $cus->update([
                 "static" => 6
             ]);
+            Toastr::success('顧客への完全な送金','お知らせ');
             return redirect()->route("index-banking");
         } catch (\Exception $exception) {
             DB::rollBack();
